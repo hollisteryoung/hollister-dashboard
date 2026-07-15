@@ -1,0 +1,117 @@
+table Anomalies
+	lineageTag: 9ef54f61-a35d-4ea2-afd9-7b0162b0adab
+
+	/// Number of flagged cluster anomalies.
+	measure 'Anomaly Count' = COUNTROWS(Anomalies)
+		formatString: #,##0
+		lineageTag: a7970d7b-4359-4593-b034-fc379e91daed
+
+	/// Largest deviation from baseline.
+	measure 'Max Z-Score' = MAX(Anomalies[ZScore])
+		formatString: 0.0
+		lineageTag: 6bbef3d6-5663-41f0-b390-54f2fd9fe007
+
+	/// Current-shift downtime share for the flagged cluster.
+	measure 'Current Share %' = MAX(Anomalies[CurrentShare])
+		formatString: 0.0
+		lineageTag: ee44ce79-8dc0-4dfa-a034-3c879c9e3ef8
+
+	/// Baseline mean share for the flagged cluster.
+	measure 'Baseline Share %' = MAX(Anomalies[BaselineMean])
+		formatString: 0.0
+		lineageTag: 7e36f3bb-1a7d-475f-bb3b-0de3c3bc99f4
+
+	column ShiftKey
+		dataType: string
+		lineageTag: 00478957-d441-461a-b0a0-2a529e1b3353
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 42f371c8-93a9-4312-8b08-c88d1ec55f4b
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Segment
+		dataType: string
+		lineageTag: ef1fabe3-e5cd-41b2-a1b3-ee7a76ec76f2
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Cluster
+		dataType: string
+		lineageTag: 25f5c5d6-5eb4-4a4f-a886-b636612a98a1
+		summarizeBy: none
+		sourceColumn: Cluster
+
+	column CurrentShare
+		dataType: double
+		lineageTag: 50e2dc5d-e4d6-44ac-a58f-b079665e89e2
+		summarizeBy: none
+		sourceColumn: CurrentShare
+
+	column BaselineMean
+		dataType: double
+		lineageTag: 743862da-47e4-4e08-8269-0107ae784b7b
+		summarizeBy: none
+		sourceColumn: BaselineMean
+
+	column ZScore
+		dataType: double
+		lineageTag: 106c82d2-e157-4808-b558-7f11bcb9abaf
+		summarizeBy: none
+		sourceColumn: ZScore
+
+	column Direction
+		dataType: string
+		lineageTag: 71eba56d-c9c0-48f1-bc36-73da15052b0a
+		summarizeBy: none
+		sourceColumn: Direction
+
+	column Headline
+		dataType: string
+		lineageTag: 9b386743-2e21-4bec-acd9-70e84753bebe
+		summarizeBy: none
+		sourceColumn: Headline
+
+	column Detail
+		dataType: string
+		lineageTag: b598aeeb-8ece-4b5e-a61e-8c8aba9b6b29
+		summarizeBy: none
+		sourceColumn: Detail
+
+	column SegColor
+		dataType: string
+		lineageTag: 2c00911f-be90-4a2a-a570-43d9130c7319
+		summarizeBy: none
+		sourceColumn: SegColor
+
+	column Rank
+		dataType: int64
+		lineageTag: 18da00fc-125a-4de7-b527-e6bf5d9309d5
+		summarizeBy: none
+		sourceColumn: Rank
+
+	column HeadlineML
+		dataType: string
+		lineageTag: bd6976a5-85b5-4bf5-bb50-1215ed0f23ae
+		summarizeBy: none
+		sourceColumn: HeadlineML
+
+	column ShiftLabel
+		dataType: string
+		lineageTag: 61b530fb-4664-4e14-bb66-24c44cadf42c
+		summarizeBy: none
+		sourceColumn: ShiftLabel
+
+	partition Anomalies = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="Anomalies"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"Segment", type text}, {"Cluster", type text}, {"CurrentShare", type number}, {"BaselineMean", type number}, {"ZScore", type number}, {"Direction", type text}, {"Headline", type text}, {"Detail", type text}, {"SegColor", type text}, {"Rank", Int64.Type}, {"HeadlineML", type text}, {"ShiftLabel", type text}})
+				in
+					Typed
+

@@ -1,0 +1,263 @@
+ShiftKey,LineId,ShiftLabel,Segment,Cluster,CurrentShare,BaselineMean,ZScore,Direction,Headline,Detail,HeadlineML,SegColor,Rank
+hu3|2026-06-13|day,hu3,Day 06-13,pneumatic,Other,8.7,0.4,8.3,above,22× more Other stops than usual (Pneumatic),"8.7% of this shift's downtime, normally 0.4%","22× more Other stops than usual (Pneumatic)
+8.7% of this shift's downtime, normally 0.4%",#10B981,0
+hu3|2026-06-13|day,hu3,Day 06-13,pneumatic,Air Pressure,23.4,4.9,3.8,above,5× more Air Pressure stops than usual (Pneumatic),"23.4% of this shift's downtime, normally 4.9%","5× more Air Pressure stops than usual (Pneumatic)
+23.4% of this shift's downtime, normally 4.9%",#10B981,1
+hu3|2026-06-13|night,hu3,Night 06-13,web,Web Torn,7.2,1.4,3.7,above,5× more Web Torn stops than usual (Web / Reel),"7.2% of this shift's downtime, normally 1.4%","5× more Web Torn stops than usual (Web / Reel)
+7.2% of this shift's downtime, normally 1.4%",#3B82F6,0
+hu3|2026-06-14|day,hu3,Day 06-14,pneumatic,Air Pressure,37.3,4.9,6.7,above,8× more Air Pressure stops than usual (Pneumatic),"37.3% of this shift's downtime, normally 4.9%","8× more Air Pressure stops than usual (Pneumatic)
+37.3% of this shift's downtime, normally 4.9%",#10B981,0
+hu3|2026-06-14|day,hu3,Day 06-14,unattributed,unattributed,13.5,41.0,-2.4,below,Fewer unattributed stops than usual (Other),"13.5% of this shift's downtime, normally 41.0%","Fewer unattributed stops than usual (Other)
+13.5% of this shift's downtime, normally 41.0%",#b2bec3,1
+hu3|2026-06-14|day,hu3,Day 06-14,web,Splice,7.1,2.8,2.0,above,3× more Splice stops than usual (Web / Reel),"7.1% of this shift's downtime, normally 2.8%","3× more Splice stops than usual (Web / Reel)
+7.1% of this shift's downtime, normally 2.8%",#3B82F6,2
+hu3|2026-06-14|night,hu3,Night 06-14,pneumatic,Air Pressure,21.5,4.9,3.5,above,4× more Air Pressure stops than usual (Pneumatic),"21.5% of this shift's downtime, normally 4.9%","4× more Air Pressure stops than usual (Pneumatic)
+21.5% of this shift's downtime, normally 4.9%",#10B981,0
+hu3|2026-06-14|night,hu3,Night 06-14,unattributed,unattributed,13.9,41.0,-2.4,below,Fewer unattributed stops than usual (Other),"13.9% of this shift's downtime, normally 41.0%","Fewer unattributed stops than usual (Other)
+13.9% of this shift's downtime, normally 41.0%",#b2bec3,1
+hu3|2026-06-15|day,hu3,Day 06-15,sealing,Sealing Head,31.0,4.2,5.0,above,7× more Sealing Head stops than usual (Sealing),"31.0% of this shift's downtime, normally 4.2%","7× more Sealing Head stops than usual (Sealing)
+31.0% of this shift's downtime, normally 4.2%",#F59E0B,0
+hu3|2026-06-15|day,hu3,Day 06-15,unattributed,unattributed,15.9,41.0,-2.2,below,Fewer unattributed stops than usual (Other),"15.9% of this shift's downtime, normally 41.0%","Fewer unattributed stops than usual (Other)
+15.9% of this shift's downtime, normally 41.0%",#b2bec3,1
+hu3|2026-06-16|day,hu3,Day 06-16,pneumatic,Air Pressure,32.2,4.9,5.7,above,7× more Air Pressure stops than usual (Pneumatic),"32.2% of this shift's downtime, normally 4.9%","7× more Air Pressure stops than usual (Pneumatic)
+32.2% of this shift's downtime, normally 4.9%",#10B981,0
+hu3|2026-06-16|day,hu3,Day 06-16,handling,Cylinder,5.9,0.4,5.5,above,15× more Cylinder stops than usual (Handling),"5.9% of this shift's downtime, normally 0.4%","15× more Cylinder stops than usual (Handling)
+5.9% of this shift's downtime, normally 0.4%",#8B5CF6,1
+hu3|2026-06-16|day,hu3,Day 06-16,unattributed,unattributed,13.8,41.0,-2.4,below,Fewer unattributed stops than usual (Other),"13.8% of this shift's downtime, normally 41.0%","Fewer unattributed stops than usual (Other)
+13.8% of this shift's downtime, normally 41.0%",#b2bec3,2
+hu3|2026-06-16|night,hu3,Night 06-16,web,Web Torn,6.5,1.4,3.2,above,5× more Web Torn stops than usual (Web / Reel),"6.5% of this shift's downtime, normally 1.4%","5× more Web Torn stops than usual (Web / Reel)
+6.5% of this shift's downtime, normally 1.4%",#3B82F6,0
+hu3|2026-06-16|night,hu3,Night 06-16,pneumatic,Valve on Web,10.0,2.3,2.2,above,4× more Valve on Web stops than usual (Pneumatic),"10.0% of this shift's downtime, normally 2.3%","4× more Valve on Web stops than usual (Pneumatic)
+10.0% of this shift's downtime, normally 2.3%",#10B981,1
+hu3|2026-06-17|day,hu3,Day 06-17,web,End of Reel,1.4,17.9,-1.9,below,Fewer End of Reel stops than usual (Web / Reel),"1.4% of this shift's downtime, normally 17.9%","Fewer End of Reel stops than usual (Web / Reel)
+1.4% of this shift's downtime, normally 17.9%",#3B82F6,0
+hu3|2026-06-17|day,hu3,Day 06-17,manual,manual,30.5,11.9,1.9,above,3× more manual stops than usual (Manual),"30.5% of this shift's downtime, normally 11.9%","3× more manual stops than usual (Manual)
+30.5% of this shift's downtime, normally 11.9%",#636e72,1
+hu3|2026-06-17|night,hu3,Night 06-17,handling,Cylinder,15.2,0.4,14.8,above,38× more Cylinder stops than usual (Handling),"15.2% of this shift's downtime, normally 0.4%","38× more Cylinder stops than usual (Handling)
+15.2% of this shift's downtime, normally 0.4%",#8B5CF6,0
+hu3|2026-06-17|night,hu3,Night 06-17,handling,Piston,7.4,0.2,7.3,above,37× more Piston stops than usual (Handling),"7.4% of this shift's downtime, normally 0.2%","37× more Piston stops than usual (Handling)
+7.4% of this shift's downtime, normally 0.2%",#8B5CF6,1
+hu3|2026-06-17|night,hu3,Night 06-17,sealing,Sealing Head,15.5,4.2,2.1,above,4× more Sealing Head stops than usual (Sealing),"15.5% of this shift's downtime, normally 4.2%","4× more Sealing Head stops than usual (Sealing)
+15.5% of this shift's downtime, normally 4.2%",#F59E0B,2
+hu3|2026-06-17|night,hu3,Night 06-17,unattributed,unattributed,19.2,41.0,-1.9,below,Fewer unattributed stops than usual (Other),"19.2% of this shift's downtime, normally 41.0%","Fewer unattributed stops than usual (Other)
+19.2% of this shift's downtime, normally 41.0%",#b2bec3,3
+hu3|2026-06-18|day,hu3,Day 06-18,manual,manual,31.0,11.9,1.9,above,3× more manual stops than usual (Manual),"31.0% of this shift's downtime, normally 11.9%","3× more manual stops than usual (Manual)
+31.0% of this shift's downtime, normally 11.9%",#636e72,0
+hu3|2026-06-19|day,hu3,Day 06-19,manual,manual,60.1,11.9,4.9,above,5× more manual stops than usual (Manual),"60.1% of this shift's downtime, normally 11.9%","5× more manual stops than usual (Manual)
+60.1% of this shift's downtime, normally 11.9%",#636e72,0
+hu3|2026-06-19|day,hu3,Day 06-19,unattributed,unattributed,15.9,41.0,-2.2,below,Fewer unattributed stops than usual (Other),"15.9% of this shift's downtime, normally 41.0%","Fewer unattributed stops than usual (Other)
+15.9% of this shift's downtime, normally 41.0%",#b2bec3,1
+hu3|2026-06-19|night,hu3,Night 06-19,handling,Gripper,14.8,5.0,2.6,above,3× more Gripper stops than usual (Handling),"14.8% of this shift's downtime, normally 5.0%","3× more Gripper stops than usual (Handling)
+14.8% of this shift's downtime, normally 5.0%",#8B5CF6,0
+hu3|2026-07-08|day,hu3,Day 07-08,manual,manual,54.8,13.2,5.8,above,4× more manual stops than usual (Manual),"54.8% of this shift's downtime, normally 13.2%","4× more manual stops than usual (Manual)
+54.8% of this shift's downtime, normally 13.2%",#636e72,0
+hu3|2026-07-08|night,hu3,Night 07-08,handling,Other,11.8,0.2,11.6,above,59× more Other stops than usual (Handling),"11.8% of this shift's downtime, normally 0.2%","59× more Other stops than usual (Handling)
+11.8% of this shift's downtime, normally 0.2%",#8B5CF6,0
+hu3|2026-07-09|day,hu3,Day 07-09,web,Splice,8.0,2.6,2.4,above,3× more Splice stops than usual (Web / Reel),"8.0% of this shift's downtime, normally 2.6%","3× more Splice stops than usual (Web / Reel)
+8.0% of this shift's downtime, normally 2.6%",#3B82F6,0
+hu3|2026-07-09|night,hu3,Night 07-09,web,Splice,15.7,2.6,5.8,above,6× more Splice stops than usual (Web / Reel),"15.7% of this shift's downtime, normally 2.6%","6× more Splice stops than usual (Web / Reel)
+15.7% of this shift's downtime, normally 2.6%",#3B82F6,0
+hu3|2026-07-10|day,hu3,Day 07-10,pneumatic,Air Pressure,24.1,3.3,6.1,above,7× more Air Pressure stops than usual (Pneumatic),"24.1% of this shift's downtime, normally 3.3%","7× more Air Pressure stops than usual (Pneumatic)
+24.1% of this shift's downtime, normally 3.3%",#10B981,0
+hu3|2026-07-10|day,hu3,Day 07-10,handling,Piston,5.6,0.8,2.4,above,7× more Piston stops than usual (Handling),"5.6% of this shift's downtime, normally 0.8%","7× more Piston stops than usual (Handling)
+5.6% of this shift's downtime, normally 0.8%",#8B5CF6,1
+hu3|2026-07-10|day,hu3,Day 07-10,sealing,Sealing Head,8.6,2.1,2.0,above,4× more Sealing Head stops than usual (Sealing),"8.6% of this shift's downtime, normally 2.1%","4× more Sealing Head stops than usual (Sealing)
+8.6% of this shift's downtime, normally 2.1%",#F59E0B,2
+hu3|2026-07-10|day,hu3,Day 07-10,handling,Fork,0.3,15.2,-2.0,below,Fewer Fork stops than usual (Handling),"0.3% of this shift's downtime, normally 15.2%","Fewer Fork stops than usual (Handling)
+0.3% of this shift's downtime, normally 15.2%",#8B5CF6,3
+hu3|2026-07-10|night,hu3,Night 07-10,web,Splice,12.1,2.6,4.2,above,5× more Splice stops than usual (Web / Reel),"12.1% of this shift's downtime, normally 2.6%","5× more Splice stops than usual (Web / Reel)
+12.1% of this shift's downtime, normally 2.6%",#3B82F6,0
+hu3|2026-07-11|day,hu3,Day 07-11,web,End of Reel,39.2,11.1,5.1,above,4× more End of Reel stops than usual (Web / Reel),"39.2% of this shift's downtime, normally 11.1%","4× more End of Reel stops than usual (Web / Reel)
+39.2% of this shift's downtime, normally 11.1%",#3B82F6,0
+hu3|2026-07-11|day,hu3,Day 07-11,pneumatic,Valve on Web,8.8,2.5,2.3,above,4× more Valve on Web stops than usual (Pneumatic),"8.8% of this shift's downtime, normally 2.5%","4× more Valve on Web stops than usual (Pneumatic)
+8.8% of this shift's downtime, normally 2.5%",#10B981,1
+hu3|2026-07-11|night,hu3,Night 07-11,pneumatic,Other,10.0,0.5,9.5,above,20× more Other stops than usual (Pneumatic),"10.0% of this shift's downtime, normally 0.5%","20× more Other stops than usual (Pneumatic)
+10.0% of this shift's downtime, normally 0.5%",#10B981,0
+hu3|2026-07-11|night,hu3,Night 07-11,web,Splice,7.0,2.6,1.9,above,3× more Splice stops than usual (Web / Reel),"7.0% of this shift's downtime, normally 2.6%","3× more Splice stops than usual (Web / Reel)
+7.0% of this shift's downtime, normally 2.6%",#3B82F6,1
+hu3|2026-07-11|night,hu3,Night 07-11,handling,Fork,0.6,15.2,-1.9,below,Fewer Fork stops than usual (Handling),"0.6% of this shift's downtime, normally 15.2%","Fewer Fork stops than usual (Handling)
+0.6% of this shift's downtime, normally 15.2%",#8B5CF6,2
+hu3|2026-07-12|day,hu3,Day 07-12,pneumatic,Valve on Web,14.7,2.5,4.5,above,6× more Valve on Web stops than usual (Pneumatic),"14.7% of this shift's downtime, normally 2.5%","6× more Valve on Web stops than usual (Pneumatic)
+14.7% of this shift's downtime, normally 2.5%",#10B981,0
+hu3|2026-07-12|day,hu3,Day 07-12,handling,Fork,1.4,15.2,-1.8,below,Fewer Fork stops than usual (Handling),"1.4% of this shift's downtime, normally 15.2%","Fewer Fork stops than usual (Handling)
+1.4% of this shift's downtime, normally 15.2%",#8B5CF6,1
+hu3|2026-07-12|night,hu3,Night 07-12,web,End of Reel,33.6,11.1,4.1,above,3× more End of Reel stops than usual (Web / Reel),"33.6% of this shift's downtime, normally 11.1%","3× more End of Reel stops than usual (Web / Reel)
+33.6% of this shift's downtime, normally 11.1%",#3B82F6,0
+hu3|2026-07-12|night,hu3,Night 07-12,handling,Fork,1.4,15.2,-1.8,below,Fewer Fork stops than usual (Handling),"1.4% of this shift's downtime, normally 15.2%","Fewer Fork stops than usual (Handling)
+1.4% of this shift's downtime, normally 15.2%",#8B5CF6,1
+hu3|2026-07-13|night,hu3,Night 07-13,pneumatic,Air Pressure,19.1,3.3,4.6,above,6× more Air Pressure stops than usual (Pneumatic),"19.1% of this shift's downtime, normally 3.3%","6× more Air Pressure stops than usual (Pneumatic)
+19.1% of this shift's downtime, normally 3.3%",#10B981,0
+hu3|2026-07-13|night,hu3,Night 07-13,web,End of Reel,22.2,11.1,2.0,above,2× more End of Reel stops than usual (Web / Reel),"22.2% of this shift's downtime, normally 11.1%","2× more End of Reel stops than usual (Web / Reel)
+22.2% of this shift's downtime, normally 11.1%",#3B82F6,1
+hu3|2026-07-14|day,hu3,Day 07-14,web,Other,16.6,0.2,16.4,above,83× more Other stops than usual (Web / Reel),"16.6% of this shift's downtime, normally 0.2%","83× more Other stops than usual (Web / Reel)
+16.6% of this shift's downtime, normally 0.2%",#3B82F6,0
+hu3|2026-07-14|day,hu3,Day 07-14,pneumatic,Air Pressure,21.1,3.3,5.2,above,6× more Air Pressure stops than usual (Pneumatic),"21.1% of this shift's downtime, normally 3.3%","6× more Air Pressure stops than usual (Pneumatic)
+21.1% of this shift's downtime, normally 3.3%",#10B981,1
+hu3|2026-07-14|day,hu3,Day 07-14,manual,manual,31.8,13.2,2.6,above,2× more manual stops than usual (Manual),"31.8% of this shift's downtime, normally 13.2%","2× more manual stops than usual (Manual)
+31.8% of this shift's downtime, normally 13.2%",#636e72,2
+hu3|2026-07-14|day,hu3,Day 07-14,unattributed,unattributed,5.9,28.8,-1.9,below,Fewer unattributed stops than usual (Other),"5.9% of this shift's downtime, normally 28.8%","Fewer unattributed stops than usual (Other)
+5.9% of this shift's downtime, normally 28.8%",#b2bec3,3
+hu3|2026-07-14|night,hu3,Night 07-14,sealing,Knife,11.4,0.1,11.3,above,114× more Knife stops than usual (Sealing),"11.4% of this shift's downtime, normally 0.1%","114× more Knife stops than usual (Sealing)
+11.4% of this shift's downtime, normally 0.1%",#F59E0B,0
+hu3|2026-07-14|night,hu3,Night 07-14,manual,manual,60.0,13.2,6.6,above,5× more manual stops than usual (Manual),"60.0% of this shift's downtime, normally 13.2%","5× more manual stops than usual (Manual)
+60.0% of this shift's downtime, normally 13.2%",#636e72,1
+hu3|2026-07-14|night,hu3,Night 07-14,web,End of Reel,0.3,11.1,-1.9,below,Fewer End of Reel stops than usual (Web / Reel),"0.3% of this shift's downtime, normally 11.1%","Fewer End of Reel stops than usual (Web / Reel)
+0.3% of this shift's downtime, normally 11.1%",#3B82F6,2
+ngp2|2026-05-29|day,ngp2,Day 05-29,hydration,Limit Switch,14.7,3.2,5.0,above,5× more Limit Switch stops than usual (Hydration),"14.7% of this shift's downtime, normally 3.2%","5× more Limit Switch stops than usual (Hydration)
+14.7% of this shift's downtime, normally 3.2%",#e76f51,0
+ngp2|2026-05-29|day,ngp2,Day 05-29,hydration,Catheter Reject,9.7,3.6,2.0,above,3× more Catheter Reject stops than usual (Hydration),"9.7% of this shift's downtime, normally 3.6%","3× more Catheter Reject stops than usual (Hydration)
+9.7% of this shift's downtime, normally 3.6%",#e76f51,1
+ngp2|2026-05-29|night,ngp2,Night 05-29,hydration,Limit Switch,26.9,4.2,5.8,above,6× more Limit Switch stops than usual (Hydration),"26.9% of this shift's downtime, normally 4.2%","6× more Limit Switch stops than usual (Hydration)
+26.9% of this shift's downtime, normally 4.2%",#e76f51,0
+ngp2|2026-05-29|night,ngp2,Night 05-29,unattributed,unattributed,16.8,3.3,3.8,above,5× more unattributed stops than usual (Other),"16.8% of this shift's downtime, normally 3.3%","5× more unattributed stops than usual (Other)
+16.8% of this shift's downtime, normally 3.3%",#b2bec3,1
+ngp2|2026-05-29|night,ngp2,Night 05-29,hydration,Cap,12.3,4.0,2.3,above,3× more Cap stops than usual (Hydration),"12.3% of this shift's downtime, normally 4.0%","3× more Cap stops than usual (Hydration)
+12.3% of this shift's downtime, normally 4.0%",#e76f51,2
+ngp2|2026-05-30|day,ngp2,Day 05-30,schubert,Line Stop / Wait,29.7,10.2,3.8,above,3× more Line Stop / Wait stops than usual (Schubert),"29.7% of this shift's downtime, normally 10.2%","3× more Line Stop / Wait stops than usual (Schubert)
+29.7% of this shift's downtime, normally 10.2%",#2a9d8f,0
+ngp2|2026-05-30|day,ngp2,Day 05-30,foil,Detection Fault,16.1,7.1,3.7,above,2× more Detection Fault stops than usual (Foil),"16.1% of this shift's downtime, normally 7.1%","2× more Detection Fault stops than usual (Foil)
+16.1% of this shift's downtime, normally 7.1%",#e9c46a,1
+ngp2|2026-05-30|night,ngp2,Night 05-30,foil,Detection Fault,34.5,8.2,8.9,above,4× more Detection Fault stops than usual (Foil),"34.5% of this shift's downtime, normally 8.2%","4× more Detection Fault stops than usual (Foil)
+34.5% of this shift's downtime, normally 8.2%",#e9c46a,0
+ngp2|2026-05-31|day,ngp2,Day 05-31,manual,manual,8.9,3.7,1.8,above,2× more manual stops than usual (Manual),"8.9% of this shift's downtime, normally 3.7%","2× more manual stops than usual (Manual)
+8.9% of this shift's downtime, normally 3.7%",#636e72,0
+ngp2|2026-06-01|day,ngp2,Day 06-01,manual,manual,14.3,3.7,4.1,above,4× more manual stops than usual (Manual),"14.3% of this shift's downtime, normally 3.7%","4× more manual stops than usual (Manual)
+14.3% of this shift's downtime, normally 3.7%",#636e72,0
+ngp2|2026-06-01|day,ngp2,Day 06-01,foil,Edge Trim,8.5,1.3,3.2,above,7× more Edge Trim stops than usual (Foil),"8.5% of this shift's downtime, normally 1.3%","7× more Edge Trim stops than usual (Foil)
+8.5% of this shift's downtime, normally 1.3%",#e9c46a,1
+ngp2|2026-06-01|day,ngp2,Day 06-01,hydration,Gripper,13.1,4.4,2.6,above,3× more Gripper stops than usual (Hydration),"13.1% of this shift's downtime, normally 4.4%","3× more Gripper stops than usual (Hydration)
+13.1% of this shift's downtime, normally 4.4%",#e76f51,2
+ngp2|2026-06-01|day,ngp2,Day 06-01,unattributed,unattributed,13.7,4.3,2.1,above,3× more unattributed stops than usual (Other),"13.7% of this shift's downtime, normally 4.3%","3× more unattributed stops than usual (Other)
+13.7% of this shift's downtime, normally 4.3%",#b2bec3,3
+ngp2|2026-06-01|night,ngp2,Night 06-01,hydration,Gripper,32.2,5.3,6.8,above,6× more Gripper stops than usual (Hydration),"32.2% of this shift's downtime, normally 5.3%","6× more Gripper stops than usual (Hydration)
+32.2% of this shift's downtime, normally 5.3%",#e76f51,0
+ngp2|2026-06-02|day,ngp2,Day 06-02,foil,Labeler,8.3,3.4,1.9,above,2× more Labeler stops than usual (Foil),"8.3% of this shift's downtime, normally 3.4%","2× more Labeler stops than usual (Foil)
+8.3% of this shift's downtime, normally 3.4%",#e9c46a,0
+ngp2|2026-06-02|night,ngp2,Night 06-02,foil,Labeler,14.0,3.7,3.6,above,4× more Labeler stops than usual (Foil),"14.0% of this shift's downtime, normally 3.7%","4× more Labeler stops than usual (Foil)
+14.0% of this shift's downtime, normally 3.7%",#e9c46a,0
+ngp2|2026-06-03|night,ngp2,Night 06-03,manual,manual,17.5,4.3,3.4,above,4× more manual stops than usual (Manual),"17.5% of this shift's downtime, normally 4.3%","4× more manual stops than usual (Manual)
+17.5% of this shift's downtime, normally 4.3%",#636e72,0
+ngp2|2026-06-04|day,ngp2,Day 06-04,schubert,Line Stop / Wait,30.3,15.7,2.2,above,more Line Stop / Wait stops than usual (Schubert),"30.3% of this shift's downtime, normally 15.7%","more Line Stop / Wait stops than usual (Schubert)
+30.3% of this shift's downtime, normally 15.7%",#2a9d8f,0
+ngp2|2026-06-04|night,ngp2,Night 06-04,foil,Sealing Lane,11.0,4.8,3.2,above,2× more Sealing Lane stops than usual (Foil),"11.0% of this shift's downtime, normally 4.8%","2× more Sealing Lane stops than usual (Foil)
+11.0% of this shift's downtime, normally 4.8%",#e9c46a,0
+ngp2|2026-06-04|night,ngp2,Night 06-04,hydration,Catheter Reject,8.6,3.5,2.1,above,2× more Catheter Reject stops than usual (Hydration),"8.6% of this shift's downtime, normally 3.5%","2× more Catheter Reject stops than usual (Hydration)
+8.6% of this shift's downtime, normally 3.5%",#e76f51,1
+ngp2|2026-06-04|night,ngp2,Night 06-04,foil,Other,11.8,4.2,2.0,above,3× more Other stops than usual (Foil),"11.8% of this shift's downtime, normally 4.2%","3× more Other stops than usual (Foil)
+11.8% of this shift's downtime, normally 4.2%",#e9c46a,2
+ngp2|2026-06-13|day,ngp2,Day 06-13,hydration,Other,50.3,3.5,6.7,above,14× more Other stops than usual (Hydration),"50.3% of this shift's downtime, normally 3.5%","14× more Other stops than usual (Hydration)
+50.3% of this shift's downtime, normally 3.5%",#e76f51,0
+ngp2|2026-06-13|night,ngp2,Night 06-13,manual,manual,12.8,2.6,4.2,above,5× more manual stops than usual (Manual),"12.8% of this shift's downtime, normally 2.6%","5× more manual stops than usual (Manual)
+12.8% of this shift's downtime, normally 2.6%",#636e72,0
+ngp2|2026-06-13|night,ngp2,Night 06-13,foil,Labeler,15.0,3.7,4.1,above,4× more Labeler stops than usual (Foil),"15.0% of this shift's downtime, normally 3.7%","4× more Labeler stops than usual (Foil)
+15.0% of this shift's downtime, normally 3.7%",#e9c46a,1
+ngp2|2026-06-14|day,ngp2,Day 06-14,hydration,Catheter Reject,15.7,1.7,8.7,above,9× more Catheter Reject stops than usual (Hydration),"15.7% of this shift's downtime, normally 1.7%","9× more Catheter Reject stops than usual (Hydration)
+15.7% of this shift's downtime, normally 1.7%",#e76f51,0
+ngp2|2026-06-14|day,ngp2,Day 06-14,hydration,Cap,12.7,2.3,3.2,above,6× more Cap stops than usual (Hydration),"12.7% of this shift's downtime, normally 2.3%","6× more Cap stops than usual (Hydration)
+12.7% of this shift's downtime, normally 2.3%",#e76f51,1
+ngp2|2026-06-14|day,ngp2,Day 06-14,foil,Detection Fault,10.5,3.1,2.9,above,3× more Detection Fault stops than usual (Foil),"10.5% of this shift's downtime, normally 3.1%","3× more Detection Fault stops than usual (Foil)
+10.5% of this shift's downtime, normally 3.1%",#e9c46a,2
+ngp2|2026-06-14|night,ngp2,Night 06-14,foil,Detection Fault,26.4,3.1,9.0,above,9× more Detection Fault stops than usual (Foil),"26.4% of this shift's downtime, normally 3.1%","9× more Detection Fault stops than usual (Foil)
+26.4% of this shift's downtime, normally 3.1%",#e9c46a,0
+ngp2|2026-06-14|night,ngp2,Night 06-14,hydration,Catheter Reject,10.4,1.7,5.4,above,6× more Catheter Reject stops than usual (Hydration),"10.4% of this shift's downtime, normally 1.7%","6× more Catheter Reject stops than usual (Hydration)
+10.4% of this shift's downtime, normally 1.7%",#e76f51,1
+ngp2|2026-06-14|night,ngp2,Night 06-14,hydration,Cap,13.2,2.3,3.3,above,6× more Cap stops than usual (Hydration),"13.2% of this shift's downtime, normally 2.3%","6× more Cap stops than usual (Hydration)
+13.2% of this shift's downtime, normally 2.3%",#e76f51,2
+ngp2|2026-06-15|day,ngp2,Day 06-15,foil,Detection Fault,27.8,3.1,9.5,above,9× more Detection Fault stops than usual (Foil),"27.8% of this shift's downtime, normally 3.1%","9× more Detection Fault stops than usual (Foil)
+27.8% of this shift's downtime, normally 3.1%",#e9c46a,0
+ngp2|2026-06-15|day,ngp2,Day 06-15,hydration,Cap,13.3,2.3,3.3,above,6× more Cap stops than usual (Hydration),"13.3% of this shift's downtime, normally 2.3%","6× more Cap stops than usual (Hydration)
+13.3% of this shift's downtime, normally 2.3%",#e76f51,1
+ngp2|2026-06-15|night,ngp2,Night 06-15,foil,Detection Fault,19.6,3.1,6.4,above,6× more Detection Fault stops than usual (Foil),"19.6% of this shift's downtime, normally 3.1%","6× more Detection Fault stops than usual (Foil)
+19.6% of this shift's downtime, normally 3.1%",#e9c46a,0
+ngp2|2026-06-15|night,ngp2,Night 06-15,hydration,Catheter Reject,5.9,1.7,2.6,above,3× more Catheter Reject stops than usual (Hydration),"5.9% of this shift's downtime, normally 1.7%","3× more Catheter Reject stops than usual (Hydration)
+5.9% of this shift's downtime, normally 1.7%",#e76f51,1
+ngp2|2026-06-15|night,ngp2,Night 06-15,foil,Labeler,9.8,3.7,2.2,above,3× more Labeler stops than usual (Foil),"9.8% of this shift's downtime, normally 3.7%","3× more Labeler stops than usual (Foil)
+9.8% of this shift's downtime, normally 3.7%",#e9c46a,2
+ngp2|2026-06-15|night,ngp2,Night 06-15,manual,manual,7.6,2.6,2.1,above,3× more manual stops than usual (Manual),"7.6% of this shift's downtime, normally 2.6%","3× more manual stops than usual (Manual)
+7.6% of this shift's downtime, normally 2.6%",#636e72,3
+ngp2|2026-06-16|day,ngp2,Day 06-16,hydration,Timing,8.6,0.7,5.9,above,12× more Timing stops than usual (Hydration),"8.6% of this shift's downtime, normally 0.7%","12× more Timing stops than usual (Hydration)
+8.6% of this shift's downtime, normally 0.7%",#e76f51,0
+ngp2|2026-06-16|day,ngp2,Day 06-16,hydration,Cap,17.8,2.3,4.7,above,8× more Cap stops than usual (Hydration),"17.8% of this shift's downtime, normally 2.3%","8× more Cap stops than usual (Hydration)
+17.8% of this shift's downtime, normally 2.3%",#e76f51,1
+ngp2|2026-06-16|night,ngp2,Night 06-16,hydration,Cap,17.2,2.3,4.5,above,7× more Cap stops than usual (Hydration),"17.2% of this shift's downtime, normally 2.3%","7× more Cap stops than usual (Hydration)
+17.2% of this shift's downtime, normally 2.3%",#e76f51,0
+ngp2|2026-06-16|night,ngp2,Night 06-16,foil,Edge Trim,5.4,1.0,3.2,above,5× more Edge Trim stops than usual (Foil),"5.4% of this shift's downtime, normally 1.0%","5× more Edge Trim stops than usual (Foil)
+5.4% of this shift's downtime, normally 1.0%",#e9c46a,1
+ngp2|2026-06-16|night,ngp2,Night 06-16,foil,Labeler,11.5,3.7,2.8,above,3× more Labeler stops than usual (Foil),"11.5% of this shift's downtime, normally 3.7%","3× more Labeler stops than usual (Foil)
+11.5% of this shift's downtime, normally 3.7%",#e9c46a,2
+ngp2|2026-06-17|day,ngp2,Day 06-17,hydration,Timing,22.3,0.7,16.2,above,32× more Timing stops than usual (Hydration),"22.3% of this shift's downtime, normally 0.7%","32× more Timing stops than usual (Hydration)
+22.3% of this shift's downtime, normally 0.7%",#e76f51,0
+ngp2|2026-06-17|day,ngp2,Day 06-17,manual,manual,18.3,2.6,6.5,above,7× more manual stops than usual (Manual),"18.3% of this shift's downtime, normally 2.6%","7× more manual stops than usual (Manual)
+18.3% of this shift's downtime, normally 2.6%",#636e72,1
+ngp2|2026-06-17|day,ngp2,Day 06-17,hydration,Catheter Reject,5.4,1.7,2.3,above,3× more Catheter Reject stops than usual (Hydration),"5.4% of this shift's downtime, normally 1.7%","3× more Catheter Reject stops than usual (Hydration)
+5.4% of this shift's downtime, normally 1.7%",#e76f51,2
+ngp2|2026-06-17|day,ngp2,Day 06-17,hydration,Cap,9.0,2.3,2.0,above,4× more Cap stops than usual (Hydration),"9.0% of this shift's downtime, normally 2.3%","4× more Cap stops than usual (Hydration)
+9.0% of this shift's downtime, normally 2.3%",#e76f51,3
+ngp2|2026-06-17|day,ngp2,Day 06-17,foil,Labeler,8.9,3.7,1.9,above,2× more Labeler stops than usual (Foil),"8.9% of this shift's downtime, normally 3.7%","2× more Labeler stops than usual (Foil)
+8.9% of this shift's downtime, normally 3.7%",#e9c46a,4
+ngp2|2026-06-17|night,ngp2,Night 06-17,foil,Labeler,18.6,3.7,5.4,above,5× more Labeler stops than usual (Foil),"18.6% of this shift's downtime, normally 3.7%","5× more Labeler stops than usual (Foil)
+18.6% of this shift's downtime, normally 3.7%",#e9c46a,0
+ngp2|2026-06-17|night,ngp2,Night 06-17,hydration,Cap,14.5,2.3,3.7,above,6× more Cap stops than usual (Hydration),"14.5% of this shift's downtime, normally 2.3%","6× more Cap stops than usual (Hydration)
+14.5% of this shift's downtime, normally 2.3%",#e76f51,1
+ngp2|2026-06-18|day,ngp2,Day 06-18,hydration,Catheter Reject,23.0,1.7,13.2,above,14× more Catheter Reject stops than usual (Hydration),"23.0% of this shift's downtime, normally 1.7%","14× more Catheter Reject stops than usual (Hydration)
+23.0% of this shift's downtime, normally 1.7%",#e76f51,0
+ngp2|2026-06-18|day,ngp2,Day 06-18,hydration,Cap,14.5,2.3,3.7,above,6× more Cap stops than usual (Hydration),"14.5% of this shift's downtime, normally 2.3%","6× more Cap stops than usual (Hydration)
+14.5% of this shift's downtime, normally 2.3%",#e76f51,1
+ngp2|2026-06-18|night,ngp2,Night 06-18,hydration,Cap,16.0,2.3,4.1,above,7× more Cap stops than usual (Hydration),"16.0% of this shift's downtime, normally 2.3%","7× more Cap stops than usual (Hydration)
+16.0% of this shift's downtime, normally 2.3%",#e76f51,0
+ngp2|2026-06-19|day,ngp2,Day 06-19,hydration,Cap,12.8,2.3,3.2,above,6× more Cap stops than usual (Hydration),"12.8% of this shift's downtime, normally 2.3%","6× more Cap stops than usual (Hydration)
+12.8% of this shift's downtime, normally 2.3%",#e76f51,0
+ngp2|2026-06-19|day,ngp2,Day 06-19,schubert,Line Stop / Wait,32.0,10.6,2.2,above,3× more Line Stop / Wait stops than usual (Schubert),"32.0% of this shift's downtime, normally 10.6%","3× more Line Stop / Wait stops than usual (Schubert)
+32.0% of this shift's downtime, normally 10.6%",#2a9d8f,1
+ngp2|2026-06-19|night,ngp2,Night 06-19,schubert,Line Stop / Wait,34.6,10.6,2.5,above,3× more Line Stop / Wait stops than usual (Schubert),"34.6% of this shift's downtime, normally 10.6%","3× more Line Stop / Wait stops than usual (Schubert)
+34.6% of this shift's downtime, normally 10.6%",#2a9d8f,0
+ngp2|2026-07-08|day,ngp2,Day 07-08,unattributed,unattributed,6.3,1.0,5.2,above,6× more unattributed stops than usual (Other),"6.3% of this shift's downtime, normally 1.0%","6× more unattributed stops than usual (Other)
+6.3% of this shift's downtime, normally 1.0%",#b2bec3,0
+ngp2|2026-07-08|night,ngp2,Night 07-08,foil,Detection Fault,48.1,9.1,4.6,above,5× more Detection Fault stops than usual (Foil),"48.1% of this shift's downtime, normally 9.1%","5× more Detection Fault stops than usual (Foil)
+48.1% of this shift's downtime, normally 9.1%",#e9c46a,0
+ngp2|2026-07-08|night,ngp2,Night 07-08,foil,Printer,8.2,2.5,3.1,above,3× more Printer stops than usual (Foil),"8.2% of this shift's downtime, normally 2.5%","3× more Printer stops than usual (Foil)
+8.2% of this shift's downtime, normally 2.5%",#e9c46a,1
+ngp2|2026-07-09|day,ngp2,Day 07-09,foil,Detection Fault,72.0,9.1,7.3,above,8× more Detection Fault stops than usual (Foil),"72.0% of this shift's downtime, normally 9.1%","8× more Detection Fault stops than usual (Foil)
+72.0% of this shift's downtime, normally 9.1%",#e9c46a,0
+ngp2|2026-07-09|night,ngp2,Night 07-09,hydration,Catheter Reject,12.3,0.9,11.4,above,14× more Catheter Reject stops than usual (Hydration),"12.3% of this shift's downtime, normally 0.9%","14× more Catheter Reject stops than usual (Hydration)
+12.3% of this shift's downtime, normally 0.9%",#e76f51,0
+ngp2|2026-07-09|night,ngp2,Night 07-09,foil,Printer,6.1,2.5,2.0,above,2× more Printer stops than usual (Foil),"6.1% of this shift's downtime, normally 2.5%","2× more Printer stops than usual (Foil)
+6.1% of this shift's downtime, normally 2.5%",#e9c46a,1
+ngp2|2026-07-10|day,ngp2,Day 07-10,hydration,Catheter Reject,6.6,0.9,5.6,above,7× more Catheter Reject stops than usual (Hydration),"6.6% of this shift's downtime, normally 0.9%","7× more Catheter Reject stops than usual (Hydration)
+6.6% of this shift's downtime, normally 0.9%",#e76f51,0
+ngp2|2026-07-10|day,ngp2,Day 07-10,schubert,Line Stop / Wait,37.2,5.3,5.0,above,7× more Line Stop / Wait stops than usual (Schubert),"37.2% of this shift's downtime, normally 5.3%","7× more Line Stop / Wait stops than usual (Schubert)
+37.2% of this shift's downtime, normally 5.3%",#2a9d8f,1
+ngp2|2026-07-10|day,ngp2,Day 07-10,foil,Printer,7.5,2.5,2.7,above,3× more Printer stops than usual (Foil),"7.5% of this shift's downtime, normally 2.5%","3× more Printer stops than usual (Foil)
+7.5% of this shift's downtime, normally 2.5%",#e9c46a,2
+ngp2|2026-07-10|night,ngp2,Night 07-10,schubert,Line Stop / Wait,17.2,5.3,1.9,above,3× more Line Stop / Wait stops than usual (Schubert),"17.2% of this shift's downtime, normally 5.3%","3× more Line Stop / Wait stops than usual (Schubert)
+17.2% of this shift's downtime, normally 5.3%",#2a9d8f,0
+ngp2|2026-07-11|night,ngp2,Night 07-11,foil,Detection Fault,35.4,9.1,3.1,above,4× more Detection Fault stops than usual (Foil),"35.4% of this shift's downtime, normally 9.1%","4× more Detection Fault stops than usual (Foil)
+35.4% of this shift's downtime, normally 9.1%",#e9c46a,0
+ngp2|2026-07-12|day,ngp2,Day 07-12,hydration,Limit Switch,21.1,2.7,5.2,above,8× more Limit Switch stops than usual (Hydration),"21.1% of this shift's downtime, normally 2.7%","8× more Limit Switch stops than usual (Hydration)
+21.1% of this shift's downtime, normally 2.7%",#e76f51,0
+ngp2|2026-07-12|night,ngp2,Night 07-12,hydration,Timing,5.2,0.2,5.0,above,26× more Timing stops than usual (Hydration),"5.2% of this shift's downtime, normally 0.2%","26× more Timing stops than usual (Hydration)
+5.2% of this shift's downtime, normally 0.2%",#e76f51,0
+ngp2|2026-07-12|night,ngp2,Night 07-12,unattributed,unattributed,5.5,1.0,4.4,above,6× more unattributed stops than usual (Other),"5.5% of this shift's downtime, normally 1.0%","6× more unattributed stops than usual (Other)
+5.5% of this shift's downtime, normally 1.0%",#b2bec3,1
+ngp2|2026-07-12|night,ngp2,Night 07-12,schubert,Line Stop / Wait,25.0,5.3,3.1,above,5× more Line Stop / Wait stops than usual (Schubert),"25.0% of this shift's downtime, normally 5.3%","5× more Line Stop / Wait stops than usual (Schubert)
+25.0% of this shift's downtime, normally 5.3%",#2a9d8f,2
+ngp2|2026-07-12|night,ngp2,Night 07-12,foil,Printer,6.2,2.5,2.0,above,2× more Printer stops than usual (Foil),"6.2% of this shift's downtime, normally 2.5%","2× more Printer stops than usual (Foil)
+6.2% of this shift's downtime, normally 2.5%",#e9c46a,3
+ngp2|2026-07-13|day,ngp2,Day 07-13,hydration,Limit Switch,33.2,2.7,8.6,above,12× more Limit Switch stops than usual (Hydration),"33.2% of this shift's downtime, normally 2.7%","12× more Limit Switch stops than usual (Hydration)
+33.2% of this shift's downtime, normally 2.7%",#e76f51,0
+ngp2|2026-07-13|night,ngp2,Night 07-13,unattributed,unattributed,7.3,1.0,6.3,above,7× more unattributed stops than usual (Other),"7.3% of this shift's downtime, normally 1.0%","7× more unattributed stops than usual (Other)
+7.3% of this shift's downtime, normally 1.0%",#b2bec3,0
+ngp2|2026-07-13|night,ngp2,Night 07-13,foil,Printer,10.6,2.5,4.4,above,4× more Printer stops than usual (Foil),"10.6% of this shift's downtime, normally 2.5%","4× more Printer stops than usual (Foil)
+10.6% of this shift's downtime, normally 2.5%",#e9c46a,1
+ngp2|2026-07-13|night,ngp2,Night 07-13,schubert,Line Stop / Wait,21.9,5.3,2.6,above,4× more Line Stop / Wait stops than usual (Schubert),"21.9% of this shift's downtime, normally 5.3%","4× more Line Stop / Wait stops than usual (Schubert)
+21.9% of this shift's downtime, normally 5.3%",#2a9d8f,2
+ngp2|2026-07-13|night,ngp2,Night 07-13,hydration,Limit Switch,11.1,2.7,2.4,above,4× more Limit Switch stops than usual (Hydration),"11.1% of this shift's downtime, normally 2.7%","4× more Limit Switch stops than usual (Hydration)
+11.1% of this shift's downtime, normally 2.7%",#e76f51,3
+ngp2|2026-07-14|day,ngp2,Day 07-14,foil,Labeler,11.9,2.1,3.4,above,6× more Labeler stops than usual (Foil),"11.9% of this shift's downtime, normally 2.1%","6× more Labeler stops than usual (Foil)
+11.9% of this shift's downtime, normally 2.1%",#e9c46a,0
+ngp2|2026-07-14|night,ngp2,Night 07-14,unattributed,unattributed,5.2,1.0,4.1,above,5× more unattributed stops than usual (Other),"5.2% of this shift's downtime, normally 1.0%","5× more unattributed stops than usual (Other)
+5.2% of this shift's downtime, normally 1.0%",#b2bec3,0
+ngp2|2026-07-14|night,ngp2,Night 07-14,foil,Detection Fault,31.9,9.1,2.7,above,4× more Detection Fault stops than usual (Foil),"31.9% of this shift's downtime, normally 9.1%","4× more Detection Fault stops than usual (Foil)
+31.9% of this shift's downtime, normally 9.1%",#e9c46a,1
+ngp2|2026-07-14|night,ngp2,Night 07-14,schubert,Line Stop / Wait,17.9,5.3,2.0,above,3× more Line Stop / Wait stops than usual (Schubert),"17.9% of this shift's downtime, normally 5.3%","3× more Line Stop / Wait stops than usual (Schubert)
+17.9% of this shift's downtime, normally 5.3%",#2a9d8f,2

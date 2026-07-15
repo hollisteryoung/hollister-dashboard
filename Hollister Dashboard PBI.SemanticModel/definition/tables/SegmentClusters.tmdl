@@ -1,0 +1,74 @@
+table SegmentClusters
+	lineageTag: 94163f5b-96fb-4170-9ef0-591aa83ad47f
+
+	/// Downtime hours by cause cluster.
+	measure 'Cluster Downtime (h)' = SUM(SegmentClusters[Hours])
+		formatString: #,##0.0
+		lineageTag: b2da736a-dbfb-40b5-8b21-5327c689a771
+
+	measure 'Cluster Halted (h)' = SUM(SegmentClusters[HaltedHours])
+		formatString: #,##0.0
+		lineageTag: 34a44cee-076d-4b2d-bf3a-eeef41fa42f5
+
+	measure 'Cluster Stopped (h)' = SUM(SegmentClusters[StoppedHours])
+		formatString: #,##0.0
+		lineageTag: 11b662c5-ce5a-4ac3-8cf1-b39ad7af42f9
+
+	column ShiftKey
+		dataType: string
+		lineageTag: 5b985a83-d293-47e1-b08b-526d3de3924b
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 904eba22-bf80-4950-9a70-14eeed1678ca
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Segment
+		dataType: string
+		lineageTag: 7fdf0002-d7dc-4eee-91e8-470f619340b7
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Cluster
+		dataType: string
+		lineageTag: 136a1ba7-e9e4-4c41-8508-ce576ad5baa9
+		summarizeBy: none
+		sourceColumn: Cluster
+
+	column Count
+		dataType: int64
+		lineageTag: 4a189a85-1789-45b4-b05d-c83dc92114e1
+		summarizeBy: none
+		sourceColumn: Count
+
+	column Hours
+		dataType: double
+		lineageTag: 4a583d35-6578-4c71-9ade-2c2c0b25a3fd
+		summarizeBy: none
+		sourceColumn: Hours
+
+	column HaltedHours
+		dataType: double
+		lineageTag: 0fa204db-d58a-4ba2-99f9-6ba3402b4e4b
+		summarizeBy: none
+		sourceColumn: HaltedHours
+
+	column StoppedHours
+		dataType: double
+		lineageTag: d88789ff-9965-4733-85a1-ca11d6886362
+		summarizeBy: none
+		sourceColumn: StoppedHours
+
+	partition SegmentClusters = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="SegmentClusters"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"Segment", type text}, {"Cluster", type text}, {"Count", Int64.Type}, {"Hours", type number}, {"HaltedHours", type number}, {"StoppedHours", type number}})
+				in
+					Typed
+

@@ -1,0 +1,33 @@
+model Model
+	culture: en-IE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Shifts","WeeklySummary","WeeklyAnomalies","SPC","SegmentDowntime","SegmentClusters","DowntimeCategories","TopStops","HourlyBreakdown","Anomalies","Lines","DimDate","KeyFindings","EWMA","HourlyClusters","ShiftTrend","PBISource"]
+
+ref table Shifts
+ref table WeeklySummary
+ref table WeeklyAnomalies
+ref table SPC
+ref table SegmentDowntime
+ref table SegmentClusters
+ref table DowntimeCategories
+ref table TopStops
+ref table HourlyBreakdown
+ref table Anomalies
+ref table Lines
+ref table DimDate
+ref table KeyFindings
+ref table EWMA
+ref table HourlyClusters
+ref table ShiftTrend
+
+ref cultureInfo en-IE
+

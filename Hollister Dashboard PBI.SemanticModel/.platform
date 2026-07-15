@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Hollister Dashboard PBI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fb815faf-03a8-4af5-a794-4da899499af1"
+  }
+}

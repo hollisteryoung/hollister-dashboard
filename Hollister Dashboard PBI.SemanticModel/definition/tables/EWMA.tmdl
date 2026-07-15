@@ -1,0 +1,87 @@
+table EWMA
+	lineageTag: 08d6b7ad-4e5b-4c43-bf70-2bbdb46ae535
+
+	/// EWMA of the reject rate (λ=0.2 drift detection).
+	measure 'EWMA Value' = AVERAGE(EWMA[Ewma])
+		formatString: 0.00
+		lineageTag: 1a3ae79b-442d-458b-9967-556cda8cdb87
+
+	/// Raw per-batch reject rate feeding the EWMA.
+	measure 'EWMA Rate %' = AVERAGE(EWMA[Rate])
+		formatString: 0.00
+		lineageTag: 212f0f7b-fa53-420c-9d7f-775c1c5e7505
+
+	/// Upper control limit for the EWMA.
+	measure 'EWMA UCL' = MAX(EWMA[Ucl])
+		formatString: 0.00
+		lineageTag: 4a791276-c743-400b-84fd-6ce241b143a8
+
+	/// Lower control limit for the EWMA.
+	measure 'EWMA LCL' = MIN(EWMA[Lcl])
+		formatString: 0.00
+		lineageTag: d3037503-40e4-4266-a42f-ab2d2d8aee1e
+
+	column LineId
+		dataType: string
+		lineageTag: 2161574b-9259-467e-8c1d-80ca23042edc
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 46de0cf7-c4ee-44f9-81d9-7347c9dc185f
+		summarizeBy: none
+		sourceColumn: Line
+
+	column Panel
+		dataType: string
+		lineageTag: 647da636-27e9-467c-8cca-7c5db7d30470
+		summarizeBy: none
+		sourceColumn: Panel
+
+	column BatchIdx
+		dataType: int64
+		lineageTag: 535584e3-49ae-41e1-9b65-b846bfb4e2c4
+		summarizeBy: none
+		sourceColumn: BatchIdx
+
+	column Lane
+		dataType: int64
+		lineageTag: 3e257c77-8a96-4631-8174-4bf0dac22ba4
+		summarizeBy: none
+		sourceColumn: Lane
+
+	column Rate
+		dataType: double
+		lineageTag: e19360ff-7186-43cb-b6b8-63b985c5ab20
+		summarizeBy: none
+		sourceColumn: Rate
+
+	column Ewma
+		dataType: double
+		lineageTag: 9b7a45fd-7ef7-41a9-b60c-efc9a161d825
+		summarizeBy: none
+		sourceColumn: Ewma
+
+	column Ucl
+		dataType: double
+		lineageTag: 01ffb868-a585-4af0-a725-7a747f76babe
+		summarizeBy: none
+		sourceColumn: Ucl
+
+	column Lcl
+		dataType: double
+		lineageTag: b275ba45-d488-4839-87c6-30d1702f37c4
+		summarizeBy: none
+		sourceColumn: Lcl
+
+	partition EWMA = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="EWMA"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"Panel", type text}, {"BatchIdx", Int64.Type}, {"Lane", Int64.Type}, {"Rate", type number}, {"Ewma", type number}, {"Ucl", type number}, {"Lcl", type number}})
+				in
+					Typed
+

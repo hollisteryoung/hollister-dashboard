@@ -1,0 +1,18 @@
+# credentials
+.env
+
+# generated HTML dashboards (rebuilt from JSON by presentation scripts)
+output/reports/
+
+# JSON snapshot is intentionally tracked — see output/analyses/ and output/validation/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ad-hoc debug scratch dumped at repo root during troubleshooting sessions
+/_*.log
+/_val.json

@@ -1,0 +1,192 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "afc292f178234c9ca375",
+  "position": {
+    "x": 16,
+    "y": 290,
+    "z": 9500,
+    "height": 220,
+    "width": 1248,
+    "tabOrder": 9500
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "AnchorShiftKey"
+                }
+              },
+              "queryRef": "ShiftTrend.AnchorShiftKey",
+              "nativeQueryRef": "AnchorShiftKey"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "TrendRank"
+                }
+              },
+              "queryRef": "ShiftTrend.TrendRank",
+              "nativeQueryRef": "TrendRank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "TrendShiftLabel"
+                }
+              },
+              "queryRef": "ShiftTrend.TrendShiftLabel",
+              "nativeQueryRef": "TrendShiftLabel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "TrendShiftDate"
+                }
+              },
+              "queryRef": "ShiftTrend.TrendShiftDate",
+              "nativeQueryRef": "TrendShiftDate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "CategoryLabel"
+                }
+              },
+              "queryRef": "ShiftTrend.CategoryLabel",
+              "nativeQueryRef": "CategoryLabel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "CategoryColor"
+                }
+              },
+              "queryRef": "ShiftTrend.CategoryColor",
+              "nativeQueryRef": "CategoryColor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShiftTrend"
+                    }
+                  },
+                  "Property": "Trend Hours"
+                }
+              },
+              "queryRef": "ShiftTrend.Trend Hours",
+              "nativeQueryRef": "Trend Hours"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\nFS = 2  # font/linewidth supersampling factor (figure is also scaled by this)\n\ndf = dataset.copy()\ndf.columns = [\"Anchor\", \"Rank\", \"ShiftLabel\", \"ShiftDate\", \"CategoryLabel\", \"Color\", \"Hours\"]\ndf[\"Hours\"] = df[\"Hours\"].fillna(0.0)\n\nCAT_ORDER = {\"Micro-stops (<2 min)\": 0, \"Halted (operator wait)\": 1,\n             \"Auto-stops (>2 min)\": 2, \"Manual stops\": 3}\n\n# The report filter context does not always narrow ShiftTrend down to a single\n# anchor shift (e.g. the Shift slicer left on \"All\"), so more than one\n# overlapping 4-shift window can arrive in `dataset`. Always resolve to\n# exactly one coherent window: the anchor with the most rank coverage\n# (prefer a full current+3-prior window), tie-broken by the most recent\n# current-shift date.\nif df.empty:\n    chosen = []\nelse:\n    def _anchor_stats(g):\n        rank0 = g.loc[g[\"Rank\"] == 0, \"ShiftDate\"]\n        return pd.Series({\n            \"n_ranks\": g[\"Rank\"].nunique(),\n            \"date0\": rank0.iloc[0] if len(rank0) else \"\",\n        })\n\n    stats = df.groupby(\"Anchor\").apply(_anchor_stats).sort_values(\n        [\"n_ranks\", \"date0\"], ascending=[False, False]\n    )\n    df = df[df[\"Anchor\"] == stats.index[0]]\n\nrows = df[[\"Rank\", \"ShiftLabel\"]].drop_duplicates()\nrows = sorted(rows.itertuples(index=False), key=lambda r: -r.Rank)  # oldest first, current last\n\nfig, ax = plt.subplots(figsize=(15.6 * FS, 2.75 * FS), dpi=150)  # 1248x220 container aspect ratio\n\nif not rows:\n    ax.axis(\"off\")\n    ax.text(0.5, 0.5, \"No prior-shift data available\", ha=\"center\", va=\"center\",\n            fontsize=13 * FS, color=\"#636e72\")\nelse:\n    max_hours = df.groupby(\"Rank\")[\"Hours\"].sum().max() or 1.0\n    n = len(rows)\n    ax.set_xlim(0, max_hours * 1.02)\n    ax.set_ylim(-0.5, n - 0.5)\n    ax.invert_yaxis()\n    ax.axis(\"off\")\n\n    trans = ax.get_yaxis_transform()\n    label_x, right_x = -0.02, 1.02\n\n    pending_texts = []\n    for i, r in enumerate(rows):\n        sub = df[(df[\"Rank\"] == r.Rank) & (df[\"ShiftLabel\"] == r.ShiftLabel)].copy()\n        sub[\"Order\"] = sub[\"CategoryLabel\"].map(CAT_ORDER).fillna(9)\n        sub = sub.sort_values(\"Order\")\n        total = sub[\"Hours\"].sum()\n        ax.barh(i, max_hours, height=0.7, color=\"#f0f1f5\", zorder=1, left=0)\n        cum = 0.0\n        for _, seg in sub.iterrows():\n            h = seg[\"Hours\"]\n            if h <= 0:\n                continue\n            ax.barh(i, h, height=0.7, left=cum, color=seg[\"Color\"], zorder=2,\n                    edgecolor=\"white\", linewidth=1.2)\n            if max_hours > 0 and h / max_hours > 0.06:\n                txt = \"%.1fh\" % h\n                t = ax.text(cum + h / 2.0, i, txt, ha=\"center\", va=\"center\",\n                            fontsize=9 * FS, color=\"white\", fontweight=\"600\", zorder=3)\n                pending_texts.append((t, cum, h))\n            cum += h\n        weight = \"bold\" if r.Rank == 0 else \"normal\"\n        label = r.ShiftLabel + (\" (current)\" if r.Rank == 0 else \"\")\n        ax.text(label_x, i, label, ha=\"right\", va=\"center\", fontsize=10 * FS,\n                color=\"#2d3436\", fontweight=weight, transform=trans)\n        ax.text(right_x, i, \"%.1fh\" % total, ha=\"left\", va=\"center\", fontsize=9.5 * FS,\n                color=\"#636e72\", transform=trans)\n\n    fig.subplots_adjust(left=0.30, right=0.90, top=0.94, bottom=0.20)\n\n    legend_labels = sorted(df[\"CategoryLabel\"].unique(), key=lambda l: CAT_ORDER.get(l, 9))\n    color_by_label = df.drop_duplicates(\"CategoryLabel\").set_index(\"CategoryLabel\")[\"Color\"].to_dict()\n    handles = [plt.Rectangle((0, 0), 1, 1, color=color_by_label[l]) for l in legend_labels]\n    fig.legend(handles, legend_labels, loc=\"lower center\", bbox_to_anchor=(0.55, 0.01),\n               ncol=4, frameon=False, fontsize=8.5 * FS, handlelength=1.2, handleheight=1.2)\n\n    # --- text-fit safety net: hide the hours label if it doesn''t fit its segment ---\n    fig.canvas.draw()\n    renderer = fig.canvas.get_renderer()\n    for t, x0, w in pending_texts:\n        bar_px = abs(ax.transData.transform((x0 + w, 0))[0] - ax.transData.transform((x0, 0))[0])\n        if t.get_window_extent(renderer=renderer).width > bar_px * 0.94:\n            t.set_text(\"\")\n\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "validator_id": "production-schedule",
+  "line_id": "hu3",
+  "generated_at": "2026-06-03T11:35:17.382965+00:00",
+  "time_range": {
+    "from": "2026-05-04",
+    "to": "2026-05-21"
+  },
+  "thresholds": {
+    "min_run_hours": 2.0,
+    "min_parts": 5000,
+    "full_day_hours": 22.0
+  },
+  "summary": {
+    "total_days": 17,
+    "full_days": 8,
+    "partial_days": 5,
+    "non_production_days": 4,
+    "calendar_hours": 408.0,
+    "effective_hours": 253.83,
+    "excluded_hours": 154.17,
+    "exclusion_pct": 37.8
+  },
+  "non_production_days": [
+    "2026-05-04",
+    "2026-05-05",
+    "2026-05-06",
+    "2026-05-07"
+  ],
+  "partial_days": [
+    "2026-05-08",
+    "2026-05-17",
+    "2026-05-18",
+    "2026-05-19",
+    "2026-05-20"
+  ],
+  "per_day": [
+    {
+      "day": "2026-05-04",
+      "classification": "non_production",
+      "run_hours": 0.04,
+      "parts_produced": 68,
+      "coverage_hours": 0.07,
+      "effective_hours": 0.0
+    },
+    {
+      "day": "2026-05-05",
+      "classification": "non_production",
+      "run_hours": 0.01,
+      "parts_produced": 24,
+      "coverage_hours": 0.02,
+      "effective_hours": 0.0
+    },
+    {
+      "day": "2026-05-06",
+      "classification": "non_production",
+      "run_hours": 0.0,
+      "parts_produced": 2,
+      "coverage_hours": 0.0,
+      "effective_hours": 0.0
+    },
+    {
+      "day": "2026-05-07",
+      "classification": "non_production",
+      "run_hours": 1.28,
+      "parts_produced": 4868,
+      "coverage_hours": 2.96,
+      "effective_hours": 0.0
+    },
+    {
+      "day": "2026-05-08",
+      "classification": "partial",
+      "run_hours": 6.39,
+      "parts_produced": 10358,
+      "coverage_hours": 9.85,
+      "effective_hours": 9.85
+    },
+    {
+      "day": "2026-05-09",
+      "classification": "full",
+      "run_hours": 8.65,
+      "parts_produced": 14264,
+      "coverage_hours": 23.52,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-10",
+      "classification": "full",
+      "run_hours": 14.1,
+      "parts_produced": 14376,
+      "coverage_hours": 23.79,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-11",
+      "classification": "full",
+      "run_hours": 11.53,
+      "parts_produced": 16424,
+      "coverage_hours": 22.92,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-12",
+      "classification": "full",
+      "run_hours": 11.52,
+      "parts_produced": 14382,
+      "coverage_hours": 23.46,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-13",
+      "classification": "full",
+      "run_hours": 12.8,
+      "parts_produced": 14950,
+      "coverage_hours": 24.0,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-14",
+      "classification": "full",
+      "run_hours": 8.24,
+      "parts_produced": 15680,
+      "coverage_hours": 24.0,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-15",
+      "classification": "full",
+      "run_hours": 6.61,
+      "parts_produced": 7646,
+      "coverage_hours": 24.0,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-16",
+      "classification": "full",
+      "run_hours": 14.47,
+      "parts_produced": 12378,
+      "coverage_hours": 24.0,
+      "effective_hours": 24.0
+    },
+    {
+      "day": "2026-05-17",
+      "classification": "partial",
+      "run_hours": 7.39,
+      "parts_produced": 14094,
+      "coverage_hours": 17.77,
+      "effective_hours": 17.77
+    },
+    {
+      "day": "2026-05-18",
+      "classification": "partial",
+      "run_hours": 7.52,
+      "parts_produced": 12422,
+      "coverage_hours": 13.72,
+      "effective_hours": 13.72
+    },
+    {
+      "day": "2026-05-19",
+      "classification": "partial",
+      "run_hours": 9.11,
+      "parts_produced": 19352,
+      "coverage_hours": 13.98,
+      "effective_hours": 13.98
+    },
+    {
+      "day": "2026-05-20",
+      "classification": "partial",
+      "run_hours": 2.33,
+      "parts_produced": 10964,
+      "coverage_hours": 6.51,
+      "effective_hours": 6.51
+    }
+  ]
+}

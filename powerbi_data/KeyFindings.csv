@@ -1,0 +1,7 @@
+LineId,Line,Rank,Text
+ngp2,NGP2,0,Detection Fault stops in Foil accounted for 22.4% of downtime — 4× the normal level (6.3%)
+ngp2,NGP2,1,Weekly OEE improved by 5.5pp vs prior week (07-01 – 07-07): 24.5% vs 19.0%
+ngp2,NGP2,2,"Quality alert: Nozzle lanes 5 · Camera lanes 3, 4, 10 · Vision lanes 1, 2, 4, 5 exceeded Laney p′ control limits this week"
+ngp2,NGP2,3,Weakest shift: Day 07-09 at 4.9% OEE (A=10.0% · P=58.6% · Q=84.7%)
+hu3,HU3,0,Weekly OEE improved by 5.0pp vs prior week (07-01 – 07-07): 42.4% vs 37.4%
+hu3,HU3,1,Weakest shift: Night 07-14 at 8.0% OEE (A=12.6% · P=79.5% · Q=80.2%)

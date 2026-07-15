@@ -1,0 +1,188 @@
+table Shifts
+	lineageTag: d2a0cefd-2b9a-4ed5-8f2a-e2ed302c2a0c
+
+	/// Running hours / scheduled hours, aggregated correctly across the current filter.
+	measure 'Availability %' = DIVIDE( SUM(Shifts[RunningHours]), SUM(Shifts[ScheduledHours]) ) * 100
+		formatString: 0.0"%"
+		lineageTag: 3c135459-9982-49e9-bf68-bb928c41dc61
+
+	/// Good parts / total parts across the current filter.
+	measure 'Quality %' = DIVIDE( SUM(Shifts[GoodCount]), SUM(Shifts[TotalCount]) ) * 100
+		formatString: 0.0"%"
+		lineageTag: a2533ebb-2de1-495b-ac74-3f772584a6d5
+
+	/// Running-time-weighted average of per-shift performance.
+	measure 'Performance %' = DIVIDE( SUMX(Shifts, Shifts[Performance] * Shifts[RunningHours]), SUM(Shifts[RunningHours]) )
+		formatString: 0.0"%"
+		lineageTag: 4140aaeb-2cf4-46ac-a847-ebb7ea4c2aa6
+
+	/// Availability x Performance x Quality.
+	measure 'OEE %' = DIVIDE( [Availability %] * [Performance %] * [Quality %], 10000 )
+		formatString: 0.0"%"
+		lineageTag: facd90c2-77f1-4b81-a153-413ad7bded1a
+
+	/// Total stopped hours.
+	measure 'Total Downtime (h)' = SUM(Shifts[TotalDowntimeHours])
+		formatString: #,##0.0
+		lineageTag: 2d360091-60a2-4770-a575-a73baa6c25f5
+
+	/// Count of stop events.
+	measure 'Total Stops' = SUM(Shifts[TotalStops])
+		formatString: #,##0
+		lineageTag: 25016c9a-e864-41f5-a59e-34eb700d7ab4
+
+	/// Number of shifts in scope.
+	measure 'Shift Count' = DISTINCTCOUNT(Shifts[ShiftKey])
+		formatString: #,##0
+		lineageTag: 151945e7-6916-49d3-8e37-6b2180928db7
+
+	/// Good parts produced.
+	measure 'Good Count' = SUM(Shifts[GoodCount])
+		formatString: #,##0
+		lineageTag: 858cb8a0-fbee-4d25-a4fb-48e952890d45
+
+	/// Total parts produced.
+	measure 'Total Count' = SUM(Shifts[TotalCount])
+		formatString: #,##0
+		lineageTag: e73fd08c-a621-4954-8d0a-bb270b4d6cd2
+
+	/// Longest single stop in scope.
+	measure 'Longest Stop (min)' = MAX(Shifts[LongestStopMin])
+		formatString: #,##0.0
+		lineageTag: 53dc2fad-80b6-46e1-b3e2-b82a32d361fc
+
+	column ShiftKey
+		dataType: string
+		lineageTag: f561f405-5fd0-40fd-90f7-85abe06dfcb8
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 90b5f852-80f2-41ed-9ac6-85f9d98500b2
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 1a5b4dbb-7701-4451-9e26-80530e23781b
+		summarizeBy: none
+		sourceColumn: Line
+
+	column ShiftDate
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: eeb9798d-c4ad-4e40-862d-ad22aa14571a
+		summarizeBy: none
+		sourceColumn: ShiftDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ShiftType
+		dataType: string
+		lineageTag: 0f98a9ab-19d3-4676-a8f0-d00f082d9340
+		summarizeBy: none
+		sourceColumn: ShiftType
+
+	column Label
+		dataType: string
+		lineageTag: 6db66354-d6fb-461b-a9b5-16c54904f51c
+		summarizeBy: none
+		sourceColumn: Label
+		sortByColumn: ShiftDate
+
+	column IsoWeek
+		dataType: string
+		lineageTag: 38c48e70-af87-4a14-8148-5757bab4eaf1
+		summarizeBy: none
+		sourceColumn: IsoWeek
+
+	column OEE
+		dataType: double
+		lineageTag: 0274414c-e227-4da1-8706-bd3879b01395
+		summarizeBy: none
+		sourceColumn: OEE
+
+	column Availability
+		dataType: double
+		lineageTag: b57a21cb-f662-467b-adad-1b06ae5719c2
+		summarizeBy: none
+		sourceColumn: Availability
+
+	column Performance
+		dataType: double
+		lineageTag: efb5219b-f533-454e-8187-01f9ea8a95aa
+		summarizeBy: none
+		sourceColumn: Performance
+
+	column Quality
+		dataType: double
+		lineageTag: 0625dc87-830c-459e-8e7f-6942d88f571d
+		summarizeBy: none
+		sourceColumn: Quality
+
+	column RunningHours
+		dataType: double
+		lineageTag: 0705e87d-7e42-4a32-865c-4a95340323f6
+		summarizeBy: none
+		sourceColumn: RunningHours
+
+	column ScheduledHours
+		dataType: double
+		lineageTag: 226a9b12-f17b-4f01-89a4-63dca0f45968
+		summarizeBy: none
+		sourceColumn: ScheduledHours
+
+	column TotalStops
+		dataType: int64
+		lineageTag: 95290ef8-852c-48ee-a266-89a877144928
+		summarizeBy: none
+		sourceColumn: TotalStops
+
+	column TotalDowntimeHours
+		dataType: double
+		lineageTag: dfa8572b-0acc-461a-9e27-ac3c0a68492e
+		summarizeBy: none
+		sourceColumn: TotalDowntimeHours
+
+	column LongestStopMin
+		dataType: double
+		lineageTag: ba9187ad-8c36-4b81-b36e-479cb6c7e975
+		summarizeBy: none
+		sourceColumn: LongestStopMin
+
+	column GoodCount
+		dataType: int64
+		lineageTag: 1cd32f6c-2294-4959-9f24-226392c0bde5
+		summarizeBy: none
+		sourceColumn: GoodCount
+
+	column TotalCount
+		dataType: int64
+		lineageTag: 2eb80af7-1e07-4f03-bf8f-f038b92aff8b
+		summarizeBy: none
+		sourceColumn: TotalCount
+
+	column LineShiftLabel
+		dataType: string
+		lineageTag: c16b3a87-823d-4250-8a4c-0b660672bbcb
+		summarizeBy: none
+		sourceColumn: LineShiftLabel
+
+	column WeekLabel
+		dataType: string
+		lineageTag: 1c18e427-f67f-41e5-8554-5374f717d24a
+		summarizeBy: none
+		sourceColumn: WeekLabel
+		sortByColumn: IsoWeek
+
+	partition Shifts = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="Shifts"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"Line", type text}, {"ShiftDate", type date}, {"ShiftType", type text}, {"Label", type text}, {"IsoWeek", type text}, {"OEE", type number}, {"Availability", type number}, {"Performance", type number}, {"Quality", type number}, {"RunningHours", type number}, {"ScheduledHours", type number}, {"TotalStops", Int64.Type}, {"TotalDowntimeHours", type number}, {"LongestStopMin", type number}, {"GoodCount", Int64.Type}, {"TotalCount", Int64.Type}, {"LineShiftLabel", type text}, {"WeekLabel", type text}})
+				in
+					Typed
+

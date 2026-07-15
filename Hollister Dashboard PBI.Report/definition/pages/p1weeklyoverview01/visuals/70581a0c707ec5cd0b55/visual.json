@@ -1,0 +1,178 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "70581a0c707ec5cd0b55",
+  "position": {
+    "x": 16.25,
+    "y": 2777.0000064373062,
+    "z": 40000,
+    "height": 460,
+    "width": 1248,
+    "tabOrder": 40000
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Segment"
+                }
+              },
+              "queryRef": "SegmentClusters.Segment",
+              "nativeQueryRef": "Segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Cluster"
+                }
+              },
+              "queryRef": "SegmentClusters.Cluster",
+              "nativeQueryRef": "Cluster"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Shifts"
+                    }
+                  },
+                  "Property": "Label"
+                }
+              },
+              "queryRef": "Shifts.Label",
+              "nativeQueryRef": "Label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Shifts"
+                    }
+                  },
+                  "Property": "ShiftDate"
+                }
+              },
+              "queryRef": "Shifts.ShiftDate",
+              "nativeQueryRef": "ShiftDate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Shifts"
+                    }
+                  },
+                  "Property": "ShiftType"
+                }
+              },
+              "queryRef": "Shifts.ShiftType",
+              "nativeQueryRef": "ShiftType"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Cluster Downtime (h)"
+                }
+              },
+              "queryRef": "SegmentClusters.Cluster Downtime (h)",
+              "nativeQueryRef": "Cluster Downtime (h)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\n\nFS = 2\n\ndf = dataset.copy()\ndf.columns = [\"Segment\", \"Cluster\", \"ShiftLabel\", \"ShiftDate\", \"ShiftType\", \"Hours\"]\ndf[\"Hours\"] = df[\"Hours\"].fillna(0.0)\ndf = df[df[\"Hours\"] > 0]\n\nSEG_COLORS = {\"hydration\": \"#e76f51\", \"foil\": \"#e9c46a\", \"schubert\": \"#2a9d8f\",\n              \"manual\": \"#636e72\", \"unattributed\": \"#b2bec3\",\n              \"web\": \"#3B82F6\", \"sealing\": \"#F59E0B\", \"handling\": \"#8B5CF6\",\n              \"pneumatic\": \"#10B981\"}\nSEG_ORDER = {\"hydration\": 0, \"foil\": 1, \"schubert\": 2, \"web\": 0, \"sealing\": 1,\n             \"handling\": 2, \"pneumatic\": 3, \"manual\": 10, \"unattributed\": 11}\n\ndef hex_blend(hexcolor, ratio):\n    r = int(hexcolor[1:3], 16); g = int(hexcolor[3:5], 16); b = int(hexcolor[5:7], 16)\n    if ratio >= 0:\n        r = int(r + (255 - r) * ratio); g = int(g + (255 - g) * ratio); b = int(b + (255 - b) * ratio)\n    else:\n        f = 1 + ratio; r = int(r * f); g = int(g * f); b = int(b * f)\n    return \"#%02x%02x%02x\" % (max(0, min(255, r)), max(0, min(255, g)), max(0, min(255, b)))\n\nshifts = df[[\"ShiftLabel\", \"ShiftDate\", \"ShiftType\"]].drop_duplicates()\nshifts[\"_sort\"] = shifts[\"ShiftType\"].map(lambda t: 0 if str(t).lower() == \"day\" else 1)\nshifts = shifts.sort_values([\"ShiftDate\", \"_sort\"])\nshift_labels = list(shifts[\"ShiftLabel\"])\nn = len(shift_labels)\n\nfig, ax = plt.subplots(figsize=(15.6 * FS, 4.6 * FS), dpi=150)\n\nif n == 0:\n    ax.axis(\"off\")\n    ax.text(0.5, 0.5, \"No shifts in this selection\", ha=\"center\", va=\"center\",\n            fontsize=13 * FS, color=\"#636e72\")\nelse:\n    totals = df.groupby([\"Segment\", \"Cluster\"])[\"Hours\"].sum().reset_index()\n    shade_map = {}\n    legend_entries = []\n    for seg, seg_df in totals.groupby(\"Segment\"):\n        seg_df = seg_df.sort_values(\"Hours\", ascending=False).reset_index(drop=True)\n        base_color = SEG_COLORS.get(seg, \"#b2bec3\")\n        m = len(seg_df)\n        for i, r in seg_df.iterrows():\n            shade = hex_blend(base_color, (i * 0.5 / max(m - 1, 1)) if m > 1 else 0.0)\n            shade_map[(seg, r[\"Cluster\"])] = shade\n            legend_entries.append((seg, r[\"Cluster\"], shade, r[\"Hours\"]))\n    legend_entries.sort(key=lambda t: (SEG_ORDER.get(t[0], 5), -t[3]))\n\n    x = list(range(n))\n    ymax = df.groupby(\"ShiftLabel\")[\"Hours\"].sum().max() * 1.18\n\n    pending_texts = []\n    for xi, lbl in zip(x, shift_labels):\n        sdf = df[df[\"ShiftLabel\"] == lbl]\n        bottom = 0.0\n        segs_here = sorted(sdf[\"Segment\"].unique(), key=lambda s: SEG_ORDER.get(s, 5))\n        for seg in segs_here:\n            seg_rows = sdf[sdf[\"Segment\"] == seg].sort_values(\"Hours\", ascending=False)\n            for _, r in seg_rows.iterrows():\n                h = r[\"Hours\"]\n                if h <= 0:\n                    continue\n                shade = shade_map.get((seg, r[\"Cluster\"]), \"#b2bec3\")\n                ax.bar(xi, h, bottom=bottom, width=0.7, color=shade, zorder=2,\n                       edgecolor=\"white\", linewidth=1.2)\n                full_label = \"%s %.1fh\" % (r[\"Cluster\"], h)\n                t = ax.text(xi, bottom + h / 2.0, full_label, ha=\"center\", va=\"center\",\n                            fontsize=8.5 * FS, color=\"white\", fontweight=\"600\", zorder=3, clip_on=True)\n                pending_texts.append((t, xi, h, full_label, r[\"Cluster\"]))\n                bottom += h\n\n    ax.set_xlim(-0.6, n - 0.4)\n    ax.set_ylim(0, ymax)\n    ax.set_xticks(x)\n    ax.set_xticklabels(shift_labels, rotation=45, ha=\"right\", fontsize=8 * FS)\n    ax.set_ylabel(\"Downtime hours\", fontsize=9 * FS)\n    ax.tick_params(axis=\"y\", labelsize=8 * FS)\n    ax.grid(axis=\"y\", color=\"#eeeeee\", zorder=0)\n    for s in [\"top\", \"right\"]:\n        ax.spines[s].set_visible(False)\n\n    handles = [plt.Rectangle((0, 0), 1, 1, color=shade) for _, _, shade, _ in legend_entries]\n    labels = [name for _, name, _, _ in legend_entries]\n    ax.legend(handles, labels, loc=\"upper center\", bbox_to_anchor=(0.5, -0.28),\n              ncol=7, fontsize=8 * FS, frameon=False, handlelength=1.2, handleheight=1.2)\n\n    fig.subplots_adjust(left=0.045, right=0.99, top=0.96, bottom=0.34)\n\n    fig.canvas.draw()\n    renderer = fig.canvas.get_renderer()\n    to_recheck = []\n    for t, xi, h, full_label, short_label in pending_texts:\n        bar_px_w = abs(ax.transData.transform((xi + 0.35, 0))[0] - ax.transData.transform((xi - 0.35, 0))[0])\n        if t.get_window_extent(renderer=renderer).width > bar_px_w * 0.94:\n            t.set_text(short_label)\n            to_recheck.append((t, bar_px_w, short_label))\n    if to_recheck:\n        fig.canvas.draw()\n        for t, bar_px_w, short_label in to_recheck:\n            if t.get_window_extent(renderer=renderer).width > bar_px_w * 0.94:\n                t.set_text(\"\")\n\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

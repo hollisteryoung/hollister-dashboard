@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c44b6abc717b30382e86",
+  "position": {
+    "x": 16,
+    "y": 1231,
+    "z": 30300,
+    "height": 200,
+    "width": 1248,
+    "tabOrder": 30300
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KeyFindings"
+                    }
+                  },
+                  "Property": "Rank"
+                }
+              },
+              "queryRef": "KeyFindings.Rank",
+              "nativeQueryRef": "Rank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "KeyFindings"
+                    }
+                  },
+                  "Property": "Text"
+                }
+              },
+              "queryRef": "KeyFindings.Text",
+              "nativeQueryRef": "Text"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nimport textwrap\ndf = dataset.copy().sort_values(\"Rank\")\nitems = [textwrap.wrap(str(t), width=150) or [str(t)] for t in df[\"Text\"]]\ntotal_lines = sum(len(l) for l in items) or 1\nfig, ax = plt.subplots(figsize=(31.2, 5), dpi=300)\nax.set_xlim(0, 1)\nax.set_ylim(0, 1)\nax.axis(\"off\")\nline_h = 1.0 / total_lines\ny = 1.0\nfor lines in items:\n    ax.text(0.012, y - line_h * 0.5, \"\\u2022\", fontsize=26, fontweight=\"bold\", color=\"#1E194B\", va=\"center\")\n    for j, ln in enumerate(lines):\n        ax.text(0.03, y - line_h * (j + 0.5), ln, fontsize=21, color=\"#2d3436\", va=\"center\")\n    y -= line_h * len(lines)\nplt.subplots_adjust(left=0.006, right=0.994, top=0.97, bottom=0.03)\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

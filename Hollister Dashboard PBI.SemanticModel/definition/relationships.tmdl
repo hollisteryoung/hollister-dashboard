@@ -1,0 +1,65 @@
+relationship Shifts_Lines
+	fromColumn: Shifts.LineId
+	toColumn: Lines.LineId
+
+relationship Weekly_Lines
+	fromColumn: WeeklySummary.LineId
+	toColumn: Lines.LineId
+
+relationship Shifts_Date
+	fromColumn: Shifts.ShiftDate
+	toColumn: DimDate.Date
+
+relationship Seg_Shifts
+	fromColumn: SegmentDowntime.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship Clu_Shifts
+	fromColumn: SegmentClusters.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship Cat_Shifts
+	fromColumn: DowntimeCategories.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship Top_Shifts
+	fromColumn: TopStops.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship Hour_Shifts
+	fromColumn: HourlyBreakdown.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship Anom_Shifts
+	fromColumn: Anomalies.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship WklyAnom_Lines
+	fromColumn: WeeklyAnomalies.LineId
+	toColumn: Lines.LineId
+
+relationship Spc_Lines
+	isActive: false
+	fromColumn: SPC.LineId
+	toColumn: Lines.LineId
+
+relationship KeyFind_Lines
+	fromColumn: KeyFindings.LineId
+	toColumn: Lines.LineId
+
+relationship Ewma_Lines
+	fromColumn: EWMA.LineId
+	toColumn: Lines.LineId
+
+relationship HourClu_Shifts
+	fromColumn: HourlyClusters.ShiftKey
+	toColumn: Shifts.ShiftKey
+
+relationship Spc_Shifts
+	fromColumn: SPC.LineShiftLabel
+	toColumn: Shifts.LineShiftLabel
+
+relationship Trend_Shifts
+	fromColumn: ShiftTrend.AnchorShiftKey
+	toColumn: Shifts.ShiftKey
+

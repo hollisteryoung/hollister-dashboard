@@ -1,0 +1,597 @@
+{
+  "analysis_id": "shift-dashboard",
+  "line_id": "hu3",
+  "generated_at": "2026-07-15T15:41:51.965505+00:00",
+  "latest_shift": {
+    "label": "Night Shift \u2014 2026-07-14 (19:00 \u2013 07:00)",
+    "shift_date": "2026-07-14",
+    "shift_type": "night",
+    "start": "2026-07-14 19:00:00",
+    "end": "2026-07-15 07:00:00"
+  },
+  "p95_ideal_ppm": 40.0,
+  "shifts": [
+    {
+      "shift_date": "2026-07-14",
+      "shift_type": "night",
+      "label": "Night 07-14",
+      "oee": 8.0,
+      "availability": 12.6,
+      "performance": 79.5,
+      "quality": 80.2,
+      "running_hours": 1.51,
+      "total_stops": 46,
+      "total_downtime_hours": 10.49,
+      "longest_stop_min": 370.3,
+      "good_count": 3053,
+      "total_count": 3806,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 18,
+          "hours": 0.31
+        },
+        "halted": {
+          "count": 5,
+          "hours": 0.23
+        },
+        "auto_long": {
+          "count": 20,
+          "hours": 3.66
+        },
+        "manual": {
+          "count": 3,
+          "hours": 6.29
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 4,
+          "hours": 0.28,
+          "halted_hours": 0.03,
+          "stopped_hours": 0.25,
+          "clusters": {
+            "Web Torn": {
+              "count": 1,
+              "hours": 0.07,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.07
+            },
+            "Splice": {
+              "count": 2,
+              "hours": 0.18,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.18
+            },
+            "End of Reel": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.03,
+              "stopped_hours": 0.0
+            }
+          }
+        },
+        "sealing": {
+          "count": 15,
+          "hours": 1.58,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.58,
+          "clusters": {
+            "Knife": {
+              "count": 14,
+              "hours": 1.2,
+              "halted_hours": 0.0,
+              "stopped_hours": 1.2
+            },
+            "Printer": {
+              "count": 1,
+              "hours": 0.39,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.39
+            }
+          }
+        },
+        "handling": {
+          "count": 5,
+          "hours": 0.34,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.34,
+          "clusters": {
+            "Gripper": {
+              "count": 2,
+              "hours": 0.05,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.05
+            },
+            "Fork": {
+              "count": 3,
+              "hours": 0.29,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.29
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 2,
+          "hours": 0.06,
+          "halted_hours": 0.03,
+          "stopped_hours": 0.03,
+          "clusters": {
+            "Air Pressure": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.03,
+              "stopped_hours": 0.0
+            },
+            "Valve on Web": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.03
+            }
+          }
+        },
+        "manual": {
+          "count": 3,
+          "hours": 6.29,
+          "halted_hours": 0.0,
+          "stopped_hours": 6.29
+        },
+        "unattributed": {
+          "count": 17,
+          "hours": 1.94,
+          "halted_hours": 0.17,
+          "stopped_hours": 1.77
+        }
+      },
+      "top_stops_by_cluster": {
+        "web": {
+          "Web Torn": [
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 1,
+              "hours": 0.07
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.17
+            },
+            {
+              "label": "1129-1B1 Last splice has not been detected",
+              "count": 1,
+              "hours": 0.0
+            }
+          ],
+          "End of Reel": [
+            {
+              "label": "1151 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "pneumatic": {
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 1,
+              "hours": 0.03
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "sealing": {
+          "Knife": [
+            {
+              "label": "1038-13B1 Limit switch fault Knife top extended",
+              "count": 14,
+              "hours": 1.2
+            }
+          ],
+          "Printer": [
+            {
+              "label": "1050-3K1 Hot printer B not ready for operation",
+              "count": 1,
+              "hours": 0.39
+            }
+          ]
+        },
+        "handling": {
+          "Gripper": [
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 2,
+              "hours": 0.05
+            }
+          ],
+          "Fork": [
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 2,
+              "hours": 0.17
+            },
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 1,
+              "hours": 0.12
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "19:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "20:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "21:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "22:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "23:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "00:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "01:00",
+          "running_min": 23.3,
+          "segments": {
+            "web": {
+              "minutes": 4.7,
+              "clusters": {
+                "Web Torn": 4.5,
+                "Splice": 0.3
+              }
+            },
+            "sealing": {
+              "minutes": 2.8,
+              "clusters": {
+                "Knife": 2.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.7,
+              "clusters": {
+                "Air Pressure": 1.7
+              }
+            },
+            "manual": {
+              "minutes": 16.4,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 11.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "02:00",
+          "running_min": 28.1,
+          "segments": {
+            "web": {
+              "minutes": 2.0,
+              "clusters": {
+                "End of Reel": 2.0
+              }
+            },
+            "sealing": {
+              "minutes": 25.9,
+              "clusters": {
+                "Knife": 2.6,
+                "Printer": 23.2
+              }
+            },
+            "handling": {
+              "minutes": 1.4,
+              "clusters": {
+                "Gripper": 1.4
+              }
+            },
+            "manual": {
+              "minutes": 1.2,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 1.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "03:00",
+          "running_min": 33.0,
+          "segments": {
+            "sealing": {
+              "minutes": 0.9,
+              "clusters": {
+                "Knife": 0.9
+              }
+            },
+            "handling": {
+              "minutes": 18.9,
+              "clusters": {
+                "Gripper": 1.4,
+                "Fork": 17.5
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.7,
+              "clusters": {
+                "Valve on Web": 1.7
+              }
+            },
+            "unattributed": {
+              "minutes": 5.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "04:00",
+          "running_min": 4.7,
+          "segments": {
+            "web": {
+              "minutes": 10.3,
+              "clusters": {
+                "Splice": 10.3
+              }
+            },
+            "sealing": {
+              "minutes": 41.2,
+              "clusters": {
+                "Knife": 41.2
+              }
+            },
+            "unattributed": {
+              "minutes": 3.8,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "05:00",
+          "running_min": 0.8,
+          "segments": {
+            "sealing": {
+              "minutes": 24.3,
+              "clusters": {
+                "Knife": 24.3
+              }
+            },
+            "unattributed": {
+              "minutes": 34.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "06:00",
+          "running_min": 0.6,
+          "segments": {
+            "unattributed": {
+              "minutes": 59.4,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Knife",
+            "segment": "sealing",
+            "current_share": 11.4,
+            "baseline_mean": 0.1,
+            "z_score": 11.3,
+            "direction": "above"
+          },
+          {
+            "cluster": "manual",
+            "segment": "manual",
+            "current_share": 60.0,
+            "baseline_mean": 13.2,
+            "z_score": 6.6,
+            "direction": "above"
+          },
+          {
+            "cluster": "End of Reel",
+            "segment": "web",
+            "current_share": 0.3,
+            "baseline_mean": 11.1,
+            "z_score": -1.9,
+            "direction": "below"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-14",
+      "shift_type": "day",
+      "label": "Day 07-14",
+      "oee": 18.1,
+      "availability": 25.5,
+      "performance": 81.8,
+      "quality": 86.9,
+      "running_hours": 3.05,
+      "total_stops": 51,
+      "total_downtime_hours": 8.95,
+      "longest_stop_min": 87.1,
+      "good_count": 6656,
+      "total_count": 7656,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 19,
+          "hours": 0.32
+        },
+        "halted": {
+          "count": 5,
+          "hours": 3.09
+        },
+        "auto_long": {
+          "count": 21,
+          "hours": 3.68
+        },
+        "manual": {
+          "count": 7,
+          "hours": 2.84
+        }
+      }
+    },
+    {
+      "shift_date": "2026-07-13",
+      "shift_type": "night",
+      "label": "Night 07-13",
+      "oee": 37.9,
+      "availability": 50.8,
+      "performance": 80.8,
+      "quality": 92.4,
+      "running_hours": 6.09,
+      "total_stops": 118,
+      "total_downtime_hours": 5.91,
+      "longest_stop_min": 61.5,
+      "good_count": 12249,
+      "total_count": 13254,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 65,
+          "hours": 1.05
+        },
+        "halted": {
+          "count": 13,
+          "hours": 1.5
+        },
+        "auto_long": {
+          "count": 32,
+          "hours": 3.17
+        },
+        "manual": {
+          "count": 8,
+          "hours": 0.19
+        }
+      }
+    },
+    {
+      "shift_date": "2026-07-13",
+      "shift_type": "day",
+      "label": "Day 07-13",
+      "oee": 25.2,
+      "availability": 34.9,
+      "performance": 83.1,
+      "quality": 86.9,
+      "running_hours": 4.19,
+      "total_stops": 84,
+      "total_downtime_hours": 7.81,
+      "longest_stop_min": 61.7,
+      "good_count": 7935,
+      "total_count": 9130,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 37,
+          "hours": 0.53
+        },
+        "halted": {
+          "count": 4,
+          "hours": 0.58
+        },
+        "auto_long": {
+          "count": 35,
+          "hours": 5.55
+        },
+        "manual": {
+          "count": 8,
+          "hours": 1.16
+        }
+      }
+    },
+    {
+      "shift_date": "2026-07-12",
+      "shift_type": "night",
+      "label": "Night 07-12",
+      "oee": 58.1,
+      "availability": 70.5,
+      "performance": 87.8,
+      "quality": 94.0,
+      "running_hours": 8.45,
+      "total_stops": 97,
+      "total_downtime_hours": 3.55,
+      "longest_stop_min": 20.1,
+      "good_count": 17714,
+      "total_count": 18844,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 62,
+          "hours": 0.72
+        },
+        "halted": {
+          "count": 9,
+          "hours": 0.33
+        },
+        "auto_long": {
+          "count": 22,
+          "hours": 1.97
+        },
+        "manual": {
+          "count": 4,
+          "hours": 0.52
+        }
+      }
+    }
+  ]
+}

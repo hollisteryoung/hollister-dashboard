@@ -1,0 +1,182 @@
+table WeeklySummary
+	lineageTag: c13cd14f-2688-4901-b59e-3c7221f0a66c
+
+	/// Published weekly OEE from the pipeline (exact).
+	measure 'Weekly OEE %' = AVERAGE(WeeklySummary[OEE])
+		formatString: 0.0"%"
+		lineageTag: a9c9b5a3-e701-4bf0-a6d0-45d865e57dbd
+
+	/// Published weekly availability.
+	measure 'Weekly Availability %' = AVERAGE(WeeklySummary[Availability])
+		formatString: 0.0"%"
+		lineageTag: adae4b66-7553-4f32-8663-3e24b2d43bce
+
+	/// Published weekly performance.
+	measure 'Weekly Performance %' = AVERAGE(WeeklySummary[Performance])
+		formatString: 0.0"%"
+		lineageTag: 0d9f58c5-906b-4e03-9b75-7cbb60451a34
+
+	/// Published weekly quality.
+	measure 'Weekly Quality %' = AVERAGE(WeeklySummary[Quality])
+		formatString: 0.0"%"
+		lineageTag: e9820df7-760b-4132-b944-7ea9576f6239
+
+	/// OEE change vs prior week (percentage points).
+	measure 'OEE dpp' = AVERAGE(WeeklySummary[OEE]) - AVERAGE(WeeklySummary[PriorOEE])
+		formatString: +0.0;-0.0;0.0
+		lineageTag: c63d1cf7-722c-49bc-83f8-ff7abc854160
+
+	/// Availability change vs prior week.
+	measure 'Availability dpp' = AVERAGE(WeeklySummary[Availability]) - AVERAGE(WeeklySummary[PriorAvailability])
+		formatString: +0.0;-0.0;0.0
+		lineageTag: f423917e-8e4f-4099-a468-1635d09870cf
+
+	/// Performance change vs prior week.
+	measure 'Performance dpp' = AVERAGE(WeeklySummary[Performance]) - AVERAGE(WeeklySummary[PriorPerformance])
+		formatString: +0.0;-0.0;0.0
+		lineageTag: ccc8c02a-fd51-4df7-a4ef-fdba68f99c44
+
+	/// Quality change vs prior week.
+	measure 'Quality dpp' = AVERAGE(WeeklySummary[Quality]) - AVERAGE(WeeklySummary[PriorQuality])
+		formatString: +0.0;-0.0;0.0
+		lineageTag: 18f7279d-000e-4e4a-8521-92733ed52e02
+
+	/// Total stop events this week.
+	measure 'Wk Total Stops' = SUM(WeeklySummary[TotalStops])
+		formatString: #,##0
+		lineageTag: 2b08a890-bd03-463f-9f59-fbdc0aed1a8c
+
+	/// Total downtime hours this week.
+	measure 'Wk Downtime (h)' = SUM(WeeklySummary[TotalDowntimeHours])
+		formatString: #,##0.0
+		lineageTag: f88f0fef-5c0a-4c0d-bfef-66bf7959edf6
+
+	/// Longest single stop this week.
+	measure 'Wk Longest Stop (min)' = MAX(WeeklySummary[LongestStopMin])
+		formatString: #,##0.0
+		lineageTag: 9b96444d-19ae-48cf-b755-772385b5ae6a
+
+	column LineId
+		dataType: string
+		lineageTag: 633e60d9-c750-4ec1-bbd3-d2a10bca21c9
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: ba9345d0-bfba-412f-95d8-f5d4d15896d2
+		summarizeBy: none
+		sourceColumn: Line
+
+	column WeekFrom
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 47e020ba-edea-4d4d-bcf8-9e9a42545415
+		summarizeBy: none
+		sourceColumn: WeekFrom
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekTo
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 895c1ac0-151a-40ca-aae2-7b4332bcd22a
+		summarizeBy: none
+		sourceColumn: WeekTo
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OEE
+		dataType: double
+		lineageTag: 4cd221a8-1a39-4820-9308-91822b4da55b
+		summarizeBy: none
+		sourceColumn: OEE
+
+	column Availability
+		dataType: double
+		lineageTag: 6c740ea2-3ce9-445a-a051-cb5c1892dd5c
+		summarizeBy: none
+		sourceColumn: Availability
+
+	column Performance
+		dataType: double
+		lineageTag: 97be8816-c99b-406a-b499-b70a41ba89fd
+		summarizeBy: none
+		sourceColumn: Performance
+
+	column Quality
+		dataType: double
+		lineageTag: 88fd32ae-26b9-43fd-9234-cfe2471681f4
+		summarizeBy: none
+		sourceColumn: Quality
+
+	column GoodCount
+		dataType: int64
+		lineageTag: 18b0b803-054c-4177-a07a-7b0bbac66dc8
+		summarizeBy: none
+		sourceColumn: GoodCount
+
+	column TotalCount
+		dataType: int64
+		lineageTag: 0cc50ed4-79bb-42d9-91a3-b73a058c8c02
+		summarizeBy: none
+		sourceColumn: TotalCount
+
+	column TotalStops
+		dataType: int64
+		lineageTag: 37811166-85c6-48b3-b54f-2a4ccca3b121
+		summarizeBy: none
+		sourceColumn: TotalStops
+
+	column TotalDowntimeHours
+		dataType: double
+		lineageTag: 0266e7e7-ecd8-49dc-9de1-6563cf45d93e
+		summarizeBy: none
+		sourceColumn: TotalDowntimeHours
+
+	column LongestStopMin
+		dataType: double
+		lineageTag: 80e87558-26c4-4c92-ac70-98d37bb051e5
+		summarizeBy: none
+		sourceColumn: LongestStopMin
+
+	column ProductionShifts
+		dataType: int64
+		lineageTag: cd4f3613-0bf3-4fc7-8cb7-8777048d9013
+		summarizeBy: none
+		sourceColumn: ProductionShifts
+
+	column PriorOEE
+		dataType: double
+		lineageTag: f6bd670f-6adb-4562-85b6-51474626b832
+		summarizeBy: none
+		sourceColumn: PriorOEE
+
+	column PriorAvailability
+		dataType: double
+		lineageTag: bcc68584-4115-450a-a435-5ae46c554f13
+		summarizeBy: none
+		sourceColumn: PriorAvailability
+
+	column PriorPerformance
+		dataType: double
+		lineageTag: 6b32039c-d8ec-4824-90de-40b3ce28c1d6
+		summarizeBy: none
+		sourceColumn: PriorPerformance
+
+	column PriorQuality
+		dataType: double
+		lineageTag: 76493b26-3de7-4fc4-bb4b-38909d0aa311
+		summarizeBy: none
+		sourceColumn: PriorQuality
+
+	partition WeeklySummary = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="WeeklySummary"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"WeekFrom", type date}, {"WeekTo", type date}, {"OEE", type number}, {"Availability", type number}, {"Performance", type number}, {"Quality", type number}, {"GoodCount", Int64.Type}, {"TotalCount", Int64.Type}, {"TotalStops", Int64.Type}, {"TotalDowntimeHours", type number}, {"LongestStopMin", type number}, {"ProductionShifts", Int64.Type}, {"PriorOEE", type number}, {"PriorAvailability", type number}, {"PriorPerformance", type number}, {"PriorQuality", type number}})
+				in
+					Typed
+

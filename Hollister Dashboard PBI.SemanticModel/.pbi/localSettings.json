@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/localSettings/1.2.0/schema.json",
+  "userConsent": {},
+  "remoteArtifacts": [
+    {
+      "datasetId": "e5f36a07-e475-4e25-9fe8-4029b5079009"
+    }
+  ],
+  "securityBindingsSignature": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9CcLsksLXkKW2X+GRQaQXgAAAAACAAAAAAAQZgAAAAEAACAAAAB6MVS6t1tmXID6Xuzr7dc3+tKtca8Om4BhfU1gbvM4hQAAAAAOgAAAAAIAACAAAADYnViQJpVV3SiHnKksYpgESZUWspKlOdzQaQBee+sxtFAAAADntnsgah0MKhv9ExnfUjk7opp7sp22zBDAFEzCo2Fc1YHiy6T3J9sg9o012CjNFIf3b4YM78sAazSFspAd8ZUcEDsFFYSg9TxbpFlwDgbYEkAAAADZ+fp2mI64kzCaSVPtfDXTE4/bX487JuAuG94SMvDGXCfnsthu+2h8mlVt6nTqJZsOcR2geHFgtZLMT37n1FLD"
+}

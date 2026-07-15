@@ -1,0 +1,222 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "871bddaa25727f451b3c",
+  "position": {
+    "x": 16,
+    "y": 3056.25,
+    "z": 20200,
+    "height": 320,
+    "width": 1248,
+    "tabOrder": 20200
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "Lane"
+                }
+              },
+              "queryRef": "SPC.Lane",
+              "nativeQueryRef": "Lane"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "RatePct"
+                }
+              },
+              "queryRef": "SPC.RatePct",
+              "nativeQueryRef": "RatePct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "UclPct"
+                }
+              },
+              "queryRef": "SPC.UclPct",
+              "nativeQueryRef": "UclPct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "OOC"
+                }
+              },
+              "queryRef": "SPC.OOC",
+              "nativeQueryRef": "OOC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "PBar"
+                }
+              },
+              "queryRef": "SPC.PBar",
+              "nativeQueryRef": "PBar"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\ndf = dataset.copy()\ndf[\"Lane\"] = df[\"Lane\"].astype(int)\ndf = df.sort_values(\"Lane\")\nfig, ax = plt.subplots(figsize=(31.2, 8), dpi=300)\nx = list(range(len(df)))\ncolors = [\"#023e8a\" if o == 1 else \"#1982c4\" for o in df[\"OOC\"]]\nax.bar(x, df[\"RatePct\"], color=colors, width=0.6, zorder=3)\nymax = max(list(df[\"RatePct\"]) + list(df[\"UclPct\"]) + [0.1]) * 1.30\nfor i, row in enumerate(df.itertuples()):\n    ax.plot([i - 0.32, i + 0.32], [row.UclPct, row.UclPct], color=\"#0055ff\", linestyle=\"--\", linewidth=3, zorder=4)\n    label = \"%.2f%%\" % row.RatePct\n    if row.OOC == 1:\n        label = label + \"  OOC\"\n    ax.text(i, row.RatePct + ymax * 0.035, label, ha=\"center\", va=\"bottom\", fontsize=18,\n            color=(\"#023e8a\" if row.OOC == 1 else \"#636e72\"), fontweight=(\"bold\" if row.OOC == 1 else \"normal\"), zorder=5)\npbar = df[\"PBar\"].mean()\nax.axhline(pbar, color=\"#636e72\", linestyle=\":\", linewidth=3, zorder=2, label=\"p-bar = %.2f%%\" % pbar)\nax.set_xticks(x)\nax.set_xticklabels([\"Lane %d\" % l for l in df[\"Lane\"]], fontsize=20)\nax.tick_params(axis=\"x\", pad=8)\nax.tick_params(axis=\"y\", labelsize=9)\nax.set_ylim(0, ymax)\nax.set_ylabel(\"Reject rate %\", fontsize=20)\nax.grid(axis=\"y\", color=\"#eeeeee\", zorder=0)\nfor s in [\"top\", \"right\"]:\n    ax.spines[s].set_visible(False)\nax.legend(loc=\"upper right\", fontsize=16, frameon=False)\nplt.tight_layout()\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "24e51a9a31ac4d150457",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "Panel"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "SPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Panel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Vision'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

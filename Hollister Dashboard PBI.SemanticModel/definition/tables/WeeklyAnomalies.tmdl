@@ -1,0 +1,117 @@
+table WeeklyAnomalies
+	lineageTag: 98ad22b9-6cdd-434c-a47e-618118aeff9e
+
+	/// This week's downtime share for the flagged cluster.
+	measure 'Wk Current %' = MAX(WeeklyAnomalies[CurrentShare])
+		formatString: 0.0
+		lineageTag: c2aae76c-7441-424e-bd01-41c0c2a3e6dc
+
+	/// Normal baseline share.
+	measure 'Wk Baseline %' = MAX(WeeklyAnomalies[BaselineMean])
+		formatString: 0.0
+		lineageTag: a5bd05c5-cc4a-4db8-ad06-3a745574c43a
+
+	/// Deviation from baseline.
+	measure 'Wk Z' = MAX(WeeklyAnomalies[ZScore])
+		formatString: 0.0
+		lineageTag: 3f15a77c-477a-4aec-bf36-b305008e8db3
+
+	/// How many times more than usual.
+	measure 'Wk Ratio' = MAX(WeeklyAnomalies[Ratio])
+		formatString: 0.0
+		lineageTag: 7b9aa173-ca18-4389-b4d4-abcc0f913413
+
+	column LineId
+		dataType: string
+		lineageTag: be70ec4d-0c80-4551-a968-b44744b26982
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 6335c3cb-4051-42d3-8f1b-546af36004ef
+		summarizeBy: none
+		sourceColumn: Line
+
+	column Segment
+		dataType: string
+		lineageTag: 9dbb333f-1b0c-4dc0-a170-987950df6505
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Cluster
+		dataType: string
+		lineageTag: b01f789a-d415-4a9c-9168-582e47d36999
+		summarizeBy: none
+		sourceColumn: Cluster
+
+	column CurrentShare
+		dataType: double
+		lineageTag: 13c14452-3cbd-4bb8-be50-fc65d9b43732
+		summarizeBy: none
+		sourceColumn: CurrentShare
+
+	column BaselineMean
+		dataType: double
+		lineageTag: 5c934b02-6bd7-4562-af90-573eb0c8bf66
+		summarizeBy: none
+		sourceColumn: BaselineMean
+
+	column ZScore
+		dataType: double
+		lineageTag: 85ad5013-ccc6-4bbb-866d-28f87a824cd3
+		summarizeBy: none
+		sourceColumn: ZScore
+
+	column Direction
+		dataType: string
+		lineageTag: 7092f1bd-5c92-40f9-aeef-65ba3da6b68b
+		summarizeBy: none
+		sourceColumn: Direction
+
+	column Ratio
+		dataType: double
+		lineageTag: 47740047-eaaf-47bf-8af4-7cc996760488
+		summarizeBy: none
+		sourceColumn: Ratio
+
+	column Headline
+		dataType: string
+		lineageTag: c910fc36-1d0a-425f-bb3c-e3cbd6aa803b
+		summarizeBy: none
+		sourceColumn: Headline
+
+	column Detail
+		dataType: string
+		lineageTag: 09c42bde-35c8-4ee7-99a8-42a4a7d17277
+		summarizeBy: none
+		sourceColumn: Detail
+
+	column SegColor
+		dataType: string
+		lineageTag: a1bdcc8c-a2fe-4748-a3b9-a3d95aaa5b53
+		summarizeBy: none
+		sourceColumn: SegColor
+
+	column Rank
+		dataType: int64
+		lineageTag: c9554566-7f23-4226-9f04-ccac1ae23e4a
+		summarizeBy: none
+		sourceColumn: Rank
+
+	column HeadlineML
+		dataType: string
+		lineageTag: 43248567-7ca6-4162-a9e9-7a55928bc7bd
+		summarizeBy: none
+		sourceColumn: HeadlineML
+
+	partition WeeklyAnomalies = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="WeeklyAnomalies"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"Segment", type text}, {"Cluster", type text}, {"CurrentShare", type number}, {"BaselineMean", type number}, {"ZScore", type number}, {"Direction", type text}, {"Ratio", type number}, {"Headline", type text}, {"Detail", type text}, {"SegColor", type text}, {"Rank", Int64.Type}, {"HeadlineML", type text}})
+				in
+					Typed
+

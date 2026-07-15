@@ -1,0 +1,58 @@
+table DimDate
+	lineageTag: 32447ab4-0b60-409f-b56d-40461fd00f30
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 0b4cec34-debf-472c-b586-6f3cc1900247
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		lineageTag: 03f749f6-8960-4937-8dae-1fb2ec5129de
+		summarizeBy: none
+		sourceColumn: Year
+
+	column MonthNum
+		dataType: int64
+		lineageTag: 5d24467b-e1f2-4dcf-9cbd-7dcf15f91eb4
+		summarizeBy: none
+		sourceColumn: MonthNum
+
+	column Month
+		dataType: string
+		lineageTag: e8636241-0f88-4ac1-ad88-7f3a8fa54204
+		summarizeBy: none
+		sourceColumn: Month
+
+	column Day
+		dataType: int64
+		lineageTag: 45af9eac-f604-4320-96f5-c265e1bcb740
+		summarizeBy: none
+		sourceColumn: Day
+
+	column Weekday
+		dataType: string
+		lineageTag: 43f4224d-03b7-479d-a412-0843e82e2eff
+		summarizeBy: none
+		sourceColumn: Weekday
+
+	column IsoWeek
+		dataType: string
+		lineageTag: 9286c358-f5c8-4492-8d2b-15a5a8ff90ce
+		summarizeBy: none
+		sourceColumn: IsoWeek
+
+	partition DimDate = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="DimDate"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"Date", type date}, {"Year", Int64.Type}, {"MonthNum", Int64.Type}, {"Month", type text}, {"Day", Int64.Type}, {"Weekday", type text}, {"IsoWeek", type text}})
+				in
+					Typed
+

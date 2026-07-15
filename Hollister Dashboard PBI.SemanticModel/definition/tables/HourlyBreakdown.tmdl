@@ -1,0 +1,60 @@
+table HourlyBreakdown
+	lineageTag: a6567efa-6d57-4566-89fb-1a1c597a8327
+
+	/// Minutes running or stopped-by-segment per hour.
+	measure 'Total Minutes' = SUM(HourlyBreakdown[Minutes])
+		formatString: #,##0.0
+		lineageTag: 4e54e59e-db86-45bd-b1ac-160114caa6ca
+
+	column ShiftKey
+		dataType: string
+		lineageTag: 068fccd2-c4a5-4f34-a1a6-da44200e20e4
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 647291e0-9e86-44ce-b0ac-67863ed3718f
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column HourLabel
+		dataType: string
+		lineageTag: 07a77f0d-0c11-4b29-95bc-ec8b1a48b2b8
+		summarizeBy: none
+		sourceColumn: HourLabel
+
+	column Segment
+		dataType: string
+		lineageTag: a6d4e219-07f3-42b3-a2e7-45a1843136be
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Minutes
+		dataType: double
+		lineageTag: 56fd346b-6191-4fbd-b809-6b8f9a60550d
+		summarizeBy: none
+		sourceColumn: Minutes
+
+	column SegmentColor
+		dataType: string
+		lineageTag: a9af27db-32e0-4c46-ad10-d7e6048925b0
+		summarizeBy: none
+		sourceColumn: SegmentColor
+
+	column SegmentLabel
+		dataType: string
+		lineageTag: dbbd4d3a-b7fd-4d2c-817a-d01ae56e3b1b
+		summarizeBy: none
+		sourceColumn: SegmentLabel
+
+	partition HourlyBreakdown = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="HourlyBreakdown"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"HourLabel", type text}, {"Segment", type text}, {"Minutes", type number}, {"SegmentColor", type text}, {"SegmentLabel", type text}})
+				in
+					Typed
+

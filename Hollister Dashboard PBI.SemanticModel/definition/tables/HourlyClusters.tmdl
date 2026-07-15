@@ -1,0 +1,60 @@
+table HourlyClusters
+	lineageTag: d6fcff8d-fff3-441e-adc3-f7efe74582c9
+
+	/// Minutes by cause cluster, per hour.
+	measure 'Hourly Cluster Minutes' = SUM(HourlyClusters[Minutes])
+		formatString: #,##0.0
+		lineageTag: bc436dbe-c3f1-45ee-8393-414aab62898c
+
+	column ShiftKey
+		dataType: string
+		lineageTag: d19684e7-7ad7-4ca7-abea-68c0934c466b
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: ce26f252-d5cb-4127-86bd-628a0214ddff
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column HourLabel
+		dataType: string
+		lineageTag: 0c49b13e-70ba-4394-8c78-41a8a2f2b7a5
+		summarizeBy: none
+		sourceColumn: HourLabel
+
+	column HourIdx
+		dataType: int64
+		lineageTag: dc7f73fe-0f38-42d6-ba62-789e76dbf06e
+		summarizeBy: none
+		sourceColumn: HourIdx
+
+	column Segment
+		dataType: string
+		lineageTag: 5dd330cf-7597-4a45-9b69-440ecdc63a4b
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Cluster
+		dataType: string
+		lineageTag: 6c715590-136e-41c7-a94d-b79ba361a6da
+		summarizeBy: none
+		sourceColumn: Cluster
+
+	column Minutes
+		dataType: double
+		lineageTag: 47025015-de38-4af4-b441-1836ef341092
+		summarizeBy: none
+		sourceColumn: Minutes
+
+	partition HourlyClusters = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="HourlyClusters"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"HourLabel", type text}, {"HourIdx", Int64.Type}, {"Segment", type text}, {"Cluster", type text}, {"Minutes", type number}})
+				in
+					Typed
+

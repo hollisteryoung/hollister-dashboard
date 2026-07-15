@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "1ab95f128991fda419ac",
+  "position": {
+    "x": 16,
+    "y": 1124.5,
+    "z": 21002,
+    "height": 560,
+    "width": 1248,
+    "tabOrder": 21002
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Segment"
+                }
+              },
+              "queryRef": "SegmentClusters.Segment",
+              "nativeQueryRef": "Segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Cluster"
+                }
+              },
+              "queryRef": "SegmentClusters.Cluster",
+              "nativeQueryRef": "Cluster"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Cluster Halted (h)"
+                }
+              },
+              "queryRef": "SegmentClusters.Cluster Halted (h)",
+              "nativeQueryRef": "Cluster Halted (h)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SegmentClusters"
+                    }
+                  },
+                  "Property": "Cluster Stopped (h)"
+                }
+              },
+              "queryRef": "SegmentClusters.Cluster Stopped (h)",
+              "nativeQueryRef": "Cluster Stopped (h)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\n\nFS = 2  # font/linewidth supersampling factor (figure is also scaled by this)\n\ndf = dataset.copy()\ndf.columns = [\"Segment\", \"Cluster\", \"Halted\", \"Stopped\"]\ndf[\"Halted\"] = df[\"Halted\"].fillna(0.0)\ndf[\"Stopped\"] = df[\"Stopped\"].fillna(0.0)\n\nSEG_LABELS = {\"hydration\": \"Hydration\", \"foil\": \"Foil\", \"schubert\": \"Schubert\",\n              \"manual\": \"Manual\", \"unattributed\": \"Other\", \"web\": \"Web / Reel\",\n              \"sealing\": \"Sealing\", \"handling\": \"Handling\", \"pneumatic\": \"Pneumatic\"}\nSEG_COLORS = {\"hydration\": \"#e76f51\", \"foil\": \"#e9c46a\", \"schubert\": \"#2a9d8f\",\n              \"manual\": \"#636e72\", \"unattributed\": \"#b2bec3\",\n              \"web\": \"#3B82F6\", \"sealing\": \"#F59E0B\", \"handling\": \"#8B5CF6\",\n              \"pneumatic\": \"#10B981\"}\nSEG_ORDER = {\"hydration\": 0, \"foil\": 1, \"schubert\": 2, \"web\": 0, \"sealing\": 1,\n             \"handling\": 2, \"pneumatic\": 3, \"manual\": 10, \"unattributed\": 11}\n\ndef hex_blend(hexcolor, ratio):\n    r = int(hexcolor[1:3], 16); g = int(hexcolor[3:5], 16); b = int(hexcolor[5:7], 16)\n    if ratio >= 0:\n        r = int(r + (255 - r) * ratio); g = int(g + (255 - g) * ratio); b = int(b + (255 - b) * ratio)\n    else:\n        f = 1 + ratio; r = int(r * f); g = int(g * f); b = int(b * f)\n    return \"#%02x%02x%02x\" % (max(0, min(255, r)), max(0, min(255, g)), max(0, min(255, b)))\n\ngrouped = df.groupby(\"Segment\").agg(Halted=(\"Halted\", \"sum\"), Stopped=(\"Stopped\", \"sum\")).reset_index()\ngrouped[\"Total\"] = grouped[\"Halted\"] + grouped[\"Stopped\"]\ngrouped = grouped[grouped[\"Total\"] > 0]\ngrouped[\"Order\"] = grouped[\"Segment\"].map(lambda s: SEG_ORDER.get(s, 5))\ngrouped = grouped.sort_values([\"Order\", \"Segment\"])\n\nfig, ax = plt.subplots(figsize=(15.6 * FS, 7.0 * FS), dpi=150)\n\nif grouped.empty:\n    ax.axis(\"off\")\n    ax.text(0.5, 0.5, \"No downtime recorded for this selection\", ha=\"center\", va=\"center\",\n            fontsize=13 * FS, color=\"#636e72\")\nelse:\n    GAP = 0.4\n    max_hours = grouped[\"Total\"].max() or 1.0\n    y_cursor = 0.0\n    row_defs = []\n    seg_label_pos = []\n    for _, seg_row in grouped.iterrows():\n        seg = seg_row[\"Segment\"]\n        base_color = SEG_COLORS.get(seg, \"#b2bec3\")\n        label = SEG_LABELS.get(seg, str(seg).title())\n        sub = df[df[\"Segment\"] == seg]\n        cl = sub.groupby(\"Cluster\").agg(Halted=(\"Halted\", \"sum\"), Stopped=(\"Stopped\", \"sum\")).reset_index()\n        cl[\"Total\"] = cl[\"Halted\"] + cl[\"Stopped\"]\n        cl = cl.sort_values(\"Total\", ascending=False).reset_index(drop=True)\n        n = len(cl)\n        shades = [hex_blend(base_color, (i * 0.5 / max(n - 1, 1)) if n > 1 else 0.0) for i in range(n)]\n        start_row = y_cursor\n        halted_total = seg_row[\"Halted\"]\n        stopped_total = seg_row[\"Stopped\"]\n        if halted_total > 0:\n            row_defs.append({\"y\": y_cursor, \"kind\": \"halted\", \"total\": halted_total,\n                              \"stack\": list(zip(cl[\"Cluster\"], cl[\"Halted\"], shades))})\n            y_cursor += 1.0\n        if stopped_total > 0:\n            row_defs.append({\"y\": y_cursor, \"kind\": \"stopped\", \"total\": stopped_total,\n                              \"stack\": list(zip(cl[\"Cluster\"], cl[\"Stopped\"], shades))})\n            y_cursor += 1.0\n        end_row = y_cursor - 1.0\n        seg_label_pos.append((seg, (start_row + end_row) / 2.0, label, seg_row[\"Total\"]))\n        y_cursor += GAP\n\n    BASELINE = 8.0\n    ylim_end = max(y_cursor - GAP + 0.15, BASELINE)\n    ax.set_xlim(0, max_hours * 1.02)\n    ax.set_ylim(-0.5, ylim_end)\n    ax.invert_yaxis()\n    ax.axis(\"off\")\n\n    trans = ax.get_yaxis_transform()\n    label_x, sub_x, right_x = -0.235, -0.085, 1.02\n\n    pending_texts = []  # (text_obj, bar_x0_data, bar_w_data, full_label, short_label)\n    for row in row_defs:\n        y = row[\"y\"]\n        ax.barh(y, max_hours, height=0.78, color=\"#f0f1f5\", zorder=1, left=0)\n        cum = 0.0\n        for name, hours, shade in row[\"stack\"]:\n            if hours <= 0:\n                continue\n            ax.barh(y, hours, height=0.78, left=cum, color=shade, zorder=2, edgecolor=\"white\", linewidth=1.2)\n            full_label = \"%s %.1fh\" % (name, hours)\n            t = ax.text(cum + hours / 2.0, y, full_label, ha=\"center\", va=\"center\", fontsize=9.5 * FS,\n                        color=\"white\", fontweight=\"600\", zorder=3, clip_on=True)\n            pending_texts.append((t, cum, hours, full_label, name))\n            cum += hours\n        kind_label = \"halted\" if row[\"kind\"] == \"halted\" else \"stopped\"\n        kind_color = \"#2d3436\" if row[\"kind\"] == \"halted\" else \"#636e72\"\n        kind_weight = \"bold\" if row[\"kind\"] == \"halted\" else \"normal\"\n        ax.text(sub_x, y, kind_label, ha=\"right\", va=\"center\", fontsize=9.5 * FS,\n                color=kind_color, fontweight=kind_weight, transform=trans)\n        ax.text(right_x, y, \"%.1fh\" % row[\"total\"], ha=\"left\", va=\"center\", fontsize=9.5 * FS,\n                color=\"#636e72\", transform=trans)\n\n    for seg, y_mid, label, total in seg_label_pos:\n        ax.text(label_x, y_mid - 0.16, label, ha=\"right\", va=\"center\", fontsize=10.5 * FS,\n                color=\"#2d3436\", fontweight=\"600\", transform=trans)\n        ax.text(label_x, y_mid + 0.18, \"%.1fh total\" % total, ha=\"right\", va=\"center\", fontsize=9 * FS,\n                color=\"#636e72\", transform=trans)\n\n    fig.subplots_adjust(left=0.235, right=0.90, top=0.98, bottom=0.065)\n    fig.text(0.235, 0.014,\n              \"halted = operator wait (machine parked)      stopped = auto-stop (fault recovery)\",\n              fontsize=9 * FS, color=\"#636e72\")\n\n    # --- text-fit safety net: shrink to name-only, or hide, if a label doesn''t\n    # actually fit inside its own bar segment''s rendered pixel width ---\n    fig.canvas.draw()\n    renderer = fig.canvas.get_renderer()\n    to_recheck = []\n    for t, x0, w, full_label, short_label in pending_texts:\n        bar_px = abs(ax.transData.transform((x0 + w, 0))[0] - ax.transData.transform((x0, 0))[0])\n        if t.get_window_extent(renderer=renderer).width > bar_px * 0.94:\n            t.set_text(short_label)\n            to_recheck.append((t, bar_px, short_label))\n    if to_recheck:\n        fig.canvas.draw()\n        for t, bar_px, short_label in to_recheck:\n            if t.get_window_extent(renderer=renderer).width > bar_px * 0.94:\n                t.set_text(\"\")\n\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6025580ab4df49e57d72",
+  "position": {
+    "x": 15,
+    "y": 5534.25,
+    "z": 30000,
+    "height": 368,
+    "width": 1248,
+    "tabOrder": 35000
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "ShiftLabel"
+                }
+              },
+              "queryRef": "SPC.ShiftLabel",
+              "nativeQueryRef": "ShiftLabel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "Lane"
+                }
+              },
+              "queryRef": "SPC.Lane",
+              "nativeQueryRef": "Lane"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "RatePct"
+                }
+              },
+              "queryRef": "SPC.RatePct",
+              "nativeQueryRef": "RatePct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "UclPct"
+                }
+              },
+              "queryRef": "SPC.UclPct",
+              "nativeQueryRef": "UclPct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "OOC"
+                }
+              },
+              "queryRef": "SPC.OOC",
+              "nativeQueryRef": "OOC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "ShiftIdx"
+                }
+              },
+              "queryRef": "SPC.ShiftIdx",
+              "nativeQueryRef": "ShiftIdx"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SPC"
+                    }
+                  },
+                  "Property": "PBar"
+                }
+              },
+              "queryRef": "SPC.PBar",
+              "nativeQueryRef": "PBar"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\ndf = dataset.copy()\ndf[\"Lane\"] = df[\"Lane\"].astype(int)\ndf[\"ShiftIdx\"] = df[\"ShiftIdx\"].astype(int)\nxo = df[[\"ShiftIdx\", \"ShiftLabel\"]].drop_duplicates().sort_values(\"ShiftIdx\")\nxlabels = list(xo[\"ShiftLabel\"])\npos = {int(getattr(r, \"ShiftIdx\")): i for i, r in enumerate(xo.itertuples())}\ncolors = [\"#264653\",\"#e76f51\",\"#e9c46a\",\"#0077b6\",\"#2a9d8f\",\"#6a4c93\",\"#f4a261\",\"#48bfe3\",\"#8338ec\",\"#d4a373\"]\nfig, ax = plt.subplots(figsize=(31.2, 9.2), dpi=300)\nfor i, (lane, g) in enumerate(df.groupby(\"Lane\")):\n    g = g.sort_values(\"ShiftIdx\")\n    c = colors[i % len(colors)]\n    x = [pos[v] for v in g[\"ShiftIdx\"]]\n    ax.plot(x, list(g[\"RatePct\"]), marker=\"o\", markersize=8, color=c, linewidth=4, label=\"N%d\" % lane)\n    ucl = g[\"UclPct\"].mean()\n    if ucl > 0:\n        ax.plot([0, len(xlabels)-1], [ucl, ucl], linestyle=\"--\", color=c, alpha=0.3, linewidth=2)\n    o = g[g[\"OOC\"] == 1]\n    if len(o):\n        ax.scatter([pos[v] for v in o[\"ShiftIdx\"]], list(o[\"RatePct\"]), marker=\"x\", s=360, color=\"#d63031\", linewidths=4, zorder=5)\npbar = df[\"PBar\"].mean()\nax.plot([0, len(xlabels)-1], [pbar, pbar], linestyle=\":\", color=\"#636e72\", linewidth=3, label=\"p-bar = %.2f%%\" % pbar)\nax.set_ylabel(\"Reject rate %\")\nax.set_ylim(bottom=0)\nax.set_xticks(range(len(xlabels)))\nax.set_xticklabels(xlabels, rotation=45, ha=\"right\", fontsize=16)\nax.grid(axis=\"y\", color=\"#eeeeee\")\nfor s in [\"top\", \"right\"]:\n    ax.spines[s].set_visible(False)\nax.legend(loc=\"upper center\", bbox_to_anchor=(0.5, -0.22), ncol=6, fontsize=14, frameon=False)\nplt.tight_layout()\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Vision Reject SPC (Laney p′)'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E194B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "65b04e65e55b43c7df68",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "Panel"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "SPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Panel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Vision'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

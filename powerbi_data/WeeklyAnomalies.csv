@@ -1,0 +1,3 @@
+LineId,Line,Segment,Cluster,CurrentShare,BaselineMean,ZScore,Direction,Ratio,Headline,Detail,HeadlineML,SegColor,Rank
+ngp2,NGP2,foil,Detection Fault,22.4,6.3,4.8,above,3.6,4× more Detection Fault stops than usual (Foil),"22.4% of this week's downtime, normally 6.3%","4× more Detection Fault stops than usual (Foil)
+22.4% of this week's downtime, normally 6.3%",#e9c46a,0

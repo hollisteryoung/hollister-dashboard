@@ -1,0 +1,7 @@
+expression PBISource =
+		let
+			Source = Python.Execute("import sys#(lf)sys.path.insert(0, r""C:\hollister-dashboard\bin"")#(lf)from powerbi_compute import compute_all#(lf)_t = compute_all()#(lf)Anomalies = _t[""Anomalies""]#(lf)DimDate = _t[""DimDate""]#(lf)DowntimeCategories = _t[""DowntimeCategories""]#(lf)EWMA = _t[""EWMA""]#(lf)HourlyBreakdown = _t[""HourlyBreakdown""]#(lf)HourlyClusters = _t[""HourlyClusters""]#(lf)KeyFindings = _t[""KeyFindings""]#(lf)Lines = _t[""Lines""]#(lf)SPC = _t[""SPC""]#(lf)SegmentClusters = _t[""SegmentClusters""]#(lf)SegmentDowntime = _t[""SegmentDowntime""]#(lf)Shifts = _t[""Shifts""]#(lf)ShiftTrend = _t[""ShiftTrend""]#(lf)TopStops = _t[""TopStops""]#(lf)WeeklyAnomalies = _t[""WeeklyAnomalies""]#(lf)WeeklySummary = _t[""WeeklySummary""]")
+		in
+			Source
+	lineageTag: 556678d4-6abd-4361-b34a-730152289d6f
+

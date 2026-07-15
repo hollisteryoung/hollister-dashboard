@@ -1,0 +1,65 @@
+table TopStops
+	lineageTag: 3aa30f90-e496-491a-bc41-c66f125d9cbd
+
+	/// Hours attributed to individual stop labels.
+	measure 'Stop Hours' = SUM(TopStops[Hours])
+		formatString: #,##0.00
+		lineageTag: 498e8132-0af1-4e44-82f4-116c9104ac1a
+
+	/// Occurrences of individual stop labels.
+	measure 'Stop Count' = SUM(TopStops[Count])
+		formatString: #,##0
+		lineageTag: 60886ce0-85f0-4258-bb23-bc8cbb062b93
+
+	column ShiftKey
+		dataType: string
+		lineageTag: ffc740cc-ffc4-45ce-9eb8-d42f61fa7fbc
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 06d55576-761c-4ba0-9529-1bb3dc2016b0
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Segment
+		dataType: string
+		lineageTag: cff7e836-9373-4fa2-8312-f6e527dbb28a
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Cluster
+		dataType: string
+		lineageTag: e64d50ee-ad4a-4a89-84cb-2d33d214e0e5
+		summarizeBy: none
+		sourceColumn: Cluster
+
+	column Label
+		dataType: string
+		lineageTag: bf8626e7-3e2e-46d0-bccf-232a3723bd77
+		summarizeBy: none
+		sourceColumn: Label
+
+	column Count
+		dataType: int64
+		lineageTag: c2ae9f3e-d412-4c3a-b091-e7a0064b8097
+		summarizeBy: none
+		sourceColumn: Count
+
+	column Hours
+		dataType: double
+		lineageTag: a8d19679-e788-4be8-aeea-dcd049bbbd6d
+		summarizeBy: none
+		sourceColumn: Hours
+
+	partition TopStops = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="TopStops"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"Segment", type text}, {"Cluster", type text}, {"Label", type text}, {"Count", Int64.Type}, {"Hours", type number}})
+				in
+					Typed
+

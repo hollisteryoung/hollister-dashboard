@@ -1,0 +1,281 @@
+ShiftKey,LineId,Category,CategoryLabel,Count,Hours
+hu3|2026-06-13|day,hu3,micro_stops,Micro-stops (<2 min),36,0.62
+hu3|2026-06-13|day,hu3,halted,Halted (operator wait),11,2.68
+hu3|2026-06-13|day,hu3,auto_long,Auto-stops (>2 min),27,3.19
+hu3|2026-06-13|day,hu3,manual,Manual stops,2,0.21
+hu3|2026-06-13|night,hu3,micro_stops,Micro-stops (<2 min),42,0.74
+hu3|2026-06-13|night,hu3,halted,Halted (operator wait),2,0.62
+hu3|2026-06-13|night,hu3,auto_long,Auto-stops (>2 min),28,3.69
+hu3|2026-06-13|night,hu3,manual,Manual stops,13,1.47
+hu3|2026-06-14|day,hu3,micro_stops,Micro-stops (<2 min),20,0.28
+hu3|2026-06-14|day,hu3,halted,Halted (operator wait),3,1.93
+hu3|2026-06-14|day,hu3,auto_long,Auto-stops (>2 min),22,1.89
+hu3|2026-06-14|day,hu3,manual,Manual stops,8,1.04
+hu3|2026-06-14|night,hu3,micro_stops,Micro-stops (<2 min),17,0.33
+hu3|2026-06-14|night,hu3,halted,Halted (operator wait),6,1.41
+hu3|2026-06-14|night,hu3,auto_long,Auto-stops (>2 min),18,1.79
+hu3|2026-06-14|night,hu3,manual,Manual stops,10,1.02
+hu3|2026-06-15|day,hu3,micro_stops,Micro-stops (<2 min),29,0.38
+hu3|2026-06-15|day,hu3,halted,Halted (operator wait),3,0.17
+hu3|2026-06-15|day,hu3,auto_long,Auto-stops (>2 min),25,3.41
+hu3|2026-06-15|day,hu3,manual,Manual stops,2,0.09
+hu3|2026-06-15|night,hu3,micro_stops,Micro-stops (<2 min),34,0.6
+hu3|2026-06-15|night,hu3,halted,Halted (operator wait),5,0.29
+hu3|2026-06-15|night,hu3,auto_long,Auto-stops (>2 min),29,2.68
+hu3|2026-06-15|night,hu3,manual,Manual stops,8,0.67
+hu3|2026-06-16|day,hu3,micro_stops,Micro-stops (<2 min),96,1.0
+hu3|2026-06-16|day,hu3,halted,Halted (operator wait),4,1.33
+hu3|2026-06-16|day,hu3,auto_long,Auto-stops (>2 min),18,1.48
+hu3|2026-06-16|day,hu3,manual,Manual stops,3,0.38
+hu3|2026-06-16|night,hu3,micro_stops,Micro-stops (<2 min),52,0.83
+hu3|2026-06-16|night,hu3,halted,Halted (operator wait),2,0.14
+hu3|2026-06-16|night,hu3,auto_long,Auto-stops (>2 min),28,2.34
+hu3|2026-06-16|night,hu3,manual,Manual stops,6,0.88
+hu3|2026-06-17|day,hu3,micro_stops,Micro-stops (<2 min),35,0.47
+hu3|2026-06-17|day,hu3,halted,Halted (operator wait),9,1.06
+hu3|2026-06-17|day,hu3,auto_long,Auto-stops (>2 min),14,3.75
+hu3|2026-06-17|day,hu3,manual,Manual stops,8,2.13
+hu3|2026-06-17|night,hu3,micro_stops,Micro-stops (<2 min),64,0.78
+hu3|2026-06-17|night,hu3,halted,Halted (operator wait),7,0.45
+hu3|2026-06-17|night,hu3,auto_long,Auto-stops (>2 min),27,3.73
+hu3|2026-06-17|night,hu3,manual,Manual stops,4,0.39
+hu3|2026-06-18|day,hu3,micro_stops,Micro-stops (<2 min),43,0.62
+hu3|2026-06-18|day,hu3,halted,Halted (operator wait),3,0.1
+hu3|2026-06-18|day,hu3,auto_long,Auto-stops (>2 min),19,4.71
+hu3|2026-06-18|day,hu3,manual,Manual stops,21,2.43
+hu3|2026-06-18|night,hu3,micro_stops,Micro-stops (<2 min),20,0.27
+hu3|2026-06-18|night,hu3,halted,Halted (operator wait),5,0.7
+hu3|2026-06-18|night,hu3,auto_long,Auto-stops (>2 min),21,1.69
+hu3|2026-06-18|night,hu3,manual,Manual stops,10,0.79
+hu3|2026-06-19|day,hu3,micro_stops,Micro-stops (<2 min),15,0.29
+hu3|2026-06-19|day,hu3,halted,Halted (operator wait),5,0.9
+hu3|2026-06-19|day,hu3,auto_long,Auto-stops (>2 min),19,2.01
+hu3|2026-06-19|day,hu3,manual,Manual stops,8,4.82
+hu3|2026-06-19|night,hu3,micro_stops,Micro-stops (<2 min),46,0.84
+hu3|2026-06-19|night,hu3,halted,Halted (operator wait),5,0.16
+hu3|2026-06-19|night,hu3,auto_long,Auto-stops (>2 min),22,2.14
+hu3|2026-06-19|night,hu3,manual,Manual stops,10,0.36
+hu3|2026-07-08|day,hu3,micro_stops,Micro-stops (<2 min),38,0.63
+hu3|2026-07-08|day,hu3,halted,Halted (operator wait),4,0.15
+hu3|2026-07-08|day,hu3,auto_long,Auto-stops (>2 min),20,1.89
+hu3|2026-07-08|day,hu3,manual,Manual stops,5,3.23
+hu3|2026-07-08|night,hu3,micro_stops,Micro-stops (<2 min),30,0.56
+hu3|2026-07-08|night,hu3,halted,Halted (operator wait),4,0.1
+hu3|2026-07-08|night,hu3,auto_long,Auto-stops (>2 min),25,4.11
+hu3|2026-07-08|night,hu3,manual,Manual stops,8,1.09
+hu3|2026-07-09|day,hu3,micro_stops,Micro-stops (<2 min),51,0.82
+hu3|2026-07-09|day,hu3,halted,Halted (operator wait),4,0.42
+hu3|2026-07-09|day,hu3,auto_long,Auto-stops (>2 min),27,2.8
+hu3|2026-07-09|day,hu3,manual,Manual stops,3,0.39
+hu3|2026-07-09|night,hu3,micro_stops,Micro-stops (<2 min),67,1.0
+hu3|2026-07-09|night,hu3,halted,Halted (operator wait),3,0.15
+hu3|2026-07-09|night,hu3,auto_long,Auto-stops (>2 min),26,2.62
+hu3|2026-07-09|night,hu3,manual,Manual stops,5,0.73
+hu3|2026-07-10|day,hu3,micro_stops,Micro-stops (<2 min),66,0.89
+hu3|2026-07-10|day,hu3,halted,Halted (operator wait),5,1.04
+hu3|2026-07-10|day,hu3,auto_long,Auto-stops (>2 min),21,2.07
+hu3|2026-07-10|day,hu3,manual,Manual stops,7,0.17
+hu3|2026-07-10|night,hu3,micro_stops,Micro-stops (<2 min),29,0.54
+hu3|2026-07-10|night,hu3,halted,Halted (operator wait),3,0.41
+hu3|2026-07-10|night,hu3,auto_long,Auto-stops (>2 min),26,3.58
+hu3|2026-07-10|night,hu3,manual,Manual stops,6,0.57
+hu3|2026-07-11|day,hu3,micro_stops,Micro-stops (<2 min),46,0.91
+hu3|2026-07-11|day,hu3,halted,Halted (operator wait),5,0.22
+hu3|2026-07-11|day,hu3,auto_long,Auto-stops (>2 min),23,2.03
+hu3|2026-07-11|day,hu3,manual,Manual stops,3,0.13
+hu3|2026-07-11|night,hu3,micro_stops,Micro-stops (<2 min),65,0.87
+hu3|2026-07-11|night,hu3,halted,Halted (operator wait),3,0.33
+hu3|2026-07-11|night,hu3,auto_long,Auto-stops (>2 min),26,2.43
+hu3|2026-07-11|night,hu3,manual,Manual stops,7,0.35
+hu3|2026-07-12|day,hu3,micro_stops,Micro-stops (<2 min),92,1.52
+hu3|2026-07-12|day,hu3,halted,Halted (operator wait),6,0.54
+hu3|2026-07-12|day,hu3,auto_long,Auto-stops (>2 min),32,2.23
+hu3|2026-07-12|day,hu3,manual,Manual stops,7,0.32
+hu3|2026-07-12|night,hu3,micro_stops,Micro-stops (<2 min),62,0.72
+hu3|2026-07-12|night,hu3,halted,Halted (operator wait),9,0.33
+hu3|2026-07-12|night,hu3,auto_long,Auto-stops (>2 min),22,1.97
+hu3|2026-07-12|night,hu3,manual,Manual stops,4,0.52
+hu3|2026-07-13|day,hu3,micro_stops,Micro-stops (<2 min),37,0.53
+hu3|2026-07-13|day,hu3,halted,Halted (operator wait),4,0.58
+hu3|2026-07-13|day,hu3,auto_long,Auto-stops (>2 min),35,5.55
+hu3|2026-07-13|day,hu3,manual,Manual stops,8,1.16
+hu3|2026-07-13|night,hu3,micro_stops,Micro-stops (<2 min),65,1.05
+hu3|2026-07-13|night,hu3,halted,Halted (operator wait),13,1.5
+hu3|2026-07-13|night,hu3,auto_long,Auto-stops (>2 min),32,3.17
+hu3|2026-07-13|night,hu3,manual,Manual stops,8,0.19
+hu3|2026-07-14|day,hu3,micro_stops,Micro-stops (<2 min),19,0.32
+hu3|2026-07-14|day,hu3,halted,Halted (operator wait),5,3.09
+hu3|2026-07-14|day,hu3,auto_long,Auto-stops (>2 min),21,3.68
+hu3|2026-07-14|day,hu3,manual,Manual stops,7,2.84
+hu3|2026-07-14|night,hu3,micro_stops,Micro-stops (<2 min),18,0.31
+hu3|2026-07-14|night,hu3,halted,Halted (operator wait),5,0.23
+hu3|2026-07-14|night,hu3,auto_long,Auto-stops (>2 min),20,3.66
+hu3|2026-07-14|night,hu3,manual,Manual stops,3,6.29
+ngp2|2026-05-29|day,ngp2,micro_stops,Micro-stops (<2 min),41,0.81
+ngp2|2026-05-29|day,ngp2,halted,Halted (operator wait),46,5.02
+ngp2|2026-05-29|day,ngp2,auto_long,Auto-stops (>2 min),12,1.15
+ngp2|2026-05-29|day,ngp2,manual,Manual stops,2,0.37
+ngp2|2026-05-29|night,ngp2,micro_stops,Micro-stops (<2 min),34,0.72
+ngp2|2026-05-29|night,ngp2,halted,Halted (operator wait),71,4.24
+ngp2|2026-05-29|night,ngp2,auto_long,Auto-stops (>2 min),17,1.81
+ngp2|2026-05-29|night,ngp2,manual,Manual stops,0,0.0
+ngp2|2026-05-30|day,ngp2,micro_stops,Micro-stops (<2 min),57,1.23
+ngp2|2026-05-30|day,ngp2,halted,Halted (operator wait),17,2.06
+ngp2|2026-05-30|day,ngp2,auto_long,Auto-stops (>2 min),32,2.06
+ngp2|2026-05-30|day,ngp2,manual,Manual stops,2,0.23
+ngp2|2026-05-30|night,ngp2,micro_stops,Micro-stops (<2 min),74,1.5
+ngp2|2026-05-30|night,ngp2,halted,Halted (operator wait),16,1.03
+ngp2|2026-05-30|night,ngp2,auto_long,Auto-stops (>2 min),26,1.97
+ngp2|2026-05-30|night,ngp2,manual,Manual stops,1,0.18
+ngp2|2026-05-31|day,ngp2,micro_stops,Micro-stops (<2 min),65,1.31
+ngp2|2026-05-31|day,ngp2,halted,Halted (operator wait),38,2.42
+ngp2|2026-05-31|day,ngp2,auto_long,Auto-stops (>2 min),26,2.07
+ngp2|2026-05-31|day,ngp2,manual,Manual stops,8,0.55
+ngp2|2026-05-31|night,ngp2,micro_stops,Micro-stops (<2 min),78,1.69
+ngp2|2026-05-31|night,ngp2,halted,Halted (operator wait),22,1.33
+ngp2|2026-05-31|night,ngp2,auto_long,Auto-stops (>2 min),13,0.92
+ngp2|2026-05-31|night,ngp2,manual,Manual stops,2,0.19
+ngp2|2026-06-01|day,ngp2,micro_stops,Micro-stops (<2 min),39,0.79
+ngp2|2026-06-01|day,ngp2,halted,Halted (operator wait),34,1.54
+ngp2|2026-06-01|day,ngp2,auto_long,Auto-stops (>2 min),19,1.54
+ngp2|2026-06-01|day,ngp2,manual,Manual stops,5,0.65
+ngp2|2026-06-01|night,ngp2,micro_stops,Micro-stops (<2 min),52,1.22
+ngp2|2026-06-01|night,ngp2,halted,Halted (operator wait),42,3.23
+ngp2|2026-06-01|night,ngp2,auto_long,Auto-stops (>2 min),15,0.8
+ngp2|2026-06-01|night,ngp2,manual,Manual stops,1,0.0
+ngp2|2026-06-02|day,ngp2,micro_stops,Micro-stops (<2 min),43,0.92
+ngp2|2026-06-02|day,ngp2,halted,Halted (operator wait),40,2.44
+ngp2|2026-06-02|day,ngp2,auto_long,Auto-stops (>2 min),13,1.01
+ngp2|2026-06-02|day,ngp2,manual,Manual stops,4,0.23
+ngp2|2026-06-02|night,ngp2,micro_stops,Micro-stops (<2 min),49,1.11
+ngp2|2026-06-02|night,ngp2,halted,Halted (operator wait),32,1.45
+ngp2|2026-06-02|night,ngp2,auto_long,Auto-stops (>2 min),32,2.04
+ngp2|2026-06-02|night,ngp2,manual,Manual stops,2,0.06
+ngp2|2026-06-03|day,ngp2,micro_stops,Micro-stops (<2 min),40,0.75
+ngp2|2026-06-03|day,ngp2,halted,Halted (operator wait),30,1.49
+ngp2|2026-06-03|day,ngp2,auto_long,Auto-stops (>2 min),26,1.63
+ngp2|2026-06-03|day,ngp2,manual,Manual stops,4,0.14
+ngp2|2026-06-03|night,ngp2,micro_stops,Micro-stops (<2 min),42,0.8
+ngp2|2026-06-03|night,ngp2,halted,Halted (operator wait),28,2.54
+ngp2|2026-06-03|night,ngp2,auto_long,Auto-stops (>2 min),12,0.92
+ngp2|2026-06-03|night,ngp2,manual,Manual stops,4,0.77
+ngp2|2026-06-04|day,ngp2,micro_stops,Micro-stops (<2 min),20,0.45
+ngp2|2026-06-04|day,ngp2,halted,Halted (operator wait),35,2.19
+ngp2|2026-06-04|day,ngp2,auto_long,Auto-stops (>2 min),19,2.17
+ngp2|2026-06-04|day,ngp2,manual,Manual stops,1,0.27
+ngp2|2026-06-04|night,ngp2,micro_stops,Micro-stops (<2 min),41,0.8
+ngp2|2026-06-04|night,ngp2,halted,Halted (operator wait),41,1.47
+ngp2|2026-06-04|night,ngp2,auto_long,Auto-stops (>2 min),3,0.15
+ngp2|2026-06-04|night,ngp2,manual,Manual stops,1,0.01
+ngp2|2026-06-13|day,ngp2,micro_stops,Micro-stops (<2 min),22,0.46
+ngp2|2026-06-13|day,ngp2,halted,Halted (operator wait),19,4.9
+ngp2|2026-06-13|day,ngp2,auto_long,Auto-stops (>2 min),10,1.47
+ngp2|2026-06-13|day,ngp2,manual,Manual stops,2,0.06
+ngp2|2026-06-13|night,ngp2,micro_stops,Micro-stops (<2 min),23,0.5
+ngp2|2026-06-13|night,ngp2,halted,Halted (operator wait),26,2.0
+ngp2|2026-06-13|night,ngp2,auto_long,Auto-stops (>2 min),32,2.55
+ngp2|2026-06-13|night,ngp2,manual,Manual stops,5,0.74
+ngp2|2026-06-14|day,ngp2,micro_stops,Micro-stops (<2 min),45,0.88
+ngp2|2026-06-14|day,ngp2,halted,Halted (operator wait),87,3.6
+ngp2|2026-06-14|day,ngp2,auto_long,Auto-stops (>2 min),12,0.82
+ngp2|2026-06-14|day,ngp2,manual,Manual stops,5,0.23
+ngp2|2026-06-14|night,ngp2,micro_stops,Micro-stops (<2 min),39,0.88
+ngp2|2026-06-14|night,ngp2,halted,Halted (operator wait),62,3.21
+ngp2|2026-06-14|night,ngp2,auto_long,Auto-stops (>2 min),24,1.46
+ngp2|2026-06-14|night,ngp2,manual,Manual stops,1,0.09
+ngp2|2026-06-15|day,ngp2,micro_stops,Micro-stops (<2 min),53,1.19
+ngp2|2026-06-15|day,ngp2,halted,Halted (operator wait),37,1.82
+ngp2|2026-06-15|day,ngp2,auto_long,Auto-stops (>2 min),25,1.47
+ngp2|2026-06-15|day,ngp2,manual,Manual stops,0,0.0
+ngp2|2026-06-15|night,ngp2,micro_stops,Micro-stops (<2 min),64,1.37
+ngp2|2026-06-15|night,ngp2,halted,Halted (operator wait),46,2.55
+ngp2|2026-06-15|night,ngp2,auto_long,Auto-stops (>2 min),23,1.98
+ngp2|2026-06-15|night,ngp2,manual,Manual stops,6,0.48
+ngp2|2026-06-16|day,ngp2,micro_stops,Micro-stops (<2 min),40,0.84
+ngp2|2026-06-16|day,ngp2,halted,Halted (operator wait),80,4.42
+ngp2|2026-06-16|day,ngp2,auto_long,Auto-stops (>2 min),20,1.73
+ngp2|2026-06-16|day,ngp2,manual,Manual stops,3,0.13
+ngp2|2026-06-16|night,ngp2,micro_stops,Micro-stops (<2 min),22,0.45
+ngp2|2026-06-16|night,ngp2,halted,Halted (operator wait),85,3.46
+ngp2|2026-06-16|night,ngp2,auto_long,Auto-stops (>2 min),10,1.16
+ngp2|2026-06-16|night,ngp2,manual,Manual stops,1,0.11
+ngp2|2026-06-17|day,ngp2,micro_stops,Micro-stops (<2 min),16,0.32
+ngp2|2026-06-17|day,ngp2,halted,Halted (operator wait),56,4.09
+ngp2|2026-06-17|day,ngp2,auto_long,Auto-stops (>2 min),11,0.65
+ngp2|2026-06-17|day,ngp2,manual,Manual stops,6,1.13
+ngp2|2026-06-17|night,ngp2,micro_stops,Micro-stops (<2 min),49,0.95
+ngp2|2026-06-17|night,ngp2,halted,Halted (operator wait),54,2.57
+ngp2|2026-06-17|night,ngp2,auto_long,Auto-stops (>2 min),38,2.8
+ngp2|2026-06-17|night,ngp2,manual,Manual stops,8,0.44
+ngp2|2026-06-18|day,ngp2,micro_stops,Micro-stops (<2 min),33,0.73
+ngp2|2026-06-18|day,ngp2,halted,Halted (operator wait),54,3.61
+ngp2|2026-06-18|day,ngp2,auto_long,Auto-stops (>2 min),22,1.32
+ngp2|2026-06-18|day,ngp2,manual,Manual stops,3,0.1
+ngp2|2026-06-18|night,ngp2,micro_stops,Micro-stops (<2 min),43,0.92
+ngp2|2026-06-18|night,ngp2,halted,Halted (operator wait),66,2.45
+ngp2|2026-06-18|night,ngp2,auto_long,Auto-stops (>2 min),18,1.11
+ngp2|2026-06-18|night,ngp2,manual,Manual stops,1,0.03
+ngp2|2026-06-19|day,ngp2,micro_stops,Micro-stops (<2 min),27,0.62
+ngp2|2026-06-19|day,ngp2,halted,Halted (operator wait),60,3.13
+ngp2|2026-06-19|day,ngp2,auto_long,Auto-stops (>2 min),26,1.79
+ngp2|2026-06-19|day,ngp2,manual,Manual stops,3,0.14
+ngp2|2026-06-19|night,ngp2,micro_stops,Micro-stops (<2 min),23,0.47
+ngp2|2026-06-19|night,ngp2,halted,Halted (operator wait),42,2.53
+ngp2|2026-06-19|night,ngp2,auto_long,Auto-stops (>2 min),19,1.54
+ngp2|2026-06-19|night,ngp2,manual,Manual stops,1,0.09
+ngp2|2026-07-08|day,ngp2,micro_stops,Micro-stops (<2 min),78,1.61
+ngp2|2026-07-08|day,ngp2,halted,Halted (operator wait),55,3.58
+ngp2|2026-07-08|day,ngp2,auto_long,Auto-stops (>2 min),36,2.71
+ngp2|2026-07-08|day,ngp2,manual,Manual stops,8,0.37
+ngp2|2026-07-08|night,ngp2,micro_stops,Micro-stops (<2 min),29,0.62
+ngp2|2026-07-08|night,ngp2,halted,Halted (operator wait),47,1.95
+ngp2|2026-07-08|night,ngp2,auto_long,Auto-stops (>2 min),29,5.63
+ngp2|2026-07-08|night,ngp2,manual,Manual stops,2,0.26
+ngp2|2026-07-09|day,ngp2,micro_stops,Micro-stops (<2 min),30,0.61
+ngp2|2026-07-09|day,ngp2,halted,Halted (operator wait),41,9.79
+ngp2|2026-07-09|day,ngp2,auto_long,Auto-stops (>2 min),6,0.34
+ngp2|2026-07-09|day,ngp2,manual,Manual stops,4,0.07
+ngp2|2026-07-09|night,ngp2,micro_stops,Micro-stops (<2 min),83,1.57
+ngp2|2026-07-09|night,ngp2,halted,Halted (operator wait),73,3.69
+ngp2|2026-07-09|night,ngp2,auto_long,Auto-stops (>2 min),31,3.1
+ngp2|2026-07-09|night,ngp2,manual,Manual stops,4,0.1
+ngp2|2026-07-10|day,ngp2,micro_stops,Micro-stops (<2 min),78,1.59
+ngp2|2026-07-10|day,ngp2,halted,Halted (operator wait),62,2.85
+ngp2|2026-07-10|day,ngp2,auto_long,Auto-stops (>2 min),32,3.58
+ngp2|2026-07-10|day,ngp2,manual,Manual stops,3,0.27
+ngp2|2026-07-10|night,ngp2,micro_stops,Micro-stops (<2 min),98,1.99
+ngp2|2026-07-10|night,ngp2,halted,Halted (operator wait),43,2.46
+ngp2|2026-07-10|night,ngp2,auto_long,Auto-stops (>2 min),24,1.51
+ngp2|2026-07-10|night,ngp2,manual,Manual stops,1,0.31
+ngp2|2026-07-11|day,ngp2,micro_stops,Micro-stops (<2 min),105,2.07
+ngp2|2026-07-11|day,ngp2,halted,Halted (operator wait),41,2.29
+ngp2|2026-07-11|day,ngp2,auto_long,Auto-stops (>2 min),44,2.61
+ngp2|2026-07-11|day,ngp2,manual,Manual stops,4,0.65
+ngp2|2026-07-11|night,ngp2,micro_stops,Micro-stops (<2 min),104,2.05
+ngp2|2026-07-11|night,ngp2,halted,Halted (operator wait),50,1.78
+ngp2|2026-07-11|night,ngp2,auto_long,Auto-stops (>2 min),44,3.21
+ngp2|2026-07-11|night,ngp2,manual,Manual stops,2,0.09
+ngp2|2026-07-12|day,ngp2,micro_stops,Micro-stops (<2 min),94,1.79
+ngp2|2026-07-12|day,ngp2,halted,Halted (operator wait),75,4.62
+ngp2|2026-07-12|day,ngp2,auto_long,Auto-stops (>2 min),21,1.12
+ngp2|2026-07-12|day,ngp2,manual,Manual stops,3,0.29
+ngp2|2026-07-12|night,ngp2,micro_stops,Micro-stops (<2 min),60,1.32
+ngp2|2026-07-12|night,ngp2,halted,Halted (operator wait),56,2.92
+ngp2|2026-07-12|night,ngp2,auto_long,Auto-stops (>2 min),32,1.9
+ngp2|2026-07-12|night,ngp2,manual,Manual stops,2,0.05
+ngp2|2026-07-13|day,ngp2,micro_stops,Micro-stops (<2 min),20,0.42
+ngp2|2026-07-13|day,ngp2,halted,Halted (operator wait),76,4.96
+ngp2|2026-07-13|day,ngp2,auto_long,Auto-stops (>2 min),23,2.56
+ngp2|2026-07-13|day,ngp2,manual,Manual stops,4,0.28
+ngp2|2026-07-13|night,ngp2,micro_stops,Micro-stops (<2 min),53,1.02
+ngp2|2026-07-13|night,ngp2,halted,Halted (operator wait),34,2.55
+ngp2|2026-07-13|night,ngp2,auto_long,Auto-stops (>2 min),10,0.93
+ngp2|2026-07-13|night,ngp2,manual,Manual stops,2,0.27
+ngp2|2026-07-14|day,ngp2,micro_stops,Micro-stops (<2 min),19,0.36
+ngp2|2026-07-14|day,ngp2,halted,Halted (operator wait),41,4.28
+ngp2|2026-07-14|day,ngp2,auto_long,Auto-stops (>2 min),22,2.06
+ngp2|2026-07-14|day,ngp2,manual,Manual stops,2,0.51
+ngp2|2026-07-14|night,ngp2,micro_stops,Micro-stops (<2 min),81,1.69
+ngp2|2026-07-14|night,ngp2,halted,Halted (operator wait),29,1.44
+ngp2|2026-07-14|night,ngp2,auto_long,Auto-stops (>2 min),29,1.36
+ngp2|2026-07-14|night,ngp2,manual,Manual stops,0,0.0

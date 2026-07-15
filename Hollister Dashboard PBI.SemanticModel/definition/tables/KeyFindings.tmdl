@@ -1,0 +1,37 @@
+table KeyFindings
+	lineageTag: 53025700-c80f-4198-81d8-4ec32db100cf
+
+	column LineId
+		dataType: string
+		lineageTag: dab2d7c9-cac7-4642-92a6-f6279b12fe06
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 37432041-1f7b-4e8a-bbf9-481adbd65ccb
+		summarizeBy: none
+		sourceColumn: Line
+
+	column Rank
+		dataType: int64
+		lineageTag: 0aada8f3-3d2c-4037-b907-f8fbcd65a625
+		summarizeBy: none
+		sourceColumn: Rank
+
+	column Text
+		dataType: string
+		lineageTag: 8a8181a1-1f9b-4048-bad1-b0b93ffd97f0
+		summarizeBy: none
+		sourceColumn: Text
+
+	partition KeyFindings = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="KeyFindings"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"Rank", Int64.Type}, {"Text", type text}})
+				in
+					Typed
+

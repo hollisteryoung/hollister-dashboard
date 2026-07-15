@@ -1,0 +1,54 @@
+table DowntimeCategories
+	lineageTag: 01cc91e1-bec8-49e4-8123-cc130c7c3132
+
+	/// Downtime hours by category (micro/halted/auto-long/manual).
+	measure 'Category Downtime (h)' = SUM(DowntimeCategories[Hours])
+		formatString: #,##0.0
+		lineageTag: 084fe848-f730-4c46-9a1a-eed5e7a3b352
+
+	column ShiftKey
+		dataType: string
+		lineageTag: cb661889-fa7f-4483-b607-8f6222f6730c
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 3317caeb-175a-4ce9-b6bd-1920bcdafc3c
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Category
+		dataType: string
+		lineageTag: 0eab2be0-2e53-4181-83af-28b070954917
+		summarizeBy: none
+		sourceColumn: Category
+
+	column Count
+		dataType: int64
+		lineageTag: dcda61fb-b3be-4d65-b154-f9810aef0d03
+		summarizeBy: none
+		sourceColumn: Count
+
+	column Hours
+		dataType: double
+		lineageTag: fbf16a34-77cd-402b-bfed-341c8b23f979
+		summarizeBy: none
+		sourceColumn: Hours
+
+	column CategoryLabel
+		dataType: string
+		lineageTag: c5d576ee-58cb-46cc-a1e6-b4ac3df9cc23
+		summarizeBy: none
+		sourceColumn: CategoryLabel
+
+	partition DowntimeCategories = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="DowntimeCategories"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"Category", type text}, {"Count", Int64.Type}, {"Hours", type number}, {"CategoryLabel", type text}})
+				in
+					Typed
+

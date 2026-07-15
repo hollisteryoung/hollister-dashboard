@@ -1,0 +1,87 @@
+table ShiftTrend
+	lineageTag: b894dcc8-de89-4f7c-b64c-8d2cfb8b37c5
+
+	/// Downtime-category hours for the anchor shift + up to 3 previous shifts on the same line.
+	measure 'Trend Hours' = SUM(ShiftTrend[Hours])
+		formatString: #,##0.0
+		lineageTag: 33f4c0c6-b1dc-452d-a9e1-d85a25a8fbeb
+
+	column AnchorShiftKey
+		dataType: string
+		lineageTag: e58aa912-d771-4f53-bcd6-ad2fd3c48461
+		summarizeBy: none
+		sourceColumn: AnchorShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: 1d5f0c60-2c1a-4f9b-9b0e-6a2f5b7c8e3a
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 2e6a1d71-3d2b-4a0c-8c1f-7b3e6c8d9f4b
+		summarizeBy: none
+		sourceColumn: Line
+
+	column TrendRank
+		dataType: int64
+		lineageTag: 3f7b2e82-4e3c-4b1d-9d2a-8c4f7d9e0a5c
+		summarizeBy: none
+		sourceColumn: TrendRank
+
+	column TrendShiftKey
+		dataType: string
+		lineageTag: 4a8c3f93-5f4d-4c2e-ae3b-9d5a8e0f1b6d
+		summarizeBy: none
+		sourceColumn: TrendShiftKey
+
+	column TrendShiftLabel
+		dataType: string
+		lineageTag: 5b9d4fa4-6a5e-4d3f-bf4c-ae6b9f102c7e
+		summarizeBy: none
+		sourceColumn: TrendShiftLabel
+
+	column TrendShiftDate
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 6cae5fb5-7b6f-4e40-c05d-bf7ca0213d8f
+		summarizeBy: none
+		sourceColumn: TrendShiftDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Category
+		dataType: string
+		lineageTag: 7dbf6fc6-8c70-4f51-d16e-c08db1324e90
+		summarizeBy: none
+		sourceColumn: Category
+
+	column CategoryLabel
+		dataType: string
+		lineageTag: 8ec070d7-9d81-4062-e27f-d19ec2435fa1
+		summarizeBy: none
+		sourceColumn: CategoryLabel
+
+	column Hours
+		dataType: double
+		lineageTag: 9fd181e8-ae92-4173-f380-e2afd3546ab2
+		summarizeBy: none
+		sourceColumn: Hours
+
+	column CategoryColor
+		dataType: string
+		lineageTag: a0e292f9-bfa3-4284-0491-f3b0e4657bc3
+		summarizeBy: none
+		sourceColumn: CategoryColor
+
+	partition ShiftTrend = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="ShiftTrend"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"AnchorShiftKey", type text}, {"LineId", type text}, {"Line", type text}, {"TrendRank", Int64.Type}, {"TrendShiftKey", type text}, {"TrendShiftLabel", type text}, {"TrendShiftDate", type date}, {"Category", type text}, {"CategoryLabel", type text}, {"Hours", type number}, {"CategoryColor", type text}})
+				in
+					Typed
+

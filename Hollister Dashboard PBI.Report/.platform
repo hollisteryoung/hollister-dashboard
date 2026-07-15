@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Hollister Dashboard PBI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1031bea8-162b-4120-9fb5-c81b8f7af5d5"
+  }
+}

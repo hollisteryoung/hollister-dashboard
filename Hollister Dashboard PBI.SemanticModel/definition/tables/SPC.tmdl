@@ -1,0 +1,122 @@
+table SPC
+	lineageTag: 05070999-e7dc-4562-ac4e-50d7a8ba0c02
+
+	/// Per-lane reject rate for the cell.
+	measure 'Reject Rate %' = SUM(SPC[RatePct])
+		formatString: 0.00
+		lineageTag: 3f7817ac-5af7-4797-aeb5-055cc0a77ce8
+
+	/// Reject rate for the control chart.
+	measure 'Max Reject Rate %' = MAX(SPC[RatePct])
+		formatString: 0.00
+		lineageTag: 7ee0fbde-1f3f-467d-a8af-31784cfe09e8
+
+	/// Upper control limit.
+	measure 'UCL %' = MAX(SPC[UclPct])
+		formatString: 0.00
+		lineageTag: 9fe2ace9-d332-46be-8b50-a22ab660eac9
+
+	/// Reject count.
+	measure 'Total Rejects' = SUM(SPC[Rejects])
+		formatString: #,##0
+		lineageTag: 24f1fea6-46c1-4a27-9448-22a56b2f8cd9
+
+	/// 1 when the lane is out of control.
+	measure 'Out of Control' = MAX(SPC[OOC])
+		formatString: 0
+		lineageTag: ea4eb6ef-e185-42f5-ba74-34898303ef82
+
+	column LineId
+		dataType: string
+		lineageTag: 89874f18-0abc-42d7-8cb2-8fc8997910f3
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: f7589d70-42ae-45ee-8b2b-5fe332678a9f
+		summarizeBy: none
+		sourceColumn: Line
+
+	column Panel
+		dataType: string
+		lineageTag: e804a3fc-87a0-471c-9794-f95dfbfb41f5
+		summarizeBy: none
+		sourceColumn: Panel
+
+	column ShiftLabel
+		dataType: string
+		lineageTag: 9eb99582-7171-4597-8f60-46cf52d19805
+		summarizeBy: none
+		sourceColumn: ShiftLabel
+
+	column Lane
+		dataType: int64
+		lineageTag: b4b64ee8-15cc-44e2-88a3-ae65ab731c21
+		summarizeBy: none
+		sourceColumn: Lane
+
+	column Rejects
+		dataType: int64
+		lineageTag: a1cb465d-17bd-43df-bb16-a81f654ccac3
+		summarizeBy: none
+		sourceColumn: Rejects
+
+	column RatePct
+		dataType: double
+		lineageTag: 5cb3fe96-7b9c-4ab2-9593-baae87375eb9
+		summarizeBy: none
+		sourceColumn: RatePct
+
+	column UclPct
+		dataType: double
+		lineageTag: 2fe88713-031b-46e2-b490-fcbc2b193f44
+		summarizeBy: none
+		sourceColumn: UclPct
+
+	column OOC
+		dataType: int64
+		lineageTag: ee74c3a8-74e1-4367-a5d8-a339e03754b4
+		summarizeBy: none
+		sourceColumn: OOC
+
+	column NInspected
+		dataType: int64
+		lineageTag: 92d7f3dc-c3c0-4666-bb40-25e2d141f352
+		summarizeBy: none
+		sourceColumn: NInspected
+
+	column OOCColor
+		dataType: string
+		lineageTag: 31a73574-c0bc-4d1e-8edb-504a1081647e
+		summarizeBy: none
+		sourceColumn: OOCColor
+
+	column ShiftIdx
+		dataType: int64
+		lineageTag: 46393b1f-a8ee-4f44-ab5e-f67e4dbae4bf
+		summarizeBy: none
+		sourceColumn: ShiftIdx
+
+	column PBar
+		dataType: double
+		lineageTag: 9bfcd615-ab36-423f-8e60-fcf959e0ca52
+		summarizeBy: none
+		sourceColumn: PBar
+
+	column LineShiftLabel
+		dataType: string
+		lineageTag: ff064765-9104-4178-a101-bc956e03fa58
+		summarizeBy: none
+		sourceColumn: LineShiftLabel
+
+	partition SPC = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="SPC"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"Panel", type text}, {"ShiftLabel", type text}, {"Lane", Int64.Type}, {"Rejects", Int64.Type}, {"RatePct", type number}, {"UclPct", type number}, {"OOC", Int64.Type}, {"NInspected", Int64.Type}, {"OOCColor", type text}, {"ShiftIdx", Int64.Type}, {"PBar", type number}, {"LineShiftLabel", type text}})
+				in
+					Typed
+

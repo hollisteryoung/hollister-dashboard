@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "4d175454c9902c0d4c6b",
+  "position": {
+    "x": 16,
+    "y": 556,
+    "z": 30000,
+    "height": 180,
+    "width": 1248,
+    "tabOrder": 30000
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Anomalies"
+                    }
+                  },
+                  "Property": "Rank"
+                }
+              },
+              "queryRef": "Anomalies.Rank",
+              "nativeQueryRef": "Rank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Anomalies"
+                    }
+                  },
+                  "Property": "Headline"
+                }
+              },
+              "queryRef": "Anomalies.Headline",
+              "nativeQueryRef": "Headline"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Anomalies"
+                    }
+                  },
+                  "Property": "Detail"
+                }
+              },
+              "queryRef": "Anomalies.Detail",
+              "nativeQueryRef": "Detail"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Anomalies"
+                    }
+                  },
+                  "Property": "SegColor"
+                }
+              },
+              "queryRef": "Anomalies.SegColor",
+              "nativeQueryRef": "SegColor"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\ndf = dataset.copy().sort_values(\"Rank\")\nfig, ax = plt.subplots(figsize=(31.2, 4.5), dpi=300)\nax.set_xlim(0, 1)\nax.set_ylim(0, 1)\nax.axis(\"off\")\nn = len(df)\nif n == 0:\n    ax.text(0.012, 0.5, \"No unusual cluster activity detected vs recent shifts.\", fontsize=21, color=\"#636e72\", va=\"center\")\nelse:\n    row_h = 1.0 / n\n    for i, r in enumerate(df.itertuples()):\n        y_top = 1 - i * row_h\n        y_c = y_top - row_h / 2\n        color = r.SegColor if isinstance(r.SegColor, str) and r.SegColor.startswith(\"#\") else \"#636e72\"\n        ax.add_patch(plt.Rectangle((0.0, y_top - row_h + row_h * 0.14), 0.004, row_h * 0.72, color=color, clip_on=False))\n        ax.text(0.016, y_c + row_h * 0.16, r.Headline, fontsize=23, fontweight=\"bold\", color=\"#2d3436\", va=\"center\")\n        ax.text(0.016, y_c - row_h * 0.24, r.Detail, fontsize=19, color=\"#636e72\", va=\"center\")\n        if i < n - 1:\n            ax.axhline(y_top - row_h, color=\"#f0f0f0\", linewidth=2, xmin=0, xmax=1)\nplt.subplots_adjust(left=0.006, right=0.994, top=0.98, bottom=0.02)\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

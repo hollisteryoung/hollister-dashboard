@@ -1,0 +1,25 @@
+table Lines
+	lineageTag: 599e9a06-5ab8-49b8-b0ca-d65c4ac4ee2f
+
+	column LineId
+		dataType: string
+		lineageTag: 1f74ebc8-bce3-41a7-a950-792f02ebf2a4
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 0f713923-4518-4305-9879-99571b413b05
+		summarizeBy: none
+		sourceColumn: Line
+
+	partition Lines = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="Lines"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}})
+				in
+					Typed
+

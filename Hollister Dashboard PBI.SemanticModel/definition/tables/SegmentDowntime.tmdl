@@ -1,0 +1,72 @@
+table SegmentDowntime
+	lineageTag: b3610f5a-26c4-4a42-89a2-2fc59bbdeea6
+
+	/// Downtime hours by line segment.
+	measure 'Segment Downtime (h)' = SUM(SegmentDowntime[Hours])
+		formatString: #,##0.0
+		lineageTag: 80a759d8-252f-4169-901f-7f9a14c67f35
+
+	column ShiftKey
+		dataType: string
+		lineageTag: 4b58ab78-41d8-4b98-ab04-52e3dfb75e8c
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column LineId
+		dataType: string
+		lineageTag: bbb2516c-fcd4-484d-a8e2-43a195fe48bd
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Segment
+		dataType: string
+		lineageTag: 62788300-1cfb-4b09-86e9-150b7fdd7334
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Count
+		dataType: int64
+		lineageTag: febcbd6e-c056-48b6-8e8c-742e0969598d
+		summarizeBy: none
+		sourceColumn: Count
+
+	column Hours
+		dataType: double
+		lineageTag: 883e6dcd-b145-4139-a297-ea44b6909845
+		summarizeBy: none
+		sourceColumn: Hours
+
+	column HaltedHours
+		dataType: double
+		lineageTag: ce2c57b7-891f-4110-aa2a-e4ec5e483277
+		summarizeBy: none
+		sourceColumn: HaltedHours
+
+	column StoppedHours
+		dataType: double
+		lineageTag: 7c08eaa5-991d-4aff-a1cd-0fa2348f9eaa
+		summarizeBy: none
+		sourceColumn: StoppedHours
+
+	column SegmentColor
+		dataType: string
+		lineageTag: ea717aaf-0982-4a98-9bf8-848b8e01a99c
+		summarizeBy: none
+		sourceColumn: SegmentColor
+
+	column SegmentLabel
+		dataType: string
+		lineageTag: 5664c2a4-584b-487c-b9e0-2272d137bd63
+		summarizeBy: none
+		sourceColumn: SegmentLabel
+
+	partition SegmentDowntime = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="SegmentDowntime"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"LineId", type text}, {"Segment", type text}, {"Count", Int64.Type}, {"Hours", type number}, {"HaltedHours", type number}, {"StoppedHours", type number}, {"SegmentColor", type text}, {"SegmentLabel", type text}})
+				in
+					Typed
+

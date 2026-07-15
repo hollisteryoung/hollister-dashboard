@@ -1,0 +1,1073 @@
+AnchorShiftKey,LineId,Line,TrendRank,TrendShiftKey,TrendShiftLabel,TrendShiftDate,Category,CategoryLabel,Hours,CategoryColor
+hu3|2026-06-13|day,hu3,HU3,0,hu3|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-13|day,hu3,HU3,0,hu3|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),2.68,#636e72
+hu3|2026-06-13|day,hu3,HU3,0,hu3|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.19,#b2bec3
+hu3|2026-06-13|day,hu3,HU3,0,hu3|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.21,#dfe6e9
+hu3|2026-06-13|night,hu3,HU3,0,hu3|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.74,#2d3436
+hu3|2026-06-13|night,hu3,HU3,0,hu3|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),0.62,#636e72
+hu3|2026-06-13|night,hu3,HU3,0,hu3|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.69,#b2bec3
+hu3|2026-06-13|night,hu3,HU3,0,hu3|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,1.47,#dfe6e9
+hu3|2026-06-13|night,hu3,HU3,1,hu3|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-13|night,hu3,HU3,1,hu3|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),2.68,#636e72
+hu3|2026-06-13|night,hu3,HU3,1,hu3|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.19,#b2bec3
+hu3|2026-06-13|night,hu3,HU3,1,hu3|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.21,#dfe6e9
+hu3|2026-06-14|day,hu3,HU3,0,hu3|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.28,#2d3436
+hu3|2026-06-14|day,hu3,HU3,0,hu3|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),1.93,#636e72
+hu3|2026-06-14|day,hu3,HU3,0,hu3|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-06-14|day,hu3,HU3,0,hu3|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,1.04,#dfe6e9
+hu3|2026-06-14|day,hu3,HU3,1,hu3|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.74,#2d3436
+hu3|2026-06-14|day,hu3,HU3,1,hu3|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),0.62,#636e72
+hu3|2026-06-14|day,hu3,HU3,1,hu3|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.69,#b2bec3
+hu3|2026-06-14|day,hu3,HU3,1,hu3|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,1.47,#dfe6e9
+hu3|2026-06-14|day,hu3,HU3,2,hu3|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-14|day,hu3,HU3,2,hu3|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),2.68,#636e72
+hu3|2026-06-14|day,hu3,HU3,2,hu3|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.19,#b2bec3
+hu3|2026-06-14|day,hu3,HU3,2,hu3|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.21,#dfe6e9
+hu3|2026-06-14|night,hu3,HU3,0,hu3|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.33,#2d3436
+hu3|2026-06-14|night,hu3,HU3,0,hu3|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),1.41,#636e72
+hu3|2026-06-14|night,hu3,HU3,0,hu3|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+hu3|2026-06-14|night,hu3,HU3,0,hu3|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,1.02,#dfe6e9
+hu3|2026-06-14|night,hu3,HU3,1,hu3|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.28,#2d3436
+hu3|2026-06-14|night,hu3,HU3,1,hu3|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),1.93,#636e72
+hu3|2026-06-14|night,hu3,HU3,1,hu3|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-06-14|night,hu3,HU3,1,hu3|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,1.04,#dfe6e9
+hu3|2026-06-14|night,hu3,HU3,2,hu3|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.74,#2d3436
+hu3|2026-06-14|night,hu3,HU3,2,hu3|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),0.62,#636e72
+hu3|2026-06-14|night,hu3,HU3,2,hu3|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.69,#b2bec3
+hu3|2026-06-14|night,hu3,HU3,2,hu3|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,1.47,#dfe6e9
+hu3|2026-06-14|night,hu3,HU3,3,hu3|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-14|night,hu3,HU3,3,hu3|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),2.68,#636e72
+hu3|2026-06-14|night,hu3,HU3,3,hu3|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.19,#b2bec3
+hu3|2026-06-14|night,hu3,HU3,3,hu3|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.21,#dfe6e9
+hu3|2026-06-15|day,hu3,HU3,0,hu3|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.38,#2d3436
+hu3|2026-06-15|day,hu3,HU3,0,hu3|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),0.17,#636e72
+hu3|2026-06-15|day,hu3,HU3,0,hu3|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),3.41,#b2bec3
+hu3|2026-06-15|day,hu3,HU3,0,hu3|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.09,#dfe6e9
+hu3|2026-06-15|day,hu3,HU3,1,hu3|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.33,#2d3436
+hu3|2026-06-15|day,hu3,HU3,1,hu3|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),1.41,#636e72
+hu3|2026-06-15|day,hu3,HU3,1,hu3|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+hu3|2026-06-15|day,hu3,HU3,1,hu3|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,1.02,#dfe6e9
+hu3|2026-06-15|day,hu3,HU3,2,hu3|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.28,#2d3436
+hu3|2026-06-15|day,hu3,HU3,2,hu3|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),1.93,#636e72
+hu3|2026-06-15|day,hu3,HU3,2,hu3|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-06-15|day,hu3,HU3,2,hu3|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,1.04,#dfe6e9
+hu3|2026-06-15|day,hu3,HU3,3,hu3|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.74,#2d3436
+hu3|2026-06-15|day,hu3,HU3,3,hu3|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),0.62,#636e72
+hu3|2026-06-15|day,hu3,HU3,3,hu3|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),3.69,#b2bec3
+hu3|2026-06-15|day,hu3,HU3,3,hu3|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,1.47,#dfe6e9
+hu3|2026-06-15|night,hu3,HU3,0,hu3|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.6,#2d3436
+hu3|2026-06-15|night,hu3,HU3,0,hu3|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),0.29,#636e72
+hu3|2026-06-15|night,hu3,HU3,0,hu3|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),2.68,#b2bec3
+hu3|2026-06-15|night,hu3,HU3,0,hu3|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.67,#dfe6e9
+hu3|2026-06-15|night,hu3,HU3,1,hu3|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.38,#2d3436
+hu3|2026-06-15|night,hu3,HU3,1,hu3|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),0.17,#636e72
+hu3|2026-06-15|night,hu3,HU3,1,hu3|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),3.41,#b2bec3
+hu3|2026-06-15|night,hu3,HU3,1,hu3|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.09,#dfe6e9
+hu3|2026-06-15|night,hu3,HU3,2,hu3|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.33,#2d3436
+hu3|2026-06-15|night,hu3,HU3,2,hu3|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),1.41,#636e72
+hu3|2026-06-15|night,hu3,HU3,2,hu3|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+hu3|2026-06-15|night,hu3,HU3,2,hu3|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,1.02,#dfe6e9
+hu3|2026-06-15|night,hu3,HU3,3,hu3|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.28,#2d3436
+hu3|2026-06-15|night,hu3,HU3,3,hu3|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),1.93,#636e72
+hu3|2026-06-15|night,hu3,HU3,3,hu3|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-06-15|night,hu3,HU3,3,hu3|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,1.04,#dfe6e9
+hu3|2026-06-16|day,hu3,HU3,0,hu3|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-06-16|day,hu3,HU3,0,hu3|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),1.33,#636e72
+hu3|2026-06-16|day,hu3,HU3,0,hu3|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.48,#b2bec3
+hu3|2026-06-16|day,hu3,HU3,0,hu3|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.38,#dfe6e9
+hu3|2026-06-16|day,hu3,HU3,1,hu3|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.6,#2d3436
+hu3|2026-06-16|day,hu3,HU3,1,hu3|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),0.29,#636e72
+hu3|2026-06-16|day,hu3,HU3,1,hu3|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),2.68,#b2bec3
+hu3|2026-06-16|day,hu3,HU3,1,hu3|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.67,#dfe6e9
+hu3|2026-06-16|day,hu3,HU3,2,hu3|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.38,#2d3436
+hu3|2026-06-16|day,hu3,HU3,2,hu3|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),0.17,#636e72
+hu3|2026-06-16|day,hu3,HU3,2,hu3|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),3.41,#b2bec3
+hu3|2026-06-16|day,hu3,HU3,2,hu3|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.09,#dfe6e9
+hu3|2026-06-16|day,hu3,HU3,3,hu3|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.33,#2d3436
+hu3|2026-06-16|day,hu3,HU3,3,hu3|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),1.41,#636e72
+hu3|2026-06-16|day,hu3,HU3,3,hu3|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+hu3|2026-06-16|day,hu3,HU3,3,hu3|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,1.02,#dfe6e9
+hu3|2026-06-16|night,hu3,HU3,0,hu3|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.83,#2d3436
+hu3|2026-06-16|night,hu3,HU3,0,hu3|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),0.14,#636e72
+hu3|2026-06-16|night,hu3,HU3,0,hu3|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),2.34,#b2bec3
+hu3|2026-06-16|night,hu3,HU3,0,hu3|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.88,#dfe6e9
+hu3|2026-06-16|night,hu3,HU3,1,hu3|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-06-16|night,hu3,HU3,1,hu3|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),1.33,#636e72
+hu3|2026-06-16|night,hu3,HU3,1,hu3|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.48,#b2bec3
+hu3|2026-06-16|night,hu3,HU3,1,hu3|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.38,#dfe6e9
+hu3|2026-06-16|night,hu3,HU3,2,hu3|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.6,#2d3436
+hu3|2026-06-16|night,hu3,HU3,2,hu3|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),0.29,#636e72
+hu3|2026-06-16|night,hu3,HU3,2,hu3|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),2.68,#b2bec3
+hu3|2026-06-16|night,hu3,HU3,2,hu3|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.67,#dfe6e9
+hu3|2026-06-16|night,hu3,HU3,3,hu3|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.38,#2d3436
+hu3|2026-06-16|night,hu3,HU3,3,hu3|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),0.17,#636e72
+hu3|2026-06-16|night,hu3,HU3,3,hu3|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),3.41,#b2bec3
+hu3|2026-06-16|night,hu3,HU3,3,hu3|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.09,#dfe6e9
+hu3|2026-06-17|day,hu3,HU3,0,hu3|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+hu3|2026-06-17|day,hu3,HU3,0,hu3|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),1.06,#636e72
+hu3|2026-06-17|day,hu3,HU3,0,hu3|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.75,#b2bec3
+hu3|2026-06-17|day,hu3,HU3,0,hu3|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,2.13,#dfe6e9
+hu3|2026-06-17|day,hu3,HU3,1,hu3|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.83,#2d3436
+hu3|2026-06-17|day,hu3,HU3,1,hu3|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),0.14,#636e72
+hu3|2026-06-17|day,hu3,HU3,1,hu3|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),2.34,#b2bec3
+hu3|2026-06-17|day,hu3,HU3,1,hu3|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.88,#dfe6e9
+hu3|2026-06-17|day,hu3,HU3,2,hu3|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-06-17|day,hu3,HU3,2,hu3|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),1.33,#636e72
+hu3|2026-06-17|day,hu3,HU3,2,hu3|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.48,#b2bec3
+hu3|2026-06-17|day,hu3,HU3,2,hu3|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.38,#dfe6e9
+hu3|2026-06-17|day,hu3,HU3,3,hu3|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),0.6,#2d3436
+hu3|2026-06-17|day,hu3,HU3,3,hu3|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),0.29,#636e72
+hu3|2026-06-17|day,hu3,HU3,3,hu3|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),2.68,#b2bec3
+hu3|2026-06-17|day,hu3,HU3,3,hu3|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.67,#dfe6e9
+hu3|2026-06-17|night,hu3,HU3,0,hu3|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.78,#2d3436
+hu3|2026-06-17|night,hu3,HU3,0,hu3|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),0.45,#636e72
+hu3|2026-06-17|night,hu3,HU3,0,hu3|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.73,#b2bec3
+hu3|2026-06-17|night,hu3,HU3,0,hu3|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-06-17|night,hu3,HU3,1,hu3|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+hu3|2026-06-17|night,hu3,HU3,1,hu3|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),1.06,#636e72
+hu3|2026-06-17|night,hu3,HU3,1,hu3|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.75,#b2bec3
+hu3|2026-06-17|night,hu3,HU3,1,hu3|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,2.13,#dfe6e9
+hu3|2026-06-17|night,hu3,HU3,2,hu3|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.83,#2d3436
+hu3|2026-06-17|night,hu3,HU3,2,hu3|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),0.14,#636e72
+hu3|2026-06-17|night,hu3,HU3,2,hu3|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),2.34,#b2bec3
+hu3|2026-06-17|night,hu3,HU3,2,hu3|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.88,#dfe6e9
+hu3|2026-06-17|night,hu3,HU3,3,hu3|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-06-17|night,hu3,HU3,3,hu3|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),1.33,#636e72
+hu3|2026-06-17|night,hu3,HU3,3,hu3|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.48,#b2bec3
+hu3|2026-06-17|night,hu3,HU3,3,hu3|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.38,#dfe6e9
+hu3|2026-06-18|day,hu3,HU3,0,hu3|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-18|day,hu3,HU3,0,hu3|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-06-18|day,hu3,HU3,0,hu3|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),4.71,#b2bec3
+hu3|2026-06-18|day,hu3,HU3,0,hu3|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,2.43,#dfe6e9
+hu3|2026-06-18|day,hu3,HU3,1,hu3|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.78,#2d3436
+hu3|2026-06-18|day,hu3,HU3,1,hu3|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),0.45,#636e72
+hu3|2026-06-18|day,hu3,HU3,1,hu3|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.73,#b2bec3
+hu3|2026-06-18|day,hu3,HU3,1,hu3|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-06-18|day,hu3,HU3,2,hu3|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+hu3|2026-06-18|day,hu3,HU3,2,hu3|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),1.06,#636e72
+hu3|2026-06-18|day,hu3,HU3,2,hu3|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.75,#b2bec3
+hu3|2026-06-18|day,hu3,HU3,2,hu3|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,2.13,#dfe6e9
+hu3|2026-06-18|day,hu3,HU3,3,hu3|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.83,#2d3436
+hu3|2026-06-18|day,hu3,HU3,3,hu3|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),0.14,#636e72
+hu3|2026-06-18|day,hu3,HU3,3,hu3|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),2.34,#b2bec3
+hu3|2026-06-18|day,hu3,HU3,3,hu3|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.88,#dfe6e9
+hu3|2026-06-18|night,hu3,HU3,0,hu3|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.27,#2d3436
+hu3|2026-06-18|night,hu3,HU3,0,hu3|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),0.7,#636e72
+hu3|2026-06-18|night,hu3,HU3,0,hu3|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.69,#b2bec3
+hu3|2026-06-18|night,hu3,HU3,0,hu3|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.79,#dfe6e9
+hu3|2026-06-18|night,hu3,HU3,1,hu3|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-18|night,hu3,HU3,1,hu3|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-06-18|night,hu3,HU3,1,hu3|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),4.71,#b2bec3
+hu3|2026-06-18|night,hu3,HU3,1,hu3|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,2.43,#dfe6e9
+hu3|2026-06-18|night,hu3,HU3,2,hu3|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.78,#2d3436
+hu3|2026-06-18|night,hu3,HU3,2,hu3|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),0.45,#636e72
+hu3|2026-06-18|night,hu3,HU3,2,hu3|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.73,#b2bec3
+hu3|2026-06-18|night,hu3,HU3,2,hu3|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-06-18|night,hu3,HU3,3,hu3|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+hu3|2026-06-18|night,hu3,HU3,3,hu3|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),1.06,#636e72
+hu3|2026-06-18|night,hu3,HU3,3,hu3|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.75,#b2bec3
+hu3|2026-06-18|night,hu3,HU3,3,hu3|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,2.13,#dfe6e9
+hu3|2026-06-19|day,hu3,HU3,0,hu3|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.29,#2d3436
+hu3|2026-06-19|day,hu3,HU3,0,hu3|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),0.9,#636e72
+hu3|2026-06-19|day,hu3,HU3,0,hu3|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.01,#b2bec3
+hu3|2026-06-19|day,hu3,HU3,0,hu3|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,4.82,#dfe6e9
+hu3|2026-06-19|day,hu3,HU3,1,hu3|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.27,#2d3436
+hu3|2026-06-19|day,hu3,HU3,1,hu3|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),0.7,#636e72
+hu3|2026-06-19|day,hu3,HU3,1,hu3|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.69,#b2bec3
+hu3|2026-06-19|day,hu3,HU3,1,hu3|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.79,#dfe6e9
+hu3|2026-06-19|day,hu3,HU3,2,hu3|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-19|day,hu3,HU3,2,hu3|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-06-19|day,hu3,HU3,2,hu3|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),4.71,#b2bec3
+hu3|2026-06-19|day,hu3,HU3,2,hu3|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,2.43,#dfe6e9
+hu3|2026-06-19|day,hu3,HU3,3,hu3|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.78,#2d3436
+hu3|2026-06-19|day,hu3,HU3,3,hu3|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),0.45,#636e72
+hu3|2026-06-19|day,hu3,HU3,3,hu3|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),3.73,#b2bec3
+hu3|2026-06-19|day,hu3,HU3,3,hu3|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-06-19|night,hu3,HU3,0,hu3|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+hu3|2026-06-19|night,hu3,HU3,0,hu3|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),0.16,#636e72
+hu3|2026-06-19|night,hu3,HU3,0,hu3|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.14,#b2bec3
+hu3|2026-06-19|night,hu3,HU3,0,hu3|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.36,#dfe6e9
+hu3|2026-06-19|night,hu3,HU3,1,hu3|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.29,#2d3436
+hu3|2026-06-19|night,hu3,HU3,1,hu3|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),0.9,#636e72
+hu3|2026-06-19|night,hu3,HU3,1,hu3|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.01,#b2bec3
+hu3|2026-06-19|night,hu3,HU3,1,hu3|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,4.82,#dfe6e9
+hu3|2026-06-19|night,hu3,HU3,2,hu3|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.27,#2d3436
+hu3|2026-06-19|night,hu3,HU3,2,hu3|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),0.7,#636e72
+hu3|2026-06-19|night,hu3,HU3,2,hu3|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.69,#b2bec3
+hu3|2026-06-19|night,hu3,HU3,2,hu3|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.79,#dfe6e9
+hu3|2026-06-19|night,hu3,HU3,3,hu3|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+hu3|2026-06-19|night,hu3,HU3,3,hu3|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-06-19|night,hu3,HU3,3,hu3|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),4.71,#b2bec3
+hu3|2026-06-19|night,hu3,HU3,3,hu3|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,2.43,#dfe6e9
+hu3|2026-07-08|day,hu3,HU3,0,hu3|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.63,#2d3436
+hu3|2026-07-08|day,hu3,HU3,0,hu3|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-08|day,hu3,HU3,0,hu3|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-07-08|day,hu3,HU3,0,hu3|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,3.23,#dfe6e9
+hu3|2026-07-08|day,hu3,HU3,1,hu3|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+hu3|2026-07-08|day,hu3,HU3,1,hu3|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),0.16,#636e72
+hu3|2026-07-08|day,hu3,HU3,1,hu3|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.14,#b2bec3
+hu3|2026-07-08|day,hu3,HU3,1,hu3|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.36,#dfe6e9
+hu3|2026-07-08|day,hu3,HU3,2,hu3|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.29,#2d3436
+hu3|2026-07-08|day,hu3,HU3,2,hu3|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),0.9,#636e72
+hu3|2026-07-08|day,hu3,HU3,2,hu3|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.01,#b2bec3
+hu3|2026-07-08|day,hu3,HU3,2,hu3|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,4.82,#dfe6e9
+hu3|2026-07-08|day,hu3,HU3,3,hu3|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.27,#2d3436
+hu3|2026-07-08|day,hu3,HU3,3,hu3|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),0.7,#636e72
+hu3|2026-07-08|day,hu3,HU3,3,hu3|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.69,#b2bec3
+hu3|2026-07-08|day,hu3,HU3,3,hu3|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.79,#dfe6e9
+hu3|2026-07-08|night,hu3,HU3,0,hu3|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.56,#2d3436
+hu3|2026-07-08|night,hu3,HU3,0,hu3|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-07-08|night,hu3,HU3,0,hu3|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),4.11,#b2bec3
+hu3|2026-07-08|night,hu3,HU3,0,hu3|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,1.09,#dfe6e9
+hu3|2026-07-08|night,hu3,HU3,1,hu3|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.63,#2d3436
+hu3|2026-07-08|night,hu3,HU3,1,hu3|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-08|night,hu3,HU3,1,hu3|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-07-08|night,hu3,HU3,1,hu3|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,3.23,#dfe6e9
+hu3|2026-07-08|night,hu3,HU3,2,hu3|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+hu3|2026-07-08|night,hu3,HU3,2,hu3|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),0.16,#636e72
+hu3|2026-07-08|night,hu3,HU3,2,hu3|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.14,#b2bec3
+hu3|2026-07-08|night,hu3,HU3,2,hu3|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.36,#dfe6e9
+hu3|2026-07-08|night,hu3,HU3,3,hu3|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.29,#2d3436
+hu3|2026-07-08|night,hu3,HU3,3,hu3|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),0.9,#636e72
+hu3|2026-07-08|night,hu3,HU3,3,hu3|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.01,#b2bec3
+hu3|2026-07-08|night,hu3,HU3,3,hu3|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,4.82,#dfe6e9
+hu3|2026-07-09|day,hu3,HU3,0,hu3|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.82,#2d3436
+hu3|2026-07-09|day,hu3,HU3,0,hu3|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),0.42,#636e72
+hu3|2026-07-09|day,hu3,HU3,0,hu3|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+hu3|2026-07-09|day,hu3,HU3,0,hu3|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-07-09|day,hu3,HU3,1,hu3|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.56,#2d3436
+hu3|2026-07-09|day,hu3,HU3,1,hu3|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-07-09|day,hu3,HU3,1,hu3|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),4.11,#b2bec3
+hu3|2026-07-09|day,hu3,HU3,1,hu3|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,1.09,#dfe6e9
+hu3|2026-07-09|day,hu3,HU3,2,hu3|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.63,#2d3436
+hu3|2026-07-09|day,hu3,HU3,2,hu3|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-09|day,hu3,HU3,2,hu3|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-07-09|day,hu3,HU3,2,hu3|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,3.23,#dfe6e9
+hu3|2026-07-09|day,hu3,HU3,3,hu3|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+hu3|2026-07-09|day,hu3,HU3,3,hu3|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),0.16,#636e72
+hu3|2026-07-09|day,hu3,HU3,3,hu3|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),2.14,#b2bec3
+hu3|2026-07-09|day,hu3,HU3,3,hu3|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.36,#dfe6e9
+hu3|2026-07-09|night,hu3,HU3,0,hu3|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-07-09|night,hu3,HU3,0,hu3|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-09|night,hu3,HU3,0,hu3|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.62,#b2bec3
+hu3|2026-07-09|night,hu3,HU3,0,hu3|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.73,#dfe6e9
+hu3|2026-07-09|night,hu3,HU3,1,hu3|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.82,#2d3436
+hu3|2026-07-09|night,hu3,HU3,1,hu3|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),0.42,#636e72
+hu3|2026-07-09|night,hu3,HU3,1,hu3|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+hu3|2026-07-09|night,hu3,HU3,1,hu3|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-07-09|night,hu3,HU3,2,hu3|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.56,#2d3436
+hu3|2026-07-09|night,hu3,HU3,2,hu3|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-07-09|night,hu3,HU3,2,hu3|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),4.11,#b2bec3
+hu3|2026-07-09|night,hu3,HU3,2,hu3|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,1.09,#dfe6e9
+hu3|2026-07-09|night,hu3,HU3,3,hu3|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.63,#2d3436
+hu3|2026-07-09|night,hu3,HU3,3,hu3|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-09|night,hu3,HU3,3,hu3|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),1.89,#b2bec3
+hu3|2026-07-09|night,hu3,HU3,3,hu3|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,3.23,#dfe6e9
+hu3|2026-07-10|day,hu3,HU3,0,hu3|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.89,#2d3436
+hu3|2026-07-10|day,hu3,HU3,0,hu3|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),1.04,#636e72
+hu3|2026-07-10|day,hu3,HU3,0,hu3|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+hu3|2026-07-10|day,hu3,HU3,0,hu3|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.17,#dfe6e9
+hu3|2026-07-10|day,hu3,HU3,1,hu3|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-07-10|day,hu3,HU3,1,hu3|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-10|day,hu3,HU3,1,hu3|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.62,#b2bec3
+hu3|2026-07-10|day,hu3,HU3,1,hu3|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.73,#dfe6e9
+hu3|2026-07-10|day,hu3,HU3,2,hu3|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.82,#2d3436
+hu3|2026-07-10|day,hu3,HU3,2,hu3|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),0.42,#636e72
+hu3|2026-07-10|day,hu3,HU3,2,hu3|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+hu3|2026-07-10|day,hu3,HU3,2,hu3|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-07-10|day,hu3,HU3,3,hu3|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.56,#2d3436
+hu3|2026-07-10|day,hu3,HU3,3,hu3|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),0.1,#636e72
+hu3|2026-07-10|day,hu3,HU3,3,hu3|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),4.11,#b2bec3
+hu3|2026-07-10|day,hu3,HU3,3,hu3|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,1.09,#dfe6e9
+hu3|2026-07-10|night,hu3,HU3,0,hu3|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.54,#2d3436
+hu3|2026-07-10|night,hu3,HU3,0,hu3|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),0.41,#636e72
+hu3|2026-07-10|night,hu3,HU3,0,hu3|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+hu3|2026-07-10|night,hu3,HU3,0,hu3|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.57,#dfe6e9
+hu3|2026-07-10|night,hu3,HU3,1,hu3|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.89,#2d3436
+hu3|2026-07-10|night,hu3,HU3,1,hu3|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),1.04,#636e72
+hu3|2026-07-10|night,hu3,HU3,1,hu3|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+hu3|2026-07-10|night,hu3,HU3,1,hu3|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.17,#dfe6e9
+hu3|2026-07-10|night,hu3,HU3,2,hu3|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-07-10|night,hu3,HU3,2,hu3|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-10|night,hu3,HU3,2,hu3|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.62,#b2bec3
+hu3|2026-07-10|night,hu3,HU3,2,hu3|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.73,#dfe6e9
+hu3|2026-07-10|night,hu3,HU3,3,hu3|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.82,#2d3436
+hu3|2026-07-10|night,hu3,HU3,3,hu3|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),0.42,#636e72
+hu3|2026-07-10|night,hu3,HU3,3,hu3|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+hu3|2026-07-10|night,hu3,HU3,3,hu3|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.39,#dfe6e9
+hu3|2026-07-11|day,hu3,HU3,0,hu3|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.91,#2d3436
+hu3|2026-07-11|day,hu3,HU3,0,hu3|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),0.22,#636e72
+hu3|2026-07-11|day,hu3,HU3,0,hu3|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.03,#b2bec3
+hu3|2026-07-11|day,hu3,HU3,0,hu3|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.13,#dfe6e9
+hu3|2026-07-11|day,hu3,HU3,1,hu3|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.54,#2d3436
+hu3|2026-07-11|day,hu3,HU3,1,hu3|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),0.41,#636e72
+hu3|2026-07-11|day,hu3,HU3,1,hu3|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+hu3|2026-07-11|day,hu3,HU3,1,hu3|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.57,#dfe6e9
+hu3|2026-07-11|day,hu3,HU3,2,hu3|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.89,#2d3436
+hu3|2026-07-11|day,hu3,HU3,2,hu3|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),1.04,#636e72
+hu3|2026-07-11|day,hu3,HU3,2,hu3|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+hu3|2026-07-11|day,hu3,HU3,2,hu3|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.17,#dfe6e9
+hu3|2026-07-11|day,hu3,HU3,3,hu3|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.0,#2d3436
+hu3|2026-07-11|day,hu3,HU3,3,hu3|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),0.15,#636e72
+hu3|2026-07-11|day,hu3,HU3,3,hu3|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),2.62,#b2bec3
+hu3|2026-07-11|day,hu3,HU3,3,hu3|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.73,#dfe6e9
+hu3|2026-07-11|night,hu3,HU3,0,hu3|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.87,#2d3436
+hu3|2026-07-11|night,hu3,HU3,0,hu3|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-11|night,hu3,HU3,0,hu3|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.43,#b2bec3
+hu3|2026-07-11|night,hu3,HU3,0,hu3|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.35,#dfe6e9
+hu3|2026-07-11|night,hu3,HU3,1,hu3|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.91,#2d3436
+hu3|2026-07-11|night,hu3,HU3,1,hu3|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),0.22,#636e72
+hu3|2026-07-11|night,hu3,HU3,1,hu3|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.03,#b2bec3
+hu3|2026-07-11|night,hu3,HU3,1,hu3|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.13,#dfe6e9
+hu3|2026-07-11|night,hu3,HU3,2,hu3|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.54,#2d3436
+hu3|2026-07-11|night,hu3,HU3,2,hu3|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),0.41,#636e72
+hu3|2026-07-11|night,hu3,HU3,2,hu3|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+hu3|2026-07-11|night,hu3,HU3,2,hu3|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.57,#dfe6e9
+hu3|2026-07-11|night,hu3,HU3,3,hu3|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.89,#2d3436
+hu3|2026-07-11|night,hu3,HU3,3,hu3|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),1.04,#636e72
+hu3|2026-07-11|night,hu3,HU3,3,hu3|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+hu3|2026-07-11|night,hu3,HU3,3,hu3|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.17,#dfe6e9
+hu3|2026-07-12|day,hu3,HU3,0,hu3|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.52,#2d3436
+hu3|2026-07-12|day,hu3,HU3,0,hu3|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),0.54,#636e72
+hu3|2026-07-12|day,hu3,HU3,0,hu3|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),2.23,#b2bec3
+hu3|2026-07-12|day,hu3,HU3,0,hu3|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.32,#dfe6e9
+hu3|2026-07-12|day,hu3,HU3,1,hu3|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.87,#2d3436
+hu3|2026-07-12|day,hu3,HU3,1,hu3|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-12|day,hu3,HU3,1,hu3|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.43,#b2bec3
+hu3|2026-07-12|day,hu3,HU3,1,hu3|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.35,#dfe6e9
+hu3|2026-07-12|day,hu3,HU3,2,hu3|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.91,#2d3436
+hu3|2026-07-12|day,hu3,HU3,2,hu3|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),0.22,#636e72
+hu3|2026-07-12|day,hu3,HU3,2,hu3|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.03,#b2bec3
+hu3|2026-07-12|day,hu3,HU3,2,hu3|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.13,#dfe6e9
+hu3|2026-07-12|day,hu3,HU3,3,hu3|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),0.54,#2d3436
+hu3|2026-07-12|day,hu3,HU3,3,hu3|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),0.41,#636e72
+hu3|2026-07-12|day,hu3,HU3,3,hu3|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+hu3|2026-07-12|day,hu3,HU3,3,hu3|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.57,#dfe6e9
+hu3|2026-07-12|night,hu3,HU3,0,hu3|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+hu3|2026-07-12|night,hu3,HU3,0,hu3|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-12|night,hu3,HU3,0,hu3|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+hu3|2026-07-12|night,hu3,HU3,0,hu3|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.52,#dfe6e9
+hu3|2026-07-12|night,hu3,HU3,1,hu3|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.52,#2d3436
+hu3|2026-07-12|night,hu3,HU3,1,hu3|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),0.54,#636e72
+hu3|2026-07-12|night,hu3,HU3,1,hu3|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),2.23,#b2bec3
+hu3|2026-07-12|night,hu3,HU3,1,hu3|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.32,#dfe6e9
+hu3|2026-07-12|night,hu3,HU3,2,hu3|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.87,#2d3436
+hu3|2026-07-12|night,hu3,HU3,2,hu3|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-12|night,hu3,HU3,2,hu3|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.43,#b2bec3
+hu3|2026-07-12|night,hu3,HU3,2,hu3|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.35,#dfe6e9
+hu3|2026-07-12|night,hu3,HU3,3,hu3|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.91,#2d3436
+hu3|2026-07-12|night,hu3,HU3,3,hu3|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),0.22,#636e72
+hu3|2026-07-12|night,hu3,HU3,3,hu3|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.03,#b2bec3
+hu3|2026-07-12|night,hu3,HU3,3,hu3|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.13,#dfe6e9
+hu3|2026-07-13|day,hu3,HU3,0,hu3|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.53,#2d3436
+hu3|2026-07-13|day,hu3,HU3,0,hu3|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),0.58,#636e72
+hu3|2026-07-13|day,hu3,HU3,0,hu3|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),5.55,#b2bec3
+hu3|2026-07-13|day,hu3,HU3,0,hu3|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,1.16,#dfe6e9
+hu3|2026-07-13|day,hu3,HU3,1,hu3|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+hu3|2026-07-13|day,hu3,HU3,1,hu3|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-13|day,hu3,HU3,1,hu3|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+hu3|2026-07-13|day,hu3,HU3,1,hu3|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.52,#dfe6e9
+hu3|2026-07-13|day,hu3,HU3,2,hu3|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.52,#2d3436
+hu3|2026-07-13|day,hu3,HU3,2,hu3|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),0.54,#636e72
+hu3|2026-07-13|day,hu3,HU3,2,hu3|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),2.23,#b2bec3
+hu3|2026-07-13|day,hu3,HU3,2,hu3|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.32,#dfe6e9
+hu3|2026-07-13|day,hu3,HU3,3,hu3|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),0.87,#2d3436
+hu3|2026-07-13|day,hu3,HU3,3,hu3|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-13|day,hu3,HU3,3,hu3|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.43,#b2bec3
+hu3|2026-07-13|day,hu3,HU3,3,hu3|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.35,#dfe6e9
+hu3|2026-07-13|night,hu3,HU3,0,hu3|2026-07-13|night,Night 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),1.05,#2d3436
+hu3|2026-07-13|night,hu3,HU3,0,hu3|2026-07-13|night,Night 07-13,2026-07-13,halted,Halted (operator wait),1.5,#636e72
+hu3|2026-07-13|night,hu3,HU3,0,hu3|2026-07-13|night,Night 07-13,2026-07-13,auto_long,Auto-stops (>2 min),3.17,#b2bec3
+hu3|2026-07-13|night,hu3,HU3,0,hu3|2026-07-13|night,Night 07-13,2026-07-13,manual,Manual stops,0.19,#dfe6e9
+hu3|2026-07-13|night,hu3,HU3,1,hu3|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.53,#2d3436
+hu3|2026-07-13|night,hu3,HU3,1,hu3|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),0.58,#636e72
+hu3|2026-07-13|night,hu3,HU3,1,hu3|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),5.55,#b2bec3
+hu3|2026-07-13|night,hu3,HU3,1,hu3|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,1.16,#dfe6e9
+hu3|2026-07-13|night,hu3,HU3,2,hu3|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+hu3|2026-07-13|night,hu3,HU3,2,hu3|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-13|night,hu3,HU3,2,hu3|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+hu3|2026-07-13|night,hu3,HU3,2,hu3|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.52,#dfe6e9
+hu3|2026-07-13|night,hu3,HU3,3,hu3|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.52,#2d3436
+hu3|2026-07-13|night,hu3,HU3,3,hu3|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),0.54,#636e72
+hu3|2026-07-13|night,hu3,HU3,3,hu3|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),2.23,#b2bec3
+hu3|2026-07-13|night,hu3,HU3,3,hu3|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.32,#dfe6e9
+hu3|2026-07-14|day,hu3,HU3,0,hu3|2026-07-14|day,Day 07-14,2026-07-14,micro_stops,Micro-stops (<2 min),0.32,#2d3436
+hu3|2026-07-14|day,hu3,HU3,0,hu3|2026-07-14|day,Day 07-14,2026-07-14,halted,Halted (operator wait),3.09,#636e72
+hu3|2026-07-14|day,hu3,HU3,0,hu3|2026-07-14|day,Day 07-14,2026-07-14,auto_long,Auto-stops (>2 min),3.68,#b2bec3
+hu3|2026-07-14|day,hu3,HU3,0,hu3|2026-07-14|day,Day 07-14,2026-07-14,manual,Manual stops,2.84,#dfe6e9
+hu3|2026-07-14|day,hu3,HU3,1,hu3|2026-07-13|night,Night 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),1.05,#2d3436
+hu3|2026-07-14|day,hu3,HU3,1,hu3|2026-07-13|night,Night 07-13,2026-07-13,halted,Halted (operator wait),1.5,#636e72
+hu3|2026-07-14|day,hu3,HU3,1,hu3|2026-07-13|night,Night 07-13,2026-07-13,auto_long,Auto-stops (>2 min),3.17,#b2bec3
+hu3|2026-07-14|day,hu3,HU3,1,hu3|2026-07-13|night,Night 07-13,2026-07-13,manual,Manual stops,0.19,#dfe6e9
+hu3|2026-07-14|day,hu3,HU3,2,hu3|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.53,#2d3436
+hu3|2026-07-14|day,hu3,HU3,2,hu3|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),0.58,#636e72
+hu3|2026-07-14|day,hu3,HU3,2,hu3|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),5.55,#b2bec3
+hu3|2026-07-14|day,hu3,HU3,2,hu3|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,1.16,#dfe6e9
+hu3|2026-07-14|day,hu3,HU3,3,hu3|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+hu3|2026-07-14|day,hu3,HU3,3,hu3|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),0.33,#636e72
+hu3|2026-07-14|day,hu3,HU3,3,hu3|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+hu3|2026-07-14|day,hu3,HU3,3,hu3|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.52,#dfe6e9
+hu3|2026-07-14|night,hu3,HU3,0,hu3|2026-07-14|night,Night 07-14,2026-07-14,micro_stops,Micro-stops (<2 min),0.31,#2d3436
+hu3|2026-07-14|night,hu3,HU3,0,hu3|2026-07-14|night,Night 07-14,2026-07-14,halted,Halted (operator wait),0.23,#636e72
+hu3|2026-07-14|night,hu3,HU3,0,hu3|2026-07-14|night,Night 07-14,2026-07-14,auto_long,Auto-stops (>2 min),3.66,#b2bec3
+hu3|2026-07-14|night,hu3,HU3,0,hu3|2026-07-14|night,Night 07-14,2026-07-14,manual,Manual stops,6.29,#dfe6e9
+hu3|2026-07-14|night,hu3,HU3,1,hu3|2026-07-14|day,Day 07-14,2026-07-14,micro_stops,Micro-stops (<2 min),0.32,#2d3436
+hu3|2026-07-14|night,hu3,HU3,1,hu3|2026-07-14|day,Day 07-14,2026-07-14,halted,Halted (operator wait),3.09,#636e72
+hu3|2026-07-14|night,hu3,HU3,1,hu3|2026-07-14|day,Day 07-14,2026-07-14,auto_long,Auto-stops (>2 min),3.68,#b2bec3
+hu3|2026-07-14|night,hu3,HU3,1,hu3|2026-07-14|day,Day 07-14,2026-07-14,manual,Manual stops,2.84,#dfe6e9
+hu3|2026-07-14|night,hu3,HU3,2,hu3|2026-07-13|night,Night 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),1.05,#2d3436
+hu3|2026-07-14|night,hu3,HU3,2,hu3|2026-07-13|night,Night 07-13,2026-07-13,halted,Halted (operator wait),1.5,#636e72
+hu3|2026-07-14|night,hu3,HU3,2,hu3|2026-07-13|night,Night 07-13,2026-07-13,auto_long,Auto-stops (>2 min),3.17,#b2bec3
+hu3|2026-07-14|night,hu3,HU3,2,hu3|2026-07-13|night,Night 07-13,2026-07-13,manual,Manual stops,0.19,#dfe6e9
+hu3|2026-07-14|night,hu3,HU3,3,hu3|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.53,#2d3436
+hu3|2026-07-14|night,hu3,HU3,3,hu3|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),0.58,#636e72
+hu3|2026-07-14|night,hu3,HU3,3,hu3|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),5.55,#b2bec3
+hu3|2026-07-14|night,hu3,HU3,3,hu3|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,1.16,#dfe6e9
+ngp2|2026-05-29|day,ngp2,NGP2,0,ngp2|2026-05-29|day,Day 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.81,#2d3436
+ngp2|2026-05-29|day,ngp2,NGP2,0,ngp2|2026-05-29|day,Day 05-29,2026-05-29,halted,Halted (operator wait),5.02,#636e72
+ngp2|2026-05-29|day,ngp2,NGP2,0,ngp2|2026-05-29|day,Day 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.15,#b2bec3
+ngp2|2026-05-29|day,ngp2,NGP2,0,ngp2|2026-05-29|day,Day 05-29,2026-05-29,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-05-29|night,ngp2,NGP2,0,ngp2|2026-05-29|night,Night 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+ngp2|2026-05-29|night,ngp2,NGP2,0,ngp2|2026-05-29|night,Night 05-29,2026-05-29,halted,Halted (operator wait),4.24,#636e72
+ngp2|2026-05-29|night,ngp2,NGP2,0,ngp2|2026-05-29|night,Night 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.81,#b2bec3
+ngp2|2026-05-29|night,ngp2,NGP2,0,ngp2|2026-05-29|night,Night 05-29,2026-05-29,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-05-29|night,ngp2,NGP2,1,ngp2|2026-05-29|day,Day 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.81,#2d3436
+ngp2|2026-05-29|night,ngp2,NGP2,1,ngp2|2026-05-29|day,Day 05-29,2026-05-29,halted,Halted (operator wait),5.02,#636e72
+ngp2|2026-05-29|night,ngp2,NGP2,1,ngp2|2026-05-29|day,Day 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.15,#b2bec3
+ngp2|2026-05-29|night,ngp2,NGP2,1,ngp2|2026-05-29|day,Day 05-29,2026-05-29,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-05-30|day,ngp2,NGP2,0,ngp2|2026-05-30|day,Day 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.23,#2d3436
+ngp2|2026-05-30|day,ngp2,NGP2,0,ngp2|2026-05-30|day,Day 05-30,2026-05-30,halted,Halted (operator wait),2.06,#636e72
+ngp2|2026-05-30|day,ngp2,NGP2,0,ngp2|2026-05-30|day,Day 05-30,2026-05-30,auto_long,Auto-stops (>2 min),2.06,#b2bec3
+ngp2|2026-05-30|day,ngp2,NGP2,0,ngp2|2026-05-30|day,Day 05-30,2026-05-30,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-05-30|day,ngp2,NGP2,1,ngp2|2026-05-29|night,Night 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+ngp2|2026-05-30|day,ngp2,NGP2,1,ngp2|2026-05-29|night,Night 05-29,2026-05-29,halted,Halted (operator wait),4.24,#636e72
+ngp2|2026-05-30|day,ngp2,NGP2,1,ngp2|2026-05-29|night,Night 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.81,#b2bec3
+ngp2|2026-05-30|day,ngp2,NGP2,1,ngp2|2026-05-29|night,Night 05-29,2026-05-29,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-05-30|day,ngp2,NGP2,2,ngp2|2026-05-29|day,Day 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.81,#2d3436
+ngp2|2026-05-30|day,ngp2,NGP2,2,ngp2|2026-05-29|day,Day 05-29,2026-05-29,halted,Halted (operator wait),5.02,#636e72
+ngp2|2026-05-30|day,ngp2,NGP2,2,ngp2|2026-05-29|day,Day 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.15,#b2bec3
+ngp2|2026-05-30|day,ngp2,NGP2,2,ngp2|2026-05-29|day,Day 05-29,2026-05-29,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-05-30|night,ngp2,NGP2,0,ngp2|2026-05-30|night,Night 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.5,#2d3436
+ngp2|2026-05-30|night,ngp2,NGP2,0,ngp2|2026-05-30|night,Night 05-30,2026-05-30,halted,Halted (operator wait),1.03,#636e72
+ngp2|2026-05-30|night,ngp2,NGP2,0,ngp2|2026-05-30|night,Night 05-30,2026-05-30,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+ngp2|2026-05-30|night,ngp2,NGP2,0,ngp2|2026-05-30|night,Night 05-30,2026-05-30,manual,Manual stops,0.18,#dfe6e9
+ngp2|2026-05-30|night,ngp2,NGP2,1,ngp2|2026-05-30|day,Day 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.23,#2d3436
+ngp2|2026-05-30|night,ngp2,NGP2,1,ngp2|2026-05-30|day,Day 05-30,2026-05-30,halted,Halted (operator wait),2.06,#636e72
+ngp2|2026-05-30|night,ngp2,NGP2,1,ngp2|2026-05-30|day,Day 05-30,2026-05-30,auto_long,Auto-stops (>2 min),2.06,#b2bec3
+ngp2|2026-05-30|night,ngp2,NGP2,1,ngp2|2026-05-30|day,Day 05-30,2026-05-30,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-05-30|night,ngp2,NGP2,2,ngp2|2026-05-29|night,Night 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+ngp2|2026-05-30|night,ngp2,NGP2,2,ngp2|2026-05-29|night,Night 05-29,2026-05-29,halted,Halted (operator wait),4.24,#636e72
+ngp2|2026-05-30|night,ngp2,NGP2,2,ngp2|2026-05-29|night,Night 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.81,#b2bec3
+ngp2|2026-05-30|night,ngp2,NGP2,2,ngp2|2026-05-29|night,Night 05-29,2026-05-29,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-05-30|night,ngp2,NGP2,3,ngp2|2026-05-29|day,Day 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.81,#2d3436
+ngp2|2026-05-30|night,ngp2,NGP2,3,ngp2|2026-05-29|day,Day 05-29,2026-05-29,halted,Halted (operator wait),5.02,#636e72
+ngp2|2026-05-30|night,ngp2,NGP2,3,ngp2|2026-05-29|day,Day 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.15,#b2bec3
+ngp2|2026-05-30|night,ngp2,NGP2,3,ngp2|2026-05-29|day,Day 05-29,2026-05-29,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-05-31|day,ngp2,NGP2,0,ngp2|2026-05-31|day,Day 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.31,#2d3436
+ngp2|2026-05-31|day,ngp2,NGP2,0,ngp2|2026-05-31|day,Day 05-31,2026-05-31,halted,Halted (operator wait),2.42,#636e72
+ngp2|2026-05-31|day,ngp2,NGP2,0,ngp2|2026-05-31|day,Day 05-31,2026-05-31,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+ngp2|2026-05-31|day,ngp2,NGP2,0,ngp2|2026-05-31|day,Day 05-31,2026-05-31,manual,Manual stops,0.55,#dfe6e9
+ngp2|2026-05-31|day,ngp2,NGP2,1,ngp2|2026-05-30|night,Night 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.5,#2d3436
+ngp2|2026-05-31|day,ngp2,NGP2,1,ngp2|2026-05-30|night,Night 05-30,2026-05-30,halted,Halted (operator wait),1.03,#636e72
+ngp2|2026-05-31|day,ngp2,NGP2,1,ngp2|2026-05-30|night,Night 05-30,2026-05-30,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+ngp2|2026-05-31|day,ngp2,NGP2,1,ngp2|2026-05-30|night,Night 05-30,2026-05-30,manual,Manual stops,0.18,#dfe6e9
+ngp2|2026-05-31|day,ngp2,NGP2,2,ngp2|2026-05-30|day,Day 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.23,#2d3436
+ngp2|2026-05-31|day,ngp2,NGP2,2,ngp2|2026-05-30|day,Day 05-30,2026-05-30,halted,Halted (operator wait),2.06,#636e72
+ngp2|2026-05-31|day,ngp2,NGP2,2,ngp2|2026-05-30|day,Day 05-30,2026-05-30,auto_long,Auto-stops (>2 min),2.06,#b2bec3
+ngp2|2026-05-31|day,ngp2,NGP2,2,ngp2|2026-05-30|day,Day 05-30,2026-05-30,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-05-31|day,ngp2,NGP2,3,ngp2|2026-05-29|night,Night 05-29,2026-05-29,micro_stops,Micro-stops (<2 min),0.72,#2d3436
+ngp2|2026-05-31|day,ngp2,NGP2,3,ngp2|2026-05-29|night,Night 05-29,2026-05-29,halted,Halted (operator wait),4.24,#636e72
+ngp2|2026-05-31|day,ngp2,NGP2,3,ngp2|2026-05-29|night,Night 05-29,2026-05-29,auto_long,Auto-stops (>2 min),1.81,#b2bec3
+ngp2|2026-05-31|day,ngp2,NGP2,3,ngp2|2026-05-29|night,Night 05-29,2026-05-29,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-05-31|night,ngp2,NGP2,0,ngp2|2026-05-31|night,Night 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.69,#2d3436
+ngp2|2026-05-31|night,ngp2,NGP2,0,ngp2|2026-05-31|night,Night 05-31,2026-05-31,halted,Halted (operator wait),1.33,#636e72
+ngp2|2026-05-31|night,ngp2,NGP2,0,ngp2|2026-05-31|night,Night 05-31,2026-05-31,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-05-31|night,ngp2,NGP2,0,ngp2|2026-05-31|night,Night 05-31,2026-05-31,manual,Manual stops,0.19,#dfe6e9
+ngp2|2026-05-31|night,ngp2,NGP2,1,ngp2|2026-05-31|day,Day 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.31,#2d3436
+ngp2|2026-05-31|night,ngp2,NGP2,1,ngp2|2026-05-31|day,Day 05-31,2026-05-31,halted,Halted (operator wait),2.42,#636e72
+ngp2|2026-05-31|night,ngp2,NGP2,1,ngp2|2026-05-31|day,Day 05-31,2026-05-31,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+ngp2|2026-05-31|night,ngp2,NGP2,1,ngp2|2026-05-31|day,Day 05-31,2026-05-31,manual,Manual stops,0.55,#dfe6e9
+ngp2|2026-05-31|night,ngp2,NGP2,2,ngp2|2026-05-30|night,Night 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.5,#2d3436
+ngp2|2026-05-31|night,ngp2,NGP2,2,ngp2|2026-05-30|night,Night 05-30,2026-05-30,halted,Halted (operator wait),1.03,#636e72
+ngp2|2026-05-31|night,ngp2,NGP2,2,ngp2|2026-05-30|night,Night 05-30,2026-05-30,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+ngp2|2026-05-31|night,ngp2,NGP2,2,ngp2|2026-05-30|night,Night 05-30,2026-05-30,manual,Manual stops,0.18,#dfe6e9
+ngp2|2026-05-31|night,ngp2,NGP2,3,ngp2|2026-05-30|day,Day 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.23,#2d3436
+ngp2|2026-05-31|night,ngp2,NGP2,3,ngp2|2026-05-30|day,Day 05-30,2026-05-30,halted,Halted (operator wait),2.06,#636e72
+ngp2|2026-05-31|night,ngp2,NGP2,3,ngp2|2026-05-30|day,Day 05-30,2026-05-30,auto_long,Auto-stops (>2 min),2.06,#b2bec3
+ngp2|2026-05-31|night,ngp2,NGP2,3,ngp2|2026-05-30|day,Day 05-30,2026-05-30,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-01|day,ngp2,NGP2,0,ngp2|2026-06-01|day,Day 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),0.79,#2d3436
+ngp2|2026-06-01|day,ngp2,NGP2,0,ngp2|2026-06-01|day,Day 06-01,2026-06-01,halted,Halted (operator wait),1.54,#636e72
+ngp2|2026-06-01|day,ngp2,NGP2,0,ngp2|2026-06-01|day,Day 06-01,2026-06-01,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-06-01|day,ngp2,NGP2,0,ngp2|2026-06-01|day,Day 06-01,2026-06-01,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-06-01|day,ngp2,NGP2,1,ngp2|2026-05-31|night,Night 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.69,#2d3436
+ngp2|2026-06-01|day,ngp2,NGP2,1,ngp2|2026-05-31|night,Night 05-31,2026-05-31,halted,Halted (operator wait),1.33,#636e72
+ngp2|2026-06-01|day,ngp2,NGP2,1,ngp2|2026-05-31|night,Night 05-31,2026-05-31,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-01|day,ngp2,NGP2,1,ngp2|2026-05-31|night,Night 05-31,2026-05-31,manual,Manual stops,0.19,#dfe6e9
+ngp2|2026-06-01|day,ngp2,NGP2,2,ngp2|2026-05-31|day,Day 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.31,#2d3436
+ngp2|2026-06-01|day,ngp2,NGP2,2,ngp2|2026-05-31|day,Day 05-31,2026-05-31,halted,Halted (operator wait),2.42,#636e72
+ngp2|2026-06-01|day,ngp2,NGP2,2,ngp2|2026-05-31|day,Day 05-31,2026-05-31,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+ngp2|2026-06-01|day,ngp2,NGP2,2,ngp2|2026-05-31|day,Day 05-31,2026-05-31,manual,Manual stops,0.55,#dfe6e9
+ngp2|2026-06-01|day,ngp2,NGP2,3,ngp2|2026-05-30|night,Night 05-30,2026-05-30,micro_stops,Micro-stops (<2 min),1.5,#2d3436
+ngp2|2026-06-01|day,ngp2,NGP2,3,ngp2|2026-05-30|night,Night 05-30,2026-05-30,halted,Halted (operator wait),1.03,#636e72
+ngp2|2026-06-01|day,ngp2,NGP2,3,ngp2|2026-05-30|night,Night 05-30,2026-05-30,auto_long,Auto-stops (>2 min),1.97,#b2bec3
+ngp2|2026-06-01|day,ngp2,NGP2,3,ngp2|2026-05-30|night,Night 05-30,2026-05-30,manual,Manual stops,0.18,#dfe6e9
+ngp2|2026-06-01|night,ngp2,NGP2,0,ngp2|2026-06-01|night,Night 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),1.22,#2d3436
+ngp2|2026-06-01|night,ngp2,NGP2,0,ngp2|2026-06-01|night,Night 06-01,2026-06-01,halted,Halted (operator wait),3.23,#636e72
+ngp2|2026-06-01|night,ngp2,NGP2,0,ngp2|2026-06-01|night,Night 06-01,2026-06-01,auto_long,Auto-stops (>2 min),0.8,#b2bec3
+ngp2|2026-06-01|night,ngp2,NGP2,0,ngp2|2026-06-01|night,Night 06-01,2026-06-01,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-01|night,ngp2,NGP2,1,ngp2|2026-06-01|day,Day 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),0.79,#2d3436
+ngp2|2026-06-01|night,ngp2,NGP2,1,ngp2|2026-06-01|day,Day 06-01,2026-06-01,halted,Halted (operator wait),1.54,#636e72
+ngp2|2026-06-01|night,ngp2,NGP2,1,ngp2|2026-06-01|day,Day 06-01,2026-06-01,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-06-01|night,ngp2,NGP2,1,ngp2|2026-06-01|day,Day 06-01,2026-06-01,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-06-01|night,ngp2,NGP2,2,ngp2|2026-05-31|night,Night 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.69,#2d3436
+ngp2|2026-06-01|night,ngp2,NGP2,2,ngp2|2026-05-31|night,Night 05-31,2026-05-31,halted,Halted (operator wait),1.33,#636e72
+ngp2|2026-06-01|night,ngp2,NGP2,2,ngp2|2026-05-31|night,Night 05-31,2026-05-31,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-01|night,ngp2,NGP2,2,ngp2|2026-05-31|night,Night 05-31,2026-05-31,manual,Manual stops,0.19,#dfe6e9
+ngp2|2026-06-01|night,ngp2,NGP2,3,ngp2|2026-05-31|day,Day 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.31,#2d3436
+ngp2|2026-06-01|night,ngp2,NGP2,3,ngp2|2026-05-31|day,Day 05-31,2026-05-31,halted,Halted (operator wait),2.42,#636e72
+ngp2|2026-06-01|night,ngp2,NGP2,3,ngp2|2026-05-31|day,Day 05-31,2026-05-31,auto_long,Auto-stops (>2 min),2.07,#b2bec3
+ngp2|2026-06-01|night,ngp2,NGP2,3,ngp2|2026-05-31|day,Day 05-31,2026-05-31,manual,Manual stops,0.55,#dfe6e9
+ngp2|2026-06-02|day,ngp2,NGP2,0,ngp2|2026-06-02|day,Day 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-02|day,ngp2,NGP2,0,ngp2|2026-06-02|day,Day 06-02,2026-06-02,halted,Halted (operator wait),2.44,#636e72
+ngp2|2026-06-02|day,ngp2,NGP2,0,ngp2|2026-06-02|day,Day 06-02,2026-06-02,auto_long,Auto-stops (>2 min),1.01,#b2bec3
+ngp2|2026-06-02|day,ngp2,NGP2,0,ngp2|2026-06-02|day,Day 06-02,2026-06-02,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-02|day,ngp2,NGP2,1,ngp2|2026-06-01|night,Night 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),1.22,#2d3436
+ngp2|2026-06-02|day,ngp2,NGP2,1,ngp2|2026-06-01|night,Night 06-01,2026-06-01,halted,Halted (operator wait),3.23,#636e72
+ngp2|2026-06-02|day,ngp2,NGP2,1,ngp2|2026-06-01|night,Night 06-01,2026-06-01,auto_long,Auto-stops (>2 min),0.8,#b2bec3
+ngp2|2026-06-02|day,ngp2,NGP2,1,ngp2|2026-06-01|night,Night 06-01,2026-06-01,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-02|day,ngp2,NGP2,2,ngp2|2026-06-01|day,Day 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),0.79,#2d3436
+ngp2|2026-06-02|day,ngp2,NGP2,2,ngp2|2026-06-01|day,Day 06-01,2026-06-01,halted,Halted (operator wait),1.54,#636e72
+ngp2|2026-06-02|day,ngp2,NGP2,2,ngp2|2026-06-01|day,Day 06-01,2026-06-01,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-06-02|day,ngp2,NGP2,2,ngp2|2026-06-01|day,Day 06-01,2026-06-01,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-06-02|day,ngp2,NGP2,3,ngp2|2026-05-31|night,Night 05-31,2026-05-31,micro_stops,Micro-stops (<2 min),1.69,#2d3436
+ngp2|2026-06-02|day,ngp2,NGP2,3,ngp2|2026-05-31|night,Night 05-31,2026-05-31,halted,Halted (operator wait),1.33,#636e72
+ngp2|2026-06-02|day,ngp2,NGP2,3,ngp2|2026-05-31|night,Night 05-31,2026-05-31,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-02|day,ngp2,NGP2,3,ngp2|2026-05-31|night,Night 05-31,2026-05-31,manual,Manual stops,0.19,#dfe6e9
+ngp2|2026-06-02|night,ngp2,NGP2,0,ngp2|2026-06-02|night,Night 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),1.11,#2d3436
+ngp2|2026-06-02|night,ngp2,NGP2,0,ngp2|2026-06-02|night,Night 06-02,2026-06-02,halted,Halted (operator wait),1.45,#636e72
+ngp2|2026-06-02|night,ngp2,NGP2,0,ngp2|2026-06-02|night,Night 06-02,2026-06-02,auto_long,Auto-stops (>2 min),2.04,#b2bec3
+ngp2|2026-06-02|night,ngp2,NGP2,0,ngp2|2026-06-02|night,Night 06-02,2026-06-02,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-02|night,ngp2,NGP2,1,ngp2|2026-06-02|day,Day 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-02|night,ngp2,NGP2,1,ngp2|2026-06-02|day,Day 06-02,2026-06-02,halted,Halted (operator wait),2.44,#636e72
+ngp2|2026-06-02|night,ngp2,NGP2,1,ngp2|2026-06-02|day,Day 06-02,2026-06-02,auto_long,Auto-stops (>2 min),1.01,#b2bec3
+ngp2|2026-06-02|night,ngp2,NGP2,1,ngp2|2026-06-02|day,Day 06-02,2026-06-02,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-02|night,ngp2,NGP2,2,ngp2|2026-06-01|night,Night 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),1.22,#2d3436
+ngp2|2026-06-02|night,ngp2,NGP2,2,ngp2|2026-06-01|night,Night 06-01,2026-06-01,halted,Halted (operator wait),3.23,#636e72
+ngp2|2026-06-02|night,ngp2,NGP2,2,ngp2|2026-06-01|night,Night 06-01,2026-06-01,auto_long,Auto-stops (>2 min),0.8,#b2bec3
+ngp2|2026-06-02|night,ngp2,NGP2,2,ngp2|2026-06-01|night,Night 06-01,2026-06-01,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-02|night,ngp2,NGP2,3,ngp2|2026-06-01|day,Day 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),0.79,#2d3436
+ngp2|2026-06-02|night,ngp2,NGP2,3,ngp2|2026-06-01|day,Day 06-01,2026-06-01,halted,Halted (operator wait),1.54,#636e72
+ngp2|2026-06-02|night,ngp2,NGP2,3,ngp2|2026-06-01|day,Day 06-01,2026-06-01,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-06-02|night,ngp2,NGP2,3,ngp2|2026-06-01|day,Day 06-01,2026-06-01,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-06-03|day,ngp2,NGP2,0,ngp2|2026-06-03|day,Day 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.75,#2d3436
+ngp2|2026-06-03|day,ngp2,NGP2,0,ngp2|2026-06-03|day,Day 06-03,2026-06-03,halted,Halted (operator wait),1.49,#636e72
+ngp2|2026-06-03|day,ngp2,NGP2,0,ngp2|2026-06-03|day,Day 06-03,2026-06-03,auto_long,Auto-stops (>2 min),1.63,#b2bec3
+ngp2|2026-06-03|day,ngp2,NGP2,0,ngp2|2026-06-03|day,Day 06-03,2026-06-03,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-06-03|day,ngp2,NGP2,1,ngp2|2026-06-02|night,Night 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),1.11,#2d3436
+ngp2|2026-06-03|day,ngp2,NGP2,1,ngp2|2026-06-02|night,Night 06-02,2026-06-02,halted,Halted (operator wait),1.45,#636e72
+ngp2|2026-06-03|day,ngp2,NGP2,1,ngp2|2026-06-02|night,Night 06-02,2026-06-02,auto_long,Auto-stops (>2 min),2.04,#b2bec3
+ngp2|2026-06-03|day,ngp2,NGP2,1,ngp2|2026-06-02|night,Night 06-02,2026-06-02,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-03|day,ngp2,NGP2,2,ngp2|2026-06-02|day,Day 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-03|day,ngp2,NGP2,2,ngp2|2026-06-02|day,Day 06-02,2026-06-02,halted,Halted (operator wait),2.44,#636e72
+ngp2|2026-06-03|day,ngp2,NGP2,2,ngp2|2026-06-02|day,Day 06-02,2026-06-02,auto_long,Auto-stops (>2 min),1.01,#b2bec3
+ngp2|2026-06-03|day,ngp2,NGP2,2,ngp2|2026-06-02|day,Day 06-02,2026-06-02,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-03|day,ngp2,NGP2,3,ngp2|2026-06-01|night,Night 06-01,2026-06-01,micro_stops,Micro-stops (<2 min),1.22,#2d3436
+ngp2|2026-06-03|day,ngp2,NGP2,3,ngp2|2026-06-01|night,Night 06-01,2026-06-01,halted,Halted (operator wait),3.23,#636e72
+ngp2|2026-06-03|day,ngp2,NGP2,3,ngp2|2026-06-01|night,Night 06-01,2026-06-01,auto_long,Auto-stops (>2 min),0.8,#b2bec3
+ngp2|2026-06-03|day,ngp2,NGP2,3,ngp2|2026-06-01|night,Night 06-01,2026-06-01,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-03|night,ngp2,NGP2,0,ngp2|2026-06-03|night,Night 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-03|night,ngp2,NGP2,0,ngp2|2026-06-03|night,Night 06-03,2026-06-03,halted,Halted (operator wait),2.54,#636e72
+ngp2|2026-06-03|night,ngp2,NGP2,0,ngp2|2026-06-03|night,Night 06-03,2026-06-03,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-03|night,ngp2,NGP2,0,ngp2|2026-06-03|night,Night 06-03,2026-06-03,manual,Manual stops,0.77,#dfe6e9
+ngp2|2026-06-03|night,ngp2,NGP2,1,ngp2|2026-06-03|day,Day 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.75,#2d3436
+ngp2|2026-06-03|night,ngp2,NGP2,1,ngp2|2026-06-03|day,Day 06-03,2026-06-03,halted,Halted (operator wait),1.49,#636e72
+ngp2|2026-06-03|night,ngp2,NGP2,1,ngp2|2026-06-03|day,Day 06-03,2026-06-03,auto_long,Auto-stops (>2 min),1.63,#b2bec3
+ngp2|2026-06-03|night,ngp2,NGP2,1,ngp2|2026-06-03|day,Day 06-03,2026-06-03,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-06-03|night,ngp2,NGP2,2,ngp2|2026-06-02|night,Night 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),1.11,#2d3436
+ngp2|2026-06-03|night,ngp2,NGP2,2,ngp2|2026-06-02|night,Night 06-02,2026-06-02,halted,Halted (operator wait),1.45,#636e72
+ngp2|2026-06-03|night,ngp2,NGP2,2,ngp2|2026-06-02|night,Night 06-02,2026-06-02,auto_long,Auto-stops (>2 min),2.04,#b2bec3
+ngp2|2026-06-03|night,ngp2,NGP2,2,ngp2|2026-06-02|night,Night 06-02,2026-06-02,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-03|night,ngp2,NGP2,3,ngp2|2026-06-02|day,Day 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-03|night,ngp2,NGP2,3,ngp2|2026-06-02|day,Day 06-02,2026-06-02,halted,Halted (operator wait),2.44,#636e72
+ngp2|2026-06-03|night,ngp2,NGP2,3,ngp2|2026-06-02|day,Day 06-02,2026-06-02,auto_long,Auto-stops (>2 min),1.01,#b2bec3
+ngp2|2026-06-03|night,ngp2,NGP2,3,ngp2|2026-06-02|day,Day 06-02,2026-06-02,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-04|day,ngp2,NGP2,0,ngp2|2026-06-04|day,Day 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-04|day,ngp2,NGP2,0,ngp2|2026-06-04|day,Day 06-04,2026-06-04,halted,Halted (operator wait),2.19,#636e72
+ngp2|2026-06-04|day,ngp2,NGP2,0,ngp2|2026-06-04|day,Day 06-04,2026-06-04,auto_long,Auto-stops (>2 min),2.17,#b2bec3
+ngp2|2026-06-04|day,ngp2,NGP2,0,ngp2|2026-06-04|day,Day 06-04,2026-06-04,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-06-04|day,ngp2,NGP2,1,ngp2|2026-06-03|night,Night 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-04|day,ngp2,NGP2,1,ngp2|2026-06-03|night,Night 06-03,2026-06-03,halted,Halted (operator wait),2.54,#636e72
+ngp2|2026-06-04|day,ngp2,NGP2,1,ngp2|2026-06-03|night,Night 06-03,2026-06-03,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-04|day,ngp2,NGP2,1,ngp2|2026-06-03|night,Night 06-03,2026-06-03,manual,Manual stops,0.77,#dfe6e9
+ngp2|2026-06-04|day,ngp2,NGP2,2,ngp2|2026-06-03|day,Day 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.75,#2d3436
+ngp2|2026-06-04|day,ngp2,NGP2,2,ngp2|2026-06-03|day,Day 06-03,2026-06-03,halted,Halted (operator wait),1.49,#636e72
+ngp2|2026-06-04|day,ngp2,NGP2,2,ngp2|2026-06-03|day,Day 06-03,2026-06-03,auto_long,Auto-stops (>2 min),1.63,#b2bec3
+ngp2|2026-06-04|day,ngp2,NGP2,2,ngp2|2026-06-03|day,Day 06-03,2026-06-03,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-06-04|day,ngp2,NGP2,3,ngp2|2026-06-02|night,Night 06-02,2026-06-02,micro_stops,Micro-stops (<2 min),1.11,#2d3436
+ngp2|2026-06-04|day,ngp2,NGP2,3,ngp2|2026-06-02|night,Night 06-02,2026-06-02,halted,Halted (operator wait),1.45,#636e72
+ngp2|2026-06-04|day,ngp2,NGP2,3,ngp2|2026-06-02|night,Night 06-02,2026-06-02,auto_long,Auto-stops (>2 min),2.04,#b2bec3
+ngp2|2026-06-04|day,ngp2,NGP2,3,ngp2|2026-06-02|night,Night 06-02,2026-06-02,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-04|night,ngp2,NGP2,0,ngp2|2026-06-04|night,Night 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-04|night,ngp2,NGP2,0,ngp2|2026-06-04|night,Night 06-04,2026-06-04,halted,Halted (operator wait),1.47,#636e72
+ngp2|2026-06-04|night,ngp2,NGP2,0,ngp2|2026-06-04|night,Night 06-04,2026-06-04,auto_long,Auto-stops (>2 min),0.15,#b2bec3
+ngp2|2026-06-04|night,ngp2,NGP2,0,ngp2|2026-06-04|night,Night 06-04,2026-06-04,manual,Manual stops,0.01,#dfe6e9
+ngp2|2026-06-04|night,ngp2,NGP2,1,ngp2|2026-06-04|day,Day 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-04|night,ngp2,NGP2,1,ngp2|2026-06-04|day,Day 06-04,2026-06-04,halted,Halted (operator wait),2.19,#636e72
+ngp2|2026-06-04|night,ngp2,NGP2,1,ngp2|2026-06-04|day,Day 06-04,2026-06-04,auto_long,Auto-stops (>2 min),2.17,#b2bec3
+ngp2|2026-06-04|night,ngp2,NGP2,1,ngp2|2026-06-04|day,Day 06-04,2026-06-04,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-06-04|night,ngp2,NGP2,2,ngp2|2026-06-03|night,Night 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-04|night,ngp2,NGP2,2,ngp2|2026-06-03|night,Night 06-03,2026-06-03,halted,Halted (operator wait),2.54,#636e72
+ngp2|2026-06-04|night,ngp2,NGP2,2,ngp2|2026-06-03|night,Night 06-03,2026-06-03,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-04|night,ngp2,NGP2,2,ngp2|2026-06-03|night,Night 06-03,2026-06-03,manual,Manual stops,0.77,#dfe6e9
+ngp2|2026-06-04|night,ngp2,NGP2,3,ngp2|2026-06-03|day,Day 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.75,#2d3436
+ngp2|2026-06-04|night,ngp2,NGP2,3,ngp2|2026-06-03|day,Day 06-03,2026-06-03,halted,Halted (operator wait),1.49,#636e72
+ngp2|2026-06-04|night,ngp2,NGP2,3,ngp2|2026-06-03|day,Day 06-03,2026-06-03,auto_long,Auto-stops (>2 min),1.63,#b2bec3
+ngp2|2026-06-04|night,ngp2,NGP2,3,ngp2|2026-06-03|day,Day 06-03,2026-06-03,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-06-13|day,ngp2,NGP2,0,ngp2|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.46,#2d3436
+ngp2|2026-06-13|day,ngp2,NGP2,0,ngp2|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),4.9,#636e72
+ngp2|2026-06-13|day,ngp2,NGP2,0,ngp2|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-13|day,ngp2,NGP2,0,ngp2|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-13|day,ngp2,NGP2,1,ngp2|2026-06-04|night,Night 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-13|day,ngp2,NGP2,1,ngp2|2026-06-04|night,Night 06-04,2026-06-04,halted,Halted (operator wait),1.47,#636e72
+ngp2|2026-06-13|day,ngp2,NGP2,1,ngp2|2026-06-04|night,Night 06-04,2026-06-04,auto_long,Auto-stops (>2 min),0.15,#b2bec3
+ngp2|2026-06-13|day,ngp2,NGP2,1,ngp2|2026-06-04|night,Night 06-04,2026-06-04,manual,Manual stops,0.01,#dfe6e9
+ngp2|2026-06-13|day,ngp2,NGP2,2,ngp2|2026-06-04|day,Day 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-13|day,ngp2,NGP2,2,ngp2|2026-06-04|day,Day 06-04,2026-06-04,halted,Halted (operator wait),2.19,#636e72
+ngp2|2026-06-13|day,ngp2,NGP2,2,ngp2|2026-06-04|day,Day 06-04,2026-06-04,auto_long,Auto-stops (>2 min),2.17,#b2bec3
+ngp2|2026-06-13|day,ngp2,NGP2,2,ngp2|2026-06-04|day,Day 06-04,2026-06-04,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-06-13|day,ngp2,NGP2,3,ngp2|2026-06-03|night,Night 06-03,2026-06-03,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-13|day,ngp2,NGP2,3,ngp2|2026-06-03|night,Night 06-03,2026-06-03,halted,Halted (operator wait),2.54,#636e72
+ngp2|2026-06-13|day,ngp2,NGP2,3,ngp2|2026-06-03|night,Night 06-03,2026-06-03,auto_long,Auto-stops (>2 min),0.92,#b2bec3
+ngp2|2026-06-13|day,ngp2,NGP2,3,ngp2|2026-06-03|night,Night 06-03,2026-06-03,manual,Manual stops,0.77,#dfe6e9
+ngp2|2026-06-13|night,ngp2,NGP2,0,ngp2|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.5,#2d3436
+ngp2|2026-06-13|night,ngp2,NGP2,0,ngp2|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),2.0,#636e72
+ngp2|2026-06-13|night,ngp2,NGP2,0,ngp2|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),2.55,#b2bec3
+ngp2|2026-06-13|night,ngp2,NGP2,0,ngp2|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,0.74,#dfe6e9
+ngp2|2026-06-13|night,ngp2,NGP2,1,ngp2|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.46,#2d3436
+ngp2|2026-06-13|night,ngp2,NGP2,1,ngp2|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),4.9,#636e72
+ngp2|2026-06-13|night,ngp2,NGP2,1,ngp2|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-13|night,ngp2,NGP2,1,ngp2|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-13|night,ngp2,NGP2,2,ngp2|2026-06-04|night,Night 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-13|night,ngp2,NGP2,2,ngp2|2026-06-04|night,Night 06-04,2026-06-04,halted,Halted (operator wait),1.47,#636e72
+ngp2|2026-06-13|night,ngp2,NGP2,2,ngp2|2026-06-04|night,Night 06-04,2026-06-04,auto_long,Auto-stops (>2 min),0.15,#b2bec3
+ngp2|2026-06-13|night,ngp2,NGP2,2,ngp2|2026-06-04|night,Night 06-04,2026-06-04,manual,Manual stops,0.01,#dfe6e9
+ngp2|2026-06-13|night,ngp2,NGP2,3,ngp2|2026-06-04|day,Day 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-13|night,ngp2,NGP2,3,ngp2|2026-06-04|day,Day 06-04,2026-06-04,halted,Halted (operator wait),2.19,#636e72
+ngp2|2026-06-13|night,ngp2,NGP2,3,ngp2|2026-06-04|day,Day 06-04,2026-06-04,auto_long,Auto-stops (>2 min),2.17,#b2bec3
+ngp2|2026-06-13|night,ngp2,NGP2,3,ngp2|2026-06-04|day,Day 06-04,2026-06-04,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-06-14|day,ngp2,NGP2,0,ngp2|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-14|day,ngp2,NGP2,0,ngp2|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),3.6,#636e72
+ngp2|2026-06-14|day,ngp2,NGP2,0,ngp2|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),0.82,#b2bec3
+ngp2|2026-06-14|day,ngp2,NGP2,0,ngp2|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-14|day,ngp2,NGP2,1,ngp2|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.5,#2d3436
+ngp2|2026-06-14|day,ngp2,NGP2,1,ngp2|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),2.0,#636e72
+ngp2|2026-06-14|day,ngp2,NGP2,1,ngp2|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),2.55,#b2bec3
+ngp2|2026-06-14|day,ngp2,NGP2,1,ngp2|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,0.74,#dfe6e9
+ngp2|2026-06-14|day,ngp2,NGP2,2,ngp2|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.46,#2d3436
+ngp2|2026-06-14|day,ngp2,NGP2,2,ngp2|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),4.9,#636e72
+ngp2|2026-06-14|day,ngp2,NGP2,2,ngp2|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-14|day,ngp2,NGP2,2,ngp2|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-14|day,ngp2,NGP2,3,ngp2|2026-06-04|night,Night 06-04,2026-06-04,micro_stops,Micro-stops (<2 min),0.8,#2d3436
+ngp2|2026-06-14|day,ngp2,NGP2,3,ngp2|2026-06-04|night,Night 06-04,2026-06-04,halted,Halted (operator wait),1.47,#636e72
+ngp2|2026-06-14|day,ngp2,NGP2,3,ngp2|2026-06-04|night,Night 06-04,2026-06-04,auto_long,Auto-stops (>2 min),0.15,#b2bec3
+ngp2|2026-06-14|day,ngp2,NGP2,3,ngp2|2026-06-04|night,Night 06-04,2026-06-04,manual,Manual stops,0.01,#dfe6e9
+ngp2|2026-06-14|night,ngp2,NGP2,0,ngp2|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-14|night,ngp2,NGP2,0,ngp2|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),3.21,#636e72
+ngp2|2026-06-14|night,ngp2,NGP2,0,ngp2|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.46,#b2bec3
+ngp2|2026-06-14|night,ngp2,NGP2,0,ngp2|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-06-14|night,ngp2,NGP2,1,ngp2|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-14|night,ngp2,NGP2,1,ngp2|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),3.6,#636e72
+ngp2|2026-06-14|night,ngp2,NGP2,1,ngp2|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),0.82,#b2bec3
+ngp2|2026-06-14|night,ngp2,NGP2,1,ngp2|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-14|night,ngp2,NGP2,2,ngp2|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.5,#2d3436
+ngp2|2026-06-14|night,ngp2,NGP2,2,ngp2|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),2.0,#636e72
+ngp2|2026-06-14|night,ngp2,NGP2,2,ngp2|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),2.55,#b2bec3
+ngp2|2026-06-14|night,ngp2,NGP2,2,ngp2|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,0.74,#dfe6e9
+ngp2|2026-06-14|night,ngp2,NGP2,3,ngp2|2026-06-13|day,Day 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.46,#2d3436
+ngp2|2026-06-14|night,ngp2,NGP2,3,ngp2|2026-06-13|day,Day 06-13,2026-06-13,halted,Halted (operator wait),4.9,#636e72
+ngp2|2026-06-14|night,ngp2,NGP2,3,ngp2|2026-06-13|day,Day 06-13,2026-06-13,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-14|night,ngp2,NGP2,3,ngp2|2026-06-13|day,Day 06-13,2026-06-13,manual,Manual stops,0.06,#dfe6e9
+ngp2|2026-06-15|day,ngp2,NGP2,0,ngp2|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.19,#2d3436
+ngp2|2026-06-15|day,ngp2,NGP2,0,ngp2|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),1.82,#636e72
+ngp2|2026-06-15|day,ngp2,NGP2,0,ngp2|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-15|day,ngp2,NGP2,0,ngp2|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-15|day,ngp2,NGP2,1,ngp2|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-15|day,ngp2,NGP2,1,ngp2|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),3.21,#636e72
+ngp2|2026-06-15|day,ngp2,NGP2,1,ngp2|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.46,#b2bec3
+ngp2|2026-06-15|day,ngp2,NGP2,1,ngp2|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-06-15|day,ngp2,NGP2,2,ngp2|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-15|day,ngp2,NGP2,2,ngp2|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),3.6,#636e72
+ngp2|2026-06-15|day,ngp2,NGP2,2,ngp2|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),0.82,#b2bec3
+ngp2|2026-06-15|day,ngp2,NGP2,2,ngp2|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-15|day,ngp2,NGP2,3,ngp2|2026-06-13|night,Night 06-13,2026-06-13,micro_stops,Micro-stops (<2 min),0.5,#2d3436
+ngp2|2026-06-15|day,ngp2,NGP2,3,ngp2|2026-06-13|night,Night 06-13,2026-06-13,halted,Halted (operator wait),2.0,#636e72
+ngp2|2026-06-15|day,ngp2,NGP2,3,ngp2|2026-06-13|night,Night 06-13,2026-06-13,auto_long,Auto-stops (>2 min),2.55,#b2bec3
+ngp2|2026-06-15|day,ngp2,NGP2,3,ngp2|2026-06-13|night,Night 06-13,2026-06-13,manual,Manual stops,0.74,#dfe6e9
+ngp2|2026-06-15|night,ngp2,NGP2,0,ngp2|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.37,#2d3436
+ngp2|2026-06-15|night,ngp2,NGP2,0,ngp2|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-06-15|night,ngp2,NGP2,0,ngp2|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.98,#b2bec3
+ngp2|2026-06-15|night,ngp2,NGP2,0,ngp2|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.48,#dfe6e9
+ngp2|2026-06-15|night,ngp2,NGP2,1,ngp2|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.19,#2d3436
+ngp2|2026-06-15|night,ngp2,NGP2,1,ngp2|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),1.82,#636e72
+ngp2|2026-06-15|night,ngp2,NGP2,1,ngp2|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-15|night,ngp2,NGP2,1,ngp2|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-15|night,ngp2,NGP2,2,ngp2|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-15|night,ngp2,NGP2,2,ngp2|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),3.21,#636e72
+ngp2|2026-06-15|night,ngp2,NGP2,2,ngp2|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.46,#b2bec3
+ngp2|2026-06-15|night,ngp2,NGP2,2,ngp2|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-06-15|night,ngp2,NGP2,3,ngp2|2026-06-14|day,Day 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-15|night,ngp2,NGP2,3,ngp2|2026-06-14|day,Day 06-14,2026-06-14,halted,Halted (operator wait),3.6,#636e72
+ngp2|2026-06-15|night,ngp2,NGP2,3,ngp2|2026-06-14|day,Day 06-14,2026-06-14,auto_long,Auto-stops (>2 min),0.82,#b2bec3
+ngp2|2026-06-15|night,ngp2,NGP2,3,ngp2|2026-06-14|day,Day 06-14,2026-06-14,manual,Manual stops,0.23,#dfe6e9
+ngp2|2026-06-16|day,ngp2,NGP2,0,ngp2|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+ngp2|2026-06-16|day,ngp2,NGP2,0,ngp2|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),4.42,#636e72
+ngp2|2026-06-16|day,ngp2,NGP2,0,ngp2|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.73,#b2bec3
+ngp2|2026-06-16|day,ngp2,NGP2,0,ngp2|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.13,#dfe6e9
+ngp2|2026-06-16|day,ngp2,NGP2,1,ngp2|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.37,#2d3436
+ngp2|2026-06-16|day,ngp2,NGP2,1,ngp2|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-06-16|day,ngp2,NGP2,1,ngp2|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.98,#b2bec3
+ngp2|2026-06-16|day,ngp2,NGP2,1,ngp2|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.48,#dfe6e9
+ngp2|2026-06-16|day,ngp2,NGP2,2,ngp2|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.19,#2d3436
+ngp2|2026-06-16|day,ngp2,NGP2,2,ngp2|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),1.82,#636e72
+ngp2|2026-06-16|day,ngp2,NGP2,2,ngp2|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-16|day,ngp2,NGP2,2,ngp2|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-16|day,ngp2,NGP2,3,ngp2|2026-06-14|night,Night 06-14,2026-06-14,micro_stops,Micro-stops (<2 min),0.88,#2d3436
+ngp2|2026-06-16|day,ngp2,NGP2,3,ngp2|2026-06-14|night,Night 06-14,2026-06-14,halted,Halted (operator wait),3.21,#636e72
+ngp2|2026-06-16|day,ngp2,NGP2,3,ngp2|2026-06-14|night,Night 06-14,2026-06-14,auto_long,Auto-stops (>2 min),1.46,#b2bec3
+ngp2|2026-06-16|day,ngp2,NGP2,3,ngp2|2026-06-14|night,Night 06-14,2026-06-14,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-06-16|night,ngp2,NGP2,0,ngp2|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-16|night,ngp2,NGP2,0,ngp2|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),3.46,#636e72
+ngp2|2026-06-16|night,ngp2,NGP2,0,ngp2|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.16,#b2bec3
+ngp2|2026-06-16|night,ngp2,NGP2,0,ngp2|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.11,#dfe6e9
+ngp2|2026-06-16|night,ngp2,NGP2,1,ngp2|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+ngp2|2026-06-16|night,ngp2,NGP2,1,ngp2|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),4.42,#636e72
+ngp2|2026-06-16|night,ngp2,NGP2,1,ngp2|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.73,#b2bec3
+ngp2|2026-06-16|night,ngp2,NGP2,1,ngp2|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.13,#dfe6e9
+ngp2|2026-06-16|night,ngp2,NGP2,2,ngp2|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.37,#2d3436
+ngp2|2026-06-16|night,ngp2,NGP2,2,ngp2|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-06-16|night,ngp2,NGP2,2,ngp2|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.98,#b2bec3
+ngp2|2026-06-16|night,ngp2,NGP2,2,ngp2|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.48,#dfe6e9
+ngp2|2026-06-16|night,ngp2,NGP2,3,ngp2|2026-06-15|day,Day 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.19,#2d3436
+ngp2|2026-06-16|night,ngp2,NGP2,3,ngp2|2026-06-15|day,Day 06-15,2026-06-15,halted,Halted (operator wait),1.82,#636e72
+ngp2|2026-06-16|night,ngp2,NGP2,3,ngp2|2026-06-15|day,Day 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.47,#b2bec3
+ngp2|2026-06-16|night,ngp2,NGP2,3,ngp2|2026-06-15|day,Day 06-15,2026-06-15,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-06-17|day,ngp2,NGP2,0,ngp2|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.32,#2d3436
+ngp2|2026-06-17|day,ngp2,NGP2,0,ngp2|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),4.09,#636e72
+ngp2|2026-06-17|day,ngp2,NGP2,0,ngp2|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),0.65,#b2bec3
+ngp2|2026-06-17|day,ngp2,NGP2,0,ngp2|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,1.13,#dfe6e9
+ngp2|2026-06-17|day,ngp2,NGP2,1,ngp2|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-17|day,ngp2,NGP2,1,ngp2|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),3.46,#636e72
+ngp2|2026-06-17|day,ngp2,NGP2,1,ngp2|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.16,#b2bec3
+ngp2|2026-06-17|day,ngp2,NGP2,1,ngp2|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.11,#dfe6e9
+ngp2|2026-06-17|day,ngp2,NGP2,2,ngp2|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+ngp2|2026-06-17|day,ngp2,NGP2,2,ngp2|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),4.42,#636e72
+ngp2|2026-06-17|day,ngp2,NGP2,2,ngp2|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.73,#b2bec3
+ngp2|2026-06-17|day,ngp2,NGP2,2,ngp2|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.13,#dfe6e9
+ngp2|2026-06-17|day,ngp2,NGP2,3,ngp2|2026-06-15|night,Night 06-15,2026-06-15,micro_stops,Micro-stops (<2 min),1.37,#2d3436
+ngp2|2026-06-17|day,ngp2,NGP2,3,ngp2|2026-06-15|night,Night 06-15,2026-06-15,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-06-17|day,ngp2,NGP2,3,ngp2|2026-06-15|night,Night 06-15,2026-06-15,auto_long,Auto-stops (>2 min),1.98,#b2bec3
+ngp2|2026-06-17|day,ngp2,NGP2,3,ngp2|2026-06-15|night,Night 06-15,2026-06-15,manual,Manual stops,0.48,#dfe6e9
+ngp2|2026-06-17|night,ngp2,NGP2,0,ngp2|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.95,#2d3436
+ngp2|2026-06-17|night,ngp2,NGP2,0,ngp2|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),2.57,#636e72
+ngp2|2026-06-17|night,ngp2,NGP2,0,ngp2|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+ngp2|2026-06-17|night,ngp2,NGP2,0,ngp2|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.44,#dfe6e9
+ngp2|2026-06-17|night,ngp2,NGP2,1,ngp2|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.32,#2d3436
+ngp2|2026-06-17|night,ngp2,NGP2,1,ngp2|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),4.09,#636e72
+ngp2|2026-06-17|night,ngp2,NGP2,1,ngp2|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),0.65,#b2bec3
+ngp2|2026-06-17|night,ngp2,NGP2,1,ngp2|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,1.13,#dfe6e9
+ngp2|2026-06-17|night,ngp2,NGP2,2,ngp2|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-17|night,ngp2,NGP2,2,ngp2|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),3.46,#636e72
+ngp2|2026-06-17|night,ngp2,NGP2,2,ngp2|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.16,#b2bec3
+ngp2|2026-06-17|night,ngp2,NGP2,2,ngp2|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.11,#dfe6e9
+ngp2|2026-06-17|night,ngp2,NGP2,3,ngp2|2026-06-16|day,Day 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.84,#2d3436
+ngp2|2026-06-17|night,ngp2,NGP2,3,ngp2|2026-06-16|day,Day 06-16,2026-06-16,halted,Halted (operator wait),4.42,#636e72
+ngp2|2026-06-17|night,ngp2,NGP2,3,ngp2|2026-06-16|day,Day 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.73,#b2bec3
+ngp2|2026-06-17|night,ngp2,NGP2,3,ngp2|2026-06-16|day,Day 06-16,2026-06-16,manual,Manual stops,0.13,#dfe6e9
+ngp2|2026-06-18|day,ngp2,NGP2,0,ngp2|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.73,#2d3436
+ngp2|2026-06-18|day,ngp2,NGP2,0,ngp2|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),3.61,#636e72
+ngp2|2026-06-18|day,ngp2,NGP2,0,ngp2|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.32,#b2bec3
+ngp2|2026-06-18|day,ngp2,NGP2,0,ngp2|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-06-18|day,ngp2,NGP2,1,ngp2|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.95,#2d3436
+ngp2|2026-06-18|day,ngp2,NGP2,1,ngp2|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),2.57,#636e72
+ngp2|2026-06-18|day,ngp2,NGP2,1,ngp2|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+ngp2|2026-06-18|day,ngp2,NGP2,1,ngp2|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.44,#dfe6e9
+ngp2|2026-06-18|day,ngp2,NGP2,2,ngp2|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.32,#2d3436
+ngp2|2026-06-18|day,ngp2,NGP2,2,ngp2|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),4.09,#636e72
+ngp2|2026-06-18|day,ngp2,NGP2,2,ngp2|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),0.65,#b2bec3
+ngp2|2026-06-18|day,ngp2,NGP2,2,ngp2|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,1.13,#dfe6e9
+ngp2|2026-06-18|day,ngp2,NGP2,3,ngp2|2026-06-16|night,Night 06-16,2026-06-16,micro_stops,Micro-stops (<2 min),0.45,#2d3436
+ngp2|2026-06-18|day,ngp2,NGP2,3,ngp2|2026-06-16|night,Night 06-16,2026-06-16,halted,Halted (operator wait),3.46,#636e72
+ngp2|2026-06-18|day,ngp2,NGP2,3,ngp2|2026-06-16|night,Night 06-16,2026-06-16,auto_long,Auto-stops (>2 min),1.16,#b2bec3
+ngp2|2026-06-18|day,ngp2,NGP2,3,ngp2|2026-06-16|night,Night 06-16,2026-06-16,manual,Manual stops,0.11,#dfe6e9
+ngp2|2026-06-18|night,ngp2,NGP2,0,ngp2|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-18|night,ngp2,NGP2,0,ngp2|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),2.45,#636e72
+ngp2|2026-06-18|night,ngp2,NGP2,0,ngp2|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.11,#b2bec3
+ngp2|2026-06-18|night,ngp2,NGP2,0,ngp2|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.03,#dfe6e9
+ngp2|2026-06-18|night,ngp2,NGP2,1,ngp2|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.73,#2d3436
+ngp2|2026-06-18|night,ngp2,NGP2,1,ngp2|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),3.61,#636e72
+ngp2|2026-06-18|night,ngp2,NGP2,1,ngp2|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.32,#b2bec3
+ngp2|2026-06-18|night,ngp2,NGP2,1,ngp2|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-06-18|night,ngp2,NGP2,2,ngp2|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.95,#2d3436
+ngp2|2026-06-18|night,ngp2,NGP2,2,ngp2|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),2.57,#636e72
+ngp2|2026-06-18|night,ngp2,NGP2,2,ngp2|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+ngp2|2026-06-18|night,ngp2,NGP2,2,ngp2|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.44,#dfe6e9
+ngp2|2026-06-18|night,ngp2,NGP2,3,ngp2|2026-06-17|day,Day 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.32,#2d3436
+ngp2|2026-06-18|night,ngp2,NGP2,3,ngp2|2026-06-17|day,Day 06-17,2026-06-17,halted,Halted (operator wait),4.09,#636e72
+ngp2|2026-06-18|night,ngp2,NGP2,3,ngp2|2026-06-17|day,Day 06-17,2026-06-17,auto_long,Auto-stops (>2 min),0.65,#b2bec3
+ngp2|2026-06-18|night,ngp2,NGP2,3,ngp2|2026-06-17|day,Day 06-17,2026-06-17,manual,Manual stops,1.13,#dfe6e9
+ngp2|2026-06-19|day,ngp2,NGP2,0,ngp2|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-06-19|day,ngp2,NGP2,0,ngp2|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),3.13,#636e72
+ngp2|2026-06-19|day,ngp2,NGP2,0,ngp2|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+ngp2|2026-06-19|day,ngp2,NGP2,0,ngp2|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-06-19|day,ngp2,NGP2,1,ngp2|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-19|day,ngp2,NGP2,1,ngp2|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),2.45,#636e72
+ngp2|2026-06-19|day,ngp2,NGP2,1,ngp2|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.11,#b2bec3
+ngp2|2026-06-19|day,ngp2,NGP2,1,ngp2|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.03,#dfe6e9
+ngp2|2026-06-19|day,ngp2,NGP2,2,ngp2|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.73,#2d3436
+ngp2|2026-06-19|day,ngp2,NGP2,2,ngp2|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),3.61,#636e72
+ngp2|2026-06-19|day,ngp2,NGP2,2,ngp2|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.32,#b2bec3
+ngp2|2026-06-19|day,ngp2,NGP2,2,ngp2|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-06-19|day,ngp2,NGP2,3,ngp2|2026-06-17|night,Night 06-17,2026-06-17,micro_stops,Micro-stops (<2 min),0.95,#2d3436
+ngp2|2026-06-19|day,ngp2,NGP2,3,ngp2|2026-06-17|night,Night 06-17,2026-06-17,halted,Halted (operator wait),2.57,#636e72
+ngp2|2026-06-19|day,ngp2,NGP2,3,ngp2|2026-06-17|night,Night 06-17,2026-06-17,auto_long,Auto-stops (>2 min),2.8,#b2bec3
+ngp2|2026-06-19|day,ngp2,NGP2,3,ngp2|2026-06-17|night,Night 06-17,2026-06-17,manual,Manual stops,0.44,#dfe6e9
+ngp2|2026-06-19|night,ngp2,NGP2,0,ngp2|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+ngp2|2026-06-19|night,ngp2,NGP2,0,ngp2|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),2.53,#636e72
+ngp2|2026-06-19|night,ngp2,NGP2,0,ngp2|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-06-19|night,ngp2,NGP2,0,ngp2|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-06-19|night,ngp2,NGP2,1,ngp2|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-06-19|night,ngp2,NGP2,1,ngp2|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),3.13,#636e72
+ngp2|2026-06-19|night,ngp2,NGP2,1,ngp2|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+ngp2|2026-06-19|night,ngp2,NGP2,1,ngp2|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-06-19|night,ngp2,NGP2,2,ngp2|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-06-19|night,ngp2,NGP2,2,ngp2|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),2.45,#636e72
+ngp2|2026-06-19|night,ngp2,NGP2,2,ngp2|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.11,#b2bec3
+ngp2|2026-06-19|night,ngp2,NGP2,2,ngp2|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.03,#dfe6e9
+ngp2|2026-06-19|night,ngp2,NGP2,3,ngp2|2026-06-18|day,Day 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.73,#2d3436
+ngp2|2026-06-19|night,ngp2,NGP2,3,ngp2|2026-06-18|day,Day 06-18,2026-06-18,halted,Halted (operator wait),3.61,#636e72
+ngp2|2026-06-19|night,ngp2,NGP2,3,ngp2|2026-06-18|day,Day 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.32,#b2bec3
+ngp2|2026-06-19|night,ngp2,NGP2,3,ngp2|2026-06-18|day,Day 06-18,2026-06-18,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-07-08|day,ngp2,NGP2,0,ngp2|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),1.61,#2d3436
+ngp2|2026-07-08|day,ngp2,NGP2,0,ngp2|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),3.58,#636e72
+ngp2|2026-07-08|day,ngp2,NGP2,0,ngp2|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),2.71,#b2bec3
+ngp2|2026-07-08|day,ngp2,NGP2,0,ngp2|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-07-08|day,ngp2,NGP2,1,ngp2|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+ngp2|2026-07-08|day,ngp2,NGP2,1,ngp2|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),2.53,#636e72
+ngp2|2026-07-08|day,ngp2,NGP2,1,ngp2|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-07-08|day,ngp2,NGP2,1,ngp2|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-08|day,ngp2,NGP2,2,ngp2|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-07-08|day,ngp2,NGP2,2,ngp2|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),3.13,#636e72
+ngp2|2026-07-08|day,ngp2,NGP2,2,ngp2|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+ngp2|2026-07-08|day,ngp2,NGP2,2,ngp2|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-07-08|day,ngp2,NGP2,3,ngp2|2026-06-18|night,Night 06-18,2026-06-18,micro_stops,Micro-stops (<2 min),0.92,#2d3436
+ngp2|2026-07-08|day,ngp2,NGP2,3,ngp2|2026-06-18|night,Night 06-18,2026-06-18,halted,Halted (operator wait),2.45,#636e72
+ngp2|2026-07-08|day,ngp2,NGP2,3,ngp2|2026-06-18|night,Night 06-18,2026-06-18,auto_long,Auto-stops (>2 min),1.11,#b2bec3
+ngp2|2026-07-08|day,ngp2,NGP2,3,ngp2|2026-06-18|night,Night 06-18,2026-06-18,manual,Manual stops,0.03,#dfe6e9
+ngp2|2026-07-08|night,ngp2,NGP2,0,ngp2|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-07-08|night,ngp2,NGP2,0,ngp2|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),1.95,#636e72
+ngp2|2026-07-08|night,ngp2,NGP2,0,ngp2|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),5.63,#b2bec3
+ngp2|2026-07-08|night,ngp2,NGP2,0,ngp2|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,0.26,#dfe6e9
+ngp2|2026-07-08|night,ngp2,NGP2,1,ngp2|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),1.61,#2d3436
+ngp2|2026-07-08|night,ngp2,NGP2,1,ngp2|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),3.58,#636e72
+ngp2|2026-07-08|night,ngp2,NGP2,1,ngp2|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),2.71,#b2bec3
+ngp2|2026-07-08|night,ngp2,NGP2,1,ngp2|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-07-08|night,ngp2,NGP2,2,ngp2|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+ngp2|2026-07-08|night,ngp2,NGP2,2,ngp2|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),2.53,#636e72
+ngp2|2026-07-08|night,ngp2,NGP2,2,ngp2|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-07-08|night,ngp2,NGP2,2,ngp2|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-08|night,ngp2,NGP2,3,ngp2|2026-06-19|day,Day 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-07-08|night,ngp2,NGP2,3,ngp2|2026-06-19|day,Day 06-19,2026-06-19,halted,Halted (operator wait),3.13,#636e72
+ngp2|2026-07-08|night,ngp2,NGP2,3,ngp2|2026-06-19|day,Day 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.79,#b2bec3
+ngp2|2026-07-08|night,ngp2,NGP2,3,ngp2|2026-06-19|day,Day 06-19,2026-06-19,manual,Manual stops,0.14,#dfe6e9
+ngp2|2026-07-09|day,ngp2,NGP2,0,ngp2|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.61,#2d3436
+ngp2|2026-07-09|day,ngp2,NGP2,0,ngp2|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),9.79,#636e72
+ngp2|2026-07-09|day,ngp2,NGP2,0,ngp2|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),0.34,#b2bec3
+ngp2|2026-07-09|day,ngp2,NGP2,0,ngp2|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.07,#dfe6e9
+ngp2|2026-07-09|day,ngp2,NGP2,1,ngp2|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-07-09|day,ngp2,NGP2,1,ngp2|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),1.95,#636e72
+ngp2|2026-07-09|day,ngp2,NGP2,1,ngp2|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),5.63,#b2bec3
+ngp2|2026-07-09|day,ngp2,NGP2,1,ngp2|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,0.26,#dfe6e9
+ngp2|2026-07-09|day,ngp2,NGP2,2,ngp2|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),1.61,#2d3436
+ngp2|2026-07-09|day,ngp2,NGP2,2,ngp2|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),3.58,#636e72
+ngp2|2026-07-09|day,ngp2,NGP2,2,ngp2|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),2.71,#b2bec3
+ngp2|2026-07-09|day,ngp2,NGP2,2,ngp2|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-07-09|day,ngp2,NGP2,3,ngp2|2026-06-19|night,Night 06-19,2026-06-19,micro_stops,Micro-stops (<2 min),0.47,#2d3436
+ngp2|2026-07-09|day,ngp2,NGP2,3,ngp2|2026-06-19|night,Night 06-19,2026-06-19,halted,Halted (operator wait),2.53,#636e72
+ngp2|2026-07-09|day,ngp2,NGP2,3,ngp2|2026-06-19|night,Night 06-19,2026-06-19,auto_long,Auto-stops (>2 min),1.54,#b2bec3
+ngp2|2026-07-09|day,ngp2,NGP2,3,ngp2|2026-06-19|night,Night 06-19,2026-06-19,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-09|night,ngp2,NGP2,0,ngp2|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.57,#2d3436
+ngp2|2026-07-09|night,ngp2,NGP2,0,ngp2|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),3.69,#636e72
+ngp2|2026-07-09|night,ngp2,NGP2,0,ngp2|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),3.1,#b2bec3
+ngp2|2026-07-09|night,ngp2,NGP2,0,ngp2|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-07-09|night,ngp2,NGP2,1,ngp2|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.61,#2d3436
+ngp2|2026-07-09|night,ngp2,NGP2,1,ngp2|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),9.79,#636e72
+ngp2|2026-07-09|night,ngp2,NGP2,1,ngp2|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),0.34,#b2bec3
+ngp2|2026-07-09|night,ngp2,NGP2,1,ngp2|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.07,#dfe6e9
+ngp2|2026-07-09|night,ngp2,NGP2,2,ngp2|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-07-09|night,ngp2,NGP2,2,ngp2|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),1.95,#636e72
+ngp2|2026-07-09|night,ngp2,NGP2,2,ngp2|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),5.63,#b2bec3
+ngp2|2026-07-09|night,ngp2,NGP2,2,ngp2|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,0.26,#dfe6e9
+ngp2|2026-07-09|night,ngp2,NGP2,3,ngp2|2026-07-08|day,Day 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),1.61,#2d3436
+ngp2|2026-07-09|night,ngp2,NGP2,3,ngp2|2026-07-08|day,Day 07-08,2026-07-08,halted,Halted (operator wait),3.58,#636e72
+ngp2|2026-07-09|night,ngp2,NGP2,3,ngp2|2026-07-08|day,Day 07-08,2026-07-08,auto_long,Auto-stops (>2 min),2.71,#b2bec3
+ngp2|2026-07-09|night,ngp2,NGP2,3,ngp2|2026-07-08|day,Day 07-08,2026-07-08,manual,Manual stops,0.37,#dfe6e9
+ngp2|2026-07-10|day,ngp2,NGP2,0,ngp2|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.59,#2d3436
+ngp2|2026-07-10|day,ngp2,NGP2,0,ngp2|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),2.85,#636e72
+ngp2|2026-07-10|day,ngp2,NGP2,0,ngp2|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+ngp2|2026-07-10|day,ngp2,NGP2,0,ngp2|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-10|day,ngp2,NGP2,1,ngp2|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.57,#2d3436
+ngp2|2026-07-10|day,ngp2,NGP2,1,ngp2|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),3.69,#636e72
+ngp2|2026-07-10|day,ngp2,NGP2,1,ngp2|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),3.1,#b2bec3
+ngp2|2026-07-10|day,ngp2,NGP2,1,ngp2|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-07-10|day,ngp2,NGP2,2,ngp2|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.61,#2d3436
+ngp2|2026-07-10|day,ngp2,NGP2,2,ngp2|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),9.79,#636e72
+ngp2|2026-07-10|day,ngp2,NGP2,2,ngp2|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),0.34,#b2bec3
+ngp2|2026-07-10|day,ngp2,NGP2,2,ngp2|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.07,#dfe6e9
+ngp2|2026-07-10|day,ngp2,NGP2,3,ngp2|2026-07-08|night,Night 07-08,2026-07-08,micro_stops,Micro-stops (<2 min),0.62,#2d3436
+ngp2|2026-07-10|day,ngp2,NGP2,3,ngp2|2026-07-08|night,Night 07-08,2026-07-08,halted,Halted (operator wait),1.95,#636e72
+ngp2|2026-07-10|day,ngp2,NGP2,3,ngp2|2026-07-08|night,Night 07-08,2026-07-08,auto_long,Auto-stops (>2 min),5.63,#b2bec3
+ngp2|2026-07-10|day,ngp2,NGP2,3,ngp2|2026-07-08|night,Night 07-08,2026-07-08,manual,Manual stops,0.26,#dfe6e9
+ngp2|2026-07-10|night,ngp2,NGP2,0,ngp2|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.99,#2d3436
+ngp2|2026-07-10|night,ngp2,NGP2,0,ngp2|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),2.46,#636e72
+ngp2|2026-07-10|night,ngp2,NGP2,0,ngp2|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),1.51,#b2bec3
+ngp2|2026-07-10|night,ngp2,NGP2,0,ngp2|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.31,#dfe6e9
+ngp2|2026-07-10|night,ngp2,NGP2,1,ngp2|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.59,#2d3436
+ngp2|2026-07-10|night,ngp2,NGP2,1,ngp2|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),2.85,#636e72
+ngp2|2026-07-10|night,ngp2,NGP2,1,ngp2|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+ngp2|2026-07-10|night,ngp2,NGP2,1,ngp2|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-10|night,ngp2,NGP2,2,ngp2|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.57,#2d3436
+ngp2|2026-07-10|night,ngp2,NGP2,2,ngp2|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),3.69,#636e72
+ngp2|2026-07-10|night,ngp2,NGP2,2,ngp2|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),3.1,#b2bec3
+ngp2|2026-07-10|night,ngp2,NGP2,2,ngp2|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-07-10|night,ngp2,NGP2,3,ngp2|2026-07-09|day,Day 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),0.61,#2d3436
+ngp2|2026-07-10|night,ngp2,NGP2,3,ngp2|2026-07-09|day,Day 07-09,2026-07-09,halted,Halted (operator wait),9.79,#636e72
+ngp2|2026-07-10|night,ngp2,NGP2,3,ngp2|2026-07-09|day,Day 07-09,2026-07-09,auto_long,Auto-stops (>2 min),0.34,#b2bec3
+ngp2|2026-07-10|night,ngp2,NGP2,3,ngp2|2026-07-09|day,Day 07-09,2026-07-09,manual,Manual stops,0.07,#dfe6e9
+ngp2|2026-07-11|day,ngp2,NGP2,0,ngp2|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.07,#2d3436
+ngp2|2026-07-11|day,ngp2,NGP2,0,ngp2|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),2.29,#636e72
+ngp2|2026-07-11|day,ngp2,NGP2,0,ngp2|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.61,#b2bec3
+ngp2|2026-07-11|day,ngp2,NGP2,0,ngp2|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-07-11|day,ngp2,NGP2,1,ngp2|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.99,#2d3436
+ngp2|2026-07-11|day,ngp2,NGP2,1,ngp2|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),2.46,#636e72
+ngp2|2026-07-11|day,ngp2,NGP2,1,ngp2|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),1.51,#b2bec3
+ngp2|2026-07-11|day,ngp2,NGP2,1,ngp2|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.31,#dfe6e9
+ngp2|2026-07-11|day,ngp2,NGP2,2,ngp2|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.59,#2d3436
+ngp2|2026-07-11|day,ngp2,NGP2,2,ngp2|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),2.85,#636e72
+ngp2|2026-07-11|day,ngp2,NGP2,2,ngp2|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+ngp2|2026-07-11|day,ngp2,NGP2,2,ngp2|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-11|day,ngp2,NGP2,3,ngp2|2026-07-09|night,Night 07-09,2026-07-09,micro_stops,Micro-stops (<2 min),1.57,#2d3436
+ngp2|2026-07-11|day,ngp2,NGP2,3,ngp2|2026-07-09|night,Night 07-09,2026-07-09,halted,Halted (operator wait),3.69,#636e72
+ngp2|2026-07-11|day,ngp2,NGP2,3,ngp2|2026-07-09|night,Night 07-09,2026-07-09,auto_long,Auto-stops (>2 min),3.1,#b2bec3
+ngp2|2026-07-11|day,ngp2,NGP2,3,ngp2|2026-07-09|night,Night 07-09,2026-07-09,manual,Manual stops,0.1,#dfe6e9
+ngp2|2026-07-11|night,ngp2,NGP2,0,ngp2|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.05,#2d3436
+ngp2|2026-07-11|night,ngp2,NGP2,0,ngp2|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),1.78,#636e72
+ngp2|2026-07-11|night,ngp2,NGP2,0,ngp2|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),3.21,#b2bec3
+ngp2|2026-07-11|night,ngp2,NGP2,0,ngp2|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-11|night,ngp2,NGP2,1,ngp2|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.07,#2d3436
+ngp2|2026-07-11|night,ngp2,NGP2,1,ngp2|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),2.29,#636e72
+ngp2|2026-07-11|night,ngp2,NGP2,1,ngp2|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.61,#b2bec3
+ngp2|2026-07-11|night,ngp2,NGP2,1,ngp2|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-07-11|night,ngp2,NGP2,2,ngp2|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.99,#2d3436
+ngp2|2026-07-11|night,ngp2,NGP2,2,ngp2|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),2.46,#636e72
+ngp2|2026-07-11|night,ngp2,NGP2,2,ngp2|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),1.51,#b2bec3
+ngp2|2026-07-11|night,ngp2,NGP2,2,ngp2|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.31,#dfe6e9
+ngp2|2026-07-11|night,ngp2,NGP2,3,ngp2|2026-07-10|day,Day 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.59,#2d3436
+ngp2|2026-07-11|night,ngp2,NGP2,3,ngp2|2026-07-10|day,Day 07-10,2026-07-10,halted,Halted (operator wait),2.85,#636e72
+ngp2|2026-07-11|night,ngp2,NGP2,3,ngp2|2026-07-10|day,Day 07-10,2026-07-10,auto_long,Auto-stops (>2 min),3.58,#b2bec3
+ngp2|2026-07-11|night,ngp2,NGP2,3,ngp2|2026-07-10|day,Day 07-10,2026-07-10,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-12|day,ngp2,NGP2,0,ngp2|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.79,#2d3436
+ngp2|2026-07-12|day,ngp2,NGP2,0,ngp2|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),4.62,#636e72
+ngp2|2026-07-12|day,ngp2,NGP2,0,ngp2|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.12,#b2bec3
+ngp2|2026-07-12|day,ngp2,NGP2,0,ngp2|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.29,#dfe6e9
+ngp2|2026-07-12|day,ngp2,NGP2,1,ngp2|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.05,#2d3436
+ngp2|2026-07-12|day,ngp2,NGP2,1,ngp2|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),1.78,#636e72
+ngp2|2026-07-12|day,ngp2,NGP2,1,ngp2|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),3.21,#b2bec3
+ngp2|2026-07-12|day,ngp2,NGP2,1,ngp2|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-12|day,ngp2,NGP2,2,ngp2|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.07,#2d3436
+ngp2|2026-07-12|day,ngp2,NGP2,2,ngp2|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),2.29,#636e72
+ngp2|2026-07-12|day,ngp2,NGP2,2,ngp2|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.61,#b2bec3
+ngp2|2026-07-12|day,ngp2,NGP2,2,ngp2|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-07-12|day,ngp2,NGP2,3,ngp2|2026-07-10|night,Night 07-10,2026-07-10,micro_stops,Micro-stops (<2 min),1.99,#2d3436
+ngp2|2026-07-12|day,ngp2,NGP2,3,ngp2|2026-07-10|night,Night 07-10,2026-07-10,halted,Halted (operator wait),2.46,#636e72
+ngp2|2026-07-12|day,ngp2,NGP2,3,ngp2|2026-07-10|night,Night 07-10,2026-07-10,auto_long,Auto-stops (>2 min),1.51,#b2bec3
+ngp2|2026-07-12|day,ngp2,NGP2,3,ngp2|2026-07-10|night,Night 07-10,2026-07-10,manual,Manual stops,0.31,#dfe6e9
+ngp2|2026-07-12|night,ngp2,NGP2,0,ngp2|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.32,#2d3436
+ngp2|2026-07-12|night,ngp2,NGP2,0,ngp2|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),2.92,#636e72
+ngp2|2026-07-12|night,ngp2,NGP2,0,ngp2|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.9,#b2bec3
+ngp2|2026-07-12|night,ngp2,NGP2,0,ngp2|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.05,#dfe6e9
+ngp2|2026-07-12|night,ngp2,NGP2,1,ngp2|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.79,#2d3436
+ngp2|2026-07-12|night,ngp2,NGP2,1,ngp2|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),4.62,#636e72
+ngp2|2026-07-12|night,ngp2,NGP2,1,ngp2|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.12,#b2bec3
+ngp2|2026-07-12|night,ngp2,NGP2,1,ngp2|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.29,#dfe6e9
+ngp2|2026-07-12|night,ngp2,NGP2,2,ngp2|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.05,#2d3436
+ngp2|2026-07-12|night,ngp2,NGP2,2,ngp2|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),1.78,#636e72
+ngp2|2026-07-12|night,ngp2,NGP2,2,ngp2|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),3.21,#b2bec3
+ngp2|2026-07-12|night,ngp2,NGP2,2,ngp2|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-12|night,ngp2,NGP2,3,ngp2|2026-07-11|day,Day 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.07,#2d3436
+ngp2|2026-07-12|night,ngp2,NGP2,3,ngp2|2026-07-11|day,Day 07-11,2026-07-11,halted,Halted (operator wait),2.29,#636e72
+ngp2|2026-07-12|night,ngp2,NGP2,3,ngp2|2026-07-11|day,Day 07-11,2026-07-11,auto_long,Auto-stops (>2 min),2.61,#b2bec3
+ngp2|2026-07-12|night,ngp2,NGP2,3,ngp2|2026-07-11|day,Day 07-11,2026-07-11,manual,Manual stops,0.65,#dfe6e9
+ngp2|2026-07-13|day,ngp2,NGP2,0,ngp2|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.42,#2d3436
+ngp2|2026-07-13|day,ngp2,NGP2,0,ngp2|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),4.96,#636e72
+ngp2|2026-07-13|day,ngp2,NGP2,0,ngp2|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),2.56,#b2bec3
+ngp2|2026-07-13|day,ngp2,NGP2,0,ngp2|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,0.28,#dfe6e9
+ngp2|2026-07-13|day,ngp2,NGP2,1,ngp2|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.32,#2d3436
+ngp2|2026-07-13|day,ngp2,NGP2,1,ngp2|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),2.92,#636e72
+ngp2|2026-07-13|day,ngp2,NGP2,1,ngp2|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.9,#b2bec3
+ngp2|2026-07-13|day,ngp2,NGP2,1,ngp2|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.05,#dfe6e9
+ngp2|2026-07-13|day,ngp2,NGP2,2,ngp2|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.79,#2d3436
+ngp2|2026-07-13|day,ngp2,NGP2,2,ngp2|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),4.62,#636e72
+ngp2|2026-07-13|day,ngp2,NGP2,2,ngp2|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.12,#b2bec3
+ngp2|2026-07-13|day,ngp2,NGP2,2,ngp2|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.29,#dfe6e9
+ngp2|2026-07-13|day,ngp2,NGP2,3,ngp2|2026-07-11|night,Night 07-11,2026-07-11,micro_stops,Micro-stops (<2 min),2.05,#2d3436
+ngp2|2026-07-13|day,ngp2,NGP2,3,ngp2|2026-07-11|night,Night 07-11,2026-07-11,halted,Halted (operator wait),1.78,#636e72
+ngp2|2026-07-13|day,ngp2,NGP2,3,ngp2|2026-07-11|night,Night 07-11,2026-07-11,auto_long,Auto-stops (>2 min),3.21,#b2bec3
+ngp2|2026-07-13|day,ngp2,NGP2,3,ngp2|2026-07-11|night,Night 07-11,2026-07-11,manual,Manual stops,0.09,#dfe6e9
+ngp2|2026-07-13|night,ngp2,NGP2,0,ngp2|2026-07-13|night,Night 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),1.02,#2d3436
+ngp2|2026-07-13|night,ngp2,NGP2,0,ngp2|2026-07-13|night,Night 07-13,2026-07-13,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-07-13|night,ngp2,NGP2,0,ngp2|2026-07-13|night,Night 07-13,2026-07-13,auto_long,Auto-stops (>2 min),0.93,#b2bec3
+ngp2|2026-07-13|night,ngp2,NGP2,0,ngp2|2026-07-13|night,Night 07-13,2026-07-13,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-13|night,ngp2,NGP2,1,ngp2|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.42,#2d3436
+ngp2|2026-07-13|night,ngp2,NGP2,1,ngp2|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),4.96,#636e72
+ngp2|2026-07-13|night,ngp2,NGP2,1,ngp2|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),2.56,#b2bec3
+ngp2|2026-07-13|night,ngp2,NGP2,1,ngp2|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,0.28,#dfe6e9
+ngp2|2026-07-13|night,ngp2,NGP2,2,ngp2|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.32,#2d3436
+ngp2|2026-07-13|night,ngp2,NGP2,2,ngp2|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),2.92,#636e72
+ngp2|2026-07-13|night,ngp2,NGP2,2,ngp2|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.9,#b2bec3
+ngp2|2026-07-13|night,ngp2,NGP2,2,ngp2|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.05,#dfe6e9
+ngp2|2026-07-13|night,ngp2,NGP2,3,ngp2|2026-07-12|day,Day 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.79,#2d3436
+ngp2|2026-07-13|night,ngp2,NGP2,3,ngp2|2026-07-12|day,Day 07-12,2026-07-12,halted,Halted (operator wait),4.62,#636e72
+ngp2|2026-07-13|night,ngp2,NGP2,3,ngp2|2026-07-12|day,Day 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.12,#b2bec3
+ngp2|2026-07-13|night,ngp2,NGP2,3,ngp2|2026-07-12|day,Day 07-12,2026-07-12,manual,Manual stops,0.29,#dfe6e9
+ngp2|2026-07-14|day,ngp2,NGP2,0,ngp2|2026-07-14|day,Day 07-14,2026-07-14,micro_stops,Micro-stops (<2 min),0.36,#2d3436
+ngp2|2026-07-14|day,ngp2,NGP2,0,ngp2|2026-07-14|day,Day 07-14,2026-07-14,halted,Halted (operator wait),4.28,#636e72
+ngp2|2026-07-14|day,ngp2,NGP2,0,ngp2|2026-07-14|day,Day 07-14,2026-07-14,auto_long,Auto-stops (>2 min),2.06,#b2bec3
+ngp2|2026-07-14|day,ngp2,NGP2,0,ngp2|2026-07-14|day,Day 07-14,2026-07-14,manual,Manual stops,0.51,#dfe6e9
+ngp2|2026-07-14|day,ngp2,NGP2,1,ngp2|2026-07-13|night,Night 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),1.02,#2d3436
+ngp2|2026-07-14|day,ngp2,NGP2,1,ngp2|2026-07-13|night,Night 07-13,2026-07-13,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-07-14|day,ngp2,NGP2,1,ngp2|2026-07-13|night,Night 07-13,2026-07-13,auto_long,Auto-stops (>2 min),0.93,#b2bec3
+ngp2|2026-07-14|day,ngp2,NGP2,1,ngp2|2026-07-13|night,Night 07-13,2026-07-13,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-14|day,ngp2,NGP2,2,ngp2|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.42,#2d3436
+ngp2|2026-07-14|day,ngp2,NGP2,2,ngp2|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),4.96,#636e72
+ngp2|2026-07-14|day,ngp2,NGP2,2,ngp2|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),2.56,#b2bec3
+ngp2|2026-07-14|day,ngp2,NGP2,2,ngp2|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,0.28,#dfe6e9
+ngp2|2026-07-14|day,ngp2,NGP2,3,ngp2|2026-07-12|night,Night 07-12,2026-07-12,micro_stops,Micro-stops (<2 min),1.32,#2d3436
+ngp2|2026-07-14|day,ngp2,NGP2,3,ngp2|2026-07-12|night,Night 07-12,2026-07-12,halted,Halted (operator wait),2.92,#636e72
+ngp2|2026-07-14|day,ngp2,NGP2,3,ngp2|2026-07-12|night,Night 07-12,2026-07-12,auto_long,Auto-stops (>2 min),1.9,#b2bec3
+ngp2|2026-07-14|day,ngp2,NGP2,3,ngp2|2026-07-12|night,Night 07-12,2026-07-12,manual,Manual stops,0.05,#dfe6e9
+ngp2|2026-07-14|night,ngp2,NGP2,0,ngp2|2026-07-14|night,Night 07-14,2026-07-14,micro_stops,Micro-stops (<2 min),1.69,#2d3436
+ngp2|2026-07-14|night,ngp2,NGP2,0,ngp2|2026-07-14|night,Night 07-14,2026-07-14,halted,Halted (operator wait),1.44,#636e72
+ngp2|2026-07-14|night,ngp2,NGP2,0,ngp2|2026-07-14|night,Night 07-14,2026-07-14,auto_long,Auto-stops (>2 min),1.36,#b2bec3
+ngp2|2026-07-14|night,ngp2,NGP2,0,ngp2|2026-07-14|night,Night 07-14,2026-07-14,manual,Manual stops,0.0,#dfe6e9
+ngp2|2026-07-14|night,ngp2,NGP2,1,ngp2|2026-07-14|day,Day 07-14,2026-07-14,micro_stops,Micro-stops (<2 min),0.36,#2d3436
+ngp2|2026-07-14|night,ngp2,NGP2,1,ngp2|2026-07-14|day,Day 07-14,2026-07-14,halted,Halted (operator wait),4.28,#636e72
+ngp2|2026-07-14|night,ngp2,NGP2,1,ngp2|2026-07-14|day,Day 07-14,2026-07-14,auto_long,Auto-stops (>2 min),2.06,#b2bec3
+ngp2|2026-07-14|night,ngp2,NGP2,1,ngp2|2026-07-14|day,Day 07-14,2026-07-14,manual,Manual stops,0.51,#dfe6e9
+ngp2|2026-07-14|night,ngp2,NGP2,2,ngp2|2026-07-13|night,Night 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),1.02,#2d3436
+ngp2|2026-07-14|night,ngp2,NGP2,2,ngp2|2026-07-13|night,Night 07-13,2026-07-13,halted,Halted (operator wait),2.55,#636e72
+ngp2|2026-07-14|night,ngp2,NGP2,2,ngp2|2026-07-13|night,Night 07-13,2026-07-13,auto_long,Auto-stops (>2 min),0.93,#b2bec3
+ngp2|2026-07-14|night,ngp2,NGP2,2,ngp2|2026-07-13|night,Night 07-13,2026-07-13,manual,Manual stops,0.27,#dfe6e9
+ngp2|2026-07-14|night,ngp2,NGP2,3,ngp2|2026-07-13|day,Day 07-13,2026-07-13,micro_stops,Micro-stops (<2 min),0.42,#2d3436
+ngp2|2026-07-14|night,ngp2,NGP2,3,ngp2|2026-07-13|day,Day 07-13,2026-07-13,halted,Halted (operator wait),4.96,#636e72
+ngp2|2026-07-14|night,ngp2,NGP2,3,ngp2|2026-07-13|day,Day 07-13,2026-07-13,auto_long,Auto-stops (>2 min),2.56,#b2bec3
+ngp2|2026-07-14|night,ngp2,NGP2,3,ngp2|2026-07-13|day,Day 07-13,2026-07-13,manual,Manual stops,0.28,#dfe6e9

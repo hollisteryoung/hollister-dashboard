@@ -1,0 +1,199 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "92842b143be4cbc4065d",
+  "position": {
+    "x": 15,
+    "y": 4026.2500000000009,
+    "z": 36000,
+    "height": 336,
+    "width": 1248,
+    "tabOrder": 42000
+  },
+  "visual": {
+    "visualType": "pythonVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EWMA"
+                    }
+                  },
+                  "Property": "BatchIdx"
+                }
+              },
+              "queryRef": "EWMA.BatchIdx",
+              "nativeQueryRef": "BatchIdx"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EWMA"
+                    }
+                  },
+                  "Property": "Lane"
+                }
+              },
+              "queryRef": "EWMA.Lane",
+              "nativeQueryRef": "Lane"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EWMA"
+                    }
+                  },
+                  "Property": "Ewma"
+                }
+              },
+              "queryRef": "EWMA.Ewma",
+              "nativeQueryRef": "Ewma"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EWMA"
+                    }
+                  },
+                  "Property": "Ucl"
+                }
+              },
+              "queryRef": "EWMA.Ucl",
+              "nativeQueryRef": "Ucl"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "script": [
+        {
+          "properties": {
+            "provider": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Python'"
+                }
+              }
+            },
+            "source": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\ndf = dataset.copy()\ndf[\"Lane\"] = df[\"Lane\"].astype(int)\ndf[\"BatchIdx\"] = df[\"BatchIdx\"].astype(int)\nxs = sorted(df[\"BatchIdx\"].unique())\npos = {v: i for i, v in enumerate(xs)}\ncolors = [\"#264653\",\"#e76f51\",\"#e9c46a\",\"#0077b6\",\"#2a9d8f\",\"#6a4c93\",\"#f4a261\",\"#48bfe3\",\"#8338ec\",\"#d4a373\"]\nfig, ax = plt.subplots(figsize=(31.2, 8.4), dpi=300)\nfor i, (lane, g) in enumerate(df.groupby(\"Lane\")):\n    g = g.sort_values(\"BatchIdx\")\n    c = colors[i % len(colors)]\n    x = [pos[v] for v in g[\"BatchIdx\"]]\n    ax.plot(x, list(g[\"Ewma\"]), marker=\"o\", markersize=6, color=c, linewidth=4, label=\"N%d\" % lane)\n    ucl = g[\"Ucl\"].mean()\n    if ucl > 0:\n        ax.plot([0, len(xs)-1], [ucl, ucl], linestyle=\"--\", color=c, alpha=0.3, linewidth=2)\n        b = g[g[\"Ewma\"] > g[\"Ucl\"]]\n        if len(b):\n            ax.scatter([pos[v] for v in b[\"BatchIdx\"]], list(b[\"Ewma\"]), marker=\"x\", s=320, color=\"#d63031\", linewidths=4, zorder=5)\nax.set_ylabel(\"EWMA reject rate %\")\nax.set_ylim(bottom=0)\nax.grid(axis=\"y\", color=\"#eeeeee\")\nfor s in [\"top\", \"right\"]:\n    ax.spines[s].set_visible(False)\nax.legend(loc=\"upper center\", bbox_to_anchor=(0.5, -0.18), ncol=6, fontsize=14, frameon=False)\nplt.tight_layout()\nplt.show()\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Nozzle EWMA Trend'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E194B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bc1415f25cb7b4cb7ad0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EWMA"
+              }
+            },
+            "Property": "Panel"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "EWMA",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "Panel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Nozzle'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

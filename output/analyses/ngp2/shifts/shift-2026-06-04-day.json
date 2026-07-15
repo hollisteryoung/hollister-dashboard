@@ -1,0 +1,3277 @@
+{
+  "analysis_id": "shift-dashboard",
+  "line_id": "ngp2",
+  "generated_at": "2026-06-05T18:28:19.702333+00:00",
+  "latest_shift": {
+    "label": "Day Shift \u2014 2026-06-04 (07:00 \u2013 19:00)",
+    "shift_date": "2026-06-04",
+    "shift_type": "day",
+    "start": "2026-06-04 07:00:00",
+    "end": "2026-06-04 19:00:00"
+  },
+  "p95_ideal_ppm": 105.0,
+  "shifts": [
+    {
+      "shift_date": "2026-06-04",
+      "shift_type": "day",
+      "label": "Day 06-04",
+      "oee": 43.9,
+      "availability": 57.7,
+      "performance": 79.7,
+      "quality": 95.4,
+      "running_hours": 6.92,
+      "total_stops": 75,
+      "total_downtime_hours": 5.26,
+      "longest_stop_min": 31.3,
+      "good_count": 40208,
+      "total_count": 42135,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 20,
+          "hours": 0.45
+        },
+        "halted": {
+          "count": 35,
+          "hours": 2.19
+        },
+        "auto_long": {
+          "count": 19,
+          "hours": 2.17
+        },
+        "manual": {
+          "count": 1,
+          "hours": 0.27
+        }
+      },
+      "segment_downtime": {
+        "hydration": {
+          "count": 31,
+          "hours": 1.58,
+          "halted_hours": 1.51,
+          "stopped_hours": 0.07,
+          "clusters": {
+            "PMK / Media": {
+              "count": 1,
+              "hours": 0.04,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.04
+            },
+            "Gripper": {
+              "count": 13,
+              "hours": 0.89,
+              "halted_hours": 0.89,
+              "stopped_hours": 0.0
+            },
+            "Catheter Reject": {
+              "count": 5,
+              "hours": 0.17,
+              "halted_hours": 0.13,
+              "stopped_hours": 0.04
+            },
+            "Limit Switch": {
+              "count": 10,
+              "hours": 0.39,
+              "halted_hours": 0.39,
+              "stopped_hours": 0.0
+            },
+            "Cap": {
+              "count": 2,
+              "hours": 0.09,
+              "halted_hours": 0.09,
+              "stopped_hours": 0.0
+            }
+          }
+        },
+        "foil": {
+          "count": 22,
+          "hours": 1.22,
+          "halted_hours": 0.68,
+          "stopped_hours": 0.54,
+          "clusters": {
+            "Other": {
+              "count": 3,
+              "hours": 0.12,
+              "halted_hours": 0.01,
+              "stopped_hours": 0.11
+            },
+            "Detection Fault": {
+              "count": 4,
+              "hours": 0.12,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.12
+            },
+            "Printer": {
+              "count": 7,
+              "hours": 0.68,
+              "halted_hours": 0.59,
+              "stopped_hours": 0.1
+            },
+            "Labeler": {
+              "count": 1,
+              "hours": 0.09,
+              "halted_hours": 0.09,
+              "stopped_hours": 0.0
+            },
+            "Positioning": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            },
+            "Sealing Lane": {
+              "count": 6,
+              "hours": 0.2,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.2
+            }
+          }
+        },
+        "schubert": {
+          "count": 18,
+          "hours": 1.54,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.54,
+          "clusters": {
+            "Line Stop / Wait": {
+              "count": 18,
+              "hours": 1.54,
+              "halted_hours": 0.0,
+              "stopped_hours": 1.54
+            }
+          }
+        },
+        "manual": {
+          "count": 1,
+          "hours": 0.27,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.27
+        },
+        "unattributed": {
+          "count": 3,
+          "hours": 0.47,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.47
+        }
+      },
+      "top_stops_by_cluster": {
+        "hydration": {
+          "PMK / Media": [
+            {
+              "label": "PMK is empty (switch to operation mode production",
+              "count": 1,
+              "hours": 0.04
+            }
+          ],
+          "Gripper": [
+            {
+              "label": "1100-8B6 Limit switch fault gripper funnel lane 3 opened",
+              "count": 4,
+              "hours": 0.55
+            },
+            {
+              "label": "1090-5B1 Limit switch fault Gripper cover left extended",
+              "count": 1,
+              "hours": 0.16
+            },
+            {
+              "label": "1100-8B7 Limit switch fault gripper tip lane 4 opened",
+              "count": 3,
+              "hours": 0.07
+            },
+            {
+              "label": "1100-8B14 Limit switch fault gripper funnel lane 7 opened",
+              "count": 2,
+              "hours": 0.04
+            },
+            {
+              "label": "1030-4B5 Limit switch fault Loading gripper funnel lane 9 closed",
+              "count": 1,
+              "hours": 0.03
+            }
+          ],
+          "Catheter Reject": [
+            {
+              "label": "1100-13B1 Bad catheter not rejected at lane 1 (remove catheter",
+              "count": 1,
+              "hours": 0.06
+            },
+            {
+              "label": "1100-13B3 Cathether detected at lane 3 (remove catheter, if free check sensor",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "1100-13B7 Bad catheter not rejected at lane 7 (remove catheter",
+              "count": 1,
+              "hours": 0.03
+            },
+            {
+              "label": "1100-13B1 Cathether detected at lane 1 (remove catheter, if free check sensor",
+              "count": 1,
+              "hours": 0.03
+            },
+            {
+              "label": "1010-5B1 Consecutive fault loader catheter absence lane 2",
+              "count": 1,
+              "hours": 0.02
+            }
+          ],
+          "Limit Switch": [
+            {
+              "label": "1010-13B3 Limit switch fault Unload TIP lane 6 closed",
+              "count": 2,
+              "hours": 0.13
+            },
+            {
+              "label": "1064-2B1 Limit switch fault TIP terminals inside carrier left extended",
+              "count": 2,
+              "hours": 0.1
+            },
+            {
+              "label": "1090-3B1 Limit switch fault TIP terminals outside extended",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "1010-13B5 Limit switch fault Unload TIP lane 10 closed",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "1064-2B3 Limit switch fault TIP terminals inside carrier right extended",
+              "count": 2,
+              "hours": 0.04
+            }
+          ],
+          "Cap": [
+            {
+              "label": "1064 Consecutive fault (Check area for missing cap and sensor 8B1",
+              "count": 1,
+              "hours": 0.06
+            },
+            {
+              "label": "1012-18B1 Consecutive fault camera cap not ok lane 8",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "foil": {
+          "Other": [
+            {
+              "label": "2A09 Communication Error to Client (Hydration",
+              "count": 1,
+              "hours": 0.09
+            },
+            {
+              "label": "2041-2B1 Consecutive fault bad part",
+              "count": 2,
+              "hours": 0.02
+            }
+          ],
+          "Detection Fault": [
+            {
+              "label": "2070-1B2 Product detection fault after cutting lane 2",
+              "count": 3,
+              "hours": 0.09
+            },
+            {
+              "label": "2070-1B4 Product detection fault after cutting lane 4",
+              "count": 1,
+              "hours": 0.03
+            }
+          ],
+          "Printer": [
+            {
+              "label": "2035 Printer left, pre-warning low ribbon",
+              "count": 3,
+              "hours": 0.44
+            },
+            {
+              "label": "2037 Printer right, not ready",
+              "count": 1,
+              "hours": 0.11
+            },
+            {
+              "label": "2037 Printer left, not ready",
+              "count": 1,
+              "hours": 0.05
+            },
+            {
+              "label": "2035 Printer right, not ready or job deviation detected",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "2035 Printer left, not ready or job deviation detected",
+              "count": 1,
+              "hours": 0.04
+            }
+          ],
+          "Labeler": [
+            {
+              "label": "2045-5B4 Labeler right, label buffer empty (dancer at the top",
+              "count": 1,
+              "hours": 0.09
+            }
+          ],
+          "Positioning": [
+            {
+              "label": "2073 Product not in correct position Lane 5 - Please check product/sensor",
+              "count": 1,
+              "hours": 0.02
+            }
+          ],
+          "Sealing Lane": [
+            {
+              "label": "2060 Please open the pack and remove catheter in sealing lane 4",
+              "count": 4,
+              "hours": 0.14
+            },
+            {
+              "label": "2060 Please open the pack and remove catheter in sealing lane 1",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "2060 Please open the pack and remove catheter in sealing lane 3",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        },
+        "schubert": {
+          "Line Stop / Wait": [
+            {
+              "label": "Schubert - Downstream machine not ready",
+              "count": 17,
+              "hours": 1.02
+            },
+            {
+              "label": "Line stop - waiting for schubert",
+              "count": 1,
+              "hours": 0.52
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "07:00",
+          "running_min": 28.3,
+          "segments": {
+            "hydration": {
+              "minutes": 22.8,
+              "clusters": {
+                "PMK / Media": 2.2,
+                "Gripper": 20.6
+              }
+            },
+            "foil": {
+              "minutes": 7.0,
+              "clusters": {
+                "Other": 0.6,
+                "Detection Fault": 3.8,
+                "Printer": 2.6
+              }
+            },
+            "unattributed": {
+              "minutes": 1.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "08:00",
+          "running_min": 38.4,
+          "segments": {
+            "hydration": {
+              "minutes": 6.3,
+              "clusters": {
+                "Catheter Reject": 1.6,
+                "Limit Switch": 4.7
+              }
+            },
+            "foil": {
+              "minutes": 12.3,
+              "clusters": {
+                "Other": 5.7,
+                "Labeler": 5.1,
+                "Detection Fault": 1.5
+              }
+            },
+            "schubert": {
+              "minutes": 3.0,
+              "clusters": {
+                "Line Stop / Wait": 3.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "09:00",
+          "running_min": 15.1,
+          "segments": {
+            "hydration": {
+              "minutes": 3.4,
+              "clusters": {
+                "Limit Switch": 2.4,
+                "Catheter Reject": 1.0
+              }
+            },
+            "foil": {
+              "minutes": 24.4,
+              "clusters": {
+                "Positioning": 0.9,
+                "Sealing Lane": 1.9,
+                "Printer": 20.8,
+                "Other": 0.8
+              }
+            },
+            "schubert": {
+              "minutes": 0.7,
+              "clusters": {
+                "Line Stop / Wait": 0.7
+              }
+            },
+            "manual": {
+              "minutes": 16.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "10:00",
+          "running_min": 47.1,
+          "segments": {
+            "hydration": {
+              "minutes": 2.8,
+              "clusters": {
+                "Cap": 1.7,
+                "Limit Switch": 1.1
+              }
+            },
+            "schubert": {
+              "minutes": 4.7,
+              "clusters": {
+                "Line Stop / Wait": 4.7
+              }
+            },
+            "unattributed": {
+              "minutes": 5.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "11:00",
+          "running_min": 33.2,
+          "segments": {
+            "hydration": {
+              "minutes": 7.7,
+              "clusters": {
+                "Gripper": 5.1,
+                "Limit Switch": 2.6
+              }
+            },
+            "foil": {
+              "minutes": 2.1,
+              "clusters": {
+                "Printer": 1.0,
+                "Sealing Lane": 1.1
+              }
+            },
+            "schubert": {
+              "minutes": 2.8,
+              "clusters": {
+                "Line Stop / Wait": 2.8
+              }
+            },
+            "unattributed": {
+              "minutes": 14.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "12:00",
+          "running_min": 34.9,
+          "segments": {
+            "hydration": {
+              "minutes": 16.8,
+              "clusters": {
+                "Gripper": 16.8
+              }
+            },
+            "foil": {
+              "minutes": 6.1,
+              "clusters": {
+                "Printer": 2.3,
+                "Sealing Lane": 3.8
+              }
+            },
+            "schubert": {
+              "minutes": 2.2,
+              "clusters": {
+                "Line Stop / Wait": 2.2
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "13:00",
+          "running_min": 39.8,
+          "segments": {
+            "hydration": {
+              "minutes": 12.5,
+              "clusters": {
+                "Limit Switch": 2.5,
+                "Gripper": 6.0,
+                "Catheter Reject": 3.9
+              }
+            },
+            "foil": {
+              "minutes": 4.5,
+              "clusters": {
+                "Sealing Lane": 2.8,
+                "Detection Fault": 1.7
+              }
+            },
+            "schubert": {
+              "minutes": 3.2,
+              "clusters": {
+                "Line Stop / Wait": 3.2
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "14:00",
+          "running_min": 48.3,
+          "segments": {
+            "foil": {
+              "minutes": 9.8,
+              "clusters": {
+                "Printer": 9.8
+              }
+            },
+            "schubert": {
+              "minutes": 2.0,
+              "clusters": {
+                "Line Stop / Wait": 2.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "15:00",
+          "running_min": 38.9,
+          "segments": {
+            "schubert": {
+              "minutes": 21.1,
+              "clusters": {
+                "Line Stop / Wait": 21.1
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "16:00",
+          "running_min": 27.8,
+          "segments": {
+            "hydration": {
+              "minutes": 9.3,
+              "clusters": {
+                "Limit Switch": 7.8,
+                "Gripper": 1.5
+              }
+            },
+            "foil": {
+              "minutes": 4.5,
+              "clusters": {
+                "Printer": 4.5
+              }
+            },
+            "schubert": {
+              "minutes": 18.4,
+              "clusters": {
+                "Line Stop / Wait": 18.4
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "17:00",
+          "running_min": 26.6,
+          "segments": {
+            "hydration": {
+              "minutes": 7.1,
+              "clusters": {
+                "Cap": 3.5,
+                "Catheter Reject": 3.6
+              }
+            },
+            "schubert": {
+              "minutes": 26.3,
+              "clusters": {
+                "Line Stop / Wait": 26.3
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "18:00",
+          "running_min": 36.8,
+          "segments": {
+            "hydration": {
+              "minutes": 5.9,
+              "clusters": {
+                "Limit Switch": 2.3,
+                "Gripper": 3.6
+              }
+            },
+            "foil": {
+              "minutes": 2.6,
+              "clusters": {
+                "Sealing Lane": 2.6
+              }
+            },
+            "schubert": {
+              "minutes": 8.0,
+              "clusters": {
+                "Line Stop / Wait": 8.0
+              }
+            },
+            "unattributed": {
+              "minutes": 6.7,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Line Stop / Wait",
+            "segment": "schubert",
+            "current_share": 30.3,
+            "baseline_mean": 15.7,
+            "z_score": 2.2,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      },
+      "nozzle_spc": {
+        "lanes": [
+          {
+            "rejects": 53,
+            "inspected": 8878,
+            "rate_pct": 0.6,
+            "p_bar_pct": 1.62,
+            "ucl_pct": 3.33,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 1
+          },
+          {
+            "rejects": 22,
+            "inspected": 8878,
+            "rate_pct": 0.25,
+            "p_bar_pct": 0.78,
+            "ucl_pct": 1.55,
+            "lcl_pct": 0.01,
+            "out_of_control": false,
+            "lane": 2
+          },
+          {
+            "rejects": 21,
+            "inspected": 8878,
+            "rate_pct": 0.24,
+            "p_bar_pct": 0.56,
+            "ucl_pct": 1.3,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 3
+          },
+          {
+            "rejects": 16,
+            "inspected": 8878,
+            "rate_pct": 0.18,
+            "p_bar_pct": 0.6,
+            "ucl_pct": 1.36,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 4
+          },
+          {
+            "rejects": 12,
+            "inspected": 8878,
+            "rate_pct": 0.14,
+            "p_bar_pct": 0.91,
+            "ucl_pct": 2.0,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 5
+          },
+          {
+            "rejects": 7,
+            "inspected": 8878,
+            "rate_pct": 0.08,
+            "p_bar_pct": 0.54,
+            "ucl_pct": 1.15,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 6
+          },
+          {
+            "rejects": 8,
+            "inspected": 8878,
+            "rate_pct": 0.09,
+            "p_bar_pct": 0.53,
+            "ucl_pct": 1.13,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 7
+          },
+          {
+            "rejects": 7,
+            "inspected": 8878,
+            "rate_pct": 0.08,
+            "p_bar_pct": 0.53,
+            "ucl_pct": 1.24,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 8
+          },
+          {
+            "rejects": 9,
+            "inspected": 8878,
+            "rate_pct": 0.1,
+            "p_bar_pct": 1.0,
+            "ucl_pct": 2.12,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 9
+          },
+          {
+            "rejects": 7,
+            "inspected": 8878,
+            "rate_pct": 0.08,
+            "p_bar_pct": 0.63,
+            "ucl_pct": 1.48,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 10
+          }
+        ],
+        "baseline_subgroups": 32,
+        "baseline_subgroups_requested": 100,
+        "last_reset_timestamp": "2026-06-04 18:46:11",
+        "ewma": {
+          "shifts": [
+            {
+              "t_stamp": "2026-05-27 03:13:09",
+              "rates": [
+                2.33,
+                0.85,
+                0.51,
+                0.81,
+                1.08,
+                0.74,
+                1.15,
+                0.44,
+                1.02,
+                0.71
+              ],
+              "ewma": [
+                2.3347883463607753,
+                0.8459378066524548,
+                0.507562683991473,
+                0.8121002943863566,
+                1.0828003925151422,
+                0.7444252698541604,
+                1.1504754170473386,
+                0.4398876594592765,
+                1.015125367982946,
+                0.7105877575880621
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 06:59:59",
+              "rates": [
+                3.58,
+                2.0,
+                0.75,
+                0.67,
+                0.75,
+                1.25,
+                0.67,
+                1.0,
+                1.25,
+                0.5
+              ],
+              "ewma": [
+                2.584,
+                1.077,
+                0.556,
+                0.783,
+                1.016,
+                0.845,
+                1.054,
+                0.552,
+                1.062,
+                0.668
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 14:12:10",
+              "rates": [
+                24.83,
+                6.36,
+                6.36,
+                4.39,
+                4.85,
+                4.24,
+                4.24,
+                5.0,
+                4.39,
+                3.94
+              ],
+              "ewma": [
+                7.034,
+                2.134,
+                1.717,
+                1.505,
+                1.782,
+                1.524,
+                1.691,
+                1.441,
+                1.728,
+                1.322
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 18:47:41",
+              "rates": [
+                6.6,
+                2.08,
+                1.45,
+                0.81,
+                0.63,
+                1.45,
+                1.08,
+                1.18,
+                1.08,
+                0.9
+              ],
+              "ewma": [
+                6.947,
+                2.123,
+                1.663,
+                1.367,
+                1.552,
+                1.509,
+                1.57,
+                1.388,
+                1.599,
+                1.238
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 18:59:59",
+              "rates": [
+                2.78,
+                1.85,
+                0.0,
+                0.0,
+                0.93,
+                0.0,
+                0.93,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                6.114,
+                2.069,
+                1.33,
+                1.094,
+                1.427,
+                1.207,
+                1.441,
+                1.11,
+                1.279,
+                0.99
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 06:49:49",
+              "rates": [
+                7.4,
+                3.15,
+                0.88,
+                0.81,
+                0.68,
+                1.16,
+                0.86,
+                0.55,
+                1.28,
+                0.48
+              ],
+              "ewma": [
+                6.372,
+                2.285,
+                1.24,
+                1.036,
+                1.278,
+                1.197,
+                1.324,
+                0.999,
+                1.28,
+                0.888
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 13:51:21",
+              "rates": [
+                8.14,
+                4.42,
+                1.22,
+                0.7,
+                1.09,
+                1.79,
+                1.09,
+                1.35,
+                2.5,
+                0.7
+              ],
+              "ewma": [
+                6.725,
+                2.712,
+                1.236,
+                0.97,
+                1.24,
+                1.316,
+                1.277,
+                1.068,
+                1.524,
+                0.851
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 18:59:59",
+              "rates": [
+                6.15,
+                3.73,
+                2.83,
+                3.11,
+                4.29,
+                2.9,
+                3.04,
+                2.07,
+                2.56,
+                2.63
+              ],
+              "ewma": [
+                6.611,
+                2.916,
+                1.556,
+                1.398,
+                1.849,
+                1.634,
+                1.63,
+                1.269,
+                1.731,
+                1.206
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 19:41:59",
+              "rates": [
+                0.78,
+                0.52,
+                0.52,
+                0.59,
+                0.78,
+                0.59,
+                0.59,
+                0.52,
+                0.59,
+                0.52
+              ],
+              "ewma": [
+                5.445,
+                2.437,
+                1.349,
+                1.236,
+                1.636,
+                1.425,
+                1.421,
+                1.119,
+                1.502,
+                1.069
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 06:48:04",
+              "rates": [
+                4.11,
+                1.89,
+                1.02,
+                1.71,
+                4.08,
+                1.53,
+                1.35,
+                0.81,
+                0.81,
+                0.87
+              ],
+              "ewma": [
+                5.177,
+                2.327,
+                1.283,
+                1.331,
+                2.124,
+                1.446,
+                1.407,
+                1.057,
+                1.363,
+                1.029
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 18:59:59",
+              "rates": [
+                3.83,
+                1.59,
+                0.78,
+                1.62,
+                1.01,
+                0.81,
+                0.78,
+                0.55,
+                0.55,
+                0.55
+              ],
+              "ewma": [
+                4.907,
+                2.18,
+                1.182,
+                1.389,
+                1.9,
+                1.319,
+                1.281,
+                0.956,
+                1.201,
+                0.934
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 21:19:12",
+              "rates": [
+                0.25,
+                0.14,
+                0.16,
+                0.16,
+                0.08,
+                0.11,
+                0.08,
+                0.03,
+                0.05,
+                0.05
+              ],
+              "ewma": [
+                3.975,
+                1.771,
+                0.979,
+                1.144,
+                1.536,
+                1.077,
+                1.041,
+                0.77,
+                0.972,
+                0.758
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 06:47:39",
+              "rates": [
+                4.84,
+                3.44,
+                3.0,
+                3.92,
+                3.7,
+                1.11,
+                1.04,
+                0.89,
+                1.0,
+                1.11
+              ],
+              "ewma": [
+                4.149,
+                2.105,
+                1.382,
+                1.699,
+                1.968,
+                1.083,
+                1.04,
+                0.794,
+                0.977,
+                0.828
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 08:33:19",
+              "rates": [
+                4.76,
+                5.01,
+                2.51,
+                3.76,
+                3.01,
+                1.0,
+                0.75,
+                0.75,
+                0.75,
+                1.25
+              ],
+              "ewma": [
+                4.272,
+                2.687,
+                1.607,
+                2.111,
+                2.176,
+                1.067,
+                0.982,
+                0.786,
+                0.932,
+                0.913
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 18:47:18",
+              "rates": [
+                0.09,
+                0.09,
+                0.09,
+                0.09,
+                0.09,
+                0.09,
+                0.09,
+                0.09,
+                0.2,
+                0.09
+              ],
+              "ewma": [
+                3.435,
+                2.167,
+                1.303,
+                1.706,
+                1.758,
+                0.871,
+                0.803,
+                0.646,
+                0.786,
+                0.748
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 06:59:59",
+              "rates": [
+                0.35,
+                0.31,
+                0.35,
+                0.26,
+                0.24,
+                0.26,
+                0.38,
+                0.24,
+                0.4,
+                0.29
+              ],
+              "ewma": [
+                2.819,
+                1.795,
+                1.113,
+                1.418,
+                1.455,
+                0.75,
+                0.717,
+                0.565,
+                0.708,
+                0.656
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 07:33:43",
+              "rates": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                2.255,
+                1.436,
+                0.89,
+                1.134,
+                1.164,
+                0.6,
+                0.574,
+                0.452,
+                0.566,
+                0.525
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 18:49:07",
+              "rates": [
+                0.41,
+                0.26,
+                0.29,
+                0.53,
+                0.85,
+                0.23,
+                0.32,
+                0.26,
+                0.41,
+                0.23
+              ],
+              "ewma": [
+                1.886,
+                1.201,
+                0.771,
+                1.013,
+                1.101,
+                0.527,
+                0.524,
+                0.414,
+                0.535,
+                0.467
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 06:59:59",
+              "rates": [
+                0.15,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.19,
+                0.1,
+                0.17,
+                0.15,
+                0.17
+              ],
+              "ewma": [
+                1.538,
+                0.982,
+                0.638,
+                0.831,
+                0.902,
+                0.459,
+                0.44,
+                0.365,
+                0.457,
+                0.407
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 09:06:15",
+              "rates": [
+                0.0,
+                0.0,
+                0.0,
+                0.02,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.02
+              ],
+              "ewma": [
+                1.23,
+                0.786,
+                0.51,
+                0.668,
+                0.722,
+                0.367,
+                0.352,
+                0.292,
+                0.366,
+                0.329
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 18:54:42",
+              "rates": [
+                0.3,
+                0.35,
+                0.27,
+                0.27,
+                0.27,
+                0.27,
+                0.24,
+                0.27,
+                0.3,
+                0.24
+              ],
+              "ewma": [
+                1.043,
+                0.699,
+                0.462,
+                0.588,
+                0.631,
+                0.347,
+                0.33,
+                0.287,
+                0.352,
+                0.312
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 06:48:38",
+              "rates": [
+                0.1,
+                0.1,
+                0.12,
+                0.12,
+                0.12,
+                0.07,
+                0.1,
+                0.12,
+                0.12,
+                0.1
+              ],
+              "ewma": [
+                0.854,
+                0.579,
+                0.394,
+                0.495,
+                0.529,
+                0.292,
+                0.283,
+                0.254,
+                0.306,
+                0.269
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 13:30:54",
+              "rates": [
+                0.14,
+                0.14,
+                0.18,
+                0.11,
+                0.11,
+                0.11,
+                0.18,
+                0.11,
+                0.25,
+                0.11
+              ],
+              "ewma": [
+                0.712,
+                0.492,
+                0.351,
+                0.418,
+                0.445,
+                0.255,
+                0.263,
+                0.225,
+                0.295,
+                0.237
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 18:51:32",
+              "rates": [
+                0.11,
+                0.11,
+                0.11,
+                0.11,
+                0.11,
+                0.17,
+                0.11,
+                0.11,
+                0.11,
+                0.11
+              ],
+              "ewma": [
+                0.592,
+                0.416,
+                0.303,
+                0.356,
+                0.378,
+                0.237,
+                0.232,
+                0.202,
+                0.258,
+                0.212
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 06:50:42",
+              "rates": [
+                0.07,
+                0.07,
+                0.04,
+                0.11,
+                0.02,
+                0.09,
+                0.04,
+                0.27,
+                0.07,
+                0.07
+              ],
+              "ewma": [
+                0.487,
+                0.346,
+                0.251,
+                0.307,
+                0.307,
+                0.207,
+                0.195,
+                0.215,
+                0.22,
+                0.183
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 18:54:51",
+              "rates": [
+                0.12,
+                0.19,
+                0.12,
+                0.16,
+                0.12,
+                0.49,
+                0.12,
+                0.14,
+                0.21,
+                0.12
+              ],
+              "ewma": [
+                0.414,
+                0.314,
+                0.226,
+                0.279,
+                0.27,
+                0.264,
+                0.181,
+                0.201,
+                0.217,
+                0.171
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 06:59:59",
+              "rates": [
+                0.19,
+                0.26,
+                0.17,
+                0.26,
+                0.17,
+                0.26,
+                0.17,
+                0.19,
+                0.32,
+                0.19
+              ],
+              "ewma": [
+                0.37,
+                0.303,
+                0.215,
+                0.275,
+                0.25,
+                0.263,
+                0.179,
+                0.199,
+                0.238,
+                0.175
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 07:06:32",
+              "rates": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                0.296,
+                0.242,
+                0.172,
+                0.22,
+                0.2,
+                0.21,
+                0.143,
+                0.159,
+                0.19,
+                0.14
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 09:21:32",
+              "rates": [
+                0.26,
+                0.26,
+                0.26,
+                0.26,
+                0.26,
+                0.26,
+                0.26,
+                0.26,
+                0.26,
+                0.39
+              ],
+              "ewma": [
+                0.288,
+                0.245,
+                0.189,
+                0.227,
+                0.211,
+                0.219,
+                0.166,
+                0.179,
+                0.203,
+                0.189
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 18:46:11",
+              "rates": [
+                1.5,
+                0.59,
+                0.56,
+                0.41,
+                0.29,
+                0.15,
+                0.18,
+                0.15,
+                0.21,
+                0.12
+              ],
+              "ewma": [
+                0.53,
+                0.313,
+                0.263,
+                0.264,
+                0.227,
+                0.205,
+                0.168,
+                0.173,
+                0.203,
+                0.175
+              ]
+            }
+          ],
+          "ucl": [
+            7.47,
+            2.68,
+            1.99,
+            1.8,
+            2.25,
+            1.69,
+            1.58,
+            1.63,
+            2.41,
+            1.72
+          ],
+          "lcl": [
+            0.0,
+            0.14,
+            0.0,
+            0.02,
+            0.11,
+            0.09,
+            0.02,
+            0.0,
+            0.5,
+            0.11
+          ],
+          "lambda": 0.2
+        }
+      },
+      "camera_spc": {
+        "lanes": [
+          {
+            "rejects": 37,
+            "inspected": 8878,
+            "rate_pct": 0.42,
+            "p_bar_pct": 0.81,
+            "ucl_pct": 2.11,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 1
+          },
+          {
+            "rejects": 18,
+            "inspected": 8878,
+            "rate_pct": 0.2,
+            "p_bar_pct": 0.34,
+            "ucl_pct": 1.1,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 2
+          },
+          {
+            "rejects": 15,
+            "inspected": 8878,
+            "rate_pct": 0.17,
+            "p_bar_pct": 0.19,
+            "ucl_pct": 0.5,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 3
+          },
+          {
+            "rejects": 17,
+            "inspected": 8878,
+            "rate_pct": 0.19,
+            "p_bar_pct": 0.44,
+            "ucl_pct": 0.97,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 4
+          },
+          {
+            "rejects": 24,
+            "inspected": 8878,
+            "rate_pct": 0.27,
+            "p_bar_pct": 0.68,
+            "ucl_pct": 1.7,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 5
+          },
+          {
+            "rejects": 3,
+            "inspected": 8878,
+            "rate_pct": 0.03,
+            "p_bar_pct": 0.2,
+            "ucl_pct": 0.64,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 6
+          },
+          {
+            "rejects": 10,
+            "inspected": 8878,
+            "rate_pct": 0.11,
+            "p_bar_pct": 0.23,
+            "ucl_pct": 0.65,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 7
+          },
+          {
+            "rejects": 19,
+            "inspected": 8878,
+            "rate_pct": 0.21,
+            "p_bar_pct": 0.27,
+            "ucl_pct": 0.58,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 8
+          },
+          {
+            "rejects": 19,
+            "inspected": 8878,
+            "rate_pct": 0.21,
+            "p_bar_pct": 0.08,
+            "ucl_pct": 0.21,
+            "lcl_pct": 0.0,
+            "out_of_control": true,
+            "lane": 9
+          },
+          {
+            "rejects": 7,
+            "inspected": 8878,
+            "rate_pct": 0.08,
+            "p_bar_pct": 0.24,
+            "ucl_pct": 0.73,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 10
+          }
+        ],
+        "baseline_subgroups": 29,
+        "baseline_subgroups_requested": 100,
+        "last_reset_timestamp": "2026-06-04 18:46:11",
+        "ewma": {
+          "shifts": [
+            {
+              "t_stamp": "2026-05-26 18:45:25",
+              "rates": [
+                0.52,
+                0.32,
+                0.4,
+                0.77,
+                0.35,
+                0.1,
+                0.2,
+                0.52,
+                0.22,
+                0.25
+              ],
+              "ewma": [
+                0.5243445692883896,
+                0.32459425717852686,
+                0.3995006242197253,
+                0.7740324594257179,
+                0.3495630461922597,
+                0.09987515605493133,
+                0.19975031210986266,
+                0.5243445692883896,
+                0.22471910112359553,
+                0.24968789013732834
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 03:13:09",
+              "rates": [
+                0.71,
+                0.47,
+                0.3,
+                0.37,
+                0.37,
+                0.24,
+                0.27,
+                0.64,
+                0.1,
+                0.2
+              ],
+              "ewma": [
+                0.562,
+                0.354,
+                0.381,
+                0.694,
+                0.354,
+                0.127,
+                0.214,
+                0.548,
+                0.2,
+                0.24
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 06:59:59",
+              "rates": [
+                0.08,
+                0.0,
+                0.08,
+                0.17,
+                0.08,
+                0.0,
+                0.0,
+                0.17,
+                0.0,
+                0.08
+              ],
+              "ewma": [
+                0.466,
+                0.283,
+                0.321,
+                0.589,
+                0.3,
+                0.102,
+                0.171,
+                0.472,
+                0.16,
+                0.209
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 18:47:41",
+              "rates": [
+                0.0,
+                0.09,
+                0.0,
+                0.27,
+                0.09,
+                0.09,
+                0.09,
+                0.81,
+                0.0,
+                0.54
+              ],
+              "ewma": [
+                0.373,
+                0.244,
+                0.257,
+                0.525,
+                0.258,
+                0.1,
+                0.155,
+                0.54,
+                0.128,
+                0.276
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 18:59:59",
+              "rates": [
+                0.93,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.93,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                0.484,
+                0.195,
+                0.206,
+                0.42,
+                0.206,
+                0.08,
+                0.124,
+                0.617,
+                0.102,
+                0.221
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 06:49:49",
+              "rates": [
+                0.35,
+                0.08,
+                0.63,
+                0.25,
+                0.05,
+                0.08,
+                0.05,
+                0.3,
+                0.0,
+                0.1
+              ],
+              "ewma": [
+                0.458,
+                0.171,
+                0.291,
+                0.386,
+                0.175,
+                0.079,
+                0.109,
+                0.554,
+                0.082,
+                0.197
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 13:51:21",
+              "rates": [
+                0.19,
+                0.13,
+                0.0,
+                0.06,
+                0.13,
+                0.19,
+                0.0,
+                0.32,
+                0.06,
+                0.06
+              ],
+              "ewma": [
+                0.405,
+                0.162,
+                0.233,
+                0.322,
+                0.166,
+                0.102,
+                0.087,
+                0.507,
+                0.078,
+                0.17
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 18:59:59",
+              "rates": [
+                0.07,
+                0.14,
+                0.0,
+                0.07,
+                0.14,
+                0.0,
+                0.0,
+                0.07,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                0.338,
+                0.157,
+                0.186,
+                0.271,
+                0.16,
+                0.082,
+                0.07,
+                0.419,
+                0.062,
+                0.136
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 19:41:59",
+              "rates": [
+                0.0,
+                0.07,
+                0.0,
+                0.07,
+                0.07,
+                0.0,
+                0.0,
+                0.0,
+                0.07,
+                0.0
+              ],
+              "ewma": [
+                0.27,
+                0.139,
+                0.149,
+                0.23,
+                0.141,
+                0.066,
+                0.056,
+                0.335,
+                0.063,
+                0.109
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 06:48:04",
+              "rates": [
+                0.06,
+                0.24,
+                0.09,
+                0.33,
+                0.18,
+                0.03,
+                0.06,
+                0.15,
+                0.12,
+                0.03
+              ],
+              "ewma": [
+                0.228,
+                0.159,
+                0.137,
+                0.25,
+                0.149,
+                0.059,
+                0.057,
+                0.298,
+                0.074,
+                0.093
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 18:59:59",
+              "rates": [
+                0.58,
+                0.49,
+                0.03,
+                0.1,
+                0.26,
+                0.1,
+                0.13,
+                0.23,
+                0.19,
+                0.13
+              ],
+              "ewma": [
+                0.299,
+                0.225,
+                0.116,
+                0.219,
+                0.171,
+                0.067,
+                0.072,
+                0.284,
+                0.098,
+                0.1
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 21:19:12",
+              "rates": [
+                0.11,
+                0.16,
+                0.0,
+                0.05,
+                0.08,
+                0.03,
+                0.0,
+                0.08,
+                0.03,
+                0.03
+              ],
+              "ewma": [
+                0.261,
+                0.213,
+                0.093,
+                0.186,
+                0.153,
+                0.059,
+                0.058,
+                0.244,
+                0.084,
+                0.085
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 06:47:39",
+              "rates": [
+                0.59,
+                0.55,
+                0.15,
+                0.48,
+                0.44,
+                0.07,
+                0.41,
+                0.74,
+                0.48,
+                0.15
+              ],
+              "ewma": [
+                0.327,
+                0.281,
+                0.104,
+                0.245,
+                0.211,
+                0.062,
+                0.128,
+                0.343,
+                0.163,
+                0.098
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 08:33:19",
+              "rates": [
+                0.0,
+                0.25,
+                1.25,
+                0.0,
+                0.5,
+                0.0,
+                0.25,
+                0.75,
+                0.25,
+                0.0
+              ],
+              "ewma": [
+                0.262,
+                0.275,
+                0.334,
+                0.196,
+                0.269,
+                0.05,
+                0.153,
+                0.425,
+                0.181,
+                0.078
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 18:47:18",
+              "rates": [
+                0.5,
+                0.41,
+                0.76,
+                0.41,
+                0.53,
+                0.41,
+                0.91,
+                0.38,
+                0.64,
+                0.61
+              ],
+              "ewma": [
+                0.309,
+                0.302,
+                0.419,
+                0.239,
+                0.32,
+                0.122,
+                0.303,
+                0.416,
+                0.273,
+                0.185
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 06:59:59",
+              "rates": [
+                0.73,
+                0.73,
+                0.53,
+                0.75,
+                0.24,
+                0.44,
+                0.62,
+                0.46,
+                0.57,
+                0.49
+              ],
+              "ewma": [
+                0.393,
+                0.387,
+                0.441,
+                0.341,
+                0.305,
+                0.186,
+                0.366,
+                0.425,
+                0.333,
+                0.245
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 07:33:43",
+              "rates": [
+                0.02,
+                0.0,
+                0.04,
+                0.06,
+                0.02,
+                0.0,
+                0.04,
+                0.02,
+                0.02,
+                0.06
+              ],
+              "ewma": [
+                0.319,
+                0.31,
+                0.361,
+                0.286,
+                0.248,
+                0.149,
+                0.301,
+                0.344,
+                0.271,
+                0.209
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 18:49:07",
+              "rates": [
+                0.09,
+                0.12,
+                0.15,
+                0.12,
+                0.0,
+                0.09,
+                0.15,
+                0.18,
+                0.2,
+                0.94
+              ],
+              "ewma": [
+                0.273,
+                0.271,
+                0.318,
+                0.252,
+                0.198,
+                0.137,
+                0.27,
+                0.31,
+                0.258,
+                0.355
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 06:59:59",
+              "rates": [
+                0.48,
+                0.63,
+                0.71,
+                1.19,
+                0.31,
+                1.07,
+                0.65,
+                0.44,
+                0.63,
+                0.67
+              ],
+              "ewma": [
+                0.315,
+                0.342,
+                0.397,
+                0.44,
+                0.221,
+                0.323,
+                0.346,
+                0.336,
+                0.332,
+                0.418
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 09:06:15",
+              "rates": [
+                0.02,
+                0.02,
+                0.05,
+                0.05,
+                0.05,
+                0.04,
+                0.07,
+                0.02,
+                0.02,
+                0.02
+              ],
+              "ewma": [
+                0.256,
+                0.277,
+                0.328,
+                0.363,
+                0.188,
+                0.266,
+                0.291,
+                0.272,
+                0.269,
+                0.338
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 18:54:42",
+              "rates": [
+                1.05,
+                0.27,
+                2.74,
+                0.75,
+                0.32,
+                0.75,
+                1.45,
+                0.35,
+                0.7,
+                0.16
+              ],
+              "ewma": [
+                0.414,
+                0.275,
+                0.81,
+                0.441,
+                0.215,
+                0.363,
+                0.523,
+                0.287,
+                0.355,
+                0.303
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 06:48:38",
+              "rates": [
+                1.76,
+                1.02,
+                4.5,
+                2.35,
+                1.81,
+                0.94,
+                1.64,
+                0.7,
+                0.77,
+                1.45
+              ],
+              "ewma": [
+                0.684,
+                0.423,
+                1.547,
+                0.822,
+                0.535,
+                0.479,
+                0.747,
+                0.37,
+                0.439,
+                0.533
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 13:30:54",
+              "rates": [
+                1.92,
+                1.08,
+                5.31,
+                1.77,
+                1.23,
+                0.9,
+                1.7,
+                0.8,
+                0.72,
+                0.9
+              ],
+              "ewma": [
+                0.93,
+                0.555,
+                2.3,
+                1.012,
+                0.674,
+                0.564,
+                0.937,
+                0.455,
+                0.496,
+                0.607
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 18:51:32",
+              "rates": [
+                0.28,
+                0.55,
+                0.33,
+                1.05,
+                1.44,
+                0.66,
+                0.0,
+                0.22,
+                0.22,
+                0.11
+              ],
+              "ewma": [
+                0.799,
+                0.554,
+                1.906,
+                1.019,
+                0.826,
+                0.584,
+                0.75,
+                0.408,
+                0.441,
+                0.508
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 06:50:42",
+              "rates": [
+                0.49,
+                0.31,
+                0.36,
+                1.09,
+                0.29,
+                0.22,
+                0.18,
+                0.31,
+                0.27,
+                0.22
+              ],
+              "ewma": [
+                0.738,
+                0.506,
+                1.596,
+                1.034,
+                0.719,
+                0.512,
+                0.636,
+                0.389,
+                0.406,
+                0.451
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 18:54:51",
+              "rates": [
+                0.29,
+                0.21,
+                0.25,
+                0.27,
+                0.33,
+                0.02,
+                0.12,
+                0.12,
+                0.23,
+                0.08
+              ],
+              "ewma": [
+                0.648,
+                0.446,
+                1.326,
+                0.881,
+                0.641,
+                0.414,
+                0.534,
+                0.336,
+                0.37,
+                0.377
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 06:59:59",
+              "rates": [
+                0.3,
+                0.13,
+                0.3,
+                0.26,
+                0.26,
+                0.06,
+                0.13,
+                0.15,
+                0.41,
+                0.11
+              ],
+              "ewma": [
+                0.578,
+                0.382,
+                1.121,
+                0.756,
+                0.564,
+                0.344,
+                0.453,
+                0.299,
+                0.377,
+                0.323
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 07:06:32",
+              "rates": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.02,
+                0.0,
+                0.0,
+                0.0,
+                0.02,
+                0.0
+              ],
+              "ewma": [
+                0.462,
+                0.306,
+                0.897,
+                0.605,
+                0.455,
+                0.275,
+                0.362,
+                0.239,
+                0.306,
+                0.258
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 09:21:32",
+              "rates": [
+                0.26,
+                0.39,
+                0.39,
+                0.26,
+                0.51,
+                0.0,
+                0.39,
+                0.0,
+                0.64,
+                0.13
+              ],
+              "ewma": [
+                0.421,
+                0.322,
+                0.795,
+                0.535,
+                0.467,
+                0.22,
+                0.367,
+                0.191,
+                0.373,
+                0.232
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 18:46:11",
+              "rates": [
+                1.03,
+                0.44,
+                0.35,
+                0.44,
+                0.56,
+                0.09,
+                0.21,
+                0.56,
+                0.38,
+                0.18
+              ],
+              "ewma": [
+                0.542,
+                0.346,
+                0.706,
+                0.516,
+                0.485,
+                0.194,
+                0.335,
+                0.264,
+                0.375,
+                0.221
+              ]
+            }
+          ],
+          "ucl": [
+            0.49,
+            0.46,
+            0.37,
+            0.74,
+            1.3,
+            0.45,
+            0.24,
+            0.73,
+            0.26,
+            0.62
+          ],
+          "lcl": [
+            0.02,
+            0.0,
+            0.01,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lambda": 0.2
+        }
+      },
+      "vision_spc": {
+        "lanes": [
+          {
+            "rejects": 73,
+            "inspected": 17756,
+            "rate_pct": 0.41,
+            "p_bar_pct": 0.69,
+            "ucl_pct": 1.75,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 1
+          },
+          {
+            "rejects": 59,
+            "inspected": 17756,
+            "rate_pct": 0.33,
+            "p_bar_pct": 0.51,
+            "ucl_pct": 1.97,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 2
+          },
+          {
+            "rejects": 54,
+            "inspected": 17756,
+            "rate_pct": 0.3,
+            "p_bar_pct": 0.53,
+            "ucl_pct": 1.93,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 3
+          },
+          {
+            "rejects": 59,
+            "inspected": 17756,
+            "rate_pct": 0.33,
+            "p_bar_pct": 0.46,
+            "ucl_pct": 1.56,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 4
+          },
+          {
+            "rejects": 54,
+            "inspected": 17756,
+            "rate_pct": 0.3,
+            "p_bar_pct": 0.38,
+            "ucl_pct": 1.06,
+            "lcl_pct": 0.0,
+            "out_of_control": false,
+            "lane": 5
+          }
+        ],
+        "baseline_subgroups": 32,
+        "baseline_subgroups_requested": 100,
+        "last_reset_timestamp": "2026-06-04 18:45:51",
+        "ewma": {
+          "shifts": [
+            {
+              "t_stamp": "2026-05-27 06:59:59",
+              "rates": [
+                0.08,
+                0.0,
+                0.04,
+                0.0,
+                0.04
+              ],
+              "ewma": [
+                0.08328475056217206,
+                0.0,
+                0.04164237528108603,
+                0.0,
+                0.04164237528108603
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 14:22:30",
+              "rates": [
+                5.0,
+                4.54,
+                5.0,
+                4.54,
+                5.0
+              ],
+              "ewma": [
+                1.066,
+                0.909,
+                1.033,
+                0.909,
+                1.033
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 18:47:52",
+              "rates": [
+                1.45,
+                1.04,
+                0.9,
+                1.04,
+                0.95
+              ],
+              "ewma": [
+                1.142,
+                0.935,
+                1.007,
+                0.935,
+                1.016
+              ]
+            },
+            {
+              "t_stamp": "2026-05-27 18:59:59",
+              "rates": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                0.914,
+                0.748,
+                0.806,
+                0.748,
+                0.813
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 06:49:40",
+              "rates": [
+                0.6,
+                0.15,
+                0.06,
+                0.15,
+                0.06
+              ],
+              "ewma": [
+                0.852,
+                0.629,
+                0.657,
+                0.629,
+                0.663
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 13:51:14",
+              "rates": [
+                2.63,
+                0.8,
+                2.05,
+                0.8,
+                1.28
+              ],
+              "ewma": [
+                1.207,
+                0.663,
+                0.936,
+                0.663,
+                0.787
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 18:59:59",
+              "rates": [
+                1.69,
+                0.93,
+                1.42,
+                0.93,
+                1.04
+              ],
+              "ewma": [
+                1.304,
+                0.717,
+                1.032,
+                0.717,
+                0.837
+              ]
+            },
+            {
+              "t_stamp": "2026-05-28 19:41:51",
+              "rates": [
+                0.07,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                1.056,
+                0.574,
+                0.826,
+                0.574,
+                0.67
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 06:47:54",
+              "rates": [
+                0.42,
+                0.19,
+                0.16,
+                0.19,
+                2.95
+              ],
+              "ewma": [
+                0.929,
+                0.498,
+                0.694,
+                0.498,
+                1.127
+              ]
+            },
+            {
+              "t_stamp": "2026-05-29 18:59:59",
+              "rates": [
+                0.58,
+                0.39,
+                0.34,
+                0.39,
+                0.26
+              ],
+              "ewma": [
+                0.86,
+                0.476,
+                0.623,
+                0.476,
+                0.954
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 06:47:30",
+              "rates": [
+                0.55,
+                0.15,
+                0.16,
+                0.16,
+                0.18
+              ],
+              "ewma": [
+                0.798,
+                0.411,
+                0.531,
+                0.414,
+                0.799
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 08:33:24",
+              "rates": [
+                1.25,
+                1.5,
+                1.13,
+                1.5,
+                1.13
+              ],
+              "ewma": [
+                0.889,
+                0.63,
+                0.65,
+                0.632,
+                0.865
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 18:47:12",
+              "rates": [
+                0.48,
+                0.48,
+                0.37,
+                0.51,
+                0.37
+              ],
+              "ewma": [
+                0.808,
+                0.6,
+                0.593,
+                0.608,
+                0.765
+              ]
+            },
+            {
+              "t_stamp": "2026-05-30 18:59:59",
+              "rates": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                0.646,
+                0.48,
+                0.474,
+                0.486,
+                0.612
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 06:59:59",
+              "rates": [
+                0.84,
+                0.26,
+                0.28,
+                0.22,
+                0.3
+              ],
+              "ewma": [
+                0.684,
+                0.437,
+                0.434,
+                0.433,
+                0.549
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 07:33:33",
+              "rates": [
+                0.2,
+                0.24,
+                0.2,
+                0.24,
+                0.2
+              ],
+              "ewma": [
+                0.588,
+                0.397,
+                0.388,
+                0.393,
+                0.48
+              ]
+            },
+            {
+              "t_stamp": "2026-05-31 18:48:56",
+              "rates": [
+                0.6,
+                0.2,
+                0.16,
+                0.22,
+                0.22
+              ],
+              "ewma": [
+                0.59,
+                0.359,
+                0.343,
+                0.358,
+                0.428
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 06:59:59",
+              "rates": [
+                0.67,
+                0.05,
+                0.11,
+                0.04,
+                0.14
+              ],
+              "ewma": [
+                0.606,
+                0.298,
+                0.297,
+                0.295,
+                0.37
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 09:06:32",
+              "rates": [
+                0.18,
+                0.22,
+                0.18,
+                0.22,
+                0.18
+              ],
+              "ewma": [
+                0.521,
+                0.283,
+                0.273,
+                0.281,
+                0.332
+              ]
+            },
+            {
+              "t_stamp": "2026-06-01 18:54:33",
+              "rates": [
+                0.35,
+                0.04,
+                0.05,
+                0.04,
+                0.05
+              ],
+              "ewma": [
+                0.487,
+                0.234,
+                0.229,
+                0.233,
+                0.276
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 06:48:24",
+              "rates": [
+                1.12,
+                0.15,
+                0.16,
+                0.16,
+                0.18
+              ],
+              "ewma": [
+                0.614,
+                0.216,
+                0.215,
+                0.218,
+                0.257
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 13:31:06",
+              "rates": [
+                0.52,
+                0.4,
+                0.22,
+                0.42,
+                0.25
+              ],
+              "ewma": [
+                0.596,
+                0.252,
+                0.215,
+                0.258,
+                0.256
+              ]
+            },
+            {
+              "t_stamp": "2026-06-02 18:51:42",
+              "rates": [
+                0.66,
+                0.64,
+                0.55,
+                0.64,
+                0.58
+              ],
+              "ewma": [
+                0.609,
+                0.329,
+                0.282,
+                0.333,
+                0.321
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 06:50:34",
+              "rates": [
+                1.27,
+                0.13,
+                0.28,
+                0.15,
+                0.28
+              ],
+              "ewma": [
+                0.742,
+                0.29,
+                0.281,
+                0.295,
+                0.313
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 18:54:44",
+              "rates": [
+                1.16,
+                0.29,
+                0.35,
+                0.31,
+                0.37
+              ],
+              "ewma": [
+                0.826,
+                0.29,
+                0.295,
+                0.298,
+                0.325
+              ]
+            },
+            {
+              "t_stamp": "2026-06-03 18:59:59",
+              "rates": [
+                0.02,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "ewma": [
+                0.665,
+                0.232,
+                0.236,
+                0.238,
+                0.26
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 06:59:59",
+              "rates": [
+                0.71,
+                0.21,
+                0.4,
+                0.24,
+                0.42
+              ],
+              "ewma": [
+                0.673,
+                0.228,
+                0.268,
+                0.237,
+                0.291
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 07:06:24",
+              "rates": [
+                0.2,
+                0.23,
+                0.2,
+                0.23,
+                0.2
+              ],
+              "ewma": [
+                0.579,
+                0.229,
+                0.255,
+                0.236,
+                0.273
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 09:21:41",
+              "rates": [
+                0.13,
+                0.19,
+                0.13,
+                0.26,
+                0.13
+              ],
+              "ewma": [
+                0.489,
+                0.222,
+                0.23,
+                0.24,
+                0.244
+              ]
+            },
+            {
+              "t_stamp": "2026-06-04 18:45:51",
+              "rates": [
+                0.76,
+                0.5,
+                0.48,
+                0.48,
+                0.48
+              ],
+              "ewma": [
+                0.544,
+                0.277,
+                0.281,
+                0.289,
+                0.292
+              ]
+            }
+          ],
+          "ucl": [
+            1.73,
+            1.99,
+            1.98,
+            1.4,
+            1.48
+          ],
+          "lcl": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lambda": 0.2
+        }
+      }
+    },
+    {
+      "shift_date": "2026-06-03",
+      "shift_type": "night",
+      "label": "Night 06-03",
+      "oee": 48.8,
+      "availability": 63.2,
+      "performance": 81.7,
+      "quality": 94.3,
+      "running_hours": 7.59,
+      "total_stops": 85,
+      "total_downtime_hours": 4.45,
+      "longest_stop_min": 37.0,
+      "good_count": 43739,
+      "total_count": 46365,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 42,
+          "hours": 0.8
+        },
+        "halted": {
+          "count": 28,
+          "hours": 2.54
+        },
+        "auto_long": {
+          "count": 12,
+          "hours": 0.92
+        },
+        "manual": {
+          "count": 4,
+          "hours": 0.77
+        }
+      }
+    },
+    {
+      "shift_date": "2026-06-03",
+      "shift_type": "day",
+      "label": "Day 06-03",
+      "oee": 50.8,
+      "availability": 66.6,
+      "performance": 80.0,
+      "quality": 95.5,
+      "running_hours": 7.99,
+      "total_stops": 100,
+      "total_downtime_hours": 4.23,
+      "longest_stop_min": 16.9,
+      "good_count": 46687,
+      "total_count": 48910,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 40,
+          "hours": 0.75
+        },
+        "halted": {
+          "count": 30,
+          "hours": 1.49
+        },
+        "auto_long": {
+          "count": 26,
+          "hours": 1.63
+        },
+        "manual": {
+          "count": 4,
+          "hours": 0.14
+        }
+      }
+    },
+    {
+      "shift_date": "2026-06-02",
+      "shift_type": "night",
+      "label": "Night 06-02",
+      "oee": 46.1,
+      "availability": 61.2,
+      "performance": 79.1,
+      "quality": 95.2,
+      "running_hours": 7.34,
+      "total_stops": 115,
+      "total_downtime_hours": 4.86,
+      "longest_stop_min": 16.9,
+      "good_count": 42583,
+      "total_count": 44725,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 49,
+          "hours": 1.11
+        },
+        "halted": {
+          "count": 32,
+          "hours": 1.45
+        },
+        "auto_long": {
+          "count": 32,
+          "hours": 2.04
+        },
+        "manual": {
+          "count": 2,
+          "hours": 0.06
+        }
+      }
+    },
+    {
+      "shift_date": "2026-06-02",
+      "shift_type": "day",
+      "label": "Day 06-02",
+      "oee": 46.8,
+      "availability": 62.6,
+      "performance": 79.7,
+      "quality": 93.7,
+      "running_hours": 7.52,
+      "total_stops": 99,
+      "total_downtime_hours": 4.62,
+      "longest_stop_min": 48.8,
+      "good_count": 42810,
+      "total_count": 45665,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 43,
+          "hours": 0.92
+        },
+        "halted": {
+          "count": 40,
+          "hours": 2.44
+        },
+        "auto_long": {
+          "count": 13,
+          "hours": 1.01
+        },
+        "manual": {
+          "count": 4,
+          "hours": 0.23
+        }
+      }
+    }
+  ]
+}
