@@ -1,0 +1,17 @@
+relationship Shifts_Lines
+	fromColumn: Shifts.LineId
+	toColumn: Lines.LineId
+
+relationship Spc_Lines
+	isActive: false
+	fromColumn: SPC.LineId
+	toColumn: Lines.LineId
+
+relationship Shifts_Snapshots
+	fromColumn: Shifts.SnapshotKey
+	toColumn: Snapshots.SnapshotKey
+
+relationship Spc_Snapshots
+	fromColumn: SPC.SnapshotKey
+	toColumn: Snapshots.SnapshotKey
+

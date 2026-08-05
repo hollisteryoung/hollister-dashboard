@@ -1,7 +1,7 @@
 {
   "analysis_id": "shift-dashboard",
   "line_id": "ngp2",
-  "generated_at": "2026-07-21T07:56:33.580060+00:00",
+  "generated_at": "2026-07-22T14:49:50.992518+00:00",
   "latest_shift": {
     "label": "Night Shift \u2014 2026-07-16 (19:00 \u2013 07:00)",
     "shift_date": "2026-07-16",
@@ -407,24 +407,24 @@
             "cluster": "Other",
             "segment": "hydration",
             "current_share": 86.1,
-            "baseline_mean": 2.4,
-            "z_score": 61.1,
+            "baseline_mean": 3.0,
+            "z_score": 33.5,
             "direction": "above"
           },
           {
             "cluster": "Other",
             "segment": "foil",
             "current_share": 0,
-            "baseline_mean": 5.7,
-            "z_score": -2.2,
+            "baseline_mean": 5.9,
+            "z_score": -2.3,
             "direction": "below"
           },
           {
             "cluster": "Printer",
             "segment": "foil",
             "current_share": 0,
-            "baseline_mean": 5.2,
-            "z_score": -2.0,
+            "baseline_mean": 5.3,
+            "z_score": -2.1,
             "direction": "below"
           }
         ],
@@ -436,8 +436,8 @@
             "rejects": 0,
             "inspected": 403,
             "rate_pct": 0.0,
-            "p_bar_pct": 2.45,
-            "ucl_pct": 17.79,
+            "p_bar_pct": 2.46,
+            "ucl_pct": 17.99,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -446,8 +446,8 @@
             "rejects": 0,
             "inspected": 403,
             "rate_pct": 0.0,
-            "p_bar_pct": 1.0,
-            "ucl_pct": 6.58,
+            "p_bar_pct": 1.01,
+            "ucl_pct": 6.6,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 2
@@ -457,7 +457,7 @@
             "inspected": 403,
             "rate_pct": 0.0,
             "p_bar_pct": 0.71,
-            "ucl_pct": 4.79,
+            "ucl_pct": 4.81,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -466,8 +466,8 @@
             "rejects": 0,
             "inspected": 403,
             "rate_pct": 0.0,
-            "p_bar_pct": 0.47,
-            "ucl_pct": 3.36,
+            "p_bar_pct": 0.48,
+            "ucl_pct": 3.38,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 4
@@ -476,8 +476,8 @@
             "rejects": 0,
             "inspected": 403,
             "rate_pct": 0.0,
-            "p_bar_pct": 0.53,
-            "ucl_pct": 4.52,
+            "p_bar_pct": 0.54,
+            "ucl_pct": 4.67,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 5
@@ -486,8 +486,8 @@
             "rejects": 0,
             "inspected": 403,
             "rate_pct": 0.0,
-            "p_bar_pct": 0.41,
-            "ucl_pct": 3.16,
+            "p_bar_pct": 0.42,
+            "ucl_pct": 3.18,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 6
@@ -516,8 +516,8 @@
             "rejects": 0,
             "inspected": 403,
             "rate_pct": 0.0,
-            "p_bar_pct": 0.69,
-            "ucl_pct": 6.16,
+            "p_bar_pct": 0.67,
+            "ucl_pct": 6.04,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 9
@@ -1350,28 +1350,28 @@
             }
           ],
           "ucl": [
-            2.79,
-            2.22,
-            1.49,
-            2.1,
-            1.43,
-            1.86,
-            0.81,
-            1.44,
-            1.9,
-            1.36
+            2.3,
+            0.76,
+            0.71,
+            0.7,
+            1.07,
+            0.67,
+            0.68,
+            0.69,
+            0.75,
+            0.67
           ],
           "lcl": [
             0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.06,
-            0.0,
-            0.0,
-            0.0
+            0.11,
+            0.11,
+            0.12,
+            0.04,
+            0.12,
+            0.09,
+            0.11,
+            0.11,
+            0.12
           ],
           "lambda": 0.2
         }

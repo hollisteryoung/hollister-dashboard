@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "NPG2 SPC Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "20b9afa1-4f49-4e48-a57b-8248c30b1dbf"
+  }
+}

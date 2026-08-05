@@ -1,0 +1,21 @@
+model Model
+	culture: en-IE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Shifts","SPC","Lines","Snapshots","PBISource"]
+
+ref table Shifts
+ref table SPC
+ref table Lines
+ref table Snapshots
+
+ref cultureInfo en-IE
+

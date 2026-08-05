@@ -1,0 +1,40 @@
+table Snapshots
+	lineageTag: e2f3a4b5-c6d7-48e9-90a1-b2c3d4e5f607
+
+	column SnapshotKey
+		dataType: string
+		lineageTag: f3a4b5c6-d7e8-49f0-a1b2-c3d4e5f60718
+		summarizeBy: none
+		sourceColumn: SnapshotKey
+		isKey: true
+
+	column SnapshotTime
+		dataType: dateTime
+		formatString: yyyy-mm-dd hh:mm
+		lineageTag: a4b5c6d7-e8f9-40a1-b2c3-d4e5f6071829
+		summarizeBy: none
+		sourceColumn: SnapshotTime
+
+	column SnapshotLabel
+		dataType: string
+		lineageTag: b5c6d7e8-f9a0-41b2-c3d4-e5f607182930
+		summarizeBy: none
+		sourceColumn: SnapshotLabel
+		sortByColumn: SnapshotTime
+
+	column IsLatestSnapshot
+		dataType: int64
+		lineageTag: c6d7e8f9-a0b1-42c3-d4e5-f60718293041
+		summarizeBy: none
+		sourceColumn: IsLatestSnapshot
+
+	partition Snapshots = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="Snapshots"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"SnapshotKey", type text}, {"SnapshotTime", type datetime}, {"SnapshotLabel", type text}, {"IsLatestSnapshot", Int64.Type}})
+				in
+					Typed
+

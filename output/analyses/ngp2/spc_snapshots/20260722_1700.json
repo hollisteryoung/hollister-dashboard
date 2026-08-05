@@ -1,0 +1,7121 @@
+{
+  "analysis_id": "weekly-dashboard-spc",
+  "line_id": "ngp2",
+  "generated_at": "2026-07-22T16:12:08.142966+00:00",
+  "shifts": [
+    {
+      "shift_date": "2026-07-21",
+      "shift_type": "night",
+      "label": "Night 07-21",
+      "line_shift_label": "ngp2|Night 07-21",
+      "iso_week": "2026-W30",
+      "week_label": "Week of Jul 20",
+      "is_latest": true,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-21",
+      "shift_type": "day",
+      "label": "Day 07-21",
+      "line_shift_label": "ngp2|Day 07-21",
+      "iso_week": "2026-W30",
+      "week_label": "Week of Jul 20",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-20",
+      "shift_type": "night",
+      "label": "Night 07-20",
+      "line_shift_label": "ngp2|Night 07-20",
+      "iso_week": "2026-W30",
+      "week_label": "Week of Jul 20",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-20",
+      "shift_type": "day",
+      "label": "Day 07-20",
+      "line_shift_label": "ngp2|Day 07-20",
+      "iso_week": "2026-W30",
+      "week_label": "Week of Jul 20",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-19",
+      "shift_type": "night",
+      "label": "Night 07-19",
+      "line_shift_label": "ngp2|Night 07-19",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-19",
+      "shift_type": "day",
+      "label": "Day 07-19",
+      "line_shift_label": "ngp2|Day 07-19",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-18",
+      "shift_type": "night",
+      "label": "Night 07-18",
+      "line_shift_label": "ngp2|Night 07-18",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-18",
+      "shift_type": "day",
+      "label": "Day 07-18",
+      "line_shift_label": "ngp2|Day 07-18",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-17",
+      "shift_type": "night",
+      "label": "Night 07-17",
+      "line_shift_label": "ngp2|Night 07-17",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-17",
+      "shift_type": "day",
+      "label": "Day 07-17",
+      "line_shift_label": "ngp2|Day 07-17",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-16",
+      "shift_type": "night",
+      "label": "Night 07-16",
+      "line_shift_label": "ngp2|Night 07-16",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-16",
+      "shift_type": "day",
+      "label": "Day 07-16",
+      "line_shift_label": "ngp2|Day 07-16",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-15",
+      "shift_type": "night",
+      "label": "Night 07-15",
+      "line_shift_label": "ngp2|Night 07-15",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    },
+    {
+      "shift_date": "2026-07-15",
+      "shift_type": "day",
+      "label": "Day 07-15",
+      "line_shift_label": "ngp2|Day 07-15",
+      "iso_week": "2026-W29",
+      "week_label": "Week of Jul 13",
+      "is_latest": false,
+      "skipped": false
+    }
+  ],
+  "weekly_nozzle_spc": {
+    "shift_subgroups": 14,
+    "total_shifts": 14,
+    "lanes": [
+      {
+        "lane": 1,
+        "p_bar_pct": 2.461,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.285,
+            "ucl_pct": 6.906,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.617,
+            "ucl_pct": 7.263,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.426,
+            "ucl_pct": 8.594,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 17.993,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 8.403,
+            "ucl_pct": 11.454,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 2.219,
+            "ucl_pct": 7.897,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 5.027,
+            "ucl_pct": 7.262,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 10.256,
+            "ucl_pct": 8.132,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 4.84,
+            "ucl_pct": 5.921,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 12.562,
+            "ucl_pct": 7.711,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 1.82,
+            "ucl_pct": 7.224,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 3.284,
+            "ucl_pct": 9.47,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 2.287,
+            "ucl_pct": 8.877,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 5.007,
+            "ucl_pct": 9.735,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 2,
+        "p_bar_pct": 1.007,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.264,
+            "ucl_pct": 2.607,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 2.735,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.464,
+            "ucl_pct": 3.214,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 6.596,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 5.324,
+            "ucl_pct": 4.243,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.486,
+            "ucl_pct": 2.963,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.522,
+            "ucl_pct": 2.735,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 1.224,
+            "ucl_pct": 3.048,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.714,
+            "ucl_pct": 2.252,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 1.276,
+            "ucl_pct": 2.896,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.957,
+            "ucl_pct": 2.721,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.617,
+            "ucl_pct": 3.529,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 1.44,
+            "ucl_pct": 3.316,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 3.211,
+            "ucl_pct": 3.625,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 3,
+        "p_bar_pct": 0.714,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.244,
+            "ucl_pct": 1.886,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 1.98,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.464,
+            "ucl_pct": 2.331,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 4.81,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 4.742,
+            "ucl_pct": 3.085,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.456,
+            "ucl_pct": 2.147,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.664,
+            "ucl_pct": 1.98,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 1.092,
+            "ucl_pct": 2.209,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.8,
+            "ucl_pct": 1.626,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 1.361,
+            "ucl_pct": 2.098,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.677,
+            "ucl_pct": 1.97,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.465,
+            "ucl_pct": 2.562,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 1.016,
+            "ucl_pct": 2.406,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 3.265,
+            "ucl_pct": 2.632,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 4,
+        "p_bar_pct": 0.48,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.244,
+            "ucl_pct": 1.309,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 1.376,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.426,
+            "ucl_pct": 1.625,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 3.379,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 1.498,
+            "ucl_pct": 2.159,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.517,
+            "ucl_pct": 1.494,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.664,
+            "ucl_pct": 1.376,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 1.092,
+            "ucl_pct": 1.538,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.616,
+            "ucl_pct": 1.126,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 1.163,
+            "ucl_pct": 1.46,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.327,
+            "ucl_pct": 1.369,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.263,
+            "ucl_pct": 1.788,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.889,
+            "ucl_pct": 1.677,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 3.537,
+            "ucl_pct": 1.838,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 5,
+        "p_bar_pct": 0.538,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.264,
+            "ucl_pct": 1.72,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 1.815,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.426,
+            "ucl_pct": 2.168,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 4.666,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 3.411,
+            "ucl_pct": 2.928,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.486,
+            "ucl_pct": 1.983,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.759,
+            "ucl_pct": 1.814,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 1.588,
+            "ucl_pct": 2.046,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 1.761,
+            "ucl_pct": 1.458,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 4.112,
+            "ucl_pct": 1.934,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.327,
+            "ucl_pct": 1.804,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.314,
+            "ucl_pct": 2.401,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 1.609,
+            "ucl_pct": 2.244,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 3.81,
+            "ucl_pct": 2.471,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 6,
+        "p_bar_pct": 0.42,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.244,
+            "ucl_pct": 1.209,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 1.273,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.426,
+            "ucl_pct": 1.509,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 3.179,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 1.913,
+            "ucl_pct": 2.017,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.486,
+            "ucl_pct": 1.385,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.569,
+            "ucl_pct": 1.273,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.992,
+            "ucl_pct": 1.427,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.419,
+            "ucl_pct": 1.034,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.624,
+            "ucl_pct": 1.352,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.303,
+            "ucl_pct": 1.266,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.314,
+            "ucl_pct": 1.665,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.847,
+            "ucl_pct": 1.559,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 2.993,
+            "ucl_pct": 1.712,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 7,
+        "p_bar_pct": 0.402,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.244,
+            "ucl_pct": 1.269,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 1.339,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.426,
+            "ucl_pct": 1.599,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 3.432,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 1.83,
+            "ucl_pct": 2.157,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.456,
+            "ucl_pct": 1.462,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.616,
+            "ucl_pct": 1.339,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.992,
+            "ucl_pct": 1.508,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.419,
+            "ucl_pct": 1.077,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.595,
+            "ucl_pct": 1.426,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.233,
+            "ucl_pct": 1.331,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.364,
+            "ucl_pct": 1.769,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.805,
+            "ucl_pct": 1.654,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 2.939,
+            "ucl_pct": 1.821,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 8,
+        "p_bar_pct": 0.383,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.244,
+            "ucl_pct": 1.196,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 1.261,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.464,
+            "ucl_pct": 1.504,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 3.223,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 1.747,
+            "ucl_pct": 2.027,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.456,
+            "ucl_pct": 1.377,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.616,
+            "ucl_pct": 1.261,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.992,
+            "ucl_pct": 1.42,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.406,
+            "ucl_pct": 1.016,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.595,
+            "ucl_pct": 1.343,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.28,
+            "ucl_pct": 1.254,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.263,
+            "ucl_pct": 1.664,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.805,
+            "ucl_pct": 1.556,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 2.939,
+            "ucl_pct": 1.713,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 9,
+        "p_bar_pct": 0.669,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.264,
+            "ucl_pct": 2.206,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.474,
+            "ucl_pct": 2.33,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.464,
+            "ucl_pct": 2.79,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 6.04,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 1.83,
+            "ucl_pct": 3.779,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.456,
+            "ucl_pct": 2.549,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.593,
+            "ucl_pct": 2.329,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.992,
+            "ucl_pct": 2.63,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.406,
+            "ucl_pct": 1.866,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.624,
+            "ucl_pct": 2.485,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.49,
+            "ucl_pct": 2.316,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.364,
+            "ucl_pct": 3.093,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 1.143,
+            "ucl_pct": 2.888,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 2.884,
+            "ucl_pct": 3.185,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 10,
+        "p_bar_pct": 0.365,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.244,
+            "ucl_pct": 1.117,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.427,
+            "ucl_pct": 1.178,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.426,
+            "ucl_pct": 1.403,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 2.995,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 1.498,
+            "ucl_pct": 1.888,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.456,
+            "ucl_pct": 1.285,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.593,
+            "ucl_pct": 1.178,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 1.059,
+            "ucl_pct": 1.325,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.394,
+            "ucl_pct": 0.951,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.595,
+            "ucl_pct": 1.254,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.21,
+            "ucl_pct": 1.171,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.263,
+            "ucl_pct": 1.552,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.805,
+            "ucl_pct": 1.451,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 3.429,
+            "ucl_pct": 1.596,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      }
+    ],
+    "ewma": {
+      "shifts": [
+        {
+          "t_stamp": "2026-07-12 06:59:59",
+          "rates": [
+            2.08,
+            0.59,
+            0.56,
+            0.62,
+            0.5,
+            0.44,
+            0.44,
+            0.44,
+            0.68,
+            0.47
+          ],
+          "ewma": [
+            2.0823620823620823,
+            0.5905205905205905,
+            0.5594405594405595,
+            0.6216006216006216,
+            0.4972804972804973,
+            0.43512043512043513,
+            0.43512043512043513,
+            0.43512043512043513,
+            0.6837606837606838,
+            0.4662004662004662
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 07:21:24",
+          "rates": [
+            0.12,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            1.69,
+            0.472,
+            0.448,
+            0.497,
+            0.398,
+            0.348,
+            0.348,
+            0.348,
+            0.547,
+            0.373
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 18:49:01",
+          "rates": [
+            2.53,
+            0.83,
+            0.69,
+            0.65,
+            0.69,
+            0.72,
+            0.65,
+            0.65,
+            0.65,
+            0.69
+          ],
+          "ewma": [
+            1.857,
+            0.544,
+            0.496,
+            0.528,
+            0.456,
+            0.423,
+            0.408,
+            0.408,
+            0.568,
+            0.436
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 18:59:59",
+          "rates": [
+            0.07,
+            0.07,
+            0.07,
+            0.07,
+            0.07,
+            0.07,
+            0.07,
+            0.07,
+            0.07,
+            0.07
+          ],
+          "ewma": [
+            1.5,
+            0.45,
+            0.411,
+            0.437,
+            0.379,
+            0.353,
+            0.341,
+            0.341,
+            0.469,
+            0.363
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 06:35:51",
+          "rates": [
+            1.33,
+            0.42,
+            0.4,
+            0.32,
+            0.32,
+            0.32,
+            0.35,
+            0.29,
+            0.35,
+            0.29
+          ],
+          "ewma": [
+            1.465,
+            0.445,
+            0.408,
+            0.413,
+            0.367,
+            0.346,
+            0.342,
+            0.331,
+            0.444,
+            0.349
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 18:55:31",
+          "rates": [
+            0.41,
+            0.41,
+            0.41,
+            0.41,
+            2.71,
+            0.41,
+            0.41,
+            0.41,
+            0.41,
+            0.37
+          ],
+          "ewma": [
+            1.254,
+            0.438,
+            0.409,
+            0.413,
+            0.836,
+            0.359,
+            0.356,
+            0.347,
+            0.437,
+            0.353
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 21:35:22",
+          "rates": [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.39,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ],
+          "ewma": [
+            1.043,
+            0.39,
+            0.367,
+            0.37,
+            0.747,
+            0.327,
+            0.324,
+            0.317,
+            0.389,
+            0.322
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 06:52:49",
+          "rates": [
+            6.83,
+            0.25,
+            0.25,
+            0.25,
+            0.3,
+            0.25,
+            0.25,
+            0.25,
+            0.41,
+            0.25
+          ],
+          "ewma": [
+            2.2,
+            0.361,
+            0.343,
+            0.345,
+            0.658,
+            0.311,
+            0.308,
+            0.303,
+            0.393,
+            0.307
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 18:48:44",
+          "rates": [
+            2.19,
+            0.47,
+            0.47,
+            0.47,
+            1.45,
+            0.47,
+            0.51,
+            0.43,
+            0.55,
+            0.47
+          ],
+          "ewma": [
+            2.199,
+            0.383,
+            0.368,
+            0.37,
+            0.816,
+            0.343,
+            0.348,
+            0.329,
+            0.424,
+            0.34
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 06:53:54",
+          "rates": [
+            0.52,
+            0.52,
+            0.52,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.52,
+            0.5
+          ],
+          "ewma": [
+            1.863,
+            0.41,
+            0.398,
+            0.395,
+            0.752,
+            0.374,
+            0.378,
+            0.362,
+            0.443,
+            0.371
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 18:49:22",
+          "rates": [
+            0.27,
+            0.27,
+            0.25,
+            0.25,
+            0.27,
+            0.25,
+            0.25,
+            0.25,
+            0.27,
+            0.25
+          ],
+          "ewma": [
+            1.544,
+            0.382,
+            0.368,
+            0.366,
+            0.656,
+            0.349,
+            0.352,
+            0.339,
+            0.408,
+            0.347
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 18:59:59",
+          "rates": [
+            0.94,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            1.422,
+            0.306,
+            0.294,
+            0.293,
+            0.525,
+            0.279,
+            0.282,
+            0.271,
+            0.326,
+            0.278
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 06:59:59",
+          "rates": [
+            0.62,
+            0.47,
+            0.47,
+            0.47,
+            0.47,
+            0.47,
+            0.47,
+            0.47,
+            0.47,
+            0.43
+          ],
+          "ewma": [
+            1.261,
+            0.34,
+            0.33,
+            0.329,
+            0.515,
+            0.318,
+            0.32,
+            0.312,
+            0.356,
+            0.308
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 14:22:49",
+          "rates": [
+            1.03,
+            1.16,
+            1.16,
+            1.03,
+            1.03,
+            1.03,
+            1.03,
+            1.16,
+            1.16,
+            1.03
+          ],
+          "ewma": [
+            1.214,
+            0.503,
+            0.495,
+            0.469,
+            0.618,
+            0.46,
+            0.462,
+            0.481,
+            0.516,
+            0.452
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 18:50:07",
+          "rates": [
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.33,
+            0.33
+          ],
+          "ewma": [
+            1.038,
+            0.469,
+            0.462,
+            0.442,
+            0.561,
+            0.434,
+            0.436,
+            0.451,
+            0.479,
+            0.428
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            0.83,
+            0.375,
+            0.37,
+            0.354,
+            0.449,
+            0.347,
+            0.349,
+            0.361,
+            0.383,
+            0.342
+          ]
+        },
+        {
+          "t_stamp": "2026-07-17 06:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            0.664,
+            0.3,
+            0.296,
+            0.283,
+            0.359,
+            0.278,
+            0.279,
+            0.289,
+            0.306,
+            0.274
+          ]
+        },
+        {
+          "t_stamp": "2026-07-17 18:45:34",
+          "rates": [
+            8.4,
+            5.32,
+            4.74,
+            1.5,
+            3.41,
+            1.91,
+            1.83,
+            1.75,
+            1.83,
+            1.5
+          ],
+          "ewma": [
+            2.212,
+            1.305,
+            1.185,
+            0.526,
+            0.969,
+            0.605,
+            0.589,
+            0.581,
+            0.611,
+            0.519
+          ]
+        },
+        {
+          "t_stamp": "2026-07-18 06:49:44",
+          "rates": [
+            2.22,
+            0.49,
+            0.46,
+            0.52,
+            0.49,
+            0.49,
+            0.46,
+            0.46,
+            0.46,
+            0.46
+          ],
+          "ewma": [
+            2.213,
+            1.141,
+            1.039,
+            0.524,
+            0.872,
+            0.581,
+            0.562,
+            0.556,
+            0.58,
+            0.506
+          ]
+        },
+        {
+          "t_stamp": "2026-07-18 18:49:15",
+          "rates": [
+            5.03,
+            0.52,
+            0.66,
+            0.66,
+            0.76,
+            0.57,
+            0.62,
+            0.62,
+            0.59,
+            0.59
+          ],
+          "ewma": [
+            2.776,
+            1.017,
+            0.964,
+            0.552,
+            0.849,
+            0.579,
+            0.573,
+            0.568,
+            0.583,
+            0.523
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 03:09:37",
+          "rates": [
+            9.25,
+            1.09,
+            0.96,
+            1.0,
+            1.14,
+            0.96,
+            0.96,
+            0.96,
+            0.96,
+            0.96
+          ],
+          "ewma": [
+            4.07,
+            1.032,
+            0.963,
+            0.642,
+            0.907,
+            0.655,
+            0.65,
+            0.646,
+            0.658,
+            0.61
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 06:59:59",
+          "rates": [
+            12.94,
+            1.57,
+            1.45,
+            1.33,
+            2.78,
+            1.09,
+            1.09,
+            1.09,
+            1.09,
+            1.33
+          ],
+          "ewma": [
+            5.843,
+            1.14,
+            1.061,
+            0.78,
+            1.282,
+            0.742,
+            0.738,
+            0.734,
+            0.744,
+            0.754
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 18:47:26",
+          "rates": [
+            9.68,
+            1.43,
+            1.58,
+            1.23,
+            3.52,
+            0.84,
+            0.84,
+            0.81,
+            0.81,
+            0.79
+          ],
+          "ewma": [
+            6.61,
+            1.198,
+            1.164,
+            0.87,
+            1.73,
+            0.761,
+            0.758,
+            0.75,
+            0.758,
+            0.761
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.02,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            5.288,
+            0.958,
+            0.936,
+            0.696,
+            1.384,
+            0.609,
+            0.606,
+            0.6,
+            0.606,
+            0.609
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 06:59:59",
+          "rates": [
+            12.56,
+            1.28,
+            1.36,
+            1.16,
+            4.11,
+            0.62,
+            0.6,
+            0.6,
+            0.62,
+            0.6
+          ],
+          "ewma": [
+            6.743,
+            1.022,
+            1.021,
+            0.789,
+            1.93,
+            0.612,
+            0.604,
+            0.599,
+            0.61,
+            0.606
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 12:59:41",
+          "rates": [
+            0.25,
+            0.22,
+            0.11,
+            0.08,
+            0.11,
+            0.05,
+            0.05,
+            0.05,
+            0.08,
+            0.05
+          ],
+          "ewma": [
+            5.444,
+            0.861,
+            0.839,
+            0.648,
+            1.566,
+            0.501,
+            0.494,
+            0.49,
+            0.504,
+            0.496
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 18:52:52",
+          "rates": [
+            10.9,
+            5.21,
+            3.95,
+            1.74,
+            1.58,
+            1.74,
+            1.26,
+            1.58,
+            2.84,
+            1.11
+          ],
+          "ewma": [
+            6.535,
+            1.731,
+            1.461,
+            0.866,
+            1.569,
+            0.748,
+            0.648,
+            0.708,
+            0.972,
+            0.618
+          ]
+        },
+        {
+          "t_stamp": "2026-07-21 06:31:15",
+          "rates": [
+            3.28,
+            1.62,
+            1.47,
+            1.26,
+            1.31,
+            1.31,
+            1.36,
+            1.26,
+            1.36,
+            1.26
+          ],
+          "ewma": [
+            5.885,
+            1.708,
+            1.462,
+            0.945,
+            1.518,
+            0.861,
+            0.791,
+            0.819,
+            1.05,
+            0.747
+          ]
+        },
+        {
+          "t_stamp": "2026-07-21 18:48:00",
+          "rates": [
+            2.29,
+            1.44,
+            1.02,
+            0.89,
+            1.61,
+            0.85,
+            0.8,
+            0.8,
+            1.14,
+            0.8
+          ],
+          "ewma": [
+            5.165,
+            1.654,
+            1.373,
+            0.934,
+            1.536,
+            0.858,
+            0.794,
+            0.816,
+            1.069,
+            0.759
+          ]
+        },
+        {
+          "t_stamp": "2026-07-22 06:51:12",
+          "rates": [
+            5.01,
+            3.21,
+            3.27,
+            3.54,
+            3.81,
+            2.99,
+            2.94,
+            2.94,
+            2.88,
+            3.43
+          ],
+          "ewma": [
+            5.133,
+            1.965,
+            1.751,
+            1.455,
+            1.991,
+            1.285,
+            1.223,
+            1.241,
+            1.432,
+            1.293
+          ]
+        }
+      ],
+      "ucl": [
+        2.3,
+        0.76,
+        0.71,
+        0.7,
+        1.07,
+        0.67,
+        0.68,
+        0.69,
+        0.75,
+        0.67
+      ],
+      "lcl": [
+        0.0,
+        0.11,
+        0.11,
+        0.12,
+        0.04,
+        0.12,
+        0.09,
+        0.11,
+        0.11,
+        0.12
+      ],
+      "lambda": 0.2
+    },
+    "shift_table": [
+      {
+        "label": "Day 07-15",
+        "n_inspected": 4920,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 14,
+            "rate_pct": 0.28,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 13,
+            "rate_pct": 0.26,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 12,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 12,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 13,
+            "rate_pct": 0.26,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 12,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 12,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 12,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 13,
+            "rate_pct": 0.26,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 12,
+            "rate_pct": 0.24,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-15",
+        "n_inspected": 4215,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 26,
+            "rate_pct": 0.62,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 20,
+            "rate_pct": 0.47,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 18,
+            "rate_pct": 0.43,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-16",
+        "n_inspected": 2585,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 11,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 12,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 12,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 11,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 11,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 11,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 11,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 12,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 12,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 11,
+            "rate_pct": 0.43,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-16",
+        "n_inspected": 403,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-17",
+        "n_inspected": 1202,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 101,
+            "rate_pct": 8.4,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 64,
+            "rate_pct": 5.32,
+            "ooc": true
+          },
+          {
+            "lane": 3,
+            "rejects": 57,
+            "rate_pct": 4.74,
+            "ooc": true
+          },
+          {
+            "lane": 4,
+            "rejects": 18,
+            "rate_pct": 1.5,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 41,
+            "rate_pct": 3.41,
+            "ooc": true
+          },
+          {
+            "lane": 6,
+            "rejects": 23,
+            "rate_pct": 1.91,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 22,
+            "rate_pct": 1.83,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 21,
+            "rate_pct": 1.75,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 22,
+            "rate_pct": 1.83,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 18,
+            "rate_pct": 1.5,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-17",
+        "n_inspected": 3290,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 73,
+            "rate_pct": 2.22,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 16,
+            "rate_pct": 0.49,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 15,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 17,
+            "rate_pct": 0.52,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 16,
+            "rate_pct": 0.49,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 16,
+            "rate_pct": 0.49,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 15,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 15,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 15,
+            "rate_pct": 0.46,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 15,
+            "rate_pct": 0.46,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-18",
+        "n_inspected": 4218,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 212,
+            "rate_pct": 5.03,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 22,
+            "rate_pct": 0.52,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 28,
+            "rate_pct": 0.66,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 28,
+            "rate_pct": 0.66,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 32,
+            "rate_pct": 0.76,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 24,
+            "rate_pct": 0.57,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 26,
+            "rate_pct": 0.62,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 26,
+            "rate_pct": 0.62,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 25,
+            "rate_pct": 0.59,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 25,
+            "rate_pct": 0.59,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-18",
+        "n_inspected": 3023,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 310,
+            "rate_pct": 10.26,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 37,
+            "rate_pct": 1.22,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 33,
+            "rate_pct": 1.09,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 33,
+            "rate_pct": 1.09,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 48,
+            "rate_pct": 1.59,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 30,
+            "rate_pct": 0.99,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 30,
+            "rate_pct": 0.99,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 30,
+            "rate_pct": 0.99,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 30,
+            "rate_pct": 0.99,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 32,
+            "rate_pct": 1.06,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-19",
+        "n_inspected": 8120,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 393,
+            "rate_pct": 4.84,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 58,
+            "rate_pct": 0.71,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 65,
+            "rate_pct": 0.8,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 50,
+            "rate_pct": 0.62,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 143,
+            "rate_pct": 1.76,
+            "ooc": true
+          },
+          {
+            "lane": 6,
+            "rejects": 34,
+            "rate_pct": 0.42,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 34,
+            "rate_pct": 0.42,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 33,
+            "rate_pct": 0.41,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 33,
+            "rate_pct": 0.41,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 32,
+            "rate_pct": 0.39,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-19",
+        "n_inspected": 3526,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 443,
+            "rate_pct": 12.56,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 45,
+            "rate_pct": 1.28,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 48,
+            "rate_pct": 1.36,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 41,
+            "rate_pct": 1.16,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 145,
+            "rate_pct": 4.11,
+            "ooc": true
+          },
+          {
+            "lane": 6,
+            "rejects": 22,
+            "rate_pct": 0.62,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 21,
+            "rate_pct": 0.6,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 21,
+            "rate_pct": 0.6,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 22,
+            "rate_pct": 0.62,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 21,
+            "rate_pct": 0.6,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-20",
+        "n_inspected": 4286,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 78,
+            "rate_pct": 1.82,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 41,
+            "rate_pct": 0.96,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 29,
+            "rate_pct": 0.68,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 14,
+            "rate_pct": 0.33,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 14,
+            "rate_pct": 0.33,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 13,
+            "rate_pct": 0.3,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 10,
+            "rate_pct": 0.23,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 12,
+            "rate_pct": 0.28,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 21,
+            "rate_pct": 0.49,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 9,
+            "rate_pct": 0.21,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-20",
+        "n_inspected": 1979,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 65,
+            "rate_pct": 3.28,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 32,
+            "rate_pct": 1.62,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 29,
+            "rate_pct": 1.47,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 25,
+            "rate_pct": 1.26,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 26,
+            "rate_pct": 1.31,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 26,
+            "rate_pct": 1.31,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 27,
+            "rate_pct": 1.36,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 25,
+            "rate_pct": 1.26,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 27,
+            "rate_pct": 1.36,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 25,
+            "rate_pct": 1.26,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-21",
+        "n_inspected": 2362,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 54,
+            "rate_pct": 2.29,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 34,
+            "rate_pct": 1.44,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 24,
+            "rate_pct": 1.02,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 21,
+            "rate_pct": 0.89,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 38,
+            "rate_pct": 1.61,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 20,
+            "rate_pct": 0.85,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 19,
+            "rate_pct": 0.8,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 19,
+            "rate_pct": 0.8,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 27,
+            "rate_pct": 1.14,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 19,
+            "rate_pct": 0.8,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-21",
+        "n_inspected": 1838,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 92,
+            "rate_pct": 5.01,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 59,
+            "rate_pct": 3.21,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 60,
+            "rate_pct": 3.27,
+            "ooc": true
+          },
+          {
+            "lane": 4,
+            "rejects": 65,
+            "rate_pct": 3.54,
+            "ooc": true
+          },
+          {
+            "lane": 5,
+            "rejects": 70,
+            "rate_pct": 3.81,
+            "ooc": true
+          },
+          {
+            "lane": 6,
+            "rejects": 55,
+            "rate_pct": 2.99,
+            "ooc": true
+          },
+          {
+            "lane": 7,
+            "rejects": 54,
+            "rate_pct": 2.94,
+            "ooc": true
+          },
+          {
+            "lane": 8,
+            "rejects": 54,
+            "rate_pct": 2.94,
+            "ooc": true
+          },
+          {
+            "lane": 9,
+            "rejects": 53,
+            "rate_pct": 2.88,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 63,
+            "rate_pct": 3.43,
+            "ooc": true
+          }
+        ]
+      }
+    ]
+  },
+  "weekly_camera_spc": {
+    "shift_subgroups": 11,
+    "total_shifts": 14,
+    "lanes": [
+      {
+        "lane": 1,
+        "p_bar_pct": 0.252,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.264,
+            "ucl_pct": 0.807,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.451,
+            "ucl_pct": 0.851,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.238,
+            "ucl_pct": 1.201,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.356,
+            "ucl_pct": 0.851,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.43,
+            "ucl_pct": 0.96,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.099,
+            "ucl_pct": 0.684,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.198,
+            "ucl_pct": 0.907,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.257,
+            "ucl_pct": 0.846,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 2.274,
+            "ucl_pct": 1.126,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 3.599,
+            "ucl_pct": 1.053,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 2.612,
+            "ucl_pct": 1.16,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 2,
+        "p_bar_pct": 0.27,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.061,
+            "ucl_pct": 0.929,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.261,
+            "ucl_pct": 0.982,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.059,
+            "ucl_pct": 1.397,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 7.137,
+            "ucl_pct": 0.982,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 4.069,
+            "ucl_pct": 1.111,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 1.034,
+            "ucl_pct": 0.783,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 2.58,
+            "ucl_pct": 1.048,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.023,
+            "ucl_pct": 0.976,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.152,
+            "ucl_pct": 1.309,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.169,
+            "ucl_pct": 1.221,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.163,
+            "ucl_pct": 1.348,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 3,
+        "p_bar_pct": 0.533,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.02,
+            "ucl_pct": 2.137,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.024,
+            "ucl_pct": 2.266,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 3.277,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.047,
+            "ucl_pct": 2.266,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.033,
+            "ucl_pct": 2.58,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.025,
+            "ucl_pct": 1.782,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.057,
+            "ucl_pct": 2.428,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.653,
+            "ucl_pct": 2.252,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 3.638,
+            "ucl_pct": 3.062,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 2.244,
+            "ucl_pct": 2.849,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 4.463,
+            "ucl_pct": 3.158,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 4,
+        "p_bar_pct": 0.432,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.061,
+            "ucl_pct": 1.44,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.285,
+            "ucl_pct": 1.521,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.059,
+            "ucl_pct": 2.156,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.213,
+            "ucl_pct": 1.521,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.364,
+            "ucl_pct": 1.718,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.111,
+            "ucl_pct": 1.217,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.822,
+            "ucl_pct": 1.623,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.0,
+            "ucl_pct": 1.512,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.101,
+            "ucl_pct": 2.021,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.0,
+            "ucl_pct": 1.887,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.0,
+            "ucl_pct": 2.081,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 5,
+        "p_bar_pct": 0.316,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.041,
+            "ucl_pct": 1.237,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.142,
+            "ucl_pct": 1.311,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 1.891,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.047,
+            "ucl_pct": 1.31,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.033,
+            "ucl_pct": 1.49,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.012,
+            "ucl_pct": 1.033,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.0,
+            "ucl_pct": 1.403,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.047,
+            "ucl_pct": 1.302,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.152,
+            "ucl_pct": 1.767,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.085,
+            "ucl_pct": 1.645,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.163,
+            "ucl_pct": 1.822,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 6,
+        "p_bar_pct": 0.184,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.081,
+            "ucl_pct": 0.591,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.047,
+            "ucl_pct": 0.624,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.059,
+            "ucl_pct": 0.88,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.166,
+            "ucl_pct": 0.624,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.132,
+            "ucl_pct": 0.703,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.086,
+            "ucl_pct": 0.501,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.198,
+            "ucl_pct": 0.665,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.0,
+            "ucl_pct": 0.62,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.101,
+            "ucl_pct": 0.826,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.042,
+            "ucl_pct": 0.772,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.0,
+            "ucl_pct": 0.85,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 7,
+        "p_bar_pct": 0.177,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.041,
+            "ucl_pct": 0.627,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.024,
+            "ucl_pct": 0.663,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.059,
+            "ucl_pct": 0.946,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.0,
+            "ucl_pct": 0.663,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.066,
+            "ucl_pct": 0.751,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.037,
+            "ucl_pct": 0.527,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.057,
+            "ucl_pct": 0.708,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.093,
+            "ucl_pct": 0.659,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.101,
+            "ucl_pct": 0.886,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.212,
+            "ucl_pct": 0.826,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.054,
+            "ucl_pct": 0.913,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 8,
+        "p_bar_pct": 0.194,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.061,
+            "ucl_pct": 0.591,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.19,
+            "ucl_pct": 0.623,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.059,
+            "ucl_pct": 0.873,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.213,
+            "ucl_pct": 0.623,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.099,
+            "ucl_pct": 0.7,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.099,
+            "ucl_pct": 0.503,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.425,
+            "ucl_pct": 0.663,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.023,
+            "ucl_pct": 0.619,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.152,
+            "ucl_pct": 0.82,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.042,
+            "ucl_pct": 0.767,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.054,
+            "ucl_pct": 0.843,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 9,
+        "p_bar_pct": 0.174,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.142,
+            "ucl_pct": 0.611,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.095,
+            "ucl_pct": 0.646,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.0,
+            "ucl_pct": 0.922,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.071,
+            "ucl_pct": 0.646,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.165,
+            "ucl_pct": 0.731,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.025,
+            "ucl_pct": 0.514,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.085,
+            "ucl_pct": 0.69,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.047,
+            "ucl_pct": 0.642,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.354,
+            "ucl_pct": 0.863,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.0,
+            "ucl_pct": 0.805,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.109,
+            "ucl_pct": 0.889,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 10,
+        "p_bar_pct": 0.879,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.528,
+            "ucl_pct": 3.199,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 2.254,
+            "ucl_pct": 3.385,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 0.059,
+            "ucl_pct": 4.847,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 1.494,
+            "ucl_pct": 3.384,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 2.183,
+            "ucl_pct": 3.839,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.271,
+            "ucl_pct": 2.685,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.539,
+            "ucl_pct": 3.619,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.0,
+            "ucl_pct": 3.365,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.051,
+            "ucl_pct": 4.537,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.127,
+            "ucl_pct": 4.227,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.054,
+            "ucl_pct": 4.675,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      }
+    ],
+    "ewma": {
+      "shifts": [
+        {
+          "t_stamp": "2026-07-10 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "t_stamp": "2026-07-11 06:49:34",
+          "rates": [
+            0.28,
+            0.19,
+            1.08,
+            1.8,
+            0.0,
+            0.33,
+            0.03,
+            0.22,
+            0.06,
+            1.08
+          ],
+          "ewma": [
+            0.055,
+            0.039,
+            0.215,
+            0.359,
+            0.0,
+            0.066,
+            0.006,
+            0.044,
+            0.011,
+            0.215
+          ]
+        },
+        {
+          "t_stamp": "2026-07-11 18:45:42",
+          "rates": [
+            0.13,
+            0.33,
+            0.63,
+            0.3,
+            0.07,
+            0.23,
+            0.1,
+            0.1,
+            0.03,
+            0.4
+          ],
+          "ewma": [
+            0.071,
+            0.098,
+            0.299,
+            0.347,
+            0.013,
+            0.099,
+            0.025,
+            0.055,
+            0.015,
+            0.252
+          ]
+        },
+        {
+          "t_stamp": "2026-07-11 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.03
+          ],
+          "ewma": [
+            0.057,
+            0.078,
+            0.239,
+            0.278,
+            0.01,
+            0.079,
+            0.02,
+            0.044,
+            0.012,
+            0.208
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 06:59:59",
+          "rates": [
+            0.22,
+            0.09,
+            1.86,
+            0.22,
+            0.06,
+            0.16,
+            0.0,
+            0.25,
+            0.0,
+            2.67
+          ],
+          "ewma": [
+            0.089,
+            0.081,
+            0.564,
+            0.266,
+            0.02,
+            0.094,
+            0.016,
+            0.085,
+            0.01,
+            0.701
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 07:21:24",
+          "rates": [
+            0.0,
+            0.0,
+            0.03,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.06
+          ],
+          "ewma": [
+            0.071,
+            0.065,
+            0.457,
+            0.213,
+            0.016,
+            0.075,
+            0.013,
+            0.068,
+            0.008,
+            0.573
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 18:49:01",
+          "rates": [
+            0.22,
+            0.54,
+            5.45,
+            0.54,
+            0.07,
+            0.32,
+            0.18,
+            0.76,
+            0.22,
+            2.96
+          ],
+          "ewma": [
+            0.1,
+            0.16,
+            1.455,
+            0.279,
+            0.027,
+            0.125,
+            0.046,
+            0.206,
+            0.05,
+            1.05
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 18:59:59",
+          "rates": [
+            0.0,
+            0.04,
+            0.11,
+            0.0,
+            0.0,
+            0.04,
+            0.0,
+            0.0,
+            0.0,
+            0.04
+          ],
+          "ewma": [
+            0.08,
+            0.135,
+            1.186,
+            0.223,
+            0.022,
+            0.107,
+            0.037,
+            0.165,
+            0.04,
+            0.847
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 06:35:51",
+          "rates": [
+            0.11,
+            0.24,
+            12.45,
+            0.08,
+            0.03,
+            0.08,
+            0.08,
+            0.08,
+            0.13,
+            4.14
+          ],
+          "ewma": [
+            0.085,
+            0.156,
+            3.439,
+            0.194,
+            0.023,
+            0.102,
+            0.046,
+            0.148,
+            0.059,
+            1.506
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 18:55:31",
+          "rates": [
+            0.41,
+            0.41,
+            3.58,
+            0.58,
+            0.12,
+            0.16,
+            0.21,
+            0.25,
+            0.49,
+            1.6
+          ],
+          "ewma": [
+            0.15,
+            0.207,
+            3.467,
+            0.27,
+            0.043,
+            0.115,
+            0.078,
+            0.168,
+            0.146,
+            1.526
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 21:35:22",
+          "rates": [
+            0.79,
+            1.38,
+            0.39,
+            0.79,
+            0.29,
+            0.29,
+            0.29,
+            0.39,
+            1.47,
+            1.08
+          ],
+          "ewma": [
+            0.277,
+            0.441,
+            2.852,
+            0.373,
+            0.093,
+            0.151,
+            0.121,
+            0.213,
+            0.412,
+            1.437
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 06:52:49",
+          "rates": [
+            0.25,
+            0.63,
+            0.25,
+            0.27,
+            0.03,
+            0.36,
+            0.14,
+            0.33,
+            0.16,
+            0.68
+          ],
+          "ewma": [
+            0.271,
+            0.478,
+            2.331,
+            0.353,
+            0.08,
+            0.192,
+            0.124,
+            0.236,
+            0.362,
+            1.286
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 18:48:44",
+          "rates": [
+            0.31,
+            0.27,
+            0.04,
+            0.27,
+            0.08,
+            0.23,
+            0.0,
+            0.35,
+            0.04,
+            0.74
+          ],
+          "ewma": [
+            0.279,
+            0.437,
+            1.873,
+            0.337,
+            0.08,
+            0.201,
+            0.099,
+            0.259,
+            0.297,
+            1.178
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 06:53:54",
+          "rates": [
+            0.32,
+            0.06,
+            0.13,
+            0.13,
+            0.06,
+            0.11,
+            0.13,
+            0.13,
+            0.13,
+            1.36
+          ],
+          "ewma": [
+            0.288,
+            0.363,
+            1.524,
+            0.295,
+            0.077,
+            0.182,
+            0.105,
+            0.233,
+            0.263,
+            1.214
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 18:49:22",
+          "rates": [
+            0.27,
+            0.04,
+            0.02,
+            0.06,
+            0.04,
+            0.08,
+            0.04,
+            0.06,
+            0.15,
+            0.48
+          ],
+          "ewma": [
+            0.284,
+            0.299,
+            1.223,
+            0.248,
+            0.07,
+            0.162,
+            0.092,
+            0.199,
+            0.239,
+            1.067
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 18:59:59",
+          "rates": [
+            0.0,
+            0.94,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2.81
+          ],
+          "ewma": [
+            0.227,
+            0.426,
+            0.978,
+            0.198,
+            0.056,
+            0.13,
+            0.074,
+            0.159,
+            0.191,
+            1.415
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 06:59:59",
+          "rates": [
+            0.45,
+            0.26,
+            0.02,
+            0.28,
+            0.14,
+            0.05,
+            0.02,
+            0.19,
+            0.09,
+            2.25
+          ],
+          "ewma": [
+            0.272,
+            0.393,
+            0.787,
+            0.215,
+            0.073,
+            0.113,
+            0.064,
+            0.165,
+            0.172,
+            1.583
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 14:22:49",
+          "rates": [
+            0.51,
+            0.13,
+            0.0,
+            0.13,
+            0.0,
+            0.13,
+            0.13,
+            0.13,
+            0.0,
+            0.13
+          ],
+          "ewma": [
+            0.32,
+            0.34,
+            0.63,
+            0.198,
+            0.058,
+            0.116,
+            0.077,
+            0.158,
+            0.138,
+            1.292
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            0.256,
+            0.272,
+            0.504,
+            0.158,
+            0.046,
+            0.093,
+            0.062,
+            0.126,
+            0.11,
+            1.034
+          ]
+        },
+        {
+          "t_stamp": "2026-07-18 18:49:15",
+          "rates": [
+            0.36,
+            7.14,
+            0.05,
+            0.21,
+            0.05,
+            0.17,
+            0.0,
+            0.21,
+            0.07,
+            1.49
+          ],
+          "ewma": [
+            0.276,
+            1.645,
+            0.413,
+            0.169,
+            0.046,
+            0.108,
+            0.05,
+            0.143,
+            0.102,
+            1.126
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 03:09:37",
+          "rates": [
+            0.5,
+            5.15,
+            0.0,
+            0.18,
+            0.0,
+            0.18,
+            0.0,
+            0.0,
+            0.14,
+            2.82
+          ],
+          "ewma": [
+            0.321,
+            2.345,
+            0.33,
+            0.172,
+            0.037,
+            0.123,
+            0.04,
+            0.114,
+            0.109,
+            1.466
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 06:59:59",
+          "rates": [
+            0.24,
+            1.21,
+            0.12,
+            0.85,
+            0.12,
+            0.0,
+            0.24,
+            0.36,
+            0.24,
+            0.48
+          ],
+          "ewma": [
+            0.305,
+            2.118,
+            0.288,
+            0.307,
+            0.054,
+            0.098,
+            0.08,
+            0.164,
+            0.136,
+            1.27
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 18:47:26",
+          "rates": [
+            0.2,
+            2.07,
+            0.05,
+            0.22,
+            0.02,
+            0.15,
+            0.07,
+            0.2,
+            0.05,
+            0.54
+          ],
+          "ewma": [
+            0.283,
+            2.108,
+            0.24,
+            0.29,
+            0.048,
+            0.108,
+            0.079,
+            0.171,
+            0.119,
+            1.124
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.02,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            0.226,
+            1.686,
+            0.192,
+            0.232,
+            0.038,
+            0.091,
+            0.063,
+            0.137,
+            0.095,
+            0.899
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 06:59:59",
+          "rates": [
+            0.2,
+            2.58,
+            0.06,
+            0.82,
+            0.0,
+            0.2,
+            0.06,
+            0.43,
+            0.09,
+            0.54
+          ],
+          "ewma": [
+            0.22,
+            1.865,
+            0.165,
+            0.35,
+            0.03,
+            0.112,
+            0.062,
+            0.195,
+            0.093,
+            0.827
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 12:59:41",
+          "rates": [
+            0.03,
+            0.0,
+            0.03,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.03,
+            0.0
+          ],
+          "ewma": [
+            0.181,
+            1.492,
+            0.137,
+            0.28,
+            0.024,
+            0.09,
+            0.05,
+            0.156,
+            0.08,
+            0.662
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 18:52:52",
+          "rates": [
+            1.58,
+            0.16,
+            4.27,
+            0.0,
+            0.32,
+            0.0,
+            0.63,
+            0.16,
+            0.16,
+            0.0
+          ],
+          "ewma": [
+            0.461,
+            1.225,
+            0.963,
+            0.224,
+            0.082,
+            0.072,
+            0.166,
+            0.156,
+            0.096,
+            0.53
+          ]
+        },
+        {
+          "t_stamp": "2026-07-21 06:31:15",
+          "rates": [
+            2.27,
+            0.15,
+            3.64,
+            0.1,
+            0.15,
+            0.1,
+            0.1,
+            0.15,
+            0.35,
+            0.05
+          ],
+          "ewma": [
+            0.824,
+            1.01,
+            1.498,
+            0.199,
+            0.096,
+            0.078,
+            0.153,
+            0.155,
+            0.148,
+            0.434
+          ]
+        },
+        {
+          "t_stamp": "2026-07-21 18:48:00",
+          "rates": [
+            3.6,
+            0.17,
+            2.24,
+            0.0,
+            0.08,
+            0.04,
+            0.21,
+            0.04,
+            0.0,
+            0.13
+          ],
+          "ewma": [
+            1.379,
+            0.842,
+            1.647,
+            0.159,
+            0.094,
+            0.071,
+            0.165,
+            0.132,
+            0.118,
+            0.373
+          ]
+        },
+        {
+          "t_stamp": "2026-07-22 06:51:12",
+          "rates": [
+            2.61,
+            0.16,
+            4.46,
+            0.0,
+            0.16,
+            0.0,
+            0.05,
+            0.05,
+            0.11,
+            0.05
+          ],
+          "ewma": [
+            1.626,
+            0.706,
+            2.21,
+            0.127,
+            0.108,
+            0.057,
+            0.143,
+            0.116,
+            0.116,
+            0.309
+          ]
+        }
+      ],
+      "ucl": [
+        0.59,
+        0.53,
+        3.41,
+        0.83,
+        0.43,
+        0.32,
+        0.91,
+        0.28,
+        0.83,
+        2.12
+      ],
+      "lcl": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lambda": 0.2
+    },
+    "shift_table": [
+      {
+        "label": "Day 07-15",
+        "n_inspected": 4920,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 13,
+            "rate_pct": 0.26,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 3,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 1,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 3,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 2,
+            "rate_pct": 0.04,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 4,
+            "rate_pct": 0.08,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 2,
+            "rate_pct": 0.04,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 3,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 7,
+            "rate_pct": 0.14,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 26,
+            "rate_pct": 0.53,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-15",
+        "n_inspected": 4215,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 19,
+            "rate_pct": 0.45,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 11,
+            "rate_pct": 0.26,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 1,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 12,
+            "rate_pct": 0.28,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 6,
+            "rate_pct": 0.14,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 2,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 1,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 8,
+            "rate_pct": 0.19,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 4,
+            "rate_pct": 0.09,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 95,
+            "rate_pct": 2.25,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-16",
+        "n_inspected": 1682,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 4,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 1,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 1,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 1,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 1,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 1,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 1,
+            "rate_pct": 0.06,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-18",
+        "n_inspected": 4218,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 15,
+            "rate_pct": 0.36,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 301,
+            "rate_pct": 7.14,
+            "ooc": true
+          },
+          {
+            "lane": 3,
+            "rejects": 2,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 9,
+            "rate_pct": 0.21,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 2,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 7,
+            "rate_pct": 0.17,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 9,
+            "rate_pct": 0.21,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 3,
+            "rate_pct": 0.07,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 63,
+            "rate_pct": 1.49,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-18",
+        "n_inspected": 3023,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 13,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 123,
+            "rate_pct": 4.07,
+            "ooc": true
+          },
+          {
+            "lane": 3,
+            "rejects": 1,
+            "rate_pct": 0.03,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 11,
+            "rate_pct": 0.36,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 1,
+            "rate_pct": 0.03,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 4,
+            "rate_pct": 0.13,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 2,
+            "rate_pct": 0.07,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 3,
+            "rate_pct": 0.1,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 5,
+            "rate_pct": 0.17,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 66,
+            "rate_pct": 2.18,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-19",
+        "n_inspected": 8120,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 8,
+            "rate_pct": 0.1,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 84,
+            "rate_pct": 1.03,
+            "ooc": true
+          },
+          {
+            "lane": 3,
+            "rejects": 2,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 9,
+            "rate_pct": 0.11,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 1,
+            "rate_pct": 0.01,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 7,
+            "rate_pct": 0.09,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 3,
+            "rate_pct": 0.04,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 8,
+            "rate_pct": 0.1,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 2,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 22,
+            "rate_pct": 0.27,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-19",
+        "n_inspected": 3526,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 7,
+            "rate_pct": 0.2,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 91,
+            "rate_pct": 2.58,
+            "ooc": true
+          },
+          {
+            "lane": 3,
+            "rejects": 2,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 29,
+            "rate_pct": 0.82,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 7,
+            "rate_pct": 0.2,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 2,
+            "rate_pct": 0.06,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 15,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 3,
+            "rate_pct": 0.09,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 19,
+            "rate_pct": 0.54,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-20",
+        "n_inspected": 4286,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 11,
+            "rate_pct": 0.26,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 1,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 28,
+            "rate_pct": 0.65,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 2,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 4,
+            "rate_pct": 0.09,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 1,
+            "rate_pct": 0.02,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 2,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-20",
+        "n_inspected": 1979,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 45,
+            "rate_pct": 2.27,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 3,
+            "rate_pct": 0.15,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 72,
+            "rate_pct": 3.64,
+            "ooc": true
+          },
+          {
+            "lane": 4,
+            "rejects": 2,
+            "rate_pct": 0.1,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 3,
+            "rate_pct": 0.15,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 2,
+            "rate_pct": 0.1,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 2,
+            "rate_pct": 0.1,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 3,
+            "rate_pct": 0.15,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 7,
+            "rate_pct": 0.35,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 1,
+            "rate_pct": 0.05,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-21",
+        "n_inspected": 2362,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 85,
+            "rate_pct": 3.6,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 4,
+            "rate_pct": 0.17,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 53,
+            "rate_pct": 2.24,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 2,
+            "rate_pct": 0.08,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 1,
+            "rate_pct": 0.04,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 5,
+            "rate_pct": 0.21,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 1,
+            "rate_pct": 0.04,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 3,
+            "rate_pct": 0.13,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-21",
+        "n_inspected": 1838,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 48,
+            "rate_pct": 2.61,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 3,
+            "rate_pct": 0.16,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 82,
+            "rate_pct": 4.46,
+            "ooc": true
+          },
+          {
+            "lane": 4,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 3,
+            "rate_pct": 0.16,
+            "ooc": false
+          },
+          {
+            "lane": 6,
+            "rejects": 0,
+            "rate_pct": 0.0,
+            "ooc": false
+          },
+          {
+            "lane": 7,
+            "rejects": 1,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 8,
+            "rejects": 1,
+            "rate_pct": 0.05,
+            "ooc": false
+          },
+          {
+            "lane": 9,
+            "rejects": 2,
+            "rate_pct": 0.11,
+            "ooc": false
+          },
+          {
+            "lane": 10,
+            "rejects": 1,
+            "rate_pct": 0.05,
+            "ooc": false
+          }
+        ]
+      }
+    ]
+  },
+  "weekly_vision_spc": {
+    "shift_subgroups": 13,
+    "total_shifts": 14,
+    "lanes": [
+      {
+        "lane": 1,
+        "p_bar_pct": 1.036,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 1.402,
+            "ucl_pct": 2.493,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 4.009,
+            "ucl_pct": 3.238,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 5.649,
+            "ucl_pct": 4.522,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 0.755,
+            "ucl_pct": 3.85,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.182,
+            "ucl_pct": 3.528,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.083,
+            "ucl_pct": 2.593,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.744,
+            "ucl_pct": 3.636,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.813,
+            "ucl_pct": 3.279,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 1.73,
+            "ucl_pct": 3.443,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 1.692,
+            "ucl_pct": 2.723,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.328,
+            "ucl_pct": 4.249,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.826,
+            "ucl_pct": 3.978,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.245,
+            "ucl_pct": 4.371,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 2,
+        "p_bar_pct": 0.441,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.229,
+            "ucl_pct": 1.233,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.308,
+            "ucl_pct": 1.637,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 3.39,
+            "ucl_pct": 2.335,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 0.949,
+            "ucl_pct": 1.969,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.152,
+            "ucl_pct": 1.795,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.041,
+            "ucl_pct": 1.287,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.513,
+            "ucl_pct": 1.853,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.419,
+            "ucl_pct": 1.66,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.17,
+            "ucl_pct": 1.749,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.87,
+            "ucl_pct": 1.357,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.227,
+            "ucl_pct": 2.186,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.656,
+            "ucl_pct": 2.039,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.19,
+            "ucl_pct": 2.252,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 3,
+        "p_bar_pct": 0.681,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.275,
+            "ucl_pct": 1.855,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.356,
+            "ucl_pct": 2.455,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 3.449,
+            "ucl_pct": 3.489,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 0.93,
+            "ucl_pct": 2.947,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.897,
+            "ucl_pct": 2.689,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.848,
+            "ucl_pct": 1.935,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.943,
+            "ucl_pct": 2.776,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 1.318,
+            "ucl_pct": 2.488,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 1.163,
+            "ucl_pct": 2.62,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 1.539,
+            "ucl_pct": 2.04,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 1.895,
+            "ucl_pct": 3.269,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 1.249,
+            "ucl_pct": 3.051,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 1.088,
+            "ucl_pct": 3.367,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": false
+      },
+      {
+        "lane": 4,
+        "p_bar_pct": 0.46,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.239,
+            "ucl_pct": 1.25,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.308,
+            "ucl_pct": 1.654,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 3.211,
+            "ucl_pct": 2.35,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 0.988,
+            "ucl_pct": 1.985,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.228,
+            "ucl_pct": 1.811,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.083,
+            "ucl_pct": 1.304,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.562,
+            "ucl_pct": 1.87,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.431,
+            "ucl_pct": 1.676,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.198,
+            "ucl_pct": 1.765,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.884,
+            "ucl_pct": 1.375,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.253,
+            "ucl_pct": 2.202,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.656,
+            "ucl_pct": 2.055,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.082,
+            "ucl_pct": 2.268,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      },
+      {
+        "lane": 5,
+        "p_bar_pct": 0.715,
+        "points": [
+          {
+            "label": "Day 07-15",
+            "rate_pct": 0.364,
+            "ucl_pct": 2.071,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-15",
+            "rate_pct": 0.961,
+            "ucl_pct": 2.765,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-16",
+            "rate_pct": 5.59,
+            "ucl_pct": 3.961,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-16",
+            "rate_pct": null,
+            "ucl_pct": null,
+            "lcl_pct": null,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-17",
+            "rate_pct": 4.978,
+            "ucl_pct": 3.335,
+            "lcl_pct": 0.0,
+            "out_of_control": true
+          },
+          {
+            "label": "Night 07-17",
+            "rate_pct": 0.213,
+            "ucl_pct": 3.036,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-18",
+            "rate_pct": 0.119,
+            "ucl_pct": 2.164,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-18",
+            "rate_pct": 0.579,
+            "ucl_pct": 3.136,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-19",
+            "rate_pct": 0.529,
+            "ucl_pct": 2.804,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-19",
+            "rate_pct": 0.227,
+            "ucl_pct": 2.956,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-20",
+            "rate_pct": 0.891,
+            "ucl_pct": 2.285,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-20",
+            "rate_pct": 0.303,
+            "ucl_pct": 3.707,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Day 07-21",
+            "rate_pct": 0.423,
+            "ucl_pct": 3.454,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          },
+          {
+            "label": "Night 07-21",
+            "rate_pct": 0.109,
+            "ucl_pct": 3.82,
+            "lcl_pct": 0.0,
+            "out_of_control": false
+          }
+        ],
+        "any_out_of_control": true
+      }
+    ],
+    "ewma": {
+      "shifts": [
+        {
+          "t_stamp": "2026-07-11 18:45:56",
+          "rates": [
+            1.68,
+            0.75,
+            0.57,
+            0.78,
+            0.62
+          ],
+          "ewma": [
+            1.6833333333333331,
+            0.75,
+            0.5666666666666667,
+            0.7833333333333333,
+            0.6166666666666667
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 06:59:59",
+          "rates": [
+            1.27,
+            0.09,
+            0.2,
+            1.27,
+            0.3
+          ],
+          "ewma": [
+            1.602,
+            0.619,
+            0.494,
+            0.882,
+            0.552
+          ]
+        },
+        {
+          "t_stamp": "2026-07-12 18:49:07",
+          "rates": [
+            2.43,
+            0.72,
+            0.84,
+            0.72,
+            0.95
+          ],
+          "ewma": [
+            1.767,
+            0.639,
+            0.563,
+            0.849,
+            0.631
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 06:35:41",
+          "rates": [
+            1.07,
+            0.07,
+            0.03,
+            0.07,
+            0.23
+          ],
+          "ewma": [
+            1.629,
+            0.524,
+            0.456,
+            0.692,
+            0.55
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 18:59:59",
+          "rates": [
+            2.63,
+            0.64,
+            0.78,
+            0.66,
+            1.05
+          ],
+          "ewma": [
+            1.83,
+            0.547,
+            0.521,
+            0.685,
+            0.65
+          ]
+        },
+        {
+          "t_stamp": "2026-07-13 21:35:30",
+          "rates": [
+            2.01,
+            0.44,
+            0.0,
+            0.44,
+            0.2
+          ],
+          "ewma": [
+            1.867,
+            0.526,
+            0.417,
+            0.636,
+            0.559
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 06:59:59",
+          "rates": [
+            3.39,
+            0.4,
+            0.85,
+            0.42,
+            0.98
+          ],
+          "ewma": [
+            2.171,
+            0.5,
+            0.503,
+            0.593,
+            0.644
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 17:11:34",
+          "rates": [
+            7.81,
+            2.64,
+            3.17,
+            2.72,
+            3.88
+          ],
+          "ewma": [
+            3.299,
+            0.929,
+            1.037,
+            1.019,
+            1.29
+          ]
+        },
+        {
+          "t_stamp": "2026-07-14 18:48:24",
+          "rates": [
+            3.11,
+            0.0,
+            0.19,
+            0.0,
+            2.14
+          ],
+          "ewma": [
+            3.262,
+            0.743,
+            0.868,
+            0.815,
+            1.46
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 06:59:59",
+          "rates": [
+            4.35,
+            0.02,
+            0.11,
+            0.05,
+            0.75
+          ],
+          "ewma": [
+            3.48,
+            0.599,
+            0.716,
+            0.663,
+            1.319
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 18:49:12",
+          "rates": [
+            2.78,
+            0.46,
+            0.55,
+            0.48,
+            0.73
+          ],
+          "ewma": [
+            3.341,
+            0.571,
+            0.683,
+            0.626,
+            1.201
+          ]
+        },
+        {
+          "t_stamp": "2026-07-15 18:59:59",
+          "rates": [
+            0.02,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            2.677,
+            0.457,
+            0.546,
+            0.501,
+            0.961
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 06:59:59",
+          "rates": [
+            4.01,
+            0.31,
+            0.36,
+            0.31,
+            0.96
+          ],
+          "ewma": [
+            2.943,
+            0.427,
+            0.508,
+            0.462,
+            0.961
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 14:22:38",
+          "rates": [
+            10.35,
+            6.81,
+            6.94,
+            6.43,
+            11.37
+          ],
+          "ewma": [
+            4.424,
+            1.704,
+            1.794,
+            1.655,
+            3.044
+          ]
+        },
+        {
+          "t_stamp": "2026-07-16 18:50:17",
+          "rates": [
+            1.6,
+            0.44,
+            0.44,
+            0.44,
+            0.61
+          ],
+          "ewma": [
+            3.86,
+            1.452,
+            1.524,
+            1.413,
+            2.557
+          ]
+        },
+        {
+          "t_stamp": "2026-07-17 15:27:28",
+          "rates": [
+            2.52,
+            3.92,
+            2.52,
+            3.92,
+            11.2
+          ],
+          "ewma": [
+            3.592,
+            1.946,
+            1.723,
+            1.915,
+            4.286
+          ]
+        },
+        {
+          "t_stamp": "2026-07-17 18:45:23",
+          "rates": [
+            1.25,
+            1.46,
+            1.62,
+            1.54,
+            8.99
+          ],
+          "ewma": [
+            3.123,
+            1.848,
+            1.703,
+            1.84,
+            5.227
+          ]
+        },
+        {
+          "t_stamp": "2026-07-17 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.04
+          ],
+          "ewma": [
+            2.498,
+            1.478,
+            1.362,
+            1.472,
+            4.19
+          ]
+        },
+        {
+          "t_stamp": "2026-07-18 06:49:55",
+          "rates": [
+            0.18,
+            0.15,
+            0.9,
+            0.23,
+            0.21
+          ],
+          "ewma": [
+            2.035,
+            1.213,
+            1.269,
+            1.223,
+            3.395
+          ]
+        },
+        {
+          "t_stamp": "2026-07-18 18:49:05",
+          "rates": [
+            0.17,
+            0.08,
+            1.7,
+            0.17,
+            0.24
+          ],
+          "ewma": [
+            1.661,
+            0.987,
+            1.354,
+            1.012,
+            2.763
+          ]
+        },
+        {
+          "t_stamp": "2026-07-18 18:59:59",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            1.329,
+            0.79,
+            1.083,
+            0.81,
+            2.21
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 03:09:26",
+          "rates": [
+            0.2,
+            0.2,
+            0.41,
+            0.27,
+            0.2
+          ],
+          "ewma": [
+            1.104,
+            0.673,
+            0.948,
+            0.703,
+            1.809
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 06:59:59",
+          "rates": [
+            2.18,
+            1.33,
+            2.36,
+            1.33,
+            1.57
+          ],
+          "ewma": [
+            1.318,
+            0.804,
+            1.23,
+            0.828,
+            1.762
+          ]
+        },
+        {
+          "t_stamp": "2026-07-19 18:47:37",
+          "rates": [
+            0.81,
+            0.42,
+            1.32,
+            0.43,
+            0.53
+          ],
+          "ewma": [
+            1.217,
+            0.727,
+            1.248,
+            0.749,
+            1.515
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 06:59:59",
+          "rates": [
+            1.73,
+            0.17,
+            1.16,
+            0.2,
+            0.23
+          ],
+          "ewma": [
+            1.32,
+            0.616,
+            1.231,
+            0.639,
+            1.257
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 09:08:23",
+          "rates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ewma": [
+            1.056,
+            0.493,
+            0.985,
+            0.511,
+            1.006
+          ]
+        },
+        {
+          "t_stamp": "2026-07-20 18:59:59",
+          "rates": [
+            3.33,
+            1.71,
+            3.03,
+            1.74,
+            1.75
+          ],
+          "ewma": [
+            1.51,
+            0.737,
+            1.393,
+            0.757,
+            1.155
+          ]
+        },
+        {
+          "t_stamp": "2026-07-21 06:31:05",
+          "rates": [
+            0.33,
+            0.23,
+            1.89,
+            0.25,
+            0.3
+          ],
+          "ewma": [
+            1.274,
+            0.635,
+            1.493,
+            0.656,
+            0.985
+          ]
+        },
+        {
+          "t_stamp": "2026-07-21 18:59:59",
+          "rates": [
+            0.83,
+            0.66,
+            1.25,
+            0.66,
+            0.42
+          ],
+          "ewma": [
+            1.184,
+            0.639,
+            1.444,
+            0.656,
+            0.873
+          ]
+        },
+        {
+          "t_stamp": "2026-07-22 06:51:05",
+          "rates": [
+            0.24,
+            0.19,
+            1.09,
+            0.08,
+            0.11
+          ],
+          "ewma": [
+            0.996,
+            0.549,
+            1.373,
+            0.541,
+            0.72
+          ]
+        }
+      ],
+      "ucl": [
+        3.52,
+        1.17,
+        1.14,
+        1.21,
+        2.08
+      ],
+      "lcl": [
+        0.38,
+        0.0,
+        0.0,
+        0.0,
+        0.03
+      ],
+      "lambda": 0.2
+    },
+    "shift_table": [
+      {
+        "label": "Day 07-15",
+        "n_inspected": 19252,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 270,
+            "rate_pct": 1.4,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 44,
+            "rate_pct": 0.23,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 53,
+            "rate_pct": 0.28,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 46,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 70,
+            "rate_pct": 0.36,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-15",
+        "n_inspected": 8431,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 338,
+            "rate_pct": 4.01,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 26,
+            "rate_pct": 0.31,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 30,
+            "rate_pct": 0.36,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 26,
+            "rate_pct": 0.31,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 81,
+            "rate_pct": 0.96,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-16",
+        "n_inspected": 3363,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 190,
+            "rate_pct": 5.65,
+            "ooc": true
+          },
+          {
+            "lane": 2,
+            "rejects": 114,
+            "rate_pct": 3.39,
+            "ooc": true
+          },
+          {
+            "lane": 3,
+            "rejects": 116,
+            "rate_pct": 3.45,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 108,
+            "rate_pct": 3.21,
+            "ooc": true
+          },
+          {
+            "lane": 5,
+            "rejects": 188,
+            "rate_pct": 5.59,
+            "ooc": true
+          }
+        ]
+      },
+      {
+        "label": "Day 07-17",
+        "n_inspected": 5163,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 39,
+            "rate_pct": 0.76,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 49,
+            "rate_pct": 0.95,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 48,
+            "rate_pct": 0.93,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 51,
+            "rate_pct": 0.99,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 257,
+            "rate_pct": 4.98,
+            "ooc": true
+          }
+        ]
+      },
+      {
+        "label": "Night 07-17",
+        "n_inspected": 6580,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 12,
+            "rate_pct": 0.18,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 10,
+            "rate_pct": 0.15,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 59,
+            "rate_pct": 0.9,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 15,
+            "rate_pct": 0.23,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 14,
+            "rate_pct": 0.21,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-18",
+        "n_inspected": 16868,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 14,
+            "rate_pct": 0.08,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 7,
+            "rate_pct": 0.04,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 143,
+            "rate_pct": 0.85,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 14,
+            "rate_pct": 0.08,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 20,
+            "rate_pct": 0.12,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-18",
+        "n_inspected": 6045,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 45,
+            "rate_pct": 0.74,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 31,
+            "rate_pct": 0.51,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 57,
+            "rate_pct": 0.94,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 34,
+            "rate_pct": 0.56,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 35,
+            "rate_pct": 0.58,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-19",
+        "n_inspected": 8121,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 66,
+            "rate_pct": 0.81,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 34,
+            "rate_pct": 0.42,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 107,
+            "rate_pct": 1.32,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 35,
+            "rate_pct": 0.43,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 43,
+            "rate_pct": 0.53,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-19",
+        "n_inspected": 7053,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 122,
+            "rate_pct": 1.73,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 12,
+            "rate_pct": 0.17,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 82,
+            "rate_pct": 1.16,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 14,
+            "rate_pct": 0.2,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 16,
+            "rate_pct": 0.23,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-20",
+        "n_inspected": 14364,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 243,
+            "rate_pct": 1.69,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 125,
+            "rate_pct": 0.87,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 221,
+            "rate_pct": 1.54,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 127,
+            "rate_pct": 0.88,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 128,
+            "rate_pct": 0.89,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-20",
+        "n_inspected": 3958,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 13,
+            "rate_pct": 0.33,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 9,
+            "rate_pct": 0.23,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 75,
+            "rate_pct": 1.89,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 10,
+            "rate_pct": 0.25,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 12,
+            "rate_pct": 0.3,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Day 07-21",
+        "n_inspected": 4723,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 39,
+            "rate_pct": 0.83,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 31,
+            "rate_pct": 0.66,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 59,
+            "rate_pct": 1.25,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 31,
+            "rate_pct": 0.66,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 20,
+            "rate_pct": 0.42,
+            "ooc": false
+          }
+        ]
+      },
+      {
+        "label": "Night 07-21",
+        "n_inspected": 3675,
+        "per_lane": [
+          {
+            "lane": 1,
+            "rejects": 9,
+            "rate_pct": 0.24,
+            "ooc": false
+          },
+          {
+            "lane": 2,
+            "rejects": 7,
+            "rate_pct": 0.19,
+            "ooc": false
+          },
+          {
+            "lane": 3,
+            "rejects": 40,
+            "rate_pct": 1.09,
+            "ooc": false
+          },
+          {
+            "lane": 4,
+            "rejects": 3,
+            "rate_pct": 0.08,
+            "ooc": false
+          },
+          {
+            "lane": 5,
+            "rejects": 4,
+            "rate_pct": 0.11,
+            "ooc": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "analysis_id": "shift-dashboard",
   "line_id": "ngp2",
-  "generated_at": "2026-07-21T07:56:29.208863+00:00",
+  "generated_at": "2026-07-22T14:49:52.113072+00:00",
   "latest_shift": {
     "label": "Night Shift \u2014 2026-07-17 (19:00 \u2013 07:00)",
     "shift_date": "2026-07-17",
@@ -763,42 +763,42 @@
       "anomalies": {
         "cluster_outliers": [
           {
-            "cluster": "Timing",
-            "segment": "hydration",
-            "current_share": 9.5,
-            "baseline_mean": 0.8,
-            "z_score": 5.5,
-            "direction": "above"
-          },
-          {
             "cluster": "Other",
             "segment": "foil",
             "current_share": 19.0,
-            "baseline_mean": 5.7,
+            "baseline_mean": 5.9,
             "z_score": 5.1,
             "direction": "above"
           },
           {
-            "cluster": "Other",
+            "cluster": "Timing",
             "segment": "hydration",
-            "current_share": 8.7,
-            "baseline_mean": 2.4,
-            "z_score": 4.6,
-            "direction": "above"
-          },
-          {
-            "cluster": "Gripper",
-            "segment": "hydration",
-            "current_share": 19.3,
-            "baseline_mean": 6.1,
-            "z_score": 3.4,
+            "current_share": 9.5,
+            "baseline_mean": 1.2,
+            "z_score": 4.5,
             "direction": "above"
           },
           {
             "cluster": "Positioning",
             "segment": "foil",
             "current_share": 5.5,
-            "baseline_mean": 1.7,
+            "baseline_mean": 1.6,
+            "z_score": 2.9,
+            "direction": "above"
+          },
+          {
+            "cluster": "Gripper",
+            "segment": "hydration",
+            "current_share": 19.3,
+            "baseline_mean": 7.0,
+            "z_score": 2.5,
+            "direction": "above"
+          },
+          {
+            "cluster": "Other",
+            "segment": "hydration",
+            "current_share": 8.7,
+            "baseline_mean": 3.0,
             "z_score": 2.3,
             "direction": "above"
           }
@@ -811,8 +811,8 @@
             "rejects": 73,
             "inspected": 3290,
             "rate_pct": 2.22,
-            "p_bar_pct": 2.45,
-            "ucl_pct": 7.82,
+            "p_bar_pct": 2.46,
+            "ucl_pct": 7.9,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -821,7 +821,7 @@
             "rejects": 16,
             "inspected": 3290,
             "rate_pct": 0.49,
-            "p_bar_pct": 1.0,
+            "p_bar_pct": 1.01,
             "ucl_pct": 2.96,
             "lcl_pct": 0.0,
             "out_of_control": false,
@@ -832,7 +832,7 @@
             "inspected": 3290,
             "rate_pct": 0.46,
             "p_bar_pct": 0.71,
-            "ucl_pct": 2.14,
+            "ucl_pct": 2.15,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -841,7 +841,7 @@
             "rejects": 17,
             "inspected": 3290,
             "rate_pct": 0.52,
-            "p_bar_pct": 0.47,
+            "p_bar_pct": 0.48,
             "ucl_pct": 1.49,
             "lcl_pct": 0.0,
             "out_of_control": false,
@@ -851,8 +851,8 @@
             "rejects": 16,
             "inspected": 3290,
             "rate_pct": 0.49,
-            "p_bar_pct": 0.53,
-            "ucl_pct": 1.93,
+            "p_bar_pct": 0.54,
+            "ucl_pct": 1.98,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 5
@@ -861,8 +861,8 @@
             "rejects": 16,
             "inspected": 3290,
             "rate_pct": 0.49,
-            "p_bar_pct": 0.41,
-            "ucl_pct": 1.38,
+            "p_bar_pct": 0.42,
+            "ucl_pct": 1.39,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 6
@@ -882,7 +882,7 @@
             "inspected": 3290,
             "rate_pct": 0.46,
             "p_bar_pct": 0.38,
-            "ucl_pct": 1.37,
+            "ucl_pct": 1.38,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 8
@@ -891,8 +891,8 @@
             "rejects": 15,
             "inspected": 3290,
             "rate_pct": 0.46,
-            "p_bar_pct": 0.69,
-            "ucl_pct": 2.6,
+            "p_bar_pct": 0.67,
+            "ucl_pct": 2.55,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 9
@@ -902,7 +902,7 @@
             "inspected": 3290,
             "rate_pct": 0.46,
             "p_bar_pct": 0.36,
-            "ucl_pct": 1.28,
+            "ucl_pct": 1.29,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 10
@@ -1725,28 +1725,28 @@
             }
           ],
           "ucl": [
-            2.79,
-            2.22,
-            1.49,
-            2.1,
-            1.43,
-            1.86,
-            0.81,
-            1.44,
-            1.9,
-            1.36
+            2.3,
+            0.76,
+            0.71,
+            0.7,
+            1.07,
+            0.67,
+            0.68,
+            0.69,
+            0.75,
+            0.67
           ],
           "lcl": [
             0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.06,
-            0.0,
-            0.0,
-            0.0
+            0.11,
+            0.11,
+            0.12,
+            0.04,
+            0.12,
+            0.09,
+            0.11,
+            0.11,
+            0.12
           ],
           "lambda": 0.2
         }
@@ -1764,8 +1764,8 @@
             "rejects": 12,
             "inspected": 6580,
             "rate_pct": 0.18,
-            "p_bar_pct": 0.96,
-            "ucl_pct": 3.35,
+            "p_bar_pct": 1.04,
+            "ucl_pct": 3.53,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -1774,8 +1774,8 @@
             "rejects": 10,
             "inspected": 6580,
             "rate_pct": 0.15,
-            "p_bar_pct": 0.43,
-            "ucl_pct": 1.75,
+            "p_bar_pct": 0.44,
+            "ucl_pct": 1.79,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 2
@@ -1784,8 +1784,8 @@
             "rejects": 59,
             "inspected": 6580,
             "rate_pct": 0.9,
-            "p_bar_pct": 0.73,
-            "ucl_pct": 2.81,
+            "p_bar_pct": 0.68,
+            "ucl_pct": 2.69,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -1794,8 +1794,8 @@
             "rejects": 15,
             "inspected": 6580,
             "rate_pct": 0.23,
-            "p_bar_pct": 0.45,
-            "ucl_pct": 1.74,
+            "p_bar_pct": 0.46,
+            "ucl_pct": 1.81,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 4
@@ -1804,8 +1804,8 @@
             "rejects": 14,
             "inspected": 6580,
             "rate_pct": 0.21,
-            "p_bar_pct": 0.69,
-            "ucl_pct": 2.88,
+            "p_bar_pct": 0.71,
+            "ucl_pct": 3.04,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 5
@@ -2328,18 +2328,18 @@
             }
           ],
           "ucl": [
-            2.63,
-            0.98,
-            0.85,
-            1.01,
-            1.75
+            3.52,
+            1.17,
+            1.14,
+            1.21,
+            2.08
           ],
           "lcl": [
-            0.33,
+            0.38,
             0.0,
-            0.06,
             0.0,
-            0.0
+            0.0,
+            0.03
           ],
           "lambda": 0.2
         }

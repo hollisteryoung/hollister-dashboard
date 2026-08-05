@@ -13,7 +13,7 @@ Usage:
 
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 
@@ -64,6 +64,22 @@ SPC_BASELINE_SUBGROUPS = 100  # per-shift buckets before the weekly window used 
 ANOMALY_BASELINE_SHIFTS = 13  # prior shifts used for per-shift z-score baseline (matches shift_dashboard)
 
 OUTPUT_PATH = os.path.join(output_dir(CFG), "weekly-dashboard.json")
+
+# Separate output file for --spc-only: never overwrites weekly-dashboard.json
+# (which the full weekly/shift-detail dashboard depends on for OEE, downtime,
+# anomalies, top-stops, etc.) — a report that only needs SPC panels + a shift
+# list must not risk truncating that shared file if its lighter run lands
+# while the full dashboard's own refresh hasn't happened yet.
+SPC_ONLY_OUTPUT_PATH = os.path.join(output_dir(CFG), "weekly-dashboard-spc.json")
+
+# --spc-only also keeps a rolling history of timestamped copies so a report
+# can "rewind" through past refreshes instead of only ever seeing "now".
+# Tune freely: SPC data itself only changes at shift boundaries (~2x/day), so
+# most consecutive snapshots inside one shift will be identical — that's
+# expected, not a bug (see project notes on 2026-07-22 for why).
+SPC_SNAPSHOT_DIR = os.path.join(output_dir(CFG), "spc_snapshots")
+SPC_SNAPSHOT_INTERVAL_MIN = 15
+SPC_SNAPSHOT_RETENTION_DAYS = 3
 
 
 def _profile_from_seg_dt(seg_dt):
@@ -422,7 +438,118 @@ def _aggregate_prior_week_oee(conn, prior_shifts, excluded, p95_ppm) -> dict:
     }
 
 
+def _iso_week(date_str):
+    y, w, _ = datetime.strptime(date_str, "%Y-%m-%d").isocalendar()
+    return f"{y}-W{w:02d}"
+
+
+def _week_label(date_str):
+    d = datetime.strptime(date_str, "%Y-%m-%d")
+    monday = d - timedelta(days=d.isocalendar()[2] - 1)
+    return f"Week of {monday.strftime('%b %d')}"
+
+
+def _write_spc_snapshot(output):
+    """Persist a timestamped copy of an --spc-only run and prune old ones.
+
+    Snapshot filenames are rounded down to the nearest SPC_SNAPSHOT_INTERVAL_MIN
+    mark, so re-running within the same 15-min window overwrites the same file
+    instead of accumulating duplicates.
+    """
+    os.makedirs(SPC_SNAPSHOT_DIR, exist_ok=True)
+    now = datetime.now()
+    rounded_minute = (now.minute // SPC_SNAPSHOT_INTERVAL_MIN) * SPC_SNAPSHOT_INTERVAL_MIN
+    snap_time = now.replace(minute=rounded_minute, second=0, microsecond=0)
+    fname = snap_time.strftime("%Y%m%d_%H%M") + ".json"
+    save_analysis_json(output, os.path.join(SPC_SNAPSHOT_DIR, fname))
+    print(f"  Snapshot -> spc_snapshots/{fname}")
+
+    cutoff = now - timedelta(days=SPC_SNAPSHOT_RETENTION_DAYS)
+    for f in os.listdir(SPC_SNAPSHOT_DIR):
+        if not f.endswith(".json"):
+            continue
+        try:
+            f_time = datetime.strptime(f[:-5], "%Y%m%d_%H%M")
+        except ValueError:
+            continue
+        if f_time < cutoff:
+            try:
+                os.remove(os.path.join(SPC_SNAPSHOT_DIR, f))
+            except OSError:
+                pass
+
+
+def compute_spc_only():
+    """Minimal path for reports that only need SPC panels + a shift list.
+
+    Skips every per-shift OEE/downtime/quality query, all anomaly/cluster
+    profiling, and top-stops collection — none of that is reachable from
+    compute_weekly_spc(). Also skips render_all_shifts.py entirely: the
+    lightweight shift list here (date/type/label only, no OEE) is all a
+    report that only shows SPC + "current shift" needs, and this stays out
+    of the shared per-shift JSON files that the full dashboard's Shifts
+    table depends on.
+    """
+    configure_segments(CFG["segments"])
+    conn = get_connection(database=CFG.get("database"))
+    try:
+        latest_date, latest_type, latest_start, latest_end = detect_latest_shift(conn)
+        print(f"Latest completed shift: {format_shift_label(latest_type, latest_date)} "
+              f"({latest_start} - {latest_end})")
+
+        n_shifts = N_DAYS * 2
+        all_shifts = [(latest_date, latest_type)]
+        all_shifts.extend(previous_shifts(latest_date, latest_type, SHIFT_BOUNDS, n=n_shifts - 1))
+
+        sched_warnings = []
+        schedule = apply_schedule(CFG, None, None, sched_warnings)
+        excluded = set(schedule["excluded_days"])
+        for w in sched_warnings:
+            print(f"  [schedule warning] {w}")
+
+        shifts_data = []
+        for i, (s_date, s_type) in enumerate(all_shifts):
+            skipped = s_date in excluded
+            shifts_data.append({
+                "shift_date": s_date, "shift_type": s_type,
+                "label": format_shift_label(s_type, s_date),
+                "line_shift_label": f"{CFG['line_id']}|{format_shift_label(s_type, s_date)}",
+                "iso_week": _iso_week(s_date), "week_label": _week_label(s_date),
+                "is_latest": (i == 0),
+                "skipped": skipped,
+            })
+
+        print("\nComputing weekly SPC (shift-level subgroups)...")
+        weekly_spc = {}
+        for panel in get_spc_panels(CFG):
+            if not has_table(CFG, panel["gate_table"]):
+                continue
+            spc = compute_weekly_spc(conn, panel, all_shifts, excluded)
+            weekly_spc["weekly_" + panel["key"]] = spc
+            if spc:
+                ooc = [l for l in spc["lanes"] if l.get("any_out_of_control")]
+                print(f"  {panel['title']}: {spc['shift_subgroups']} shifts"
+                      + (f", OOC lanes: {[l['lane'] for l in ooc]}" if ooc else ", all in control"))
+
+        output = {
+            "analysis_id": "weekly-dashboard-spc",
+            "line_id": CFG["line_id"],
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "shifts": shifts_data,
+            **weekly_spc,
+        }
+        save_analysis_json(output, SPC_ONLY_OUTPUT_PATH)
+        print(f"\nWrote {SPC_ONLY_OUTPUT_PATH}")
+        _write_spc_snapshot(output)
+    finally:
+        conn.close()
+
+
 def main():
+    if "--spc-only" in sys.argv:
+        compute_spc_only()
+        return
+
     configure_segments(CFG["segments"])
     conn = get_connection(database=CFG.get("database"))
     try:

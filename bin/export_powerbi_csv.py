@@ -116,14 +116,19 @@ def shift_key(line, date, stype):
     return f"{line}|{date}|{stype}"
 
 
-def collect_shifts():
+def collect_shifts(lines=None):
     """Return one authoritative rich record per (line, date, type).
 
     Each per-shift file carries a rolling window; the *subject* shift (the one
     named in the filename) always holds the full detail, so we take that entry.
+
+    lines=None (default) scans every configured line, matching prior behaviour.
+    Pass an iterable of line keys (e.g. ("ngp2",)) to restrict the scan to a
+    subset — used by reports that only ever show one line, to skip reading
+    the other line's shift JSON entirely.
     """
     records = {}
-    for line in LINES:
+    for line in (lines or LINES):
         sdir = os.path.join(ANALYSES, line, "shifts")
         if not os.path.isdir(sdir):
             continue
@@ -165,14 +170,130 @@ def write_csv(name, header, rows):
     print(f"  {name:28s} {len(rows):6d} rows")
 
 
-def build_tables():
+def _build_tables_spc_only(lines):
+    """Lightweight counterpart to build_tables() for the weekly_analysis.py
+    --spc-only path: reads every retained file under spc_snapshots/ (never
+    the full weekly-dashboard.json) and returns Snapshots / Shifts / SPC / Lines.
+
+    Every snapshot's data is stacked into Shifts/SPC tagged with a SnapshotKey,
+    so a report can slice by Snapshots[SnapshotLabel] to "rewind" through
+    whatever history weekly_analysis.py --spc-only has retained (see
+    SPC_SNAPSHOT_RETENTION_DAYS there). Shifts has NO OEE/Availability/
+    Performance/Quality/downtime columns — that data was never computed
+    (that's the whole point of --spc-only) so there's nothing to put in them.
+    """
+    active_lines = lines or LINES
+    generated_at = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    shifts, spc, snapshots = [], [], []
+    seen_snapshots = set()
+    for line in active_lines:
+        snap_dir = os.path.join(ANALYSES, line, "spc_snapshots")
+        if not os.path.isdir(snap_dir):
+            continue
+        for fname in sorted(os.listdir(snap_dir)):
+            if not fname.endswith(".json"):
+                continue
+            snap_key = fname[:-5]  # "20260722_1645"
+            try:
+                snap_dt = dt.datetime.strptime(snap_key, "%Y%m%d_%H%M")
+            except ValueError:
+                continue
+
+            if snap_key not in seen_snapshots:
+                seen_snapshots.add(snap_key)
+                snapshots.append([
+                    snap_key, snap_dt.strftime("%Y-%m-%d %H:%M:%S"),
+                    snap_dt.strftime("%b %d, %I:%M %p").replace(" 0", " "),
+                ])
+
+            doc = json.load(open(os.path.join(snap_dir, fname), encoding="utf-8"))
+            # SPC has no active relationship to Shifts (would form a cycle
+            # with the two SnapshotKey relationships), so it carries its own
+            # IsLatest flag rather than inheriting one via a join.
+            latest_label = next(
+                (s.get("label", "") for s in doc.get("shifts", []) if s.get("is_latest")), None)
+
+            for s in doc.get("shifts", []):
+                if s.get("skipped"):
+                    continue
+                date, stype, lbl = s["shift_date"], s["shift_type"], s.get("label", "")
+                shifts.append([
+                    f"{snap_key}|{shift_key(line, date, stype)}", snap_key, line, LINES[line],
+                    date, stype, lbl,
+                    s.get("line_shift_label", f"{line}|{lbl}"),
+                    s.get("iso_week", iso_week(date)), s.get("week_label", week_label(date)),
+                    1 if s.get("is_latest") else 0,
+                ])
+
+            for pkey, pname in SPC_PANELS.items():
+                sp = doc.get(pkey)
+                if not sp:
+                    continue
+                ucl = {}
+                for lane in sp.get("lanes", []):
+                    ln = lane.get("lane")
+                    for pt in lane.get("points", []):
+                        ucl[(ln, pt.get("label"))] = (pt.get("ucl_pct", 0), pt.get("out_of_control", False))
+                pbar = {lane.get("lane"): lane.get("p_bar_pct", 0) for lane in sp.get("lanes", [])}
+                for sidx, st in enumerate(sp.get("shift_table", [])):
+                    slbl, n = st.get("label"), st.get("n_inspected", 0)
+                    for pl in st.get("per_lane", []):
+                        ln = pl.get("lane")
+                        u, ooc = ucl.get((ln, slbl), (0, pl.get("ooc", False)))
+                        is_ooc = 1 if (pl.get("ooc") or ooc) else 0
+                        spc.append([
+                            snap_key, line, LINES[line], pname, slbl, f"{line}|{slbl}", ln,
+                            pl.get("rejects", 0), round(pl.get("rate_pct", 0), 3),
+                            round(u, 3), is_ooc, n,
+                            "#e17055" if is_ooc else "#ffffff",
+                            sidx, round(pbar.get(ln, 0), 3),
+                            1 if slbl == latest_label else 0,
+                        ])
+
+    if snapshots:
+        latest_key = max(row[0] for row in snapshots)
+        for row in snapshots:
+            row.append(1 if row[0] == latest_key else 0)
+
+    lines_dim = [[lid, lbl, generated_at] for lid, lbl in LINES.items() if lid in active_lines]
+
+    return [
+        ("Snapshots",
+         ["SnapshotKey", "SnapshotTime", "SnapshotLabel", "IsLatestSnapshot"], snapshots),
+        ("Shifts",
+         ["ShiftKey", "SnapshotKey", "LineId", "Line", "ShiftDate", "ShiftType", "Label",
+          "LineShiftLabel", "IsoWeek", "WeekLabel", "IsLatest"], shifts),
+        ("SPC",
+         ["SnapshotKey", "LineId", "Line", "Panel", "ShiftLabel", "LineShiftLabel", "Lane",
+          "Rejects", "RatePct", "UclPct", "OOC", "NInspected", "OOCColor",
+          "ShiftIdx", "PBar", "IsLatest"], spc),
+        ("Lines", ["LineId", "Line", "GeneratedAt"], lines_dim),
+    ]
+
+
+def build_tables(lines=None, spc_only=False):
     """Collect + flatten every analysis JSON into a list of (name, header, rows).
 
     Pure in-memory: no files written. Reused by bin/powerbi_compute.py so Power BI
     can obtain the same tables as DataFrames without going through CSV on disk.
+
+    lines=None (default) builds every configured line, matching prior behaviour.
+    Pass an iterable of line keys to restrict every table (Shifts, SPC, Lines,
+    etc.) to just those lines — for a report that only ever shows one line.
+
+    spc_only=False → full behaviour (all ~15 tables, both lines by default).
+    spc_only=True  → see _build_tables_spc_only: only Shifts (no OEE/downtime
+    columns) / SPC / Lines, sourced from weekly-dashboard-spc.json instead of
+    the full weekly-dashboard.json + per-shift files.
     """
-    records = collect_shifts()
-    print(f"Collected {len(records)} distinct shifts across {len(LINES)} lines")
+    if spc_only:
+        return _build_tables_spc_only(lines)
+
+    records = collect_shifts(lines=lines)
+    active_lines = lines or LINES
+    print(f"Collected {len(records)} distinct shifts across {len(active_lines)} lines")
+    generated_at = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     shifts, categories, segments, clusters, topstops, hourly, anomalies = ([] for _ in range(7))
     hourly_clusters = []
@@ -259,7 +380,7 @@ def build_tables():
 
     # Weekly rollup (+prior week), weekly anomalies, SPC, EWMA, key findings — from weekly doc
     weekly, weekly_anoms, spc, findings, ewma_rows = [], [], [], [], []
-    for line in LINES:
+    for line in active_lines:
         wf = os.path.join(ANALYSES, line, "weekly-dashboard.json")
         if not os.path.exists(wf):
             continue
@@ -348,8 +469,16 @@ def build_tables():
                         cat_k, cat_label, cats.get(cat_k, 0), CAT_COLORS.get(cat_k, "#b2bec3"),
                     ])
 
+    # Flag the chronologically-latest shift per line (line_seq is already sorted
+    # by shift_key, i.e. date then type — same ordering the 4-Shift Trend window
+    # above relies on) so reports can default to "current shift" without a
+    # manual slicer.
+    latest_key_by_line = {ln: seq[-1][2] for ln, seq in line_seq.items() if seq}
+    for row in shifts:
+        row.append(1 if row[0] == latest_key_by_line.get(row[1]) else 0)
+
     # Dimensions
-    lines_dim = [[lid, lbl] for lid, lbl in LINES.items()]
+    lines_dim = [[lid, lbl, generated_at] for lid, lbl in LINES.items() if lid in active_lines]
     date_dim = []
     for ds in sorted(dates):
         d = dt.date.fromisoformat(ds)
@@ -361,7 +490,8 @@ def build_tables():
          ["ShiftKey", "LineId", "Line", "ShiftDate", "ShiftType", "Label", "LineShiftLabel",
           "IsoWeek", "WeekLabel", "OEE", "Availability", "Performance", "Quality",
           "RunningHours", "ScheduledHours", "TotalStops",
-          "TotalDowntimeHours", "LongestStopMin", "GoodCount", "TotalCount"], shifts),
+          "TotalDowntimeHours", "LongestStopMin", "GoodCount", "TotalCount",
+          "IsLatest"], shifts),
         ("DowntimeCategories",
          ["ShiftKey", "LineId", "Category", "CategoryLabel", "Count", "Hours"], categories),
         ("SegmentDowntime",
@@ -401,7 +531,7 @@ def build_tables():
           "Ucl", "Lcl"], ewma_rows),
         ("KeyFindings",
          ["LineId", "Line", "Rank", "Text"], findings),
-        ("Lines", ["LineId", "Line"], lines_dim),
+        ("Lines", ["LineId", "Line", "GeneratedAt"], lines_dim),
         ("DimDate",
          ["Date", "Year", "MonthNum", "Month", "Day", "Weekday", "IsoWeek"], date_dim),
     ]

@@ -1,0 +1,7 @@
+expression PBISource =
+		let
+			Source = Python.Execute("import sys#(lf)sys.path.insert(0, r""C:\hollister-dashboard\bin"")#(lf)from powerbi_compute import compute_all#(lf)_t = compute_all(lines=(""ngp2"",), tables=(""Lines"",""Shifts"",""SPC"",""Snapshots""), spc_only=True)#(lf)Lines = _t[""Lines""]#(lf)SPC = _t[""SPC""]#(lf)Shifts = _t[""Shifts""]#(lf)Snapshots = _t[""Snapshots""]")
+		in
+			Source
+	lineageTag: 556678d4-6abd-4361-b34a-730152289d6f
+

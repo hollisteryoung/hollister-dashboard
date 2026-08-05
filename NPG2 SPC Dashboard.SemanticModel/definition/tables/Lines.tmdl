@@ -1,0 +1,34 @@
+table Lines
+	lineageTag: 599e9a06-5ab8-49b8-b0ca-d65c4ac4ee2f
+
+	measure 'Last Refreshed' = "Last refreshed " & MAX(Lines[GeneratedAt])
+		lineageTag: a1c2b3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6
+
+	column LineId
+		dataType: string
+		lineageTag: 1f74ebc8-bce3-41a7-a950-792f02ebf2a4
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 0f713923-4518-4305-9879-99571b413b05
+		summarizeBy: none
+		sourceColumn: Line
+
+	column GeneratedAt
+		dataType: string
+		lineageTag: 7c8d9e0f-1a2b-43c4-95d6-e7f8091a2b3c
+		summarizeBy: none
+		sourceColumn: GeneratedAt
+
+	partition Lines = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="Lines"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"GeneratedAt", type text}})
+				in
+					Typed
+

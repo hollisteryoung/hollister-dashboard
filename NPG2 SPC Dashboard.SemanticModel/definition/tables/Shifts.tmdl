@@ -1,0 +1,89 @@
+table Shifts
+	lineageTag: d2a0cefd-2b9a-4ed5-8f2a-e2ed302c2a0c
+
+	/// Number of shifts in scope.
+	measure 'Shift Count' = DISTINCTCOUNT(Shifts[ShiftKey])
+		formatString: #,##0
+		lineageTag: 151945e7-6916-49d3-8e37-6b2180928db7
+
+	column ShiftKey
+		dataType: string
+		lineageTag: f561f405-5fd0-40fd-90f7-85abe06dfcb8
+		summarizeBy: none
+		sourceColumn: ShiftKey
+
+	column SnapshotKey
+		dataType: string
+		lineageTag: d7e8f9a0-b1c2-43d4-e5f6-071829304152
+		summarizeBy: none
+		sourceColumn: SnapshotKey
+
+	column LineId
+		dataType: string
+		lineageTag: 90b5f852-80f2-41ed-9ac6-85f9d98500b2
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 1a5b4dbb-7701-4451-9e26-80530e23781b
+		summarizeBy: none
+		sourceColumn: Line
+
+	column ShiftDate
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: eeb9798d-c4ad-4e40-862d-ad22aa14571a
+		summarizeBy: none
+		sourceColumn: ShiftDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ShiftType
+		dataType: string
+		lineageTag: 0f98a9ab-19d3-4676-a8f0-d00f082d9340
+		summarizeBy: none
+		sourceColumn: ShiftType
+
+	column Label
+		dataType: string
+		lineageTag: 6db66354-d6fb-461b-a9b5-16c54904f51c
+		summarizeBy: none
+		sourceColumn: Label
+		sortByColumn: ShiftDate
+
+	column IsoWeek
+		dataType: string
+		lineageTag: 38c48e70-af87-4a14-8148-5757bab4eaf1
+		summarizeBy: none
+		sourceColumn: IsoWeek
+
+	column LineShiftLabel
+		dataType: string
+		lineageTag: c16b3a87-823d-4250-8a4c-0b660672bbcb
+		summarizeBy: none
+		sourceColumn: LineShiftLabel
+
+	column IsLatest
+		dataType: int64
+		lineageTag: 4b5c6d7e-8f90-41a2-b3c4-d5e6f7081920
+		summarizeBy: none
+		sourceColumn: IsLatest
+
+	column WeekLabel
+		dataType: string
+		lineageTag: 1c18e427-f67f-41e5-8554-5374f717d24a
+		summarizeBy: none
+		sourceColumn: WeekLabel
+		sortByColumn: IsoWeek
+
+	partition Shifts = m
+		mode: import
+		source =
+				let
+					Source = PBISource,
+					Data = Source{[Name="Shifts"]}[Value],
+					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"SnapshotKey", type text}, {"LineId", type text}, {"Line", type text}, {"ShiftDate", type date}, {"ShiftType", type text}, {"Label", type text}, {"IsoWeek", type text}, {"LineShiftLabel", type text}, {"WeekLabel", type text}, {"IsLatest", Int64.Type}})
+				in
+					Typed
+

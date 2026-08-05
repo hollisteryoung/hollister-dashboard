@@ -1,7 +1,7 @@
 {
   "analysis_id": "shift-dashboard",
   "line_id": "ngp2",
-  "generated_at": "2026-07-21T07:56:30.357132+00:00",
+  "generated_at": "2026-07-22T14:49:52.754283+00:00",
   "latest_shift": {
     "label": "Day Shift \u2014 2026-07-17 (07:00 \u2013 19:00)",
     "shift_date": "2026-07-17",
@@ -631,15 +631,15 @@
             "segment": "manual",
             "current_share": 64.2,
             "baseline_mean": 3.4,
-            "z_score": 26.2,
+            "z_score": 22.4,
             "direction": "above"
           },
           {
             "cluster": "Other",
             "segment": "hydration",
             "current_share": 10.7,
-            "baseline_mean": 2.4,
-            "z_score": 6.1,
+            "baseline_mean": 3.0,
+            "z_score": 3.1,
             "direction": "above"
           }
         ],
@@ -651,8 +651,8 @@
             "rejects": 101,
             "inspected": 1202,
             "rate_pct": 8.4,
-            "p_bar_pct": 2.45,
-            "ucl_pct": 11.33,
+            "p_bar_pct": 2.46,
+            "ucl_pct": 11.45,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -661,8 +661,8 @@
             "rejects": 64,
             "inspected": 1202,
             "rate_pct": 5.32,
-            "p_bar_pct": 1.0,
-            "ucl_pct": 4.23,
+            "p_bar_pct": 1.01,
+            "ucl_pct": 4.24,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 2
@@ -672,7 +672,7 @@
             "inspected": 1202,
             "rate_pct": 4.74,
             "p_bar_pct": 0.71,
-            "ucl_pct": 3.08,
+            "ucl_pct": 3.09,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 3
@@ -681,8 +681,8 @@
             "rejects": 18,
             "inspected": 1202,
             "rate_pct": 1.5,
-            "p_bar_pct": 0.47,
-            "ucl_pct": 2.15,
+            "p_bar_pct": 0.48,
+            "ucl_pct": 2.16,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 4
@@ -691,8 +691,8 @@
             "rejects": 41,
             "inspected": 1202,
             "rate_pct": 3.41,
-            "p_bar_pct": 0.53,
-            "ucl_pct": 2.84,
+            "p_bar_pct": 0.54,
+            "ucl_pct": 2.93,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 5
@@ -701,8 +701,8 @@
             "rejects": 23,
             "inspected": 1202,
             "rate_pct": 1.91,
-            "p_bar_pct": 0.41,
-            "ucl_pct": 2.0,
+            "p_bar_pct": 0.42,
+            "ucl_pct": 2.02,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 6
@@ -712,7 +712,7 @@
             "inspected": 1202,
             "rate_pct": 1.83,
             "p_bar_pct": 0.4,
-            "ucl_pct": 2.15,
+            "ucl_pct": 2.16,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 7
@@ -722,7 +722,7 @@
             "inspected": 1202,
             "rate_pct": 1.75,
             "p_bar_pct": 0.38,
-            "ucl_pct": 2.02,
+            "ucl_pct": 2.03,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 8
@@ -731,8 +731,8 @@
             "rejects": 22,
             "inspected": 1202,
             "rate_pct": 1.83,
-            "p_bar_pct": 0.69,
-            "ucl_pct": 3.86,
+            "p_bar_pct": 0.67,
+            "ucl_pct": 3.78,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 9
@@ -742,7 +742,7 @@
             "inspected": 1202,
             "rate_pct": 1.5,
             "p_bar_pct": 0.36,
-            "ucl_pct": 1.88,
+            "ucl_pct": 1.89,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 10
@@ -1565,28 +1565,28 @@
             }
           ],
           "ucl": [
-            2.79,
-            2.22,
-            1.49,
-            2.1,
-            1.43,
-            1.86,
-            0.81,
-            1.44,
-            1.9,
-            1.36
+            2.3,
+            0.76,
+            0.71,
+            0.7,
+            1.07,
+            0.67,
+            0.68,
+            0.69,
+            0.75,
+            0.67
           ],
           "lcl": [
             0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.06,
-            0.0,
-            0.0,
-            0.0
+            0.11,
+            0.11,
+            0.12,
+            0.04,
+            0.12,
+            0.09,
+            0.11,
+            0.11,
+            0.12
           ],
           "lambda": 0.2
         }
@@ -1604,8 +1604,8 @@
             "rejects": 39,
             "inspected": 5163,
             "rate_pct": 0.76,
-            "p_bar_pct": 0.96,
-            "ucl_pct": 3.66,
+            "p_bar_pct": 1.04,
+            "ucl_pct": 3.85,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -1614,8 +1614,8 @@
             "rejects": 49,
             "inspected": 5163,
             "rate_pct": 0.95,
-            "p_bar_pct": 0.43,
-            "ucl_pct": 1.92,
+            "p_bar_pct": 0.44,
+            "ucl_pct": 1.97,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 2
@@ -1624,8 +1624,8 @@
             "rejects": 48,
             "inspected": 5163,
             "rate_pct": 0.93,
-            "p_bar_pct": 0.73,
-            "ucl_pct": 3.07,
+            "p_bar_pct": 0.68,
+            "ucl_pct": 2.95,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -1634,8 +1634,8 @@
             "rejects": 51,
             "inspected": 5163,
             "rate_pct": 0.99,
-            "p_bar_pct": 0.45,
-            "ucl_pct": 1.91,
+            "p_bar_pct": 0.46,
+            "ucl_pct": 1.99,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 4
@@ -1644,8 +1644,8 @@
             "rejects": 257,
             "inspected": 5163,
             "rate_pct": 4.98,
-            "p_bar_pct": 0.69,
-            "ucl_pct": 3.17,
+            "p_bar_pct": 0.71,
+            "ucl_pct": 3.33,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 5
@@ -2168,18 +2168,18 @@
             }
           ],
           "ucl": [
-            2.63,
-            0.98,
-            0.85,
-            1.01,
-            1.75
+            3.52,
+            1.17,
+            1.14,
+            1.21,
+            2.08
           ],
           "lcl": [
-            0.33,
+            0.38,
             0.0,
-            0.06,
             0.0,
-            0.0
+            0.0,
+            0.03
           ],
           "lambda": 0.2
         }

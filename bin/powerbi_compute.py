@@ -79,34 +79,52 @@ def _run(cmd, line):
 
 
 # Under Power BI's pure in-report refresh, the Python source query is executed
-# once per table (13×), each in its own python.exe. These guards ensure the
+# once per table, each in its own python.exe. These guards ensure the
 # expensive SQL pipeline runs only ONCE per refresh: the first caller recomputes
 # under a cross-process lock and stamps a sentinel; the rest see it "fresh" and
 # skip straight to the (fast) flatten step.
-_SENTINEL = os.path.join(export.OUT, ".last_refresh")
-_LOCK = os.path.join(export.OUT, ".refresh.lock")
+#
+# The sentinel/lock filenames are scoped by the *sorted set of lines requested*
+# (see _scope_suffix): a report that only ever asks for ("ngp2",) must not be
+# able to mark a full ("ngp2","hu3") refresh "fresh" for a different report
+# that needs both lines, and vice versa — each distinct scope tracks its own
+# freshness independently.
 _TTL = int(os.environ.get("REFRESH_TTL", "300"))   # seconds
 
 
-def _fresh():
+def _scope_suffix(lines, spc_only=False):
+    suffix = "-".join(sorted(lines)) or "none"
+    return f"{suffix}.spc" if spc_only else suffix
+
+
+def _sentinel_path(lines, spc_only=False):
+    return os.path.join(export.OUT, f".last_refresh.{_scope_suffix(lines, spc_only)}")
+
+
+def _lock_path(lines, spc_only=False):
+    return os.path.join(export.OUT, f".refresh.lock.{_scope_suffix(lines, spc_only)}")
+
+
+def _fresh(lines, spc_only=False):
     try:
-        return (time.time() - os.path.getmtime(_SENTINEL)) < _TTL
+        return (time.time() - os.path.getmtime(_sentinel_path(lines, spc_only))) < _TTL
     except OSError:
         return False
 
 
-def _acquire_lock(timeout=900, stale=1800):
+def _acquire_lock(lines, spc_only=False, timeout=900, stale=1800):
+    lock = _lock_path(lines, spc_only)
     start = time.time()
     while True:
         try:
-            fd = os.open(_LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
             os.write(fd, str(os.getpid()).encode())
             os.close(fd)
             return True
         except FileExistsError:
             try:
-                if time.time() - os.path.getmtime(_LOCK) > stale:
-                    os.remove(_LOCK)          # steal an abandoned lock
+                if time.time() - os.path.getmtime(lock) > stale:
+                    os.remove(lock)          # steal an abandoned lock
                     continue
             except OSError:
                 continue
@@ -115,11 +133,21 @@ def _acquire_lock(timeout=900, stale=1800):
             time.sleep(1)
 
 
-def refresh_from_db(lines=LINES, force=False):
+def refresh_from_db(lines=LINES, force=False, spc_only=False):
     """Recompute all analysis JSON from the live database, reusing the pipeline.
 
     Analysis-only (``--no-render``): no plotly/jinja2 needed, and no HTML cost.
-    Deduplicated so 13 parallel Power BI table queries trigger only one recompute.
+    Deduplicated so parallel Power BI table queries for the *same* line scope
+    trigger only one recompute (see _scope_suffix).
+
+    spc_only=True runs weekly_analysis.py --spc-only instead of the full
+    weekly+shifts pair: skips every per-shift OEE/downtime/quality query,
+    anomaly/cluster profiling, top-stops, and render_all_shifts.py entirely.
+    ~4min per line instead of ~10-11min, for reports that only bind to SPC +
+    a lightweight shift list (no OEE/downtime columns available in that mode
+    — see export_powerbi_csv.py build_tables(spc_only=True)). Writes to
+    weekly-dashboard-spc.json, never touching the full weekly-dashboard.json
+    the full dashboard depends on.
     """
     if not have_db():
         raise RuntimeError(
@@ -127,48 +155,63 @@ def refresh_from_db(lines=LINES, force=False):
             "Add DB_PASSWORD / DB_USER / DB_SERVER to .env, or call with refresh=False."
         )
     os.makedirs(export.OUT, exist_ok=True)
-    if not force and _fresh():
+    if not force and _fresh(lines, spc_only):
         return
-    got = _acquire_lock()
+    got = _acquire_lock(lines, spc_only)
     try:
-        if not force and _fresh():      # another query refreshed while we waited
+        if not force and _fresh(lines, spc_only):      # another query refreshed while we waited
             return
         for line in lines:
             t0 = time.time()
-            _run([WEEKLY, "--line", line], line)       # weekly-dashboard.json (incl. SPC)
-            t1 = time.time()
-            _run([SHIFTS, line, "--no-render"], line)   # per-shift analysis JSON
-            t2 = time.time()
-            print(f"### TIMING [{line}] weekly(+SPC)={t1-t0:.0f}s  shifts={t2-t1:.0f}s", flush=True)
-        with open(_SENTINEL, "w") as f:
+            if spc_only:
+                _run([WEEKLY, "--line", line, "--spc-only"], line)
+                t1 = time.time()
+                print(f"### TIMING [{line}] spc-only={t1-t0:.0f}s", flush=True)
+            else:
+                _run([WEEKLY, "--line", line], line)       # weekly-dashboard.json (incl. SPC)
+                t1 = time.time()
+                _run([SHIFTS, line, "--no-render"], line)   # per-shift analysis JSON
+                t2 = time.time()
+                print(f"### TIMING [{line}] weekly(+SPC)={t1-t0:.0f}s  shifts={t2-t1:.0f}s", flush=True)
+        with open(_sentinel_path(lines, spc_only), "w") as f:
             f.write(str(time.time()))
     finally:
         if got:
             try:
-                os.remove(_LOCK)
+                os.remove(_lock_path(lines, spc_only))
             except OSError:
                 pass
 
 
-def compute_all(refresh=None, lines=LINES, force=False):
-    """Return ``{table_name: DataFrame}`` for the whole semantic model.
+def compute_all(refresh=None, lines=LINES, force=False, tables=None, spc_only=False):
+    """Return ``{table_name: DataFrame}`` for the requested slice of the model.
 
     refresh=None  → recompute from SQL when DB creds are present, else reuse JSON.
     refresh=True  → always recompute from SQL (raises if creds missing).
     refresh=False → skip the DB; flatten whatever analysis JSON already exists.
     force=True    → bypass the freshness guard (used by the CLI build step).
+    lines=LINES   → restrict to a subset of lines, e.g. ("ngp2",) for a
+                    single-line report — skips that line's DB pipeline run
+                    entirely and every returned table is pre-filtered to it.
+    tables=None   → return every table (default); pass an iterable of names
+                    to only materialize those DataFrames (e.g. a report that
+                    only ever binds to a handful of the ~15 available tables).
+    spc_only=False → see refresh_from_db. When True, Shifts has no
+                    OEE/downtime columns (see export_powerbi_csv.py).
     """
     import pandas as pd
 
     if refresh is None:
         refresh = have_db()
     if refresh:
-        refresh_from_db(lines, force=force)
+        refresh_from_db(lines, force=force, spc_only=spc_only)
 
-    tables = {}
-    for name, header, rows in export.build_tables():
-        tables[name] = pd.DataFrame(rows, columns=header)
-    return tables
+    result = {}
+    for name, header, rows in export.build_tables(lines=lines, spc_only=spc_only):
+        if tables is not None and name not in tables:
+            continue
+        result[name] = pd.DataFrame(rows, columns=header)
+    return result
 
 
 def check_connection():
