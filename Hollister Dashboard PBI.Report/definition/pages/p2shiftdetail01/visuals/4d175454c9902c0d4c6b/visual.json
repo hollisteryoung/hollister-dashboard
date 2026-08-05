@@ -146,5 +146,65 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1efaff111175c8cc6751",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Anomalies"
+              }
+            },
+            "Property": "Rank"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0780c5980bd5dfe2c27b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Anomalies"
+              }
+            },
+            "Property": "Headline"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bd149160c5c2950f2572",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Anomalies"
+              }
+            },
+            "Property": "Detail"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bcd705ee1268bf33c866",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Anomalies"
+              }
+            },
+            "Property": "SegColor"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

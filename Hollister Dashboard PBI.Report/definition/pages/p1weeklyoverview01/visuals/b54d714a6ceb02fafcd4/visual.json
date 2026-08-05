@@ -3,9 +3,9 @@
   "name": "b54d714a6ceb02fafcd4",
   "position": {
     "x": 0,
-    "y": 6,
+    "y": 10,
     "z": 46000,
-    "height": 154,
+    "height": 150,
     "width": 187,
     "tabOrder": 46000
   },
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "WeeklySummary"
+                      "Entity": "Shifts"
                     }
                   },
-                  "Property": "Wk Total Stops"
+                  "Property": "Total Stops"
                 }
               },
-              "queryRef": "WeeklySummary.Wk Total Stops",
-              "nativeQueryRef": "Wk Total Stops"
+              "queryRef": "Shifts.Total Stops",
+              "nativeQueryRef": "Total Stops"
             }
           ]
         }
@@ -338,10 +338,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "WeeklySummary"
+                "Entity": "Shifts"
               }
             },
-            "Property": "Wk Total Stops"
+            "Property": "Total Stops"
           }
         },
         "type": "Advanced"

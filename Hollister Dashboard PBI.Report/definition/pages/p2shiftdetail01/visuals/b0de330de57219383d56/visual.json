@@ -3,9 +3,9 @@
   "name": "b0de330de57219383d56",
   "position": {
     "x": 0,
-    "y": 6,
+    "y": 10,
     "z": 2000,
-    "height": 84,
+    "height": 80,
     "width": 1280,
     "tabOrder": 4000
   },
@@ -126,6 +126,40 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

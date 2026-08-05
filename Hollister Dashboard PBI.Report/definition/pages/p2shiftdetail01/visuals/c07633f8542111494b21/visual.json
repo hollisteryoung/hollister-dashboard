@@ -216,6 +216,76 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "577b9f5f8b13f906f772",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "Lane"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6dd96565c99e9ac53248",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "RatePct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bed04b1ccf428b1c2e45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "UclPct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "85f811d5de524d3ed42c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "OOC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f806a56c07a6126f5a2d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "PBar"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

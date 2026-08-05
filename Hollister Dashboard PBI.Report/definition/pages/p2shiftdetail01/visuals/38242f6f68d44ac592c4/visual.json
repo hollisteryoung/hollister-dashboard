@@ -21,14 +21,13 @@
                   {
                     "value": "4-Shift Trend — downtime mix vs 3 prior shifts (this line)",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "15px",
-                      "color": "#1E194B",
-                      "fontWeight": "bold"
+                      "color": "#1e194b"
                     }
                   }
-                ],
-                "horizontalTextAlignment": "left"
+                ]
               }
             ]
           }

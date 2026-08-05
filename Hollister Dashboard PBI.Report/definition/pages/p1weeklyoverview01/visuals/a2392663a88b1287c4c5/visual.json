@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a2392663a88b1287c4c5",
   "position": {
-    "x": 15,
-    "y": 3314.2499999999736,
+    "x": 18,
+    "y": 3285,
     "z": 38000,
     "height": 368,
     "width": 1248,
@@ -177,6 +177,40 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
       ]
     }
   },
@@ -235,6 +269,104 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "d6cad36f5b791045898f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "ShiftLabel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5ec380f8fc7a1361b91d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "Lane"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "72bdafd15db464ed397d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "RatePct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ccbd10f0396ecc3dff83",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "UclPct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4c1011a1bf9f6a2c6729",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "OOC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2159bc2fc6d3641b9d61",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "ShiftIdx"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2fc4bc30842f8ad5c1db",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SPC"
+              }
+            },
+            "Property": "PBar"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

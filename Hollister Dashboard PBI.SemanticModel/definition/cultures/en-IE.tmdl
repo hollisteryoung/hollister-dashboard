@@ -1939,6 +1939,16 @@ cultureInfo en-IE
 			            },
 			            "Weight": 0.605
 			          }
+			        },
+			        {
+			          "Downtime": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4177,16 +4187,6 @@ cultureInfo en-IE
 			          "wk downtime": {
 			            "State": "Generated",
 			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "Downtime": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]

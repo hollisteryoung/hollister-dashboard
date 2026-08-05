@@ -1,7 +1,7 @@
 {
   "analysis_id": "shift-dashboard",
   "line_id": "hu3",
-  "generated_at": "2026-07-15T15:41:55.161390+00:00",
+  "generated_at": "2026-07-20T07:47:17.109074+00:00",
   "latest_shift": {
     "label": "Day Shift \u2014 2026-07-13 (07:00 \u2013 19:00)",
     "shift_date": "2026-07-13",
@@ -9,15 +9,15 @@
     "start": "2026-07-13 07:00:00",
     "end": "2026-07-13 19:00:00"
   },
-  "p95_ideal_ppm": 40.0,
+  "p95_ideal_ppm": 41.0,
   "shifts": [
     {
       "shift_date": "2026-07-13",
       "shift_type": "day",
       "label": "Day 07-13",
-      "oee": 25.2,
+      "oee": 24.6,
       "availability": 34.9,
-      "performance": 83.1,
+      "performance": 81.1,
       "quality": 86.9,
       "running_hours": 4.19,
       "total_stops": 84,
@@ -546,7 +546,16 @@
         }
       ],
       "anomalies": {
-        "cluster_outliers": [],
+        "cluster_outliers": [
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 16.0,
+            "baseline_mean": 8.7,
+            "z_score": 2.1,
+            "direction": "above"
+          }
+        ],
         "baseline_shifts": 13
       }
     },
@@ -554,9 +563,9 @@
       "shift_date": "2026-07-12",
       "shift_type": "night",
       "label": "Night 07-12",
-      "oee": 58.1,
+      "oee": 56.7,
       "availability": 70.5,
-      "performance": 87.8,
+      "performance": 85.6,
       "quality": 94.0,
       "running_hours": 8.45,
       "total_stops": 97,
@@ -587,9 +596,9 @@
       "shift_date": "2026-07-12",
       "shift_type": "day",
       "label": "Day 07-12",
-      "oee": 47.5,
+      "oee": 46.4,
       "availability": 61.6,
-      "performance": 82.3,
+      "performance": 80.3,
       "quality": 93.6,
       "running_hours": 7.4,
       "total_stops": 137,
@@ -620,9 +629,9 @@
       "shift_date": "2026-07-11",
       "shift_type": "night",
       "label": "Night 07-11",
-      "oee": 54.6,
+      "oee": 53.3,
       "availability": 67.0,
-      "performance": 85.6,
+      "performance": 83.5,
       "quality": 95.2,
       "running_hours": 8.04,
       "total_stops": 100,
@@ -653,9 +662,9 @@
       "shift_date": "2026-07-11",
       "shift_type": "day",
       "label": "Day 07-11",
-      "oee": 62.0,
+      "oee": 60.4,
       "availability": 72.7,
-      "performance": 88.6,
+      "performance": 86.5,
       "quality": 96.2,
       "running_hours": 8.72,
       "total_stops": 77,

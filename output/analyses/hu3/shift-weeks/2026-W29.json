@@ -3,16 +3,16 @@
   "line_id": "hu3",
   "week": "2026-W29",
   "week_start": "2026-07-13",
-  "week_end": "2026-07-14",
-  "generated_at": "2026-07-15T15:41:55.564247+00:00",
+  "week_end": "2026-07-19",
+  "generated_at": "2026-07-21T07:57:44.443819+00:00",
   "shifts": [
     {
       "shift_date": "2026-07-13",
       "shift_type": "day",
       "label": "Day 07-13",
-      "oee": 25.2,
+      "oee": 24.6,
       "availability": 34.9,
-      "performance": 83.1,
+      "performance": 81.1,
       "quality": 86.9,
       "running_hours": 4.19,
       "total_stops": 84,
@@ -541,7 +541,16 @@
         }
       ],
       "anomalies": {
-        "cluster_outliers": [],
+        "cluster_outliers": [
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 16.0,
+            "baseline_mean": 8.7,
+            "z_score": 2.1,
+            "direction": "above"
+          }
+        ],
         "baseline_shifts": 13
       }
     },
@@ -549,9 +558,9 @@
       "shift_date": "2026-07-13",
       "shift_type": "night",
       "label": "Night 07-13",
-      "oee": 37.9,
+      "oee": 37.0,
       "availability": 50.8,
-      "performance": 80.8,
+      "performance": 78.8,
       "quality": 92.4,
       "running_hours": 6.09,
       "total_stops": 118,
@@ -1172,16 +1181,8 @@
             "cluster": "Air Pressure",
             "segment": "pneumatic",
             "current_share": 19.1,
-            "baseline_mean": 3.3,
-            "z_score": 4.6,
-            "direction": "above"
-          },
-          {
-            "cluster": "End of Reel",
-            "segment": "web",
-            "current_share": 22.2,
-            "baseline_mean": 11.1,
-            "z_score": 2.0,
+            "baseline_mean": 5.3,
+            "z_score": 2.1,
             "direction": "above"
           }
         ],
@@ -1192,9 +1193,9 @@
       "shift_date": "2026-07-14",
       "shift_type": "day",
       "label": "Day 07-14",
-      "oee": 18.1,
+      "oee": 17.7,
       "availability": 25.5,
-      "performance": 81.8,
+      "performance": 79.8,
       "quality": 86.9,
       "running_hours": 3.05,
       "total_stops": 51,
@@ -1662,33 +1663,25 @@
             "cluster": "Other",
             "segment": "web",
             "current_share": 16.6,
-            "baseline_mean": 0.2,
-            "z_score": 16.4,
-            "direction": "above"
-          },
-          {
-            "cluster": "Air Pressure",
-            "segment": "pneumatic",
-            "current_share": 21.1,
-            "baseline_mean": 3.3,
-            "z_score": 5.2,
-            "direction": "above"
-          },
-          {
-            "cluster": "manual",
-            "segment": "manual",
-            "current_share": 31.8,
-            "baseline_mean": 13.2,
-            "z_score": 2.6,
+            "baseline_mean": 0.0,
+            "z_score": 16.6,
             "direction": "above"
           },
           {
             "cluster": "unattributed",
             "segment": "unattributed",
             "current_share": 5.9,
-            "baseline_mean": 28.8,
+            "baseline_mean": 29.0,
             "z_score": -1.9,
             "direction": "below"
+          },
+          {
+            "cluster": "Air Pressure",
+            "segment": "pneumatic",
+            "current_share": 21.1,
+            "baseline_mean": 6.5,
+            "z_score": 1.9,
+            "direction": "above"
           }
         ],
         "baseline_shifts": 13
@@ -1698,9 +1691,9 @@
       "shift_date": "2026-07-14",
       "shift_type": "night",
       "label": "Night 07-14",
-      "oee": 8.0,
+      "oee": 7.8,
       "availability": 12.6,
-      "performance": 79.5,
+      "performance": 77.5,
       "quality": 80.2,
       "running_hours": 1.51,
       "total_stops": 46,
@@ -2120,8 +2113,8 @@
             "cluster": "Knife",
             "segment": "sealing",
             "current_share": 11.4,
-            "baseline_mean": 0.1,
-            "z_score": 11.3,
+            "baseline_mean": 0.5,
+            "z_score": 10.9,
             "direction": "above"
           },
           {
@@ -2129,16 +2122,5180 @@
             "segment": "manual",
             "current_share": 60.0,
             "baseline_mean": 13.2,
-            "z_score": 6.6,
+            "z_score": 3.5,
             "direction": "above"
           },
           {
-            "cluster": "End of Reel",
-            "segment": "web",
-            "current_share": 0.3,
-            "baseline_mean": 11.1,
-            "z_score": -1.9,
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 0.4,
+            "baseline_mean": 9.6,
+            "z_score": -2.6,
             "direction": "below"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-15",
+      "shift_type": "day",
+      "label": "Day 07-15",
+      "oee": 37.2,
+      "availability": 48.0,
+      "performance": 82.0,
+      "quality": 94.6,
+      "running_hours": 5.76,
+      "total_stops": 64,
+      "total_downtime_hours": 6.24,
+      "longest_stop_min": 75.0,
+      "good_count": 24577,
+      "total_count": 25988,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 30,
+          "hours": 0.47
+        },
+        "halted": {
+          "count": 3,
+          "hours": 0.06
+        },
+        "auto_long": {
+          "count": 26,
+          "hours": 5.5
+        },
+        "manual": {
+          "count": 5,
+          "hours": 0.21
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 14,
+          "hours": 1.21,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.21,
+          "clusters": {
+            "End of Reel": {
+              "count": 5,
+              "hours": 0.98,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.98
+            },
+            "Splice": {
+              "count": 6,
+              "hours": 0.1,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.1
+            },
+            "Web Torn": {
+              "count": 3,
+              "hours": 0.14,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.14
+            }
+          }
+        },
+        "sealing": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "handling": {
+          "count": 13,
+          "hours": 1.28,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.28,
+          "clusters": {
+            "Gripper": {
+              "count": 8,
+              "hours": 1.16,
+              "halted_hours": 0.0,
+              "stopped_hours": 1.16
+            },
+            "Fork": {
+              "count": 3,
+              "hours": 0.09,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.09
+            },
+            "Piston": {
+              "count": 2,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 9,
+          "hours": 0.25,
+          "halted_hours": 0.02,
+          "stopped_hours": 0.22,
+          "clusters": {
+            "Cooling": {
+              "count": 3,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            },
+            "Valve on Web": {
+              "count": 3,
+              "hours": 0.16,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.16
+            },
+            "Other": {
+              "count": 2,
+              "hours": 0.04,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.04
+            },
+            "Air Pressure": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.02,
+              "stopped_hours": 0.0
+            }
+          }
+        },
+        "manual": {
+          "count": 5,
+          "hours": 0.21,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.21
+        },
+        "unattributed": {
+          "count": 23,
+          "hours": 3.3,
+          "halted_hours": 0.03,
+          "stopped_hours": 3.27
+        }
+      },
+      "top_stops_by_cluster": {
+        "web": {
+          "End of Reel": [
+            {
+              "label": "1156 End of reel",
+              "count": 1,
+              "hours": 0.38
+            },
+            {
+              "label": "1158-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.25
+            },
+            {
+              "label": "1150 End of reel",
+              "count": 1,
+              "hours": 0.16
+            },
+            {
+              "label": "1155 End of reel",
+              "count": 1,
+              "hours": 0.11
+            },
+            {
+              "label": "1153 End of reel",
+              "count": 1,
+              "hours": 0.09
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 2,
+              "hours": 0.06
+            },
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 2,
+              "hours": 0.03
+            },
+            {
+              "label": "1129-1B1 Last splice has not been detected",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1120-1B1 Last splice has not been detected",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Web Torn": [
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 1,
+              "hours": 0.07
+            },
+            {
+              "label": "1151-1B1 Web torn",
+              "count": 1,
+              "hours": 0.06
+            },
+            {
+              "label": "1156-1B1 Web torn",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "pneumatic": {
+          "Cooling": [
+            {
+              "label": "1073-7B1 Flow monitor flowrate not ok",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1022-11B2 Flow monitor site cooling flow rate not OK",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1061-15B1 Flow monitor flow rate not OK",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 2,
+              "hours": 0.14
+            },
+            {
+              "label": "1074 Valve right inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.03
+            }
+          ],
+          "Other": [
+            {
+              "label": "MSM-Valve: At least one station takes longer than maximum allowed",
+              "count": 1,
+              "hours": 0.02
+            },
+            {
+              "label": "MSM-Valve: At least one station takes longer than the set cycle time allows",
+              "count": 1,
+              "hours": 0.02
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        },
+        "handling": {
+          "Gripper": [
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 6,
+              "hours": 1.07
+            },
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 2,
+              "hours": 0.09
+            }
+          ],
+          "Fork": [
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 3,
+              "hours": 0.09
+            }
+          ],
+          "Piston": [
+            {
+              "label": "1082-3B1 Limit switch fault Push out piston lowered",
+              "count": 2,
+              "hours": 0.02
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "07:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "08:00",
+          "running_min": 21.0,
+          "segments": {
+            "web": {
+              "minutes": 5.1,
+              "clusters": {
+                "End of Reel": 5.1
+              }
+            },
+            "unattributed": {
+              "minutes": 33.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "09:00",
+          "running_min": 36.6,
+          "segments": {
+            "web": {
+              "minutes": 17.5,
+              "clusters": {
+                "End of Reel": 17.5
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.7,
+              "clusters": {
+                "Cooling": 0.7
+              }
+            },
+            "manual": {
+              "minutes": 0.7,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 4.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "10:00",
+          "running_min": 52.9,
+          "segments": {
+            "handling": {
+              "minutes": 2.4,
+              "clusters": {
+                "Gripper": 2.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.8,
+              "clusters": {
+                "Valve on Web": 1.5,
+                "Cooling": 0.3
+              }
+            },
+            "unattributed": {
+              "minutes": 3.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "11:00",
+          "running_min": 47.3,
+          "segments": {
+            "web": {
+              "minutes": 3.4,
+              "clusters": {
+                "End of Reel": 3.4
+              }
+            },
+            "handling": {
+              "minutes": 9.3,
+              "clusters": {
+                "Gripper": 5.2,
+                "Fork": 4.1
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "12:00",
+          "running_min": 19.2,
+          "segments": {
+            "web": {
+              "minutes": 6.7,
+              "clusters": {
+                "End of Reel": 3.3,
+                "Splice": 3.5
+              }
+            },
+            "handling": {
+              "minutes": 0.6,
+              "clusters": {
+                "Gripper": 0.6
+              }
+            },
+            "unattributed": {
+              "minutes": 33.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "13:00",
+          "running_min": 42.1,
+          "segments": {
+            "handling": {
+              "minutes": 5.6,
+              "clusters": {
+                "Gripper": 5.6
+              }
+            },
+            "pneumatic": {
+              "minutes": 8.7,
+              "clusters": {
+                "Other": 1.3,
+                "Valve on Web": 7.4
+              }
+            },
+            "unattributed": {
+              "minutes": 3.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "14:00",
+          "running_min": 16.9,
+          "segments": {
+            "pneumatic": {
+              "minutes": 0.5,
+              "clusters": {
+                "Valve on Web": 0.5
+              }
+            },
+            "unattributed": {
+              "minutes": 42.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "15:00",
+          "running_min": 37.0,
+          "segments": {
+            "web": {
+              "minutes": 15.4,
+              "clusters": {
+                "Splice": 1.9,
+                "Web Torn": 4.1,
+                "End of Reel": 9.3
+              }
+            },
+            "handling": {
+              "minutes": 1.4,
+              "clusters": {
+                "Fork": 1.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.1,
+              "clusters": {
+                "Other": 1.1
+              }
+            },
+            "manual": {
+              "minutes": 3.9,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 1.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "16:00",
+          "running_min": 46.3,
+          "segments": {
+            "web": {
+              "minutes": 5.2,
+              "clusters": {
+                "End of Reel": 5.2
+              }
+            },
+            "handling": {
+              "minutes": 1.3,
+              "clusters": {
+                "Gripper": 1.3
+              }
+            },
+            "manual": {
+              "minutes": 1.0,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 6.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "17:00",
+          "running_min": 18.3,
+          "segments": {
+            "web": {
+              "minutes": 15.2,
+              "clusters": {
+                "Splice": 0.4,
+                "End of Reel": 14.8
+              }
+            },
+            "handling": {
+              "minutes": 23.0,
+              "clusters": {
+                "Gripper": 23.0
+              }
+            },
+            "unattributed": {
+              "minutes": 3.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "18:00",
+          "running_min": 8.0,
+          "segments": {
+            "web": {
+              "minutes": 4.3,
+              "clusters": {
+                "Web Torn": 4.0,
+                "Splice": 0.3
+              }
+            },
+            "handling": {
+              "minutes": 33.1,
+              "clusters": {
+                "Gripper": 31.7,
+                "Piston": 1.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 2.0,
+              "clusters": {
+                "Valve on Web": 0.5,
+                "Air Pressure": 1.5
+              }
+            },
+            "manual": {
+              "minutes": 6.8,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 5.8,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 18.6,
+            "baseline_mean": 9.6,
+            "z_score": 2.5,
+            "direction": "above"
+          },
+          {
+            "cluster": "unattributed",
+            "segment": "unattributed",
+            "current_share": 52.8,
+            "baseline_mean": 29.0,
+            "z_score": 2.0,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-15",
+      "shift_type": "night",
+      "label": "Night 07-15",
+      "oee": 4.8,
+      "availability": 6.6,
+      "performance": 79.0,
+      "quality": 91.2,
+      "running_hours": 0.8,
+      "total_stops": 13,
+      "total_downtime_hours": 11.2,
+      "longest_stop_min": 575.1,
+      "good_count": 1651,
+      "total_count": 1810,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 6,
+          "hours": 0.09
+        },
+        "halted": {
+          "count": 1,
+          "hours": 0.01
+        },
+        "auto_long": {
+          "count": 4,
+          "hours": 11.08
+        },
+        "manual": {
+          "count": 2,
+          "hours": 0.03
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "sealing": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "handling": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "pneumatic": {
+          "count": 3,
+          "hours": 0.05,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.05,
+          "clusters": {
+            "Air Pressure": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            },
+            "Valve on Web": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            },
+            "Cooling": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            }
+          }
+        },
+        "manual": {
+          "count": 2,
+          "hours": 0.03,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.03
+        },
+        "unattributed": {
+          "count": 8,
+          "hours": 11.13,
+          "halted_hours": 0.01,
+          "stopped_hours": 11.12
+        }
+      },
+      "top_stops_by_cluster": {
+        "pneumatic": {
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Cooling": [
+            {
+              "label": "1061-15B1 Flow monitor flow rate not OK",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "19:00",
+          "running_min": 2.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 58.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "20:00",
+          "running_min": 29.3,
+          "segments": {
+            "pneumatic": {
+              "minutes": 1.5,
+              "clusters": {
+                "Air Pressure": 0.8,
+                "Valve on Web": 0.7
+              }
+            },
+            "manual": {
+              "minutes": 1.6,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 27.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "21:00",
+          "running_min": 16.4,
+          "segments": {
+            "pneumatic": {
+              "minutes": 1.3,
+              "clusters": {
+                "Cooling": 1.3
+              }
+            },
+            "unattributed": {
+              "minutes": 42.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "22:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "23:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "00:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "01:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "02:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "03:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "04:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "05:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "06:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "unattributed",
+            "segment": "unattributed",
+            "current_share": 99.3,
+            "baseline_mean": 29.0,
+            "z_score": 5.8,
+            "direction": "above"
+          },
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 0,
+            "baseline_mean": 9.6,
+            "z_score": -2.7,
+            "direction": "below"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-16",
+      "shift_type": "day",
+      "label": "Day 07-16",
+      "oee": 11.8,
+      "availability": 17.4,
+      "performance": 80.7,
+      "quality": 84.2,
+      "running_hours": 2.08,
+      "total_stops": 49,
+      "total_downtime_hours": 9.92,
+      "longest_stop_min": 246.0,
+      "good_count": 3988,
+      "total_count": 4738,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 26,
+          "hours": 0.44
+        },
+        "halted": {
+          "count": 7,
+          "hours": 0.87
+        },
+        "auto_long": {
+          "count": 15,
+          "hours": 4.51
+        },
+        "manual": {
+          "count": 1,
+          "hours": 4.1
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 11,
+          "hours": 1.42,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.42,
+          "clusters": {
+            "Other": {
+              "count": 1,
+              "hours": 0.07,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.07
+            },
+            "Splice": {
+              "count": 5,
+              "hours": 0.12,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.12
+            },
+            "Web Torn": {
+              "count": 2,
+              "hours": 0.52,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.52
+            },
+            "End of Reel": {
+              "count": 3,
+              "hours": 0.71,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.71
+            }
+          }
+        },
+        "sealing": {
+          "count": 7,
+          "hours": 0.26,
+          "halted_hours": 0.13,
+          "stopped_hours": 0.13,
+          "clusters": {
+            "Sealing Head": {
+              "count": 7,
+              "hours": 0.26,
+              "halted_hours": 0.13,
+              "stopped_hours": 0.13
+            }
+          }
+        },
+        "handling": {
+          "count": 4,
+          "hours": 0.07,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.07,
+          "clusters": {
+            "Gripper": {
+              "count": 3,
+              "hours": 0.04,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.04
+            },
+            "Cylinder": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.03
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 5,
+          "hours": 0.2,
+          "halted_hours": 0.02,
+          "stopped_hours": 0.18,
+          "clusters": {
+            "Valve on Web": {
+              "count": 4,
+              "hours": 0.18,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.18
+            },
+            "Air Pressure": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.02,
+              "stopped_hours": 0.0
+            }
+          }
+        },
+        "manual": {
+          "count": 1,
+          "hours": 4.1,
+          "halted_hours": 0.0,
+          "stopped_hours": 4.1
+        },
+        "unattributed": {
+          "count": 21,
+          "hours": 3.86,
+          "halted_hours": 0.72,
+          "stopped_hours": 3.14
+        }
+      },
+      "top_stops_by_cluster": {
+        "web": {
+          "Other": [
+            {
+              "label": "1038-14B2 Limit switch fault Flap punching waste A closed",
+              "count": 1,
+              "hours": 0.07
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1128-1B1 Last splice has not been detected",
+              "count": 2,
+              "hours": 0.04
+            },
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.03
+            },
+            {
+              "label": "1129-1B1 Last splice has not been detected",
+              "count": 1,
+              "hours": 0.0
+            }
+          ],
+          "Web Torn": [
+            {
+              "label": "1153-1B1 Web torn",
+              "count": 1,
+              "hours": 0.4
+            },
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 1,
+              "hours": 0.12
+            }
+          ],
+          "End of Reel": [
+            {
+              "label": "1156 End of reel",
+              "count": 1,
+              "hours": 0.55
+            },
+            {
+              "label": "1151 End of reel",
+              "count": 1,
+              "hours": 0.13
+            },
+            {
+              "label": "1156 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "pneumatic": {
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 2,
+              "hours": 0.17
+            },
+            {
+              "label": "1074 Valve left out of area - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1074 Valve right inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        },
+        "sealing": {
+          "Sealing Head": [
+            {
+              "label": "1076-2M1 Sealing head B has reached adjusted current limit",
+              "count": 3,
+              "hours": 0.17
+            },
+            {
+              "label": "1068-2B1 Limit switch fault Sealing head in working position",
+              "count": 2,
+              "hours": 0.04
+            },
+            {
+              "label": "1078 Temperature not reached Heating sealing head A",
+              "count": 1,
+              "hours": 0.03
+            },
+            {
+              "label": "1078 Temperature not reached Heating sealing head B",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "handling": {
+          "Gripper": [
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 3,
+              "hours": 0.04
+            }
+          ],
+          "Cylinder": [
+            {
+              "label": "1090-2B1 Error Cylinder switch",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "07:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "08:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "09:00",
+          "running_min": 1.7,
+          "segments": {
+            "web": {
+              "minutes": 4.9,
+              "clusters": {
+                "Other": 4.4,
+                "Splice": 0.5
+              }
+            },
+            "sealing": {
+              "minutes": 4.8,
+              "clusters": {
+                "Sealing Head": 4.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.5,
+              "clusters": {
+                "Valve on Web": 0.5
+              }
+            },
+            "manual": {
+              "minutes": 47.4,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 0.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "10:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "11:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "12:00",
+          "running_min": 0.0,
+          "segments": {
+            "manual": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "13:00",
+          "running_min": 3.2,
+          "segments": {
+            "web": {
+              "minutes": 9.6,
+              "clusters": {
+                "Web Torn": 7.3,
+                "Splice": 2.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.3,
+              "clusters": {
+                "Valve on Web": 0.3
+              }
+            },
+            "manual": {
+              "minutes": 18.6,
+              "clusters": null
+            },
+            "unattributed": {
+              "minutes": 28.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "14:00",
+          "running_min": 17.7,
+          "segments": {
+            "web": {
+              "minutes": 11.8,
+              "clusters": {
+                "Web Torn": 11.8
+              }
+            },
+            "sealing": {
+              "minutes": 3.3,
+              "clusters": {
+                "Sealing Head": 3.3
+              }
+            },
+            "handling": {
+              "minutes": 0.9,
+              "clusters": {
+                "Gripper": 0.9
+              }
+            },
+            "pneumatic": {
+              "minutes": 11.4,
+              "clusters": {
+                "Valve on Web": 10.0,
+                "Air Pressure": 1.5
+              }
+            },
+            "unattributed": {
+              "minutes": 14.8,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "15:00",
+          "running_min": 37.0,
+          "segments": {
+            "web": {
+              "minutes": 12.0,
+              "clusters": {
+                "Web Torn": 12.0
+              }
+            },
+            "sealing": {
+              "minutes": 7.5,
+              "clusters": {
+                "Sealing Head": 7.5
+              }
+            },
+            "unattributed": {
+              "minutes": 3.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "16:00",
+          "running_min": 39.1,
+          "segments": {
+            "web": {
+              "minutes": 7.8,
+              "clusters": {
+                "End of Reel": 7.8
+              }
+            },
+            "handling": {
+              "minutes": 1.6,
+              "clusters": {
+                "Cylinder": 1.6
+              }
+            },
+            "unattributed": {
+              "minutes": 11.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "17:00",
+          "running_min": 5.4,
+          "segments": {
+            "web": {
+              "minutes": 1.7,
+              "clusters": {
+                "Splice": 1.7
+              }
+            },
+            "unattributed": {
+              "minutes": 52.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "18:00",
+          "running_min": 20.9,
+          "segments": {
+            "web": {
+              "minutes": 37.5,
+              "clusters": {
+                "Splice": 2.7,
+                "End of Reel": 34.8
+              }
+            },
+            "handling": {
+              "minutes": 1.6,
+              "clusters": {
+                "Gripper": 1.6
+              }
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 0.4,
+            "baseline_mean": 9.6,
+            "z_score": -2.6,
+            "direction": "below"
+          },
+          {
+            "cluster": "manual",
+            "segment": "manual",
+            "current_share": 41.3,
+            "baseline_mean": 13.2,
+            "z_score": 2.1,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-16",
+      "shift_type": "night",
+      "label": "Night 07-16",
+      "oee": 16.1,
+      "availability": 24.4,
+      "performance": 75.9,
+      "quality": 86.8,
+      "running_hours": 2.93,
+      "total_stops": 93,
+      "total_downtime_hours": 9.07,
+      "longest_stop_min": 88.9,
+      "good_count": 5725,
+      "total_count": 6596,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 51,
+          "hours": 0.77
+        },
+        "halted": {
+          "count": 6,
+          "hours": 1.06
+        },
+        "auto_long": {
+          "count": 36,
+          "hours": 7.24
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 16,
+          "hours": 1.54,
+          "halted_hours": 0.31,
+          "stopped_hours": 1.22,
+          "clusters": {
+            "End of Reel": {
+              "count": 6,
+              "hours": 0.75,
+              "halted_hours": 0.24,
+              "stopped_hours": 0.51
+            },
+            "Web Torn": {
+              "count": 8,
+              "hours": 0.76,
+              "halted_hours": 0.07,
+              "stopped_hours": 0.68
+            },
+            "Splice": {
+              "count": 2,
+              "hours": 0.03,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.03
+            }
+          }
+        },
+        "sealing": {
+          "count": 16,
+          "hours": 2.9,
+          "halted_hours": 0.0,
+          "stopped_hours": 2.9,
+          "clusters": {
+            "Sealing Head": {
+              "count": 15,
+              "hours": 2.74,
+              "halted_hours": 0.0,
+              "stopped_hours": 2.74
+            },
+            "Printer": {
+              "count": 1,
+              "hours": 0.16,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.16
+            }
+          }
+        },
+        "handling": {
+          "count": 14,
+          "hours": 0.5,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.5,
+          "clusters": {
+            "Gripper": {
+              "count": 7,
+              "hours": 0.31,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.31
+            },
+            "Fork": {
+              "count": 3,
+              "hours": 0.11,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.11
+            },
+            "Piston": {
+              "count": 4,
+              "hours": 0.09,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.09
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 6,
+          "hours": 0.34,
+          "halted_hours": 0.26,
+          "stopped_hours": 0.08,
+          "clusters": {
+            "Valve on Web": {
+              "count": 4,
+              "hours": 0.07,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.07
+            },
+            "Air Pressure": {
+              "count": 1,
+              "hours": 0.26,
+              "halted_hours": 0.26,
+              "stopped_hours": 0.0
+            },
+            "Other": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 41,
+          "hours": 3.79,
+          "halted_hours": 0.49,
+          "stopped_hours": 3.3
+        }
+      },
+      "top_stops_by_cluster": {
+        "web": {
+          "End of Reel": [
+            {
+              "label": "1156 End of reel",
+              "count": 1,
+              "hours": 0.29
+            },
+            {
+              "label": "1159-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.24
+            },
+            {
+              "label": "1155 End of reel",
+              "count": 1,
+              "hours": 0.17
+            },
+            {
+              "label": "1155 Prewarning end of reel",
+              "count": 3,
+              "hours": 0.05
+            }
+          ],
+          "Web Torn": [
+            {
+              "label": "1153-1B1 Web torn",
+              "count": 5,
+              "hours": 0.47
+            },
+            {
+              "label": "1158-1B1 Web torn",
+              "count": 2,
+              "hours": 0.23
+            },
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 1,
+              "hours": 0.06
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.02
+            },
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "handling": {
+          "Gripper": [
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 4,
+              "hours": 0.23
+            },
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 3,
+              "hours": 0.08
+            }
+          ],
+          "Fork": [
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 2,
+              "hours": 0.07
+            },
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 1,
+              "hours": 0.04
+            }
+          ],
+          "Piston": [
+            {
+              "label": "1082-5B1 Error vacuum switch push out piston A",
+              "count": 4,
+              "hours": 0.09
+            }
+          ]
+        },
+        "pneumatic": {
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 2,
+              "hours": 0.02
+            },
+            {
+              "label": "1074 Valve left inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 1,
+              "hours": 0.26
+            }
+          ],
+          "Other": [
+            {
+              "label": "MSM-Valve: At least one station takes longer than maximum allowed",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "sealing": {
+          "Sealing Head": [
+            {
+              "label": "1054 Temperature not reached Heating sealing head B at the back",
+              "count": 15,
+              "hours": 2.74
+            }
+          ],
+          "Printer": [
+            {
+              "label": "1050-2K1 Hot printer A not ready for operation",
+              "count": 1,
+              "hours": 0.16
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "19:00",
+          "running_min": 18.8,
+          "segments": {
+            "web": {
+              "minutes": 25.4,
+              "clusters": {
+                "End of Reel": 17.2,
+                "Web Torn": 8.2
+              }
+            },
+            "handling": {
+              "minutes": 1.1,
+              "clusters": {
+                "Gripper": 1.1
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.6,
+              "clusters": {
+                "Valve on Web": 0.6
+              }
+            },
+            "unattributed": {
+              "minutes": 14.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "20:00",
+          "running_min": 26.9,
+          "segments": {
+            "web": {
+              "minutes": 0.5,
+              "clusters": {
+                "Web Torn": 0.5
+              }
+            },
+            "sealing": {
+              "minutes": 18.8,
+              "clusters": {
+                "Sealing Head": 18.8
+              }
+            },
+            "handling": {
+              "minutes": 5.8,
+              "clusters": {
+                "Fork": 2.4,
+                "Gripper": 3.4
+              }
+            },
+            "unattributed": {
+              "minutes": 7.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "21:00",
+          "running_min": 22.4,
+          "segments": {
+            "web": {
+              "minutes": 10.9,
+              "clusters": {
+                "Web Torn": 10.6,
+                "Splice": 0.4
+              }
+            },
+            "sealing": {
+              "minutes": 22.2,
+              "clusters": {
+                "Sealing Head": 22.2
+              }
+            },
+            "unattributed": {
+              "minutes": 4.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "22:00",
+          "running_min": 8.5,
+          "segments": {
+            "sealing": {
+              "minutes": 44.5,
+              "clusters": {
+                "Sealing Head": 44.5
+              }
+            },
+            "unattributed": {
+              "minutes": 6.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "23:00",
+          "running_min": 0.0,
+          "segments": {
+            "sealing": {
+              "minutes": 60.0,
+              "clusters": {
+                "Sealing Head": 60.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "00:00",
+          "running_min": 13.8,
+          "segments": {
+            "web": {
+              "minutes": 17.6,
+              "clusters": {
+                "Web Torn": 17.6
+              }
+            },
+            "sealing": {
+              "minutes": 18.7,
+              "clusters": {
+                "Sealing Head": 18.7
+              }
+            },
+            "handling": {
+              "minutes": 8.0,
+              "clusters": {
+                "Gripper": 8.0
+              }
+            },
+            "unattributed": {
+              "minutes": 2.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "01:00",
+          "running_min": 31.7,
+          "segments": {
+            "web": {
+              "minutes": 1.8,
+              "clusters": {
+                "Web Torn": 1.8
+              }
+            },
+            "handling": {
+              "minutes": 8.0,
+              "clusters": {
+                "Fork": 3.1,
+                "Gripper": 4.9
+              }
+            },
+            "pneumatic": {
+              "minutes": 2.4,
+              "clusters": {
+                "Valve on Web": 2.4
+              }
+            },
+            "unattributed": {
+              "minutes": 16.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "02:00",
+          "running_min": 18.7,
+          "segments": {
+            "pneumatic": {
+              "minutes": 15.8,
+              "clusters": {
+                "Air Pressure": 15.8
+              }
+            },
+            "unattributed": {
+              "minutes": 25.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "03:00",
+          "running_min": 15.4,
+          "segments": {
+            "web": {
+              "minutes": 22.5,
+              "clusters": {
+                "Web Torn": 6.8,
+                "Splice": 1.3,
+                "End of Reel": 14.4
+              }
+            },
+            "sealing": {
+              "minutes": 3.1,
+              "clusters": {
+                "Printer": 3.1
+              }
+            },
+            "handling": {
+              "minutes": 1.0,
+              "clusters": {
+                "Gripper": 1.0
+              }
+            },
+            "unattributed": {
+              "minutes": 18.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "04:00",
+          "running_min": 5.0,
+          "segments": {
+            "web": {
+              "minutes": 13.5,
+              "clusters": {
+                "End of Reel": 13.5
+              }
+            },
+            "sealing": {
+              "minutes": 6.8,
+              "clusters": {
+                "Printer": 6.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.6,
+              "clusters": {
+                "Valve on Web": 0.6
+              }
+            },
+            "unattributed": {
+              "minutes": 34.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "05:00",
+          "running_min": 4.0,
+          "segments": {
+            "handling": {
+              "minutes": 1.0,
+              "clusters": {
+                "Fork": 1.0
+              }
+            },
+            "unattributed": {
+              "minutes": 54.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "06:00",
+          "running_min": 10.8,
+          "segments": {
+            "handling": {
+              "minutes": 5.1,
+              "clusters": {
+                "Piston": 5.1
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.1,
+              "clusters": {
+                "Valve on Web": 0.6,
+                "Other": 0.5
+              }
+            },
+            "unattributed": {
+              "minutes": 43.0,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Sealing Head",
+            "segment": "sealing",
+            "current_share": 30.2,
+            "baseline_mean": 2.4,
+            "z_score": 9.5,
+            "direction": "above"
+          },
+          {
+            "cluster": "Web Torn",
+            "segment": "web",
+            "current_share": 8.3,
+            "baseline_mean": 2.1,
+            "z_score": 3.0,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-17",
+      "shift_type": "day",
+      "label": "Day 07-17",
+      "oee": 14.7,
+      "availability": 19.8,
+      "performance": 83.1,
+      "quality": 89.8,
+      "running_hours": 2.37,
+      "total_stops": 39,
+      "total_downtime_hours": 9.63,
+      "longest_stop_min": 306.5,
+      "good_count": 14915,
+      "total_count": 16608,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 21,
+          "hours": 0.3
+        },
+        "halted": {
+          "count": 4,
+          "hours": 0.21
+        },
+        "auto_long": {
+          "count": 14,
+          "hours": 9.12
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 9,
+          "hours": 0.29,
+          "halted_hours": 0.12,
+          "stopped_hours": 0.18,
+          "clusters": {
+            "Web Torn": {
+              "count": 4,
+              "hours": 0.04,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.04
+            },
+            "End of Reel": {
+              "count": 3,
+              "hours": 0.24,
+              "halted_hours": 0.12,
+              "stopped_hours": 0.12
+            },
+            "Splice": {
+              "count": 2,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            }
+          }
+        },
+        "sealing": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "handling": {
+          "count": 6,
+          "hours": 5.26,
+          "halted_hours": 0.0,
+          "stopped_hours": 5.26,
+          "clusters": {
+            "Gripper": {
+              "count": 3,
+              "hours": 0.09,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.09
+            },
+            "Fork": {
+              "count": 3,
+              "hours": 5.17,
+              "halted_hours": 0.0,
+              "stopped_hours": 5.17
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 7,
+          "hours": 1.01,
+          "halted_hours": 0.08,
+          "stopped_hours": 0.93,
+          "clusters": {
+            "Other": {
+              "count": 1,
+              "hours": 0.07,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.07
+            },
+            "Air Pressure": {
+              "count": 4,
+              "hours": 0.92,
+              "halted_hours": 0.08,
+              "stopped_hours": 0.83
+            },
+            "Cooling": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            },
+            "Valve on Web": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 17,
+          "hours": 3.06,
+          "halted_hours": 0.01,
+          "stopped_hours": 3.05
+        }
+      },
+      "top_stops_by_cluster": {
+        "pneumatic": {
+          "Other": [
+            {
+              "label": "MSM-Valve: At least one station takes longer than maximum allowed",
+              "count": 1,
+              "hours": 0.07
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 4,
+              "hours": 0.92
+            }
+          ],
+          "Cooling": [
+            {
+              "label": "1061-15B1 Flow monitor flow rate not OK",
+              "count": 1,
+              "hours": 0.02
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "handling": {
+          "Gripper": [
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 3,
+              "hours": 0.09
+            }
+          ],
+          "Fork": [
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 2,
+              "hours": 5.14
+            },
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "web": {
+          "Web Torn": [
+            {
+              "label": "1153-1B1 Web torn",
+              "count": 3,
+              "hours": 0.03
+            },
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "End of Reel": [
+            {
+              "label": "1300-2B1 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.12
+            },
+            {
+              "label": "1158-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.06
+            },
+            {
+              "label": "1150 End of reel",
+              "count": 1,
+              "hours": 0.06
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1128-1B1 Last splice has not been detected",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "07:00",
+          "running_min": 4.6,
+          "segments": {
+            "pneumatic": {
+              "minutes": 10.8,
+              "clusters": {
+                "Other": 3.9,
+                "Air Pressure": 6.8
+              }
+            },
+            "unattributed": {
+              "minutes": 44.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "08:00",
+          "running_min": 37.3,
+          "segments": {
+            "web": {
+              "minutes": 5.9,
+              "clusters": {
+                "Web Torn": 0.6,
+                "End of Reel": 5.3
+              }
+            },
+            "handling": {
+              "minutes": 1.3,
+              "clusters": {
+                "Gripper": 1.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 15.5,
+              "clusters": {
+                "Air Pressure": 14.0,
+                "Cooling": 1.5
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "09:00",
+          "running_min": 38.5,
+          "segments": {
+            "web": {
+              "minutes": 6.8,
+              "clusters": {
+                "End of Reel": 5.4,
+                "Splice": 0.9,
+                "Web Torn": 0.5
+              }
+            },
+            "handling": {
+              "minutes": 2.6,
+              "clusters": {
+                "Fork": 1.9,
+                "Gripper": 0.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 2.3,
+              "clusters": {
+                "Air Pressure": 2.3
+              }
+            },
+            "unattributed": {
+              "minutes": 9.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "10:00",
+          "running_min": 49.9,
+          "segments": {
+            "web": {
+              "minutes": 4.2,
+              "clusters": {
+                "Web Torn": 0.6,
+                "End of Reel": 3.6
+              }
+            },
+            "handling": {
+              "minutes": 3.6,
+              "clusters": {
+                "Gripper": 3.6
+              }
+            },
+            "unattributed": {
+              "minutes": 2.4,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "11:00",
+          "running_min": 3.8,
+          "segments": {
+            "web": {
+              "minutes": 0.4,
+              "clusters": {
+                "Web Torn": 0.4
+              }
+            },
+            "unattributed": {
+              "minutes": 55.8,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "12:00",
+          "running_min": 0.6,
+          "segments": {
+            "handling": {
+              "minutes": 21.8,
+              "clusters": {
+                "Fork": 21.8
+              }
+            },
+            "unattributed": {
+              "minutes": 37.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "13:00",
+          "running_min": 0.0,
+          "segments": {
+            "handling": {
+              "minutes": 60.0,
+              "clusters": {
+                "Fork": 60.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "14:00",
+          "running_min": 0.0,
+          "segments": {
+            "handling": {
+              "minutes": 60.0,
+              "clusters": {
+                "Fork": 60.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "15:00",
+          "running_min": 0.0,
+          "segments": {
+            "handling": {
+              "minutes": 60.0,
+              "clusters": {
+                "Fork": 60.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "16:00",
+          "running_min": 0.0,
+          "segments": {
+            "handling": {
+              "minutes": 60.0,
+              "clusters": {
+                "Fork": 60.0
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "17:00",
+          "running_min": 5.2,
+          "segments": {
+            "handling": {
+              "minutes": 46.5,
+              "clusters": {
+                "Fork": 46.5
+              }
+            },
+            "pneumatic": {
+              "minutes": 7.6,
+              "clusters": {
+                "Valve on Web": 0.5,
+                "Air Pressure": 7.1
+              }
+            },
+            "unattributed": {
+              "minutes": 0.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "18:00",
+          "running_min": 2.4,
+          "segments": {
+            "web": {
+              "minutes": 0.3,
+              "clusters": {
+                "Splice": 0.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 24.7,
+              "clusters": {
+                "Air Pressure": 24.7
+              }
+            },
+            "unattributed": {
+              "minutes": 32.6,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Fork",
+            "segment": "handling",
+            "current_share": 53.7,
+            "baseline_mean": 6.5,
+            "z_score": 6.7,
+            "direction": "above"
+          },
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 1.0,
+            "baseline_mean": 9.6,
+            "z_score": -2.4,
+            "direction": "below"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-17",
+      "shift_type": "night",
+      "label": "Night 07-17",
+      "oee": 51.3,
+      "availability": 59.2,
+      "performance": 89.4,
+      "quality": 97.0,
+      "running_hours": 7.1,
+      "total_stops": 70,
+      "total_downtime_hours": 4.9,
+      "longest_stop_min": 32.3,
+      "good_count": 16825,
+      "total_count": 17354,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 28,
+          "hours": 0.58
+        },
+        "halted": {
+          "count": 2,
+          "hours": 0.07
+        },
+        "auto_long": {
+          "count": 40,
+          "hours": 4.25
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 16,
+          "hours": 1.68,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.68,
+          "clusters": {
+            "Splice": {
+              "count": 10,
+              "hours": 0.71,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.71
+            },
+            "End of Reel": {
+              "count": 5,
+              "hours": 0.72,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.72
+            },
+            "Web Torn": {
+              "count": 1,
+              "hours": 0.25,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.25
+            }
+          }
+        },
+        "sealing": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "handling": {
+          "count": 23,
+          "hours": 1.5,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.5,
+          "clusters": {
+            "Piston": {
+              "count": 1,
+              "hours": 0.26,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.26
+            },
+            "Gripper": {
+              "count": 6,
+              "hours": 0.17,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.17
+            },
+            "Fork": {
+              "count": 16,
+              "hours": 1.06,
+              "halted_hours": 0.0,
+              "stopped_hours": 1.06
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 5,
+          "hours": 0.17,
+          "halted_hours": 0.03,
+          "stopped_hours": 0.14,
+          "clusters": {
+            "Cooling": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            },
+            "Other": {
+              "count": 1,
+              "hours": 0.06,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.06
+            },
+            "Air Pressure": {
+              "count": 2,
+              "hours": 0.08,
+              "halted_hours": 0.03,
+              "stopped_hours": 0.04
+            },
+            "Valve on Web": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 26,
+          "hours": 1.56,
+          "halted_hours": 0.04,
+          "stopped_hours": 1.52
+        }
+      },
+      "top_stops_by_cluster": {
+        "handling": {
+          "Piston": [
+            {
+              "label": "1082-5B2 Error vacuum switch push out piston B",
+              "count": 1,
+              "hours": 0.26
+            }
+          ],
+          "Gripper": [
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 3,
+              "hours": 0.11
+            },
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 3,
+              "hours": 0.07
+            }
+          ],
+          "Fork": [
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 12,
+              "hours": 0.94
+            },
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 4,
+              "hours": 0.12
+            }
+          ]
+        },
+        "web": {
+          "Splice": [
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 4,
+              "hours": 0.33
+            },
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 4,
+              "hours": 0.29
+            },
+            {
+              "label": "1311-1B1 Consecutive error splice detection",
+              "count": 1,
+              "hours": 0.08
+            },
+            {
+              "label": "1129-1B1 Consecutive error splice detection",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "End of Reel": [
+            {
+              "label": "1150 End of reel",
+              "count": 2,
+              "hours": 0.21
+            },
+            {
+              "label": "1151 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.21
+            },
+            {
+              "label": "1159-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.18
+            },
+            {
+              "label": "1152 End of reel",
+              "count": 1,
+              "hours": 0.12
+            }
+          ],
+          "Web Torn": [
+            {
+              "label": "1158-1B1 Web torn",
+              "count": 1,
+              "hours": 0.25
+            }
+          ]
+        },
+        "pneumatic": {
+          "Cooling": [
+            {
+              "label": "1061-15B1 Flow monitor flow rate not OK",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Other": [
+            {
+              "label": "MSM-Valve: At least one station takes longer than maximum allowed",
+              "count": 1,
+              "hours": 0.06
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 2,
+              "hours": 0.08
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "19:00",
+          "running_min": 29.9,
+          "segments": {
+            "web": {
+              "minutes": 1.2,
+              "clusters": {
+                "Splice": 1.2
+              }
+            },
+            "handling": {
+              "minutes": 16.6,
+              "clusters": {
+                "Piston": 15.8,
+                "Gripper": 0.8
+              }
+            },
+            "unattributed": {
+              "minutes": 12.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "20:00",
+          "running_min": 49.4,
+          "segments": {
+            "web": {
+              "minutes": 7.6,
+              "clusters": {
+                "Splice": 7.6
+              }
+            },
+            "handling": {
+              "minutes": 2.3,
+              "clusters": {
+                "Fork": 2.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.6,
+              "clusters": {
+                "Cooling": 0.6
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "21:00",
+          "running_min": 35.7,
+          "segments": {
+            "web": {
+              "minutes": 15.9,
+              "clusters": {
+                "Splice": 3.2,
+                "End of Reel": 12.7
+              }
+            },
+            "handling": {
+              "minutes": 2.2,
+              "clusters": {
+                "Gripper": 2.2
+              }
+            },
+            "unattributed": {
+              "minutes": 6.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "22:00",
+          "running_min": 19.7,
+          "segments": {
+            "handling": {
+              "minutes": 32.1,
+              "clusters": {
+                "Fork": 32.1
+              }
+            },
+            "unattributed": {
+              "minutes": 8.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "23:00",
+          "running_min": 26.9,
+          "segments": {
+            "web": {
+              "minutes": 27.1,
+              "clusters": {
+                "Splice": 1.5,
+                "Web Torn": 15.0,
+                "End of Reel": 10.5
+              }
+            },
+            "handling": {
+              "minutes": 2.8,
+              "clusters": {
+                "Fork": 2.8
+              }
+            },
+            "unattributed": {
+              "minutes": 3.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "00:00",
+          "running_min": 40.1,
+          "segments": {
+            "web": {
+              "minutes": 7.3,
+              "clusters": {
+                "End of Reel": 7.3
+              }
+            },
+            "handling": {
+              "minutes": 1.6,
+              "clusters": {
+                "Fork": 1.6
+              }
+            },
+            "pneumatic": {
+              "minutes": 3.7,
+              "clusters": {
+                "Other": 3.7
+              }
+            },
+            "unattributed": {
+              "minutes": 7.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "01:00",
+          "running_min": 46.8,
+          "segments": {
+            "web": {
+              "minutes": 5.3,
+              "clusters": {
+                "Splice": 5.3
+              }
+            },
+            "handling": {
+              "minutes": 6.7,
+              "clusters": {
+                "Fork": 6.7
+              }
+            },
+            "unattributed": {
+              "minutes": 1.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "02:00",
+          "running_min": 40.0,
+          "segments": {
+            "handling": {
+              "minutes": 6.5,
+              "clusters": {
+                "Fork": 4.0,
+                "Gripper": 2.5
+              }
+            },
+            "unattributed": {
+              "minutes": 13.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "03:00",
+          "running_min": 40.4,
+          "segments": {
+            "web": {
+              "minutes": 12.7,
+              "clusters": {
+                "Splice": 12.7
+              }
+            },
+            "handling": {
+              "minutes": 6.9,
+              "clusters": {
+                "Fork": 6.9
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "04:00",
+          "running_min": 47.8,
+          "segments": {
+            "web": {
+              "minutes": 7.2,
+              "clusters": {
+                "End of Reel": 7.2
+              }
+            },
+            "handling": {
+              "minutes": 3.4,
+              "clusters": {
+                "Gripper": 3.4
+              }
+            },
+            "unattributed": {
+              "minutes": 1.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "05:00",
+          "running_min": 35.5,
+          "segments": {
+            "web": {
+              "minutes": 10.9,
+              "clusters": {
+                "Splice": 10.9
+              }
+            },
+            "handling": {
+              "minutes": 6.3,
+              "clusters": {
+                "Gripper": 1.5,
+                "Fork": 4.9
+              }
+            },
+            "pneumatic": {
+              "minutes": 4.5,
+              "clusters": {
+                "Air Pressure": 4.5
+              }
+            },
+            "unattributed": {
+              "minutes": 2.8,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "06:00",
+          "running_min": 13.9,
+          "segments": {
+            "web": {
+              "minutes": 5.4,
+              "clusters": {
+                "End of Reel": 5.4
+              }
+            },
+            "handling": {
+              "minutes": 2.2,
+              "clusters": {
+                "Fork": 2.2
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.2,
+              "clusters": {
+                "Valve on Web": 1.2
+              }
+            },
+            "unattributed": {
+              "minutes": 37.3,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Piston",
+            "segment": "handling",
+            "current_share": 5.4,
+            "baseline_mean": 0.5,
+            "z_score": 3.1,
+            "direction": "above"
+          },
+          {
+            "cluster": "Fork",
+            "segment": "handling",
+            "current_share": 21.6,
+            "baseline_mean": 6.5,
+            "z_score": 2.2,
+            "direction": "above"
+          },
+          {
+            "cluster": "Splice",
+            "segment": "web",
+            "current_share": 14.4,
+            "baseline_mean": 5.5,
+            "z_score": 2.1,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-18",
+      "shift_type": "day",
+      "label": "Day 07-18",
+      "oee": 32.9,
+      "availability": 40.1,
+      "performance": 84.7,
+      "quality": 96.7,
+      "running_hours": 4.81,
+      "total_stops": 56,
+      "total_downtime_hours": 7.19,
+      "longest_stop_min": 186.5,
+      "good_count": 11327,
+      "total_count": 11708,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 37,
+          "hours": 0.54
+        },
+        "halted": {
+          "count": 4,
+          "hours": 3.4
+        },
+        "auto_long": {
+          "count": 15,
+          "hours": 3.25
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 11,
+          "hours": 0.63,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.63,
+          "clusters": {
+            "Web Torn": {
+              "count": 3,
+              "hours": 0.09,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.09
+            },
+            "End of Reel": {
+              "count": 4,
+              "hours": 0.43,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.43
+            },
+            "Splice": {
+              "count": 4,
+              "hours": 0.11,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.11
+            }
+          }
+        },
+        "sealing": {
+          "count": 1,
+          "hours": 0.01,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.01,
+          "clusters": {
+            "Sealing Head": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "handling": {
+          "count": 15,
+          "hours": 0.29,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.29,
+          "clusters": {
+            "Fork": {
+              "count": 10,
+              "hours": 0.23,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.23
+            },
+            "Gripper": {
+              "count": 5,
+              "hours": 0.06,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.06
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 10,
+          "hours": 0.4,
+          "halted_hours": 0.27,
+          "stopped_hours": 0.13,
+          "clusters": {
+            "Valve on Web": {
+              "count": 4,
+              "hours": 0.06,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.06
+            },
+            "Air Pressure": {
+              "count": 2,
+              "hours": 0.27,
+              "halted_hours": 0.27,
+              "stopped_hours": 0.0
+            },
+            "Other": {
+              "count": 2,
+              "hours": 0.06,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.06
+            },
+            "Cooling": {
+              "count": 2,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 19,
+          "hours": 5.86,
+          "halted_hours": 3.13,
+          "stopped_hours": 2.73
+        }
+      },
+      "top_stops_by_cluster": {
+        "pneumatic": {
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right inserted but not found - Check for valve on web",
+              "count": 3,
+              "hours": 0.05
+            },
+            {
+              "label": "1074 Valve left inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 2,
+              "hours": 0.27
+            }
+          ],
+          "Other": [
+            {
+              "label": "1A02-21T2 Battery in external UPS must be checked",
+              "count": 1,
+              "hours": 0.05
+            },
+            {
+              "label": "MSM-Valve: At least one station takes longer than the set cycle time allows",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Cooling": [
+            {
+              "label": "1022-11B2 Flow monitor site cooling flow rate not OK",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1061-15B1 Flow monitor flow rate not OK",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "sealing": {
+          "Sealing Head": [
+            {
+              "label": "1072 Temperature not reached Heating sealing head",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "web": {
+          "Web Torn": [
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 2,
+              "hours": 0.09
+            },
+            {
+              "label": "1153-1B1 Web torn",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "End of Reel": [
+            {
+              "label": "1151 End of reel",
+              "count": 1,
+              "hours": 0.18
+            },
+            {
+              "label": "1158-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.11
+            },
+            {
+              "label": "1150 End of reel",
+              "count": 1,
+              "hours": 0.07
+            },
+            {
+              "label": "1153 End of reel",
+              "count": 1,
+              "hours": 0.07
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.05
+            },
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 2,
+              "hours": 0.05
+            },
+            {
+              "label": "1129-1B1 Consecutive error splice detection",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "handling": {
+          "Fork": [
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 8,
+              "hours": 0.16
+            },
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 2,
+              "hours": 0.07
+            }
+          ],
+          "Gripper": [
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 3,
+              "hours": 0.04
+            },
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 2,
+              "hours": 0.02
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "07:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "08:00",
+          "running_min": 22.1,
+          "segments": {
+            "sealing": {
+              "minutes": 0.3,
+              "clusters": {
+                "Sealing Head": 0.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 7.4,
+              "clusters": {
+                "Valve on Web": 0.9,
+                "Air Pressure": 6.0,
+                "Other": 0.4
+              }
+            },
+            "unattributed": {
+              "minutes": 30.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "09:00",
+          "running_min": 38.4,
+          "segments": {
+            "web": {
+              "minutes": 9.1,
+              "clusters": {
+                "Web Torn": 0.5,
+                "End of Reel": 4.0,
+                "Splice": 4.5
+              }
+            },
+            "handling": {
+              "minutes": 4.3,
+              "clusters": {
+                "Fork": 4.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 2.6,
+              "clusters": {
+                "Valve on Web": 2.6
+              }
+            },
+            "unattributed": {
+              "minutes": 5.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "10:00",
+          "running_min": 55.7,
+          "segments": {
+            "handling": {
+              "minutes": 3.8,
+              "clusters": {
+                "Gripper": 1.5,
+                "Fork": 2.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.5,
+              "clusters": {
+                "Cooling": 0.5
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "11:00",
+          "running_min": 43.3,
+          "segments": {
+            "web": {
+              "minutes": 12.0,
+              "clusters": {
+                "End of Reel": 9.2,
+                "Web Torn": 2.8
+              }
+            },
+            "handling": {
+              "minutes": 1.6,
+              "clusters": {
+                "Fork": 1.3,
+                "Gripper": 0.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 3.2,
+              "clusters": {
+                "Other": 3.2
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "12:00",
+          "running_min": 45.3,
+          "segments": {
+            "web": {
+              "minutes": 10.9,
+              "clusters": {
+                "End of Reel": 8.3,
+                "Web Torn": 2.4,
+                "Splice": 0.3
+              }
+            },
+            "handling": {
+              "minutes": 3.0,
+              "clusters": {
+                "Fork": 2.1,
+                "Gripper": 0.9
+              }
+            },
+            "unattributed": {
+              "minutes": 0.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "13:00",
+          "running_min": 26.3,
+          "segments": {
+            "pneumatic": {
+              "minutes": 10.2,
+              "clusters": {
+                "Air Pressure": 10.2
+              }
+            },
+            "unattributed": {
+              "minutes": 23.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "14:00",
+          "running_min": 28.4,
+          "segments": {
+            "web": {
+              "minutes": 4.5,
+              "clusters": {
+                "End of Reel": 4.5
+              }
+            },
+            "handling": {
+              "minutes": 3.4,
+              "clusters": {
+                "Fork": 3.1,
+                "Gripper": 0.3
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.3,
+              "clusters": {
+                "Cooling": 0.3
+              }
+            },
+            "unattributed": {
+              "minutes": 23.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "15:00",
+          "running_min": 29.1,
+          "segments": {
+            "web": {
+              "minutes": 1.5,
+              "clusters": {
+                "Splice": 1.5
+              }
+            },
+            "handling": {
+              "minutes": 1.5,
+              "clusters": {
+                "Gripper": 0.6,
+                "Fork": 0.9
+              }
+            },
+            "unattributed": {
+              "minutes": 27.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "16:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "17:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "18:00",
+          "running_min": 0.0,
+          "segments": {
+            "unattributed": {
+              "minutes": 60.0,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "unattributed",
+            "segment": "unattributed",
+            "current_share": 81.5,
+            "baseline_mean": 29.0,
+            "z_score": 4.4,
+            "direction": "above"
+          },
+          {
+            "cluster": "Gripper",
+            "segment": "handling",
+            "current_share": 0.8,
+            "baseline_mean": 9.6,
+            "z_score": -2.5,
+            "direction": "below"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-18",
+      "shift_type": "night",
+      "label": "Night 07-18",
+      "oee": 46.0,
+      "availability": 54.1,
+      "performance": 87.3,
+      "quality": 97.3,
+      "running_hours": 6.49,
+      "total_stops": 55,
+      "total_downtime_hours": 5.51,
+      "longest_stop_min": 53.0,
+      "good_count": 15561,
+      "total_count": 15996,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 15,
+          "hours": 0.29
+        },
+        "halted": {
+          "count": 5,
+          "hours": 1.47
+        },
+        "auto_long": {
+          "count": 35,
+          "hours": 3.74
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 14,
+          "hours": 1.43,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.43,
+          "clusters": {
+            "End of Reel": {
+              "count": 6,
+              "hours": 0.68,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.68
+            },
+            "Splice": {
+              "count": 5,
+              "hours": 0.38,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.38
+            },
+            "Web Torn": {
+              "count": 3,
+              "hours": 0.37,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.37
+            }
+          }
+        },
+        "sealing": {
+          "count": 1,
+          "hours": 0.18,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.18,
+          "clusters": {
+            "Printer": {
+              "count": 1,
+              "hours": 0.18,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.18
+            }
+          }
+        },
+        "handling": {
+          "count": 19,
+          "hours": 0.88,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.88,
+          "clusters": {
+            "Fork": {
+              "count": 12,
+              "hours": 0.66,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.66
+            },
+            "Gripper": {
+              "count": 6,
+              "hours": 0.18,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.18
+            },
+            "Piston": {
+              "count": 1,
+              "hours": 0.04,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.04
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 6,
+          "hours": 2.07,
+          "halted_hours": 1.34,
+          "stopped_hours": 0.73,
+          "clusters": {
+            "Air Pressure": {
+              "count": 4,
+              "hours": 2.04,
+              "halted_hours": 1.34,
+              "stopped_hours": 0.69
+            },
+            "Other": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.03
+            },
+            "Valve on Web": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 15,
+          "hours": 0.94,
+          "halted_hours": 0.13,
+          "stopped_hours": 0.81
+        }
+      },
+      "top_stops_by_cluster": {
+        "handling": {
+          "Fork": [
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 8,
+              "hours": 0.52
+            },
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 4,
+              "hours": 0.14
+            }
+          ],
+          "Gripper": [
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 4,
+              "hours": 0.12
+            },
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 2,
+              "hours": 0.06
+            }
+          ],
+          "Piston": [
+            {
+              "label": "1082-3B1 Limit switch fault Push out piston lowered",
+              "count": 1,
+              "hours": 0.04
+            }
+          ]
+        },
+        "pneumatic": {
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 4,
+              "hours": 2.04
+            }
+          ],
+          "Other": [
+            {
+              "label": "1400-3B2 Infeed valve maximum product level permanently not reached",
+              "count": 1,
+              "hours": 0.03
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "web": {
+          "End of Reel": [
+            {
+              "label": "1153 End of reel",
+              "count": 1,
+              "hours": 0.19
+            },
+            {
+              "label": "1158-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.15
+            },
+            {
+              "label": "1151 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.1
+            },
+            {
+              "label": "1300-2B1 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.09
+            },
+            {
+              "label": "1150 End of reel",
+              "count": 1,
+              "hours": 0.09
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 2,
+              "hours": 0.3
+            },
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 2,
+              "hours": 0.07
+            },
+            {
+              "label": "1129-1B1 Last splice has not been detected",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Web Torn": [
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 3,
+              "hours": 0.37
+            }
+          ]
+        },
+        "sealing": {
+          "Printer": [
+            {
+              "label": "1050-2K1 Hot printer A not ready for operation",
+              "count": 1,
+              "hours": 0.18
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "19:00",
+          "running_min": 25.0,
+          "segments": {
+            "handling": {
+              "minutes": 5.7,
+              "clusters": {
+                "Fork": 2.2,
+                "Gripper": 3.5
+              }
+            },
+            "pneumatic": {
+              "minutes": 9.7,
+              "clusters": {
+                "Air Pressure": 9.7
+              }
+            },
+            "unattributed": {
+              "minutes": 19.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "20:00",
+          "running_min": 24.3,
+          "segments": {
+            "web": {
+              "minutes": 4.6,
+              "clusters": {
+                "End of Reel": 4.6
+              }
+            },
+            "handling": {
+              "minutes": 1.7,
+              "clusters": {
+                "Gripper": 1.7
+              }
+            },
+            "pneumatic": {
+              "minutes": 29.1,
+              "clusters": {
+                "Air Pressure": 29.1
+              }
+            },
+            "unattributed": {
+              "minutes": 0.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "21:00",
+          "running_min": 44.3,
+          "segments": {
+            "web": {
+              "minutes": 1.8,
+              "clusters": {
+                "Splice": 1.8
+              }
+            },
+            "handling": {
+              "minutes": 4.9,
+              "clusters": {
+                "Gripper": 0.8,
+                "Fork": 1.8,
+                "Piston": 2.3
+              }
+            },
+            "unattributed": {
+              "minutes": 9.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "22:00",
+          "running_min": 30.9,
+          "segments": {
+            "pneumatic": {
+              "minutes": 28.7,
+              "clusters": {
+                "Other": 1.8,
+                "Air Pressure": 26.5,
+                "Valve on Web": 0.4
+              }
+            },
+            "unattributed": {
+              "minutes": 0.4,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "23:00",
+          "running_min": 23.8,
+          "segments": {
+            "web": {
+              "minutes": 5.8,
+              "clusters": {
+                "End of Reel": 5.8
+              }
+            },
+            "handling": {
+              "minutes": 1.0,
+              "clusters": {
+                "Gripper": 1.0
+              }
+            },
+            "pneumatic": {
+              "minutes": 29.5,
+              "clusters": {
+                "Air Pressure": 29.5
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "00:00",
+          "running_min": 35.2,
+          "segments": {
+            "web": {
+              "minutes": 16.0,
+              "clusters": {
+                "End of Reel": 6.1,
+                "Web Torn": 9.6,
+                "Splice": 0.3
+              }
+            },
+            "handling": {
+              "minutes": 1.4,
+              "clusters": {
+                "Gripper": 1.4
+              }
+            },
+            "unattributed": {
+              "minutes": 7.4,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "01:00",
+          "running_min": 33.8,
+          "segments": {
+            "web": {
+              "minutes": 18.5,
+              "clusters": {
+                "End of Reel": 18.5
+              }
+            },
+            "handling": {
+              "minutes": 7.8,
+              "clusters": {
+                "Fork": 7.8
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "02:00",
+          "running_min": 31.3,
+          "segments": {
+            "web": {
+              "minutes": 12.9,
+              "clusters": {
+                "Web Torn": 12.9
+              }
+            },
+            "handling": {
+              "minutes": 6.1,
+              "clusters": {
+                "Gripper": 2.6,
+                "Fork": 3.5
+              }
+            },
+            "unattributed": {
+              "minutes": 9.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "03:00",
+          "running_min": 42.4,
+          "segments": {
+            "handling": {
+              "minutes": 13.9,
+              "clusters": {
+                "Fork": 13.9
+              }
+            },
+            "unattributed": {
+              "minutes": 3.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "04:00",
+          "running_min": 42.2,
+          "segments": {
+            "web": {
+              "minutes": 11.2,
+              "clusters": {
+                "Splice": 11.2
+              }
+            },
+            "handling": {
+              "minutes": 6.6,
+              "clusters": {
+                "Fork": 6.6
+              }
+            }
+          }
+        },
+        {
+          "hour_label": "05:00",
+          "running_min": 37.4,
+          "segments": {
+            "web": {
+              "minutes": 5.7,
+              "clusters": {
+                "End of Reel": 5.7
+              }
+            },
+            "sealing": {
+              "minutes": 10.7,
+              "clusters": {
+                "Printer": 10.7
+              }
+            },
+            "handling": {
+              "minutes": 1.0,
+              "clusters": {
+                "Fork": 1.0
+              }
+            },
+            "unattributed": {
+              "minutes": 5.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "06:00",
+          "running_min": 19.1,
+          "segments": {
+            "web": {
+              "minutes": 9.6,
+              "clusters": {
+                "Splice": 9.6
+              }
+            },
+            "handling": {
+              "minutes": 2.7,
+              "clusters": {
+                "Fork": 2.7
+              }
+            },
+            "pneumatic": {
+              "minutes": 27.6,
+              "clusters": {
+                "Air Pressure": 27.6
+              }
+            },
+            "unattributed": {
+              "minutes": 1.1,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Air Pressure",
+            "segment": "pneumatic",
+            "current_share": 37.0,
+            "baseline_mean": 6.5,
+            "z_score": 4.0,
+            "direction": "above"
+          },
+          {
+            "cluster": "Web Torn",
+            "segment": "web",
+            "current_share": 6.8,
+            "baseline_mean": 2.1,
+            "z_score": 2.3,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-19",
+      "shift_type": "day",
+      "label": "Day 07-19",
+      "oee": 33.9,
+      "availability": 44.7,
+      "performance": 81.4,
+      "quality": 93.4,
+      "running_hours": 5.36,
+      "total_stops": 89,
+      "total_downtime_hours": 6.64,
+      "longest_stop_min": 66.6,
+      "good_count": 11583,
+      "total_count": 12408,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 58,
+          "hours": 0.94
+        },
+        "halted": {
+          "count": 8,
+          "hours": 1.2
+        },
+        "auto_long": {
+          "count": 23,
+          "hours": 4.5
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 10,
+          "hours": 0.6,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.6,
+          "clusters": {
+            "End of Reel": {
+              "count": 4,
+              "hours": 0.22,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.22
+            },
+            "Web Torn": {
+              "count": 3,
+              "hours": 0.27,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.27
+            },
+            "Splice": {
+              "count": 3,
+              "hours": 0.12,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.12
+            }
+          }
+        },
+        "sealing": {
+          "count": 5,
+          "hours": 0.3,
+          "halted_hours": 0.08,
+          "stopped_hours": 0.22,
+          "clusters": {
+            "Sealing Head": {
+              "count": 4,
+              "hours": 0.3,
+              "halted_hours": 0.08,
+              "stopped_hours": 0.21
+            },
+            "Temperature": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "handling": {
+          "count": 15,
+          "hours": 0.52,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.52,
+          "clusters": {
+            "Fork": {
+              "count": 5,
+              "hours": 0.22,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.22
+            },
+            "Gripper": {
+              "count": 9,
+              "hours": 0.29,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.29
+            },
+            "Piston": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 3,
+          "hours": 0.58,
+          "halted_hours": 0.03,
+          "stopped_hours": 0.54,
+          "clusters": {
+            "Valve on Web": {
+              "count": 1,
+              "hours": 0.01,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.01
+            },
+            "Air Pressure": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.03,
+              "stopped_hours": 0.0
+            },
+            "Other": {
+              "count": 1,
+              "hours": 0.53,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.53
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 56,
+          "hours": 4.64,
+          "halted_hours": 1.08,
+          "stopped_hours": 3.56
+        }
+      },
+      "top_stops_by_cluster": {
+        "handling": {
+          "Fork": [
+            {
+              "label": "1210-2B1 Limit switch fault Fork A in working position",
+              "count": 2,
+              "hours": 0.18
+            },
+            {
+              "label": "1211-2B1 Limit switch fault Fork B in working position",
+              "count": 3,
+              "hours": 0.04
+            }
+          ],
+          "Gripper": [
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 5,
+              "hours": 0.22
+            },
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 4,
+              "hours": 0.07
+            }
+          ],
+          "Piston": [
+            {
+              "label": "1082-5B2 Error vacuum switch push out piston B",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "web": {
+          "End of Reel": [
+            {
+              "label": "1153 End of reel",
+              "count": 1,
+              "hours": 0.12
+            },
+            {
+              "label": "1150 End of reel",
+              "count": 1,
+              "hours": 0.05
+            },
+            {
+              "label": "1153 Prewarning end of reel",
+              "count": 1,
+              "hours": 0.04
+            },
+            {
+              "label": "1159-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Web Torn": [
+            {
+              "label": "1158-1B1 Web torn",
+              "count": 2,
+              "hours": 0.26
+            },
+            {
+              "label": "1159-1B1 Web torn",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.07
+            },
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.02
+            },
+            {
+              "label": "1128-1B1 Consecutive error splice detection",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        },
+        "sealing": {
+          "Sealing Head": [
+            {
+              "label": "1086-1M1 Vertical axis has reached adjusted current limit",
+              "count": 1,
+              "hours": 0.2
+            },
+            {
+              "label": "1410-4B2 Limit switch fault Sealing head A bottom in home position",
+              "count": 1,
+              "hours": 0.08
+            },
+            {
+              "label": "1078-2B3 Limit switch fault Sealing head B in working position",
+              "count": 1,
+              "hours": 0.01
+            },
+            {
+              "label": "1078-2B1 Limit switch fault Sealing head A in working position",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Temperature": [
+            {
+              "label": "1022-7B1 Temperature sealing tool A not in tolerance",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "pneumatic": {
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 1,
+              "hours": 0.03
+            }
+          ],
+          "Other": [
+            {
+              "label": "MSM-Valve: At least one station takes longer than the set cycle time allows",
+              "count": 1,
+              "hours": 0.53
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "07:00",
+          "running_min": 32.9,
+          "segments": {
+            "handling": {
+              "minutes": 11.4,
+              "clusters": {
+                "Fork": 10.2,
+                "Gripper": 1.2
+              }
+            },
+            "unattributed": {
+              "minutes": 15.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "08:00",
+          "running_min": 31.3,
+          "segments": {
+            "web": {
+              "minutes": 3.2,
+              "clusters": {
+                "End of Reel": 3.2
+              }
+            },
+            "sealing": {
+              "minutes": 5.1,
+              "clusters": {
+                "Sealing Head": 5.1
+              }
+            },
+            "handling": {
+              "minutes": 1.1,
+              "clusters": {
+                "Fork": 1.1
+              }
+            },
+            "unattributed": {
+              "minutes": 19.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "09:00",
+          "running_min": 22.4,
+          "segments": {
+            "web": {
+              "minutes": 0.7,
+              "clusters": {
+                "End of Reel": 0.4,
+                "Web Torn": 0.3
+              }
+            },
+            "sealing": {
+              "minutes": 0.7,
+              "clusters": {
+                "Sealing Head": 0.7
+              }
+            },
+            "handling": {
+              "minutes": 1.1,
+              "clusters": {
+                "Fork": 1.1
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.7,
+              "clusters": {
+                "Valve on Web": 0.7
+              }
+            },
+            "unattributed": {
+              "minutes": 34.4,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "10:00",
+          "running_min": 40.7,
+          "segments": {
+            "handling": {
+              "minutes": 1.9,
+              "clusters": {
+                "Gripper": 0.9,
+                "Fork": 1.0
+              }
+            },
+            "unattributed": {
+              "minutes": 17.4,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "11:00",
+          "running_min": 40.1,
+          "segments": {
+            "web": {
+              "minutes": 14.3,
+              "clusters": {
+                "Web Torn": 13.2,
+                "Splice": 1.1
+              }
+            },
+            "sealing": {
+              "minutes": 0.3,
+              "clusters": {
+                "Sealing Head": 0.3
+              }
+            },
+            "handling": {
+              "minutes": 0.3,
+              "clusters": {
+                "Piston": 0.3
+              }
+            },
+            "unattributed": {
+              "minutes": 5.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "12:00",
+          "running_min": 17.0,
+          "segments": {
+            "handling": {
+              "minutes": 7.6,
+              "clusters": {
+                "Gripper": 7.6
+              }
+            },
+            "unattributed": {
+              "minutes": 35.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "13:00",
+          "running_min": 10.4,
+          "segments": {
+            "sealing": {
+              "minutes": 0.4,
+              "clusters": {
+                "Temperature": 0.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 2.0,
+              "clusters": {
+                "Air Pressure": 2.0
+              }
+            },
+            "unattributed": {
+              "minutes": 47.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "14:00",
+          "running_min": 30.1,
+          "segments": {
+            "pneumatic": {
+              "minutes": 28.8,
+              "clusters": {
+                "Other": 28.8
+              }
+            },
+            "unattributed": {
+              "minutes": 1.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "15:00",
+          "running_min": 26.5,
+          "segments": {
+            "web": {
+              "minutes": 5.8,
+              "clusters": {
+                "Splice": 5.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 3.2,
+              "clusters": {
+                "Other": 3.2
+              }
+            },
+            "unattributed": {
+              "minutes": 24.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "16:00",
+          "running_min": 18.3,
+          "segments": {
+            "sealing": {
+              "minutes": 11.9,
+              "clusters": {
+                "Sealing Head": 11.9
+              }
+            },
+            "unattributed": {
+              "minutes": 29.8,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "17:00",
+          "running_min": 31.4,
+          "segments": {
+            "web": {
+              "minutes": 9.8,
+              "clusters": {
+                "End of Reel": 9.8
+              }
+            },
+            "handling": {
+              "minutes": 2.4,
+              "clusters": {
+                "Gripper": 2.4
+              }
+            },
+            "unattributed": {
+              "minutes": 16.5,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "18:00",
+          "running_min": 20.2,
+          "segments": {
+            "web": {
+              "minutes": 2.4,
+              "clusters": {
+                "Web Torn": 2.4
+              }
+            },
+            "handling": {
+              "minutes": 5.0,
+              "clusters": {
+                "Gripper": 5.0
+              }
+            },
+            "unattributed": {
+              "minutes": 32.3,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "unattributed",
+            "segment": "unattributed",
+            "current_share": 69.9,
+            "baseline_mean": 29.0,
+            "z_score": 3.4,
+            "direction": "above"
+          },
+          {
+            "cluster": "Other",
+            "segment": "pneumatic",
+            "current_share": 8.0,
+            "baseline_mean": 1.0,
+            "z_score": 2.6,
+            "direction": "above"
+          }
+        ],
+        "baseline_shifts": 13
+      }
+    },
+    {
+      "shift_date": "2026-07-19",
+      "shift_type": "night",
+      "label": "Night 07-19",
+      "oee": 36.8,
+      "availability": 49.3,
+      "performance": 78.7,
+      "quality": 94.8,
+      "running_hours": 5.92,
+      "total_stops": 95,
+      "total_downtime_hours": 6.08,
+      "longest_stop_min": 46.0,
+      "good_count": 11935,
+      "total_count": 12596,
+      "downtime_categories": {
+        "micro_stops": {
+          "count": 66,
+          "hours": 1.07
+        },
+        "halted": {
+          "count": 7,
+          "hours": 1.38
+        },
+        "auto_long": {
+          "count": 22,
+          "hours": 3.63
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0
+        }
+      },
+      "segment_downtime": {
+        "web": {
+          "count": 8,
+          "hours": 1.14,
+          "halted_hours": 0.0,
+          "stopped_hours": 1.14,
+          "clusters": {
+            "End of Reel": {
+              "count": 6,
+              "hours": 1.11,
+              "halted_hours": 0.0,
+              "stopped_hours": 1.11
+            },
+            "Splice": {
+              "count": 2,
+              "hours": 0.03,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.03
+            }
+          }
+        },
+        "sealing": {
+          "count": 1,
+          "hours": 0.02,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.02,
+          "clusters": {
+            "Sealing Head": {
+              "count": 1,
+              "hours": 0.02,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.02
+            }
+          }
+        },
+        "handling": {
+          "count": 16,
+          "hours": 0.43,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.43,
+          "clusters": {
+            "Gripper": {
+              "count": 15,
+              "hours": 0.4,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.4
+            },
+            "Cylinder": {
+              "count": 1,
+              "hours": 0.03,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.03
+            }
+          }
+        },
+        "pneumatic": {
+          "count": 20,
+          "hours": 0.69,
+          "halted_hours": 0.43,
+          "stopped_hours": 0.26,
+          "clusters": {
+            "Air Pressure": {
+              "count": 2,
+              "hours": 0.04,
+              "halted_hours": 0.04,
+              "stopped_hours": 0.0
+            },
+            "Valve on Web": {
+              "count": 17,
+              "hours": 0.26,
+              "halted_hours": 0.0,
+              "stopped_hours": 0.26
+            },
+            "Cooling": {
+              "count": 1,
+              "hours": 0.4,
+              "halted_hours": 0.4,
+              "stopped_hours": 0.0
+            }
+          }
+        },
+        "manual": {
+          "count": 0,
+          "hours": 0.0,
+          "halted_hours": 0.0,
+          "stopped_hours": 0.0
+        },
+        "unattributed": {
+          "count": 50,
+          "hours": 3.8,
+          "halted_hours": 0.95,
+          "stopped_hours": 2.85
+        }
+      },
+      "top_stops_by_cluster": {
+        "pneumatic": {
+          "Air Pressure": [
+            {
+              "label": "1A07-1B1 Main air valve basic machine pressure not present",
+              "count": 2,
+              "hours": 0.04
+            }
+          ],
+          "Valve on Web": [
+            {
+              "label": "1074 Valve right out of area - Check for valve on web",
+              "count": 13,
+              "hours": 0.21
+            },
+            {
+              "label": "1074 Valve left out of area - Check for valve on web",
+              "count": 2,
+              "hours": 0.02
+            },
+            {
+              "label": "1074 Valve right inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.02
+            },
+            {
+              "label": "1074 Valve left inserted but not found - Check for valve on web",
+              "count": 1,
+              "hours": 0.01
+            }
+          ],
+          "Cooling": [
+            {
+              "label": "1022-11B2 Flow monitor site cooling flow rate not OK",
+              "count": 1,
+              "hours": 0.4
+            }
+          ]
+        },
+        "handling": {
+          "Gripper": [
+            {
+              "label": "1406-6B2 Valve in pickup position B not present",
+              "count": 9,
+              "hours": 0.21
+            },
+            {
+              "label": "1406-6B1 Valve in pickup position A not present",
+              "count": 6,
+              "hours": 0.18
+            }
+          ],
+          "Cylinder": [
+            {
+              "label": "1159-11B1 Error Cylinder switch",
+              "count": 1,
+              "hours": 0.03
+            }
+          ]
+        },
+        "web": {
+          "End of Reel": [
+            {
+              "label": "1159-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.77
+            },
+            {
+              "label": "1151 End of reel",
+              "count": 1,
+              "hours": 0.11
+            },
+            {
+              "label": "1152 End of reel",
+              "count": 1,
+              "hours": 0.09
+            },
+            {
+              "label": "1150 End of reel",
+              "count": 1,
+              "hours": 0.08
+            },
+            {
+              "label": "1158-5B1 All rolls empty - Please refill!",
+              "count": 1,
+              "hours": 0.05
+            }
+          ],
+          "Splice": [
+            {
+              "label": "1158-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.02
+            },
+            {
+              "label": "1159-6GQ1 Vacuum splice module not present",
+              "count": 1,
+              "hours": 0.01
+            }
+          ]
+        },
+        "sealing": {
+          "Sealing Head": [
+            {
+              "label": "1076-2M1 Sealing head B has reached adjusted current limit",
+              "count": 1,
+              "hours": 0.02
+            }
+          ]
+        }
+      },
+      "hourly_breakdown": [
+        {
+          "hour_label": "19:00",
+          "running_min": 17.5,
+          "segments": {
+            "handling": {
+              "minutes": 0.4,
+              "clusters": {
+                "Gripper": 0.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.5,
+              "clusters": {
+                "Air Pressure": 1.5
+              }
+            },
+            "unattributed": {
+              "minutes": 40.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "20:00",
+          "running_min": 41.8,
+          "segments": {
+            "handling": {
+              "minutes": 0.7,
+              "clusters": {
+                "Gripper": 0.7
+              }
+            },
+            "pneumatic": {
+              "minutes": 1.7,
+              "clusters": {
+                "Valve on Web": 1.7
+              }
+            },
+            "unattributed": {
+              "minutes": 15.8,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "21:00",
+          "running_min": 25.6,
+          "segments": {
+            "handling": {
+              "minutes": 0.8,
+              "clusters": {
+                "Gripper": 0.8
+              }
+            },
+            "unattributed": {
+              "minutes": 33.6,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "22:00",
+          "running_min": 7.7,
+          "segments": {
+            "web": {
+              "minutes": 40.1,
+              "clusters": {
+                "End of Reel": 40.1
+              }
+            },
+            "unattributed": {
+              "minutes": 12.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "23:00",
+          "running_min": 25.9,
+          "segments": {
+            "web": {
+              "minutes": 9.8,
+              "clusters": {
+                "End of Reel": 9.8
+              }
+            },
+            "unattributed": {
+              "minutes": 24.3,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "00:00",
+          "running_min": 46.2,
+          "segments": {
+            "web": {
+              "minutes": 11.7,
+              "clusters": {
+                "End of Reel": 11.7
+              }
+            },
+            "handling": {
+              "minutes": 0.4,
+              "clusters": {
+                "Gripper": 0.4
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.6,
+              "clusters": {
+                "Valve on Web": 0.6
+              }
+            },
+            "unattributed": {
+              "minutes": 1.0,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "01:00",
+          "running_min": 33.3,
+          "segments": {
+            "sealing": {
+              "minutes": 1.2,
+              "clusters": {
+                "Sealing Head": 1.2
+              }
+            },
+            "handling": {
+              "minutes": 18.5,
+              "clusters": {
+                "Gripper": 16.5,
+                "Cylinder": 2.0
+              }
+            },
+            "pneumatic": {
+              "minutes": 3.7,
+              "clusters": {
+                "Valve on Web": 3.7
+              }
+            },
+            "unattributed": {
+              "minutes": 3.4,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "02:00",
+          "running_min": 16.6,
+          "segments": {
+            "pneumatic": {
+              "minutes": 0.6,
+              "clusters": {
+                "Valve on Web": 0.6
+              }
+            },
+            "unattributed": {
+              "minutes": 42.7,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "03:00",
+          "running_min": 45.1,
+          "segments": {
+            "web": {
+              "minutes": 4.9,
+              "clusters": {
+                "End of Reel": 4.9
+              }
+            },
+            "handling": {
+              "minutes": 1.6,
+              "clusters": {
+                "Gripper": 1.6
+              }
+            },
+            "pneumatic": {
+              "minutes": 4.2,
+              "clusters": {
+                "Valve on Web": 4.2
+              }
+            },
+            "unattributed": {
+              "minutes": 4.2,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "04:00",
+          "running_min": 42.0,
+          "segments": {
+            "web": {
+              "minutes": 1.8,
+              "clusters": {
+                "Splice": 1.8
+              }
+            },
+            "handling": {
+              "minutes": 0.8,
+              "clusters": {
+                "Gripper": 0.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 4.5,
+              "clusters": {
+                "Valve on Web": 3.8,
+                "Air Pressure": 0.7
+              }
+            },
+            "unattributed": {
+              "minutes": 10.9,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "05:00",
+          "running_min": 32.4,
+          "segments": {
+            "handling": {
+              "minutes": 1.8,
+              "clusters": {
+                "Gripper": 1.8
+              }
+            },
+            "pneumatic": {
+              "minutes": 0.7,
+              "clusters": {
+                "Valve on Web": 0.7
+              }
+            },
+            "unattributed": {
+              "minutes": 25.1,
+              "clusters": null
+            }
+          }
+        },
+        {
+          "hour_label": "06:00",
+          "running_min": 21.1,
+          "segments": {
+            "handling": {
+              "minutes": 1.0,
+              "clusters": {
+                "Gripper": 1.0
+              }
+            },
+            "pneumatic": {
+              "minutes": 23.9,
+              "clusters": {
+                "Cooling": 23.9
+              }
+            },
+            "unattributed": {
+              "minutes": 14.0,
+              "clusters": null
+            }
+          }
+        }
+      ],
+      "anomalies": {
+        "cluster_outliers": [
+          {
+            "cluster": "Cooling",
+            "segment": "pneumatic",
+            "current_share": 6.5,
+            "baseline_mean": 0.4,
+            "z_score": 6.2,
+            "direction": "above"
+          },
+          {
+            "cluster": "unattributed",
+            "segment": "unattributed",
+            "current_share": 62.5,
+            "baseline_mean": 29.0,
+            "z_score": 2.8,
+            "direction": "above"
           }
         ],
         "baseline_shifts": 13

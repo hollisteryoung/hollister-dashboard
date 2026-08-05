@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "WeeklySummary"
+                      "Entity": "Shifts"
                     }
                   },
-                  "Property": "Weekly Quality %"
+                  "Property": "Quality %"
                 }
               },
-              "queryRef": "WeeklySummary.Weekly Quality %",
-              "nativeQueryRef": "Weekly Quality %"
+              "queryRef": "Shifts.Quality %",
+              "nativeQueryRef": "Quality %"
             }
           ]
         }

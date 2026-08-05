@@ -55,11 +55,6 @@
           "name": "HollisterMW.json",
           "path": "HollisterMW.json",
           "type": "CustomTheme"
-        },
-        {
-          "name": "mwgradient.png",
-          "path": "mwgradient.png",
-          "type": "Image"
         }
       ]
     }

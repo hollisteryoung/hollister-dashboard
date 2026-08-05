@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "WeeklySummary"
+                      "Entity": "Shifts"
                     }
                   },
-                  "Property": "Weekly Performance %"
+                  "Property": "Performance %"
                 }
               },
-              "queryRef": "WeeklySummary.Weekly Performance %",
-              "nativeQueryRef": "Weekly Performance %"
+              "queryRef": "Shifts.Performance %",
+              "nativeQueryRef": "Performance %"
             }
           ]
         }
@@ -357,10 +357,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "WeeklySummary"
+                "Entity": "Shifts"
               }
             },
-            "Property": "Weekly Performance %"
+            "Property": "Performance %"
           }
         },
         "type": "Advanced"

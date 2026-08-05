@@ -3,9 +3,9 @@
   "name": "725dc0b752fb8c681ba4",
   "position": {
     "x": 187,
-    "y": 6,
+    "y": 10,
     "z": 39000,
-    "height": 154,
+    "height": 150,
     "width": 187,
     "tabOrder": 39000
   },
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "WeeklySummary"
+                      "Entity": "Shifts"
                     }
                   },
-                  "Property": "Wk Downtime (h)"
+                  "Property": "Total Downtime (h)"
                 }
               },
-              "queryRef": "WeeklySummary.Wk Downtime (h)",
-              "nativeQueryRef": "Downtime ",
+              "queryRef": "Shifts.Total Downtime (h)",
+              "nativeQueryRef": "Total Downtime (h)",
               "displayName": "Downtime "
             }
           ]
@@ -333,10 +333,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "WeeklySummary"
+                "Entity": "Shifts"
               }
             },
-            "Property": "Wk Downtime (h)"
+            "Property": "Total Downtime (h)"
           }
         },
         "type": "Advanced"

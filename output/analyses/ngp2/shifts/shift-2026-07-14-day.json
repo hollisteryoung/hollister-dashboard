@@ -1,7 +1,7 @@
 {
   "analysis_id": "shift-dashboard",
   "line_id": "ngp2",
-  "generated_at": "2026-07-15T15:41:12.423286+00:00",
+  "generated_at": "2026-07-21T07:56:31.208117+00:00",
   "latest_shift": {
     "label": "Day Shift \u2014 2026-07-14 (07:00 \u2013 19:00)",
     "shift_date": "2026-07-14",
@@ -698,8 +698,24 @@
             "cluster": "Labeler",
             "segment": "foil",
             "current_share": 11.9,
-            "baseline_mean": 2.1,
-            "z_score": 3.4,
+            "baseline_mean": 1.5,
+            "z_score": 5.7,
+            "direction": "above"
+          },
+          {
+            "cluster": "Gripper",
+            "segment": "hydration",
+            "current_share": 17.2,
+            "baseline_mean": 6.1,
+            "z_score": 2.9,
+            "direction": "above"
+          },
+          {
+            "cluster": "PMK / Media",
+            "segment": "hydration",
+            "current_share": 9.2,
+            "baseline_mean": 2.3,
+            "z_score": 1.8,
             "direction": "above"
           }
         ],
@@ -711,8 +727,8 @@
             "rejects": 56,
             "inspected": 2554,
             "rate_pct": 2.19,
-            "p_bar_pct": 2.37,
-            "ucl_pct": 8.22,
+            "p_bar_pct": 2.45,
+            "ucl_pct": 8.54,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -721,7 +737,7 @@
             "rejects": 12,
             "inspected": 2554,
             "rate_pct": 0.47,
-            "p_bar_pct": 1.01,
+            "p_bar_pct": 1.0,
             "ucl_pct": 3.22,
             "lcl_pct": 0.0,
             "out_of_control": false,
@@ -732,7 +748,7 @@
             "inspected": 2554,
             "rate_pct": 0.47,
             "p_bar_pct": 0.71,
-            "ucl_pct": 2.29,
+            "ucl_pct": 2.33,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -741,8 +757,8 @@
             "rejects": 12,
             "inspected": 2554,
             "rate_pct": 0.47,
-            "p_bar_pct": 0.49,
-            "ucl_pct": 1.64,
+            "p_bar_pct": 0.47,
+            "ucl_pct": 1.62,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 4
@@ -751,8 +767,8 @@
             "rejects": 37,
             "inspected": 2554,
             "rate_pct": 1.45,
-            "p_bar_pct": 0.56,
-            "ucl_pct": 2.03,
+            "p_bar_pct": 0.53,
+            "ucl_pct": 2.11,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 5
@@ -761,8 +777,8 @@
             "rejects": 12,
             "inspected": 2554,
             "rate_pct": 0.47,
-            "p_bar_pct": 0.43,
-            "ucl_pct": 1.55,
+            "p_bar_pct": 0.41,
+            "ucl_pct": 1.51,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 6
@@ -772,7 +788,7 @@
             "inspected": 2554,
             "rate_pct": 0.51,
             "p_bar_pct": 0.4,
-            "ucl_pct": 1.59,
+            "ucl_pct": 1.6,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 7
@@ -781,8 +797,8 @@
             "rejects": 11,
             "inspected": 2554,
             "rate_pct": 0.43,
-            "p_bar_pct": 0.4,
-            "ucl_pct": 1.56,
+            "p_bar_pct": 0.38,
+            "ucl_pct": 1.51,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 8
@@ -791,8 +807,8 @@
             "rejects": 14,
             "inspected": 2554,
             "rate_pct": 0.55,
-            "p_bar_pct": 0.79,
-            "ucl_pct": 3.13,
+            "p_bar_pct": 0.69,
+            "ucl_pct": 2.86,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 9
@@ -801,8 +817,8 @@
             "rejects": 12,
             "inspected": 2554,
             "rate_pct": 0.47,
-            "p_bar_pct": 0.4,
-            "ucl_pct": 1.55,
+            "p_bar_pct": 0.36,
+            "ucl_pct": 1.4,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 10
@@ -1625,16 +1641,16 @@
             }
           ],
           "ucl": [
-            12.27,
-            3.86,
-            3.29,
-            3.75,
-            2.9,
-            3.54,
-            4.82,
-            3.23,
-            4.04,
-            3.1
+            2.79,
+            2.22,
+            1.49,
+            2.1,
+            1.43,
+            1.86,
+            0.81,
+            1.44,
+            1.9,
+            1.36
           ],
           "lcl": [
             0.0,
@@ -1643,7 +1659,7 @@
             0.0,
             0.0,
             0.0,
-            0.0,
+            0.06,
             0.0,
             0.0,
             0.0
@@ -1657,8 +1673,8 @@
             "rejects": 8,
             "inspected": 2554,
             "rate_pct": 0.31,
-            "p_bar_pct": 0.27,
-            "ucl_pct": 1.16,
+            "p_bar_pct": 0.25,
+            "ucl_pct": 1.02,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 1
@@ -1667,7 +1683,7 @@
             "rejects": 7,
             "inspected": 2554,
             "rate_pct": 0.27,
-            "p_bar_pct": 0.26,
+            "p_bar_pct": 0.27,
             "ucl_pct": 1.16,
             "lcl_pct": 0.0,
             "out_of_control": false,
@@ -1677,8 +1693,8 @@
             "rejects": 1,
             "inspected": 2554,
             "rate_pct": 0.04,
-            "p_bar_pct": 0.33,
-            "ucl_pct": 1.66,
+            "p_bar_pct": 0.53,
+            "ucl_pct": 2.76,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -1687,8 +1703,8 @@
             "rejects": 7,
             "inspected": 2554,
             "rate_pct": 0.27,
-            "p_bar_pct": 0.44,
-            "ucl_pct": 1.82,
+            "p_bar_pct": 0.43,
+            "ucl_pct": 1.86,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 4
@@ -1697,8 +1713,8 @@
             "rejects": 2,
             "inspected": 2554,
             "rate_pct": 0.08,
-            "p_bar_pct": 0.39,
-            "ucl_pct": 1.93,
+            "p_bar_pct": 0.31,
+            "ucl_pct": 1.59,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 5
@@ -1708,7 +1724,7 @@
             "inspected": 2554,
             "rate_pct": 0.23,
             "p_bar_pct": 0.18,
-            "ucl_pct": 0.76,
+            "ucl_pct": 0.74,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 6
@@ -1718,7 +1734,7 @@
             "inspected": 2554,
             "rate_pct": 0.0,
             "p_bar_pct": 0.17,
-            "ucl_pct": 0.8,
+            "ucl_pct": 0.79,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 7
@@ -1728,7 +1744,7 @@
             "inspected": 2554,
             "rate_pct": 0.35,
             "p_bar_pct": 0.19,
-            "ucl_pct": 0.75,
+            "ucl_pct": 0.74,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 8
@@ -1738,7 +1754,7 @@
             "inspected": 2554,
             "rate_pct": 0.04,
             "p_bar_pct": 0.17,
-            "ucl_pct": 0.77,
+            "ucl_pct": 0.76,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 9
@@ -1747,8 +1763,8 @@
             "rejects": 19,
             "inspected": 2554,
             "rate_pct": 0.74,
-            "p_bar_pct": 0.76,
-            "ucl_pct": 3.64,
+            "p_bar_pct": 0.85,
+            "ucl_pct": 4.05,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 10
@@ -2571,16 +2587,16 @@
             }
           ],
           "ucl": [
-            0.49,
-            0.31,
-            1.05,
-            0.85,
+            0.58,
+            0.53,
+            3.43,
+            0.83,
             0.43,
-            0.25,
-            0.91,
-            0.11,
-            0.73,
-            1.68
+            0.31,
+            0.92,
+            0.26,
+            0.84,
+            2.28
           ],
           "lcl": [
             0.0,
@@ -2603,8 +2619,8 @@
             "rejects": 415,
             "inspected": 5622,
             "rate_pct": 7.38,
-            "p_bar_pct": 0.79,
-            "ucl_pct": 3.12,
+            "p_bar_pct": 0.96,
+            "ucl_pct": 3.54,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 1
@@ -2613,7 +2629,7 @@
             "rejects": 135,
             "inspected": 5622,
             "rate_pct": 2.4,
-            "p_bar_pct": 0.4,
+            "p_bar_pct": 0.43,
             "ucl_pct": 1.86,
             "lcl_pct": 0.0,
             "out_of_control": true,
@@ -2623,8 +2639,8 @@
             "rejects": 163,
             "inspected": 5622,
             "rate_pct": 2.9,
-            "p_bar_pct": 0.68,
-            "ucl_pct": 3.04,
+            "p_bar_pct": 0.73,
+            "ucl_pct": 2.98,
             "lcl_pct": 0.0,
             "out_of_control": false,
             "lane": 3
@@ -2633,8 +2649,8 @@
             "rejects": 139,
             "inspected": 5622,
             "rate_pct": 2.47,
-            "p_bar_pct": 0.4,
-            "ucl_pct": 1.7,
+            "p_bar_pct": 0.45,
+            "ucl_pct": 1.85,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 4
@@ -2643,8 +2659,8 @@
             "rejects": 209,
             "inspected": 5622,
             "rate_pct": 3.72,
-            "p_bar_pct": 0.6,
-            "ucl_pct": 2.8,
+            "p_bar_pct": 0.69,
+            "ucl_pct": 3.06,
             "lcl_pct": 0.0,
             "out_of_control": true,
             "lane": 5
@@ -3167,16 +3183,16 @@
             }
           ],
           "ucl": [
-            6.84,
-            6.93,
-            7.16,
-            6.77,
-            6.76
+            2.63,
+            0.98,
+            0.85,
+            1.01,
+            1.75
           ],
           "lcl": [
+            0.33,
             0.0,
-            0.0,
-            0.0,
+            0.06,
             0.0,
             0.0
           ],
