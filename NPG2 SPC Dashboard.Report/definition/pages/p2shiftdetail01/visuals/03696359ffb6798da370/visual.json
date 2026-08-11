@@ -33,7 +33,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Statistical process control \u00b7 reject rate % by lane",
+                    "value": "Statistical process control · reject rate % by lane",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13px",

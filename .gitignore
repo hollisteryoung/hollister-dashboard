@@ -16,3 +16,15 @@ venv/
 # ad-hoc debug scratch dumped at repo root during troubleshooting sessions
 /_*.log
 /_val.json
+
+# refresh bookkeeping and the rolling 15-minute SPC snapshot store — machine-local
+# state, and in Fabric the snapshot history lives in the Gold Delta tables instead
+powerbi_data/.last_refresh*
+powerbi_data/.refresh.lock*
+output/analyses/*/spc_snapshots/
+
+# duckdb-vs-pyodbc parity artefacts (bin/verify_duckdb_parity.py)
+output/analyses/*/_parity_*.json
+
+# generated Fabric definition parts (rebuilt by fabric_jobs/deploy/generate_dataflow.py)
+fabric_jobs/deploy/build/

@@ -12,12 +12,6 @@ table Shifts
 		summarizeBy: none
 		sourceColumn: ShiftKey
 
-	column SnapshotKey
-		dataType: string
-		lineageTag: d7e8f9a0-b1c2-43d4-e5f6-071829304152
-		summarizeBy: none
-		sourceColumn: SnapshotKey
-
 	column LineId
 		dataType: string
 		lineageTag: 90b5f852-80f2-41ed-9ac6-85f9d98500b2
@@ -64,18 +58,24 @@ table Shifts
 		summarizeBy: none
 		sourceColumn: LineShiftLabel
 
-	column IsLatest
-		dataType: int64
-		lineageTag: 4b5c6d7e-8f90-41a2-b3c4-d5e6f7081920
-		summarizeBy: none
-		sourceColumn: IsLatest
-
 	column WeekLabel
 		dataType: string
 		lineageTag: 1c18e427-f67f-41e5-8554-5374f717d24a
 		summarizeBy: none
 		sourceColumn: WeekLabel
 		sortByColumn: IsoWeek
+
+	column SnapshotKey
+		dataType: string
+		lineageTag: d7e8f9a0-b1c2-43d4-e5f6-071829304152
+		summarizeBy: none
+		sourceColumn: SnapshotKey
+
+	column IsLatest
+		dataType: int64
+		lineageTag: 4b5c6d7e-8f90-41a2-b3c4-d5e6f7081920
+		summarizeBy: none
+		sourceColumn: IsLatest
 
 	partition Shifts = m
 		mode: import

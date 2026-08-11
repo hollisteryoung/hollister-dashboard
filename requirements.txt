@@ -3,3 +3,10 @@ pandas==3.0.3
 pyodbc==5.3.0
 scikit-learn==1.8.0
 matplotlib==3.11.0
+
+# Fabric/Lakehouse path only (DB_BACKEND=duckdb) — not needed for the live SQL
+# pipeline. Versions pinned to match fabric_jobs/notebook_bootstrap.py so the
+# notebook and local parity runs use the same engines.
+duckdb==1.5.5
+deltalake==1.6.2
+pyarrow==25.0.1

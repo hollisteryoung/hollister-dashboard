@@ -3,7 +3,7 @@
   "name": "7f9dcd3b62e1c33452d8",
   "position": {
     "x": 28,
-    "y": 900.0,
+    "y": 900,
     "z": 20100,
     "height": 30,
     "width": 900,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Vision System SPC (Stn 041 Print Inspection) \u2014 reject rate % by lane",
+                    "value": "Vision System SPC (Stn 041 Print Inspection) — reject rate % by lane",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "15px",

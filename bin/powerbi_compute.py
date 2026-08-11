@@ -64,6 +64,10 @@ SHIFTS = os.path.join("bin", "render_all_shifts.py")
 
 
 def have_db():
+    # The duckdb backend reads Delta tables out of an attached Fabric Lakehouse,
+    # which is reached by workspace identity — there is no password to check.
+    if os.environ.get("DB_BACKEND", "").strip().lower() == "duckdb":
+        return True
     return bool(os.environ.get("DB_PASSWORD") or os.environ.get("MSSQL_SA_PASSWORD"))
 
 

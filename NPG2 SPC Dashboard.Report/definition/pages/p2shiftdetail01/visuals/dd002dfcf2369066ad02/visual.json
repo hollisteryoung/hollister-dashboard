@@ -3,7 +3,7 @@
   "name": "dd002dfcf2369066ad02",
   "position": {
     "x": 28,
-    "y": 524.0,
+    "y": 524,
     "z": 20100,
     "height": 30,
     "width": 900,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Camera Reject SPC (Cap Orientation) \u2014 reject rate % by lane",
+                    "value": "Camera Reject SPC (Cap Orientation) — reject rate % by lane",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "15px",

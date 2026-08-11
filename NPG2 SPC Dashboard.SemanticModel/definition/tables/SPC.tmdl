@@ -26,12 +26,6 @@ table SPC
 		formatString: 0
 		lineageTag: ea4eb6ef-e185-42f5-ba74-34898303ef82
 
-	column SnapshotKey
-		dataType: string
-		lineageTag: e8f9a0b1-c2d3-44e5-f607-182930415263
-		summarizeBy: none
-		sourceColumn: SnapshotKey
-
 	column LineId
 		dataType: string
 		lineageTag: 89874f18-0abc-42d7-8cb2-8fc8997910f3
@@ -115,6 +109,12 @@ table SPC
 		lineageTag: ff064765-9104-4178-a101-bc956e03fa58
 		summarizeBy: none
 		sourceColumn: LineShiftLabel
+
+	column SnapshotKey
+		dataType: string
+		lineageTag: e8f9a0b1-c2d3-44e5-f607-182930415263
+		summarizeBy: none
+		sourceColumn: SnapshotKey
 
 	column IsLatest
 		dataType: int64

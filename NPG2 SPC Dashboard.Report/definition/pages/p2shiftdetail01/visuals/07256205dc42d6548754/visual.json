@@ -3,7 +3,7 @@
   "name": "07256205dc42d6548754",
   "position": {
     "x": 28,
-    "y": 148.0,
+    "y": 148,
     "z": 20100,
     "height": 30,
     "width": 900,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Nozzle Reject SPC (Laney p\u2032) \u2014 reject rate % by lane",
+                    "value": "Nozzle Reject SPC (Laney p′) — reject rate % by lane",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "15px",

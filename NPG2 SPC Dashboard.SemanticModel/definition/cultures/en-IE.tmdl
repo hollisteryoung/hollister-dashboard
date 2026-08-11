@@ -1939,16 +1939,6 @@ cultureInfo en-IE
 			            },
 			            "Weight": 0.605
 			          }
-			        },
-			        {
-			          "Downtime": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },

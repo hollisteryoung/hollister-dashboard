@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, os.path.normpath(os.path.join(os.path.dirname(__file__), '..')))
-from core.db import query
+from core.db import query, top_clause, limit_clause
 from core.lines import get_line_config, get_table, get_col
 from domain.shifts import assign_shift
 
@@ -331,9 +331,10 @@ def _lanes_at_last_block_before(conn, tbl, name_col, counter_col, rep_name,
     timestamp index first and only fall back to this if that lookup missed.
     """
     df_bk = query(conn, f"""
-    SELECT TOP 1 block_id FROM {tbl}
+    SELECT {top_clause(1)} block_id FROM {tbl}
     WHERE {name_col} = ? AND t_stamp < ?
     ORDER BY block_id DESC
+    {limit_clause(1)}
     """, params=[rep_name, before_ts_str])
     if df_bk.empty:
         return None
@@ -581,8 +582,9 @@ def _collect_counter_subgroups(conn, table_key, counter_col, name_col,
         return None
 
     df_sample = query(conn, f"""
-    SELECT TOP 1 {name_col} AS name FROM {tbl}
+    SELECT {top_clause(1)} {name_col} AS name FROM {tbl}
     WHERE {name_col} LIKE ? ORDER BY row_id
+    {limit_clause(1)}
     """, params=[counter_pattern])
     if len(df_sample) == 0:
         return None
@@ -740,9 +742,10 @@ def _collect_camera_dual(conn, params, excluded_days=None, shift_boundaries=None
         if b is not None and b in cache:
             return cache[b]
         df_bk = query(conn, f"""
-        SELECT TOP 1 block_id FROM {tbl}
+        SELECT {top_clause(1)} block_id FROM {tbl}
         WHERE {name_col} = ? AND t_stamp < ?
         ORDER BY block_id DESC
+        {limit_clause(1)}
         """, params=[reset_name, before_ts_str])
         if df_bk.empty:
             return None
