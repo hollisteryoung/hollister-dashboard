@@ -8,11 +8,31 @@
 
 On a recent call we tried to add the NGP2 SPC dashboard to the enterprise
 gateway and couldn't, because its data source was a **Python script**. I said I
-would remove the Python data source so it could be added. **That is now done** —
-the dashboard no longer uses a Python data source at all, and the gateway host
-needs no Python runtime.
+would remove the Python data source so it could be added.
 
-What the gateway now needs to serve is an ordinary **SQL Server** connection.
+**The rewrite is complete and tested, but not yet published — so if you look at
+the `NPG2 SPC Dashboard` semantic model in the Smart Factory workspace today, it
+will still show the Python source. That is expected.** It cannot be switched over
+until the new connection exists, because the replacement reads from a Fabric
+Lakehouse that this connection is what fills. Chicken and egg.
+
+**Importantly, the connection I'm asking for is not for that semantic model.** It
+is for a new **Dataflow Gen2** item that doesn't exist yet. Nothing about the
+existing model needs to change for you to create the connection, and creating it
+does not affect the existing model or report.
+
+Sequence:
+
+1. You create the SQL Server connection (this request) — nothing else changes
+2. I build the Dataflow against it, which fills a Lakehouse
+3. I repoint the semantic model at that Lakehouse — **at which point the Python
+   source disappears from the model entirely**
+4. The gateway is then only ever doing a plain SQL read
+
+If it would help to see step 3 before doing step 1, say so — I can publish a
+side-by-side copy of the model that reads from the Lakehouse, with no Python
+source, for you to inspect. It won't refresh automatically until this connection
+exists, but you can confirm the data source is a plain Lakehouse read.
 
 ## What is being asked for
 
