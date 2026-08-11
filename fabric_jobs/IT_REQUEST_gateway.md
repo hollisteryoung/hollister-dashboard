@@ -26,6 +26,14 @@ Step 2 matters and is easy to miss: without it the connection exists but is
 invisible to me, and a dataflow cannot be bound to it. (Currently my account sees
 zero gateways and zero SQL connections — see the bottom of this document.)
 
+**To be clear on scope: I do not need any gateway-level role.** Per Microsoft's
+guidance, "a user who just needs to use the gateway to connect to a data source
+doesn't need to belong to a gateway role — in this case they'll only have the
+*User* connection role." So I am not asking to be a gateway admin or a connection
+creator; just the **User** role on this one connection, which allows using it and
+nothing else. Connection roles are managed from **Manage connections and
+gateways**, or the Power Platform admin center under Data Gateways.
+
 ### Connection details
 
 | Field | Value |
