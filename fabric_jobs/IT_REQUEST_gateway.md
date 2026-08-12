@@ -133,6 +133,27 @@ rejection rather than a warning.
 | Apr 2026 | 3000.314 |
 | **Jun 2026 (latest)** | **3000.322** |
 
+### What specifically is blocked
+
+**Dataflow Gen2 with CI/CD support.** Microsoft tied those capabilities to the
+**October 2025 gateway release, `3000.290`**. The installed version is
+`3000.286` (September 2025) — **one release short of the requirement**.
+
+There is no way to avoid this by using an older dataflow type: as of **April
+2026 Microsoft removed the option to create non-CI/CD ("Classic") Dataflow Gen2
+items**. All new Dataflow Gen2 items are CI/CD by default, so any dataflow we
+create now requires `3000.290` or later.
+
+Note the minimum version quoted in older community threads — `3000.182.5` — is
+for *classic* Gen2 and is not the relevant figure here. The installed gateway
+clears that easily; it's the CI/CD requirement and the support window it misses.
+
+So there are two independent reasons the update is needed:
+
+1. **Specific:** CI/CD Dataflow Gen2 requires ≥ `3000.290`; installed is `3000.286`
+2. **General:** 11 months old is roughly four releases outside Microsoft's
+   six-release support window
+
 ### Request
 
 Update **HOLL_PBI_GATEWAY (Primary)** to **3000.322**.
@@ -156,6 +177,21 @@ are all working. Nothing about this request is caused by those failing — the
 gateway is healthy for its existing load and simply too old for Fabric
 Dataflow Gen2, a newer workload. Updating brings it back inside Microsoft's
 support window, which is worth doing independently of this project.
+
+### No firewall change should be needed
+
+Dataflow Gen2 sometimes additionally requires outbound **TCP 1433** from the
+gateway host to `*.datawarehouse.pbidedicated.windows.net`,
+`*.datawarehouse.fabric.microsoft.com` and `*.dfs.fabric.microsoft.com`. If that
+is blocked it surfaces as a *new* failure straight after the update, so it is
+worth knowing about up front.
+
+**This design deliberately avoids that requirement.** Per Microsoft's
+documentation, port 1433 is not needed when a dataflow's queries do not
+reference each other and Fast Copy is disabled. Ours is exactly that shape: five
+independent queries, each reading one table and writing its own destination, no
+cross-references, Fast Copy off. Fast Copy should stay disabled for this reason
+as well as to keep the data volume small.
 
 ## What this is not
 
