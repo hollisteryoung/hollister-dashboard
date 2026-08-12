@@ -93,3 +93,36 @@ a nod.
 | "Nothing changed" | "The numbers are identical; the plumbing changed" |
 | "It's just a permissions thing" | "A new SQL connection, plus access for me to use it" |
 | "It'll be live today" | "Once the connection exists, I can wire it up" |
+
+## Round 2 — the connection exists, refresh still fails (2026-08-12)
+
+IT created the SQL connection and granted access. Confirmed working on our side:
+the connection is visible, and its credentials have genuinely been used from this
+account. That part is done — don't re-ask for it.
+
+But every refresh attempt against it has failed. Three attempts, three failures,
+none transient (retried twice back-to-back, same result both times):
+
+- First attempt: explicit `UnsupportedGatewayVersion`
+- Two retries on the same dataflow: generic `EntityUserFailure` ("something went
+  wrong, please try again later")
+
+Neither of us has visibility into the gateway itself (that needs a gateway-level
+role, which is a separate thing from the connection-level access already
+granted) — the portal shows "Online" for the gateway, but that only means the
+service is running and connected, not which version is installed. The first
+error named the version specifically, and Microsoft documents both later errors
+as generic symptoms of the same class of problem (outdated or unhealthy
+gateway).
+
+### The ask — no Fabric portal access needed for this one
+
+> "Refreshing this still fails — the first attempt named the cause directly:
+> the gateway version isn't supported. Could someone open the On-premises Data
+> Gateway app on the gateway machine itself? The Status tab shows the installed
+> version and has a 'Check for updates' button right there. If it's behind,
+> updating it should be enough — no Fabric changes needed on your end beyond
+> that."
+
+This doesn't require any Fabric/Power BI role at all — just local access to the
+gateway host, which whoever manages it already has.
