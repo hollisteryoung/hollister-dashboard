@@ -53,6 +53,34 @@ on-premises source.
 | F | VNet data gateway | different | — | Needs on-prem reachable from an Azure VNet (ExpressRoute/VPN) |
 | G | Mirroring for SQL Server | yes | unverified | Continuous replication; heavier than needed, and version floor unknown |
 
+### Copy activity is also markedly cheaper than Dataflow Gen2
+
+This matters because capacity is the binding constraint. Measured comparisons put
+Copy activity at roughly **4.6× cheaper than Dataflow Gen2** for SQL Server
+ingestion, and Gen2 at **5–9× the CU of an equivalent Gen1 dataflow**.
+
+The reason is Gen2's billing model — it charges across several engines at once,
+approximately:
+
+```
+(Mashup hours × 16) + (SQL hours × 6) + (FastCopy hours × 1.5)
+```
+
+Gen2 **stages data by default**, pushing it through both the Mashup engine and a
+Warehouse SQL engine. Staging is reported as the single largest avoidable
+multiplier, on the order of 700 CU of overhead per run. (The
+`StagingLakehouseForDataflows` and `StagingWarehouseForDataflows` items already in
+the workspace are that machinery.) Copy activity has none of it for a Lakehouse
+destination.
+
+At 96 runs per day the difference compounds directly onto the resource IT says is
+exhausted. So even once the gateway is updated and Gen2 becomes available, **Copy
+activity remains the better choice on cost grounds alone.**
+
+> The ~4.6× *ratio* is the reliable finding and is expected to hold across SKU
+> sizes. Absolute CU figures for this specific workload need measuring once it
+> runs — the published benchmarks used different data volumes.
+
 Two things to confirm when testing B:
 
 - Outbound `*.frontend.clouddatahub.net` must be allowed from the gateway host.
@@ -69,7 +97,7 @@ With local compute ruled out, this has to run inside Fabric.
 | # | Option | Suitability |
 |---|---|---|
 | 1 | **Python notebook + DuckDB** | **Correct choice.** Starts in seconds; reuses the existing pipeline unchanged via `DB_BACKEND=duckdb`; parity already verified as numerically identical |
-| 2 | PySpark notebook | Rejected — 1–2 minute cold start is a large slice of a 15-minute window, for no benefit at this data size |
+| 2 | PySpark notebook | Rejected — 1–2 minute cold start is a large slice of a 15-minute window, for no benefit at this data size. **Also a cost decision:** in published benchmarks the Spark-session notebook burned ~46% more CU than Copy activity purely from spinning up Spark. A Python notebook avoids that penalty |
 | 3 | Rewrite SPC maths in SQL / Warehouse | Rejected — the counter-reset detection and Laney p′ logic are intricate; parity was verified specifically to avoid reimplementing them |
 | 4 | Local machine | Ruled out by constraint |
 
