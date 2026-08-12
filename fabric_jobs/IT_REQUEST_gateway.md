@@ -104,6 +104,59 @@ Gateway  ──SQL Server read──>  Fabric Dataflow Gen2  ──>  Lakehouse
                                        Power BI report  <───┘
 ```
 
+## Follow-up (2026-08-12): gateway update required
+
+The SQL connection now works — credentials and permissions are confirmed good,
+and the source query previews real data successfully. Refresh still fails, with
+Fabric returning:
+
+```
+UnsupportedGatewayVersion
+"The gateway version you are using is not supported. Please update to the
+ latest on-prem gateway version and try again."
+```
+
+Gateway: **HOLL_PBI_GATEWAY (Primary)**, id
+`23abfba2-f963-4c8d-ac82-acfbbf7e33e2`, version **3000.286.14**.
+
+**That is the September 2025 release — 11 months old.** Microsoft ships monthly
+and supports only the **last six releases** (currently ~Jan–Jun 2026), so this
+version sits roughly four releases below the oldest supported one. Hence a hard
+rejection rather than a warning.
+
+| Release | Version |
+|---|---|
+| **Installed — Sept 2025** | **3000.286** |
+| Jan 2026 | 3000.302 |
+| Feb 2026 | 3000.306 |
+| Mar 2026 | 3000.310 |
+| Apr 2026 | 3000.314 |
+| **Jun 2026 (latest)** | **3000.322** |
+
+### Request
+
+Update **HOLL_PBI_GATEWAY (Primary)** to **3000.322**.
+
+Practical notes:
+
+- **The portal's "update gateway" button will not work for this jump.**
+  UI-triggered updates require the November 2025 baseline or later; 3000.286
+  predates it. This first update must be run from the **installer on the gateway
+  host**. Subsequent updates can then be triggered from the portal.
+- Existing connections and configuration are **preserved** — it is an in-place
+  upgrade, not a reinstall.
+- Requires **10 GB free disk** on the gateway host.
+- Multi-member cluster: disable one member, allow in-flight work to drain
+  (~30 minutes is enough for most workloads), update it, then repeat.
+
+### Scope of impact
+
+This gateway currently serves ~32 connections (files, SharePoint, ODBC) which
+are all working. Nothing about this request is caused by those failing — the
+gateway is healthy for its existing load and simply too old for Fabric
+Dataflow Gen2, a newer workload. Updating brings it back inside Microsoft's
+support window, which is worth doing independently of this project.
+
 ## What this is not
 
 - **Not a Python data source.** This is the change that unblocks what we tried on
