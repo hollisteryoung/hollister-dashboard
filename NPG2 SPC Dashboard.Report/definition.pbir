@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
   "version": "4.0",
   "datasetReference": {
-    "byPath": {
-      "path": "../NPG2 SPC Dashboard.SemanticModel"
+    "byConnection": {
+      "connectionString": "semanticmodelid=1c5363ab-60d3-4a82-a673-4f1e6f7d00d8"
     }
   }
 }

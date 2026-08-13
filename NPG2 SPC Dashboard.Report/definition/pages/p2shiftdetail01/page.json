@@ -20,8 +20,6 @@
           }
         },
         "type": "Categorical",
-        "isLockedInViewMode": true,
-        "isHiddenInViewMode": true,
         "filter": {
           "Version": 2,
           "From": [
@@ -61,7 +59,9 @@
             }
           ]
         },
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true
       },
       {
         "name": "9d4e2f7a1c6b4058b3e0",
@@ -76,8 +76,6 @@
           }
         },
         "type": "Categorical",
-        "isLockedInViewMode": true,
-        "isHiddenInViewMode": true,
         "filter": {
           "Version": 2,
           "From": [
@@ -117,7 +115,9 @@
             }
           ]
         },
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true
       },
       {
         "name": "c4d5e6f7a8b940516273",
@@ -132,8 +132,6 @@
           }
         },
         "type": "Categorical",
-        "isLockedInViewMode": true,
-        "isHiddenInViewMode": true,
         "filter": {
           "Version": 2,
           "From": [
@@ -173,7 +171,9 @@
             }
           ]
         },
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true
       }
     ]
   },
@@ -196,6 +196,33 @@
             "expr": {
               "Literal": {
                 "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pageRefresh": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "duration": {
+            "expr": {
+              "Literal": {
+                "Value": "'PT15M'"
+              }
+            }
+          },
+          "refreshType": {
+            "expr": {
+              "Literal": {
+                "Value": "'CDM'"
               }
             }
           }
