@@ -109,6 +109,31 @@ def _discover_delta_tables(root):
             yield name, f"read_parquet('{posix}/**/*.parquet')"
 
 
+def _naive_projection(con, scan):
+    """Select list that strips any timezone tag, or None if there is nothing to strip.
+
+    The Ignition historian stores wall-clock *local* time in naive columns, and
+    pyodbc hands those back naive — which is the representation every timestamp
+    comparison in this codebase was written against and verified on.
+
+    A Fabric Copy activity, however, writes those same naive values into Parquet as
+    UTC-adjusted, so DuckDB reads them as TIMESTAMP WITH TIME ZONE. The clock value
+    is intact but the label is wrong, and any session in a non-UTC timezone would
+    then shift every timestamp by the offset. Casting back to a naive TIMESTAMP at
+    UTC recovers exactly the pyodbc representation. Paired with `SET TimeZone='UTC'`
+    below so the cast cannot depend on the host's zone.
+    """
+    cols = con.execute(f"DESCRIBE SELECT * FROM {scan}").fetchall()
+    if not any(str(c[1]).upper() == "TIMESTAMP WITH TIME ZONE" for c in cols):
+        return None
+    parts = []
+    for name, dtype, *_ in cols:
+        q = f'"{name}"'
+        parts.append(f"{q}::TIMESTAMP AS {q}"
+                     if str(dtype).upper() == "TIMESTAMP WITH TIME ZONE" else q)
+    return ", ".join(parts)
+
+
 def _duckdb_connection():
     import duckdb
 
@@ -121,16 +146,25 @@ def _duckdb_connection():
         # Parquet-only local export needs no extension.
         print(f"  note: delta extension unavailable ({e})", file=sys.stderr)
 
+    # Fixes the reference point for the timezone strip in _naive_projection(), so
+    # the same Bronze table reads identically on a workstation and in a notebook.
+    con.execute("SET TimeZone='UTC'")
+
     # The line configs qualify every table as `dbo.<name>`, so mirror that schema
     # here and the existing query text resolves unchanged.
     con.execute("CREATE SCHEMA IF NOT EXISTS dbo")
-    registered = 0
+    registered = normalised = 0
     for name, scan in _discover_delta_tables(root):
-        con.execute(f'CREATE OR REPLACE VIEW dbo."{name}" AS SELECT * FROM {scan}')
+        projection = _naive_projection(con, scan)
+        if projection:
+            normalised += 1
+        con.execute(f'CREATE OR REPLACE VIEW dbo."{name}" AS '
+                    f"SELECT {projection or '*'} FROM {scan}")
         registered += 1
     if registered == 0:
         raise RuntimeError(f"no Delta/Parquet tables found under {root}")
-    print(f"  duckdb backend: {registered} table(s) registered from {root}")
+    print(f"  duckdb backend: {registered} table(s) registered from {root}"
+          + (f" ({normalised} timezone-normalised)" if normalised else ""))
     return con
 
 
