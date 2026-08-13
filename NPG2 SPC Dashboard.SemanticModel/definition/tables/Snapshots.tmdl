@@ -28,13 +28,9 @@ table Snapshots
 		summarizeBy: none
 		sourceColumn: IsLatestSnapshot
 
-	partition Snapshots = m
-		mode: import
-		source =
-				let
-					Source = PBISource,
-					Data = Source{[Name="Snapshots"]}[Value],
-					Typed = Table.TransformColumnTypes(Data, {{"SnapshotKey", type text}, {"SnapshotTime", type datetime}, {"SnapshotLabel", type text}, {"IsLatestSnapshot", Int64.Type}})
-				in
-					Typed
+	partition Snapshots = entity
+		mode: directLake
+		source
+			entityName: gold_Snapshots
+			expressionSource: 'DirectLake - NPG2 SPC Dashboard'
 

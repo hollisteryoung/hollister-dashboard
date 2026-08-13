@@ -28,3 +28,8 @@ output/analyses/*/_parity_*.json
 
 # generated Fabric definition parts (rebuilt by fabric_jobs/deploy/generate_dataflow.py)
 fabric_jobs/deploy/build/
+
+# pre-conversion TMDL saved by convert_model_to_directlake.py's --revert path —
+# redundant with git history (the prior commit already has the Import-mode
+# version), kept locally only as a same-machine convenience
+*.import.bak

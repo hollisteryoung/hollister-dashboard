@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Shifts","SPC","Lines","Snapshots","PBISource"]
+annotation PBI_QueryOrder = ["Shifts","SPC","Lines","Snapshots"]
 
 ref table Shifts
 ref table SPC

@@ -122,13 +122,9 @@ table SPC
 		summarizeBy: none
 		sourceColumn: IsLatest
 
-	partition SPC = m
-		mode: import
-		source =
-				let
-					Source = PBISource,
-					Data = Source{[Name="SPC"]}[Value],
-					Typed = Table.TransformColumnTypes(Data, {{"SnapshotKey", type text}, {"LineId", type text}, {"Line", type text}, {"Panel", type text}, {"ShiftLabel", type text}, {"Lane", Int64.Type}, {"Rejects", Int64.Type}, {"RatePct", type number}, {"UclPct", type number}, {"OOC", Int64.Type}, {"NInspected", Int64.Type}, {"OOCColor", type text}, {"ShiftIdx", Int64.Type}, {"PBar", type number}, {"LineShiftLabel", type text}, {"IsLatest", Int64.Type}})
-				in
-					Typed
+	partition SPC = entity
+		mode: directLake
+		source
+			entityName: gold_SPC
+			expressionSource: 'DirectLake - NPG2 SPC Dashboard'
 

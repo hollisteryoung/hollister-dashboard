@@ -1,30 +1,56 @@
 # NGP2 SPC Dashboard — Fabric-native refresh
 
-## Status (2026-08-13)
+## Status (2026-08-13) — LIVE
 
-**Two ingestion routes exist. The Copy-activity one does not need the gateway
-update; the Dataflow Gen2 one does.**
+**The migration is complete and running.** The published `NPG2 SPC Dashboard`
+semantic model reads Direct Lake from `NGP2SPCLakehouse`; the `Python.Execute`
+source (`PBISource`) has been deleted from the live model, not just superseded.
+The `NGP2 SPC 15min` pipeline is scheduled every 15 minutes.
 
-| Route | Gateway floor | Installed `3000.286.14` | State |
-|---|---|---|---|
-| **Pipeline Copy activity** ★ | `3000.214.2` | ✓ clears it | Deployed to the tenant; **never executed** |
-| Dataflow Gen2 (CI/CD) | `3000.290` | ✗ one release short | Built; blocked on `UnsupportedGatewayVersion` |
+| Step | State |
+|---|---|
+| Bronze backfill (Copy activity through the gateway) | ✅ ran, 3.9M rows, 79 days |
+| 15-min incremental pipeline (Copy → merge → Gold) | ✅ completed end to end, scheduled |
+| Gold table schemas | ✅ declared explicitly, stable at 0 rows and populated ([`spc_gold_refresh.py`](spc_gold_refresh.py) `GOLD_SCHEMAS`) |
+| Semantic model → Direct Lake | ✅ **done directly against the live/published model** via TOM (not via Desktop publish — see below), verified with live DAX queries |
+| Schedule | ✅ enabled, 15 min, GMT Standard Time |
+| `gold_SPC` populated with real rows | ⏳ pending — needs 3 producing shifts in the 7-day window (`N_DAYS`); the 2026-08-04..08-11 outage left only 2. Should clear once Day 2026-08-13 completes at 19:00 |
+| Fabric-side execution identity | ⚠️ open — pipeline/notebook run as a personal AAD account; a service principal / workspace identity should own them for production stability (raised with IT separately; unrelated to the SQL login, which is already a proper service account) |
 
-The backfill pipeline's definition was accepted by the API and read back intact
-(5 Copy activities, correct connection and Lakehouse GUIDs, staging off), so the
-JSON shape is no longer an open question. What remains untested is whether Copy
-activity actually reaches the historian through gateway `3000.286.14` — that is
-what the first run answers, and nothing downstream can be trusted until it does.
+**Two ingestion routes exist. Copy activity is live; Dataflow Gen2 remains a
+deployable, unused alternative** that would only become relevant if the gateway
+is updated past `3000.290` (installed: `3000.286.14`). Both land the same Bronze
+table names in the same Lakehouse, so nothing downstream depends on which one
+extracts. See [`OPTIONS.md`](OPTIONS.md) for the cost comparison — the ~4.6x
+figure is ingestion-only; end-to-end the notebook now dominates run time (~7–8
+of each ~15 min), so it is the better target if capacity ever becomes tight.
 
-Both land the **same Bronze table names in the same Lakehouse**, so the notebook,
-Gold tables, Direct Lake model and 15-minute schedule are shared. Choosing one
-does not discard the other — once the gateway is updated, Gen2 becomes a working
-alternative rather than a requirement, and Copy activity remains preferable on
-cost (see [`OPTIONS.md`](OPTIONS.md): ~4.6x cheaper in CU, no staging engines).
+### The Direct Lake conversion was NOT a Desktop publish
 
-Remaining blocker for either route is Fabric capacity, not code. See
-[`EVIDENCE_gateway_blocker.md`](EVIDENCE_gateway_blocker.md) for the gateway
-escalation.
+The first attempt (via `convert_model_to_directlake.py` + Desktop's PBIP
+"set up remote model" flow) failed with
+`PFE_TM_SWITCH_PARTITION_FROM_NONDIRECTLAKE_TO_DIRECTLAKE_NOT_ALLOWED` — a hard
+Analysis Services restriction: you cannot alter an **existing** table's storage
+mode from Import to Direct Lake in place, only create it fresh as Direct Lake.
+The failure aborted cleanly; nothing was left partially applied (confirmed via
+XMLA — all 4 tables still read `storageMode: Import` afterward).
+
+The fix was to connect directly to the **live, published** semantic model over
+XMLA (`ConnectFabric`) and do the migration Microsoft's restriction actually
+requires: capture every column/measure/relationship definition, **delete** the
+4 tables (cascades measures/relationships), **recreate** them as `directLake`
+entities against `gold_*`, then restore the measures and relationships from the
+captured definitions. `PBISource` was deleted afterward since nothing
+referenced it. Verified with live `TOPN`/`COUNTROWS`/measure DAX queries — not
+just that the TMDL parses, but that real rows come back correctly shaped.
+
+One quirk worth knowing: immediately after `Create`, `COUNTROWS` on a table
+returned `null` instead of a number until `RefreshWithXMLA(Full)` was run to
+force Direct Lake to *frame* (load) the underlying Parquet data — table
+metadata existing is not the same as data being loaded.
+
+The local PBIP's TMDL files match what's live (same conversion script's output),
+so opening the project in Desktop should sync without conflict now.
 
 Discovered against the live tenant:
 
@@ -153,7 +179,8 @@ the first deploy returns an error. (Lesson from the Gen2 round: only
 portal-authored items reach real gateway execution, so a portal-built Copy activity
 is the reference to diff against if it misbehaves.)
 
-## Run order
+## Run order (historical — all phases below are complete; kept as the reference
+## for rebuilding this from scratch, e.g. on a different line)
 
 ```bash
 az login --allow-no-subscriptions --tenant db08e4ba-c0c6-4893-8bbe-8f3b86b87652
@@ -167,7 +194,7 @@ python fabric_jobs/deploy/deploy_bronze.py --lakehouse-only
 # Phase B — ship the code the notebook imports
 python fabric_jobs/deploy/sync_code_to_lakehouse.py --workspace "Smart Factory"
 #   then create a *Python* notebook "NGP2 SPC Gold Refresh" with the Lakehouse
-#   attached, pasting the two cells from fabric_jobs/notebook_bootstrap.py
+#   attached, pasting the cell from fabric_jobs/notebook_bootstrap.py
 
 # Phase C — deploy both pipelines (creates nothing else, runs nothing)
 python fabric_jobs/deploy/deploy_pipeline.py
@@ -179,12 +206,24 @@ python fabric_jobs/deploy/deploy_pipeline.py --run "NGP2 SPC Bronze Backfill"
 # Phase C.2 — prove one incremental run (stage -> merge -> Gold)
 python fabric_jobs/deploy/deploy_pipeline.py --run "NGP2 SPC 15min"
 
-# Phase D — repoint the semantic model (only after gold_* tables exist)
+# Phase D — repoint the semantic model. convert_model_to_directlake.py only
+# rewrites the LOCAL TMDL files — publishing that through Desktop against an
+# EXISTING model fails with PFE_TM_SWITCH_PARTITION_FROM_NONDIRECTLAKE_TO_DIRECTLAKE_NOT_ALLOWED,
+# a hard AS restriction (cannot alter storage mode on an existing table, only
+# create fresh). What actually worked: connect to the *live* model over XMLA
+# (powerbi-modeling-mcp ConnectFabric), capture every column/measure/relationship,
+# DELETE the 4 tables (cascades), recreate them as directLake entities against
+# gold_*, restore measures/relationships from the capture, RefreshWithXMLA(Full)
+# to force Direct Lake to frame the data (COUNTROWS returns null on a table
+# that exists but has never been framed), then delete PBISource. No script for
+# this yet — it was done interactively; a script would need the same
+# capture/delete/recreate/restore/frame sequence.
 python fabric_jobs/deploy/convert_model_to_directlake.py \
     --workspace-id daff049b-5e21-4d61-8cf2-465032703de5 --lakehouse-id <guid>
-#   reversible with --revert
+#   (rewrites local TMDL only; reversible with --revert; does not by itself fix
+#   an already-published model — see above)
 
-# Phase E — schedule, only after two consecutive successful runs
+# Phase E — schedule, only after a successful run
 python fabric_jobs/deploy/deploy_pipeline.py --schedule
 ```
 
@@ -247,15 +286,33 @@ needs `export MSYS_NO_PATHCONV=1` first.
 
 ## Open items
 
-- **The gateway.** [`IT_REQUEST_gateway.md`](IT_REQUEST_gateway.md).
-- The `Sql.Database` server string must match the gateway connection's
-  registration exactly. `generate_dataflow.py` strips the ODBC `,1433` suffix and
-  says so, but confirm it against whatever IT creates.
-- Confirm the Smart Factory capacity is an F or P SKU once someone with capacity
-  admin rights can check — Direct Lake does not work on Pro or PPU.
-- The historian's latest data was **2026-08-05** (StatusBlocks only to 08-03) as
-  of 2026-08-10 — 5 days stale. Unrelated to this migration, but a 15-minute
-  cadence is pointless if the source itself has stopped advancing.
+- **`gold_SPC` has 0 rows.** Not a bug — `compute_weekly_spc()` in
+  [`weekly_analysis.py`](../src/pipelines/weekly_analysis.py) refuses to draw
+  control limits with fewer than 3 producing shifts in the `N_DAYS` window,
+  and the 2026-08-04..08-11 outage left only 2. Should clear once Day
+  2026-08-13 completes at 19:00 and the next scheduled run picks it up. If it
+  hasn't after that, something other than the shift count is wrong.
+- **Fabric-side execution identity.** The pipeline and notebook are owned by a
+  personal AAD account, so the schedule depends on that account staying valid.
+  Raised with IT as a request for a service principal or workspace identity to
+  own these items — unrelated to the SQL login (`ssu_DataViewer`), which is
+  already `credentialType: Basic` with no user passthrough and is not the gap.
+- **Duty cycle / overlap risk, accepted but not proven safe.** Each run has
+  taken 7–8 minutes against the 15-minute schedule (~50%). Delta's optimistic
+  concurrency should make an overlapping run fail rather than corrupt data if
+  Fabric's schedule doesn't itself prevent overlap, but that specific behaviour
+  hasn't been observed or verified.
+- **The gateway update is no longer blocking anything**, since Copy activity
+  clears its floor already. [`EVIDENCE_gateway_blocker.md`](EVIDENCE_gateway_blocker.md)
+  has the original evidence if the update is still pursued to bring the gateway
+  inside Microsoft's support window, and it would re-open the Dataflow Gen2
+  route as a live alternative rather than a documented one.
+- **Confirmed, not still open:** the Smart Factory capacity supports Direct
+  Lake — proven empirically by the live `RefreshWithXMLA`/DAX verification
+  above, which would not have worked on a Pro/PPU-only capacity. The
+  `Sql.Database` server string match was confirmed by the successful backfill.
+  The historian is live and advancing (extracted timestamps were minutes old
+  at backfill time), so the earlier 5-day staleness concern is resolved.
 - The interactive "rewind through snapshots" UI is still deferred. The Gold
   tables retain the 3-day history, so it remains buildable on a separate,
   unlocked page.

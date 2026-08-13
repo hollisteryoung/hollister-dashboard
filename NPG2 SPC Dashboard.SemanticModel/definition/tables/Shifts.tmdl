@@ -77,13 +77,9 @@ table Shifts
 		summarizeBy: none
 		sourceColumn: IsLatest
 
-	partition Shifts = m
-		mode: import
-		source =
-				let
-					Source = PBISource,
-					Data = Source{[Name="Shifts"]}[Value],
-					Typed = Table.TransformColumnTypes(Data, {{"ShiftKey", type text}, {"SnapshotKey", type text}, {"LineId", type text}, {"Line", type text}, {"ShiftDate", type date}, {"ShiftType", type text}, {"Label", type text}, {"IsoWeek", type text}, {"LineShiftLabel", type text}, {"WeekLabel", type text}, {"IsLatest", Int64.Type}})
-				in
-					Typed
+	partition Shifts = entity
+		mode: directLake
+		source
+			entityName: gold_Shifts
+			expressionSource: 'DirectLake - NPG2 SPC Dashboard'
 

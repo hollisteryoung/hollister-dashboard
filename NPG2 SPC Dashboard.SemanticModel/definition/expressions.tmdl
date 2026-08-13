@@ -1,7 +1,8 @@
-expression PBISource =
+expression 'DirectLake - NPG2 SPC Dashboard' =
 		let
-			Source = Python.Execute("import sys#(lf)sys.path.insert(0, r""C:\hollister-dashboard\bin"")#(lf)from powerbi_compute import compute_all#(lf)_t = compute_all(lines=(""ngp2"",), tables=(""Lines"",""Shifts"",""SPC"",""Snapshots""), spc_only=True)#(lf)Lines = _t[""Lines""]#(lf)SPC = _t[""SPC""]#(lf)Shifts = _t[""Shifts""]#(lf)Snapshots = _t[""Snapshots""]")
+			Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/daff049b-5e21-4d61-8cf2-465032703de5/49675f59-eded-4e77-bbb9-75f9a1fecf97", [HierarchicalNavigation = true])
 		in
 			Source
-	lineageTag: 556678d4-6abd-4361-b34a-730152289d6f
+	lineageTag: 07486648-dc52-47b3-b29d-d13078755f90
 
+	annotation PBI_IncludeFutureArtifacts = 0

@@ -22,13 +22,9 @@ table Lines
 		summarizeBy: none
 		sourceColumn: GeneratedAt
 
-	partition Lines = m
-		mode: import
-		source =
-				let
-					Source = PBISource,
-					Data = Source{[Name="Lines"]}[Value],
-					Typed = Table.TransformColumnTypes(Data, {{"LineId", type text}, {"Line", type text}, {"GeneratedAt", type text}})
-				in
-					Typed
+	partition Lines = entity
+		mode: directLake
+		source
+			entityName: gold_Lines
+			expressionSource: 'DirectLake - NPG2 SPC Dashboard'
 
