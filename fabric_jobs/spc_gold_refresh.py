@@ -35,6 +35,7 @@ import sys
 import tempfile
 
 import pandas as pd
+import pyarrow as pa
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -58,6 +59,68 @@ DATETIME_COLS = {
 
 # Retained history, matching SPC_SNAPSHOT_RETENTION_DAYS in weekly_analysis.py.
 RETENTION_DAYS = 3
+
+# Gold column types, DECLARED rather than inferred from the DataFrame.
+#
+# Inference is not usable here for two compounding reasons. An empty pandas object
+# column gives Arrow a `null` type, which delta-rs writes as Delta `"type":"void"` —
+# not a valid Delta data type, so the table cannot be read again by anything
+# (delta-rs, DuckDB's delta extension, or Direct Lake) and every later run dies with
+# `data did not match any variant of untagged enum DataType`. Substituting a
+# placeholder type avoids the corruption but leaves a worse problem: the schema would
+# then *change* between runs depending on whether the SPC panels produced rows, and a
+# Direct Lake model binds to column types. A run with 0 SPC rows would break a model
+# bound to a run with 350.
+#
+# The SPC panels legitimately return nothing whenever the line has been down for most
+# of the shift window, so 0-row Gold is normal operation, not an error path.
+#
+# Captured from a populated run (350 SPC rows). _gold_arrow() casts every write to
+# these, so an empty table and a full one are byte-compatible.
+GOLD_SCHEMAS = {
+    "Lines": pa.schema([
+        ("LineId", pa.string()),
+        ("Line", pa.string()),
+        ("GeneratedAt", pa.string()),
+    ]),
+    "Shifts": pa.schema([
+        ("ShiftKey", pa.string()),
+        ("SnapshotKey", pa.string()),
+        ("LineId", pa.string()),
+        ("Line", pa.string()),
+        ("ShiftDate", pa.timestamp("us", tz="UTC")),
+        ("ShiftType", pa.string()),
+        ("Label", pa.string()),
+        ("LineShiftLabel", pa.string()),
+        ("IsoWeek", pa.string()),
+        ("WeekLabel", pa.string()),
+        ("IsLatest", pa.int64()),
+    ]),
+    "SPC": pa.schema([
+        ("SnapshotKey", pa.string()),
+        ("LineId", pa.string()),
+        ("Line", pa.string()),
+        ("Panel", pa.string()),
+        ("ShiftLabel", pa.string()),
+        ("LineShiftLabel", pa.string()),
+        ("Lane", pa.int64()),
+        ("Rejects", pa.int64()),
+        ("RatePct", pa.float64()),
+        ("UclPct", pa.float64()),
+        ("OOC", pa.int64()),
+        ("NInspected", pa.int64()),
+        ("OOCColor", pa.string()),
+        ("ShiftIdx", pa.int64()),
+        ("PBar", pa.float64()),
+        ("IsLatest", pa.int64()),
+    ]),
+    "Snapshots": pa.schema([
+        ("SnapshotKey", pa.string()),
+        ("SnapshotTime", pa.timestamp("us", tz="UTC")),
+        ("SnapshotLabel", pa.string()),
+        ("IsLatestSnapshot", pa.int64()),
+    ]),
+}
 
 
 def _prepare_paths(bronze, gold, workdir=None):
@@ -181,33 +244,23 @@ def merge_history(new, gold):
     return merged
 
 
-def _typed_arrow(df):
-    """Arrow table with no untyped columns, so the Delta schema stays readable.
+def _gold_arrow(name, df):
+    """Cast a Gold frame to its declared schema. See GOLD_SCHEMAS for why.
 
-    A pandas `object` column carrying no values gives Arrow a `null` type, and
-    delta-rs writes that into the Delta schema as `"type":"void"`. `void` is not a
-    Delta data type, so the table it produces cannot be read again — by delta-rs,
-    by DuckDB's delta extension, or by Direct Lake — and every later run dies with
-
-        Kernel error: data did not match any variant of untagged enum DataType
-
-    This is reachable on normal data, not just in tests: the SPC panels correctly
-    return nothing when the line has been down for most of the 7-day window, so
-    Shifts/SPC/Snapshots legitimately arrive with 0 rows.
-
-    String is a placeholder for a column whose real type is unknowable while empty.
-    write_gold passes schema_mode="overwrite", so the first run with real rows
-    replaces it with the true types — which is why the Direct Lake conversion must
-    wait for Gold to hold actual data, not merely to exist.
+    Column-set drift is raised rather than absorbed: if build_tables() starts
+    emitting a different set of columns, the semantic model needs updating too, and
+    silently writing a different shape would only surface later as a broken report.
     """
-    import pyarrow as pa
-
-    tbl = pa.Table.from_pandas(df, preserve_index=False)
-    if not any(pa.types.is_null(f.type) for f in tbl.schema):
-        return tbl
-    fields = [f.with_type(pa.string()) if pa.types.is_null(f.type) else f
-              for f in tbl.schema]
-    return tbl.cast(pa.schema(fields))
+    schema = GOLD_SCHEMAS[name]
+    missing = [c for c in schema.names if c not in df.columns]
+    extra = [c for c in df.columns if c not in schema.names]
+    if missing or extra:
+        raise RuntimeError(
+            f"gold_{name} column drift vs GOLD_SCHEMAS: "
+            f"missing={missing} unexpected={extra}. Update GOLD_SCHEMAS and the "
+            f"Direct Lake model together."
+        )
+    return pa.Table.from_pandas(df[schema.names], preserve_index=False).cast(schema)
 
 
 def write_gold(merged, gold):
@@ -232,7 +285,7 @@ def write_gold(merged, gold):
         # Full overwrite: the largest of these is the 3-day SPC history (order
         # 10^4 rows), so rewriting is cheaper and far simpler to reason about
         # than merge/append plus a separate prune.
-        write_deltalake(path, _typed_arrow(df), mode="overwrite",
+        write_deltalake(path, _gold_arrow(name, df), mode="overwrite",
                         schema_mode="overwrite", storage_options=opts)
         print(f"  {GOLD_PREFIX}{name:10s} {len(df):>7,} rows x {len(df.columns)} cols")
 

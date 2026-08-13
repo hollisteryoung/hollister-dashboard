@@ -59,7 +59,16 @@ C_STOPTYPE = _SB_COLS.C_STOPTYPE
 C_STARTID = _SB_COLS.C_STARTID
 C_ALARM   = _SB_COLS.C_ALARM
 
-N_DAYS = 7               # calendar days to cover = N_DAYS * 2 shifts
+# Calendar days to cover = N_DAYS * 2 shifts. Env-tunable because the SPC panels
+# refuse to draw with fewer than 3 *producing* shifts inside the window, so a
+# production outage can blank the charts even with months of history available: after
+# the 2026-08-04..08-11 downtime only 2 of the 14 shifts in the window had data.
+# Widening it is a methodology decision, not a technical one — the control limits
+# already come from a baseline of SPC_BASELINE_SUBGROUPS shifts *before* the window,
+# so downtime is excluded from the limits either way; N_DAYS only decides how many
+# points get plotted. A wider window plots points that are further apart in time than
+# the axis suggests. Default unchanged.
+N_DAYS = int(os.environ.get("SPC_WINDOW_DAYS", "7"))
 SPC_BASELINE_SUBGROUPS = 100  # per-shift buckets before the weekly window used for p_bar/sigma_z
 ANOMALY_BASELINE_SHIFTS = 13  # prior shifts used for per-shift z-score baseline (matches shift_dashboard)
 
