@@ -17,14 +17,17 @@ Usage:
 
 import argparse
 import fnmatch
-import json
 import os
-import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
-ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fab                                                      # noqa: E402
+
+ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))
 ONELAKE = "https://onelake.dfs.fabric.microsoft.com"
 
 # Only what the notebook actually imports. Nothing here should carry credentials —
@@ -34,12 +37,14 @@ EXCLUDE = ("__pycache__", "*.pyc", ".env", "*.log", "build", "*.abf", "vendor")
 
 
 def _token(resource="https://storage.azure.com"):
-    out = subprocess.run(
-        ["az", "account", "get-access-token", "--resource", resource, "-o", "json"],
-        capture_output=True, text=True)
-    if out.returncode != 0:
-        sys.exit(f"az login required:\n{out.stderr.strip()}")
-    return json.loads(out.stdout)["accessToken"]
+    """Delegate to fab.token(), which resolves az.bat and decodes leniently.
+
+    This used to call `["az", ...]` directly and died with WinError 2, because on
+    Windows az is a .bat and CreateProcess will not find it from the bare name —
+    the same defect fab._az() exists to solve. Kept as a wrapper so the resource
+    audience stays explicit at the call site.
+    """
+    return fab.token(resource)
 
 
 def _request(method, url, token, data=None):
@@ -113,5 +118,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import urllib.parse  # noqa: E402  (used in main's f-string)
     sys.exit(main())
