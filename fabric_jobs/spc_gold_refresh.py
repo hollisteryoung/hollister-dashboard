@@ -181,6 +181,35 @@ def merge_history(new, gold):
     return merged
 
 
+def _typed_arrow(df):
+    """Arrow table with no untyped columns, so the Delta schema stays readable.
+
+    A pandas `object` column carrying no values gives Arrow a `null` type, and
+    delta-rs writes that into the Delta schema as `"type":"void"`. `void` is not a
+    Delta data type, so the table it produces cannot be read again — by delta-rs,
+    by DuckDB's delta extension, or by Direct Lake — and every later run dies with
+
+        Kernel error: data did not match any variant of untagged enum DataType
+
+    This is reachable on normal data, not just in tests: the SPC panels correctly
+    return nothing when the line has been down for most of the 7-day window, so
+    Shifts/SPC/Snapshots legitimately arrive with 0 rows.
+
+    String is a placeholder for a column whose real type is unknowable while empty.
+    write_gold passes schema_mode="overwrite", so the first run with real rows
+    replaces it with the true types — which is why the Direct Lake conversion must
+    wait for Gold to hold actual data, not merely to exist.
+    """
+    import pyarrow as pa
+
+    tbl = pa.Table.from_pandas(df, preserve_index=False)
+    if not any(pa.types.is_null(f.type) for f in tbl.schema):
+        return tbl
+    fields = [f.with_type(pa.string()) if pa.types.is_null(f.type) else f
+              for f in tbl.schema]
+    return tbl.cast(pa.schema(fields))
+
+
 def write_gold(merged, gold):
     from deltalake import write_deltalake
 
@@ -203,8 +232,8 @@ def write_gold(merged, gold):
         # Full overwrite: the largest of these is the 3-day SPC history (order
         # 10^4 rows), so rewriting is cheaper and far simpler to reason about
         # than merge/append plus a separate prune.
-        write_deltalake(path, df, mode="overwrite", schema_mode="overwrite",
-                        storage_options=opts)
+        write_deltalake(path, _typed_arrow(df), mode="overwrite",
+                        schema_mode="overwrite", storage_options=opts)
         print(f"  {GOLD_PREFIX}{name:10s} {len(df):>7,} rows x {len(df.columns)} cols")
 
 

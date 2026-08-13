@@ -9,13 +9,15 @@
 # The pipeline code itself is not duplicated here — it is synced to the Lakehouse
 # by fabric_jobs/sync_code_to_lakehouse.py and imported off Files/code.
 
-# ── Cell 1 — dependencies ─────────────────────────────────────────────────────
-# Pinned so a silent upstream release can't change SPC numbers between runs.
-
-%pip install -q duckdb==1.5.5 deltalake==1.6.2
-
-
-# ── Cell 2 — run the refresh ──────────────────────────────────────────────────
+# ── Cell 1 — run the refresh ──────────────────────────────────────────────────
+#
+# There is deliberately no `%pip install` cell. It was tried, pinning
+# duckdb==1.5.5 / deltalake==1.6.2, and it does not work: the runtime's
+# preinstalled versions (duckdb 1.4.4, deltalake 1.2.1) stay in force, and the
+# install still costs a slice of a 15-minute window on every one of ~96 daily runs.
+# The code is version-tolerant instead — see bronze_merge._arrow() and the
+# per-table fault tolerance in core.db._duckdb_connection() — and both versions are
+# printed on every run so the log says what was actually used.
 #
 # Two steps, in order. The merge folds the tail the pipeline's Copy activities just
 # landed in stage_* into the Bronze tables (Copy activity has no incremental
