@@ -7,8 +7,14 @@ update; the Dataflow Gen2 one does.**
 
 | Route | Gateway floor | Installed `3000.286.14` | State |
 |---|---|---|---|
-| **Pipeline Copy activity** ★ | `3000.214.2` | ✓ clears it | Built, locally verified, **not yet run in Fabric** |
+| **Pipeline Copy activity** ★ | `3000.214.2` | ✓ clears it | Deployed to the tenant; **never executed** |
 | Dataflow Gen2 (CI/CD) | `3000.290` | ✗ one release short | Built; blocked on `UnsupportedGatewayVersion` |
+
+The backfill pipeline's definition was accepted by the API and read back intact
+(5 Copy activities, correct connection and Lakehouse GUIDs, staging off), so the
+JSON shape is no longer an open question. What remains untested is whether Copy
+activity actually reaches the historian through gateway `3000.286.14` — that is
+what the first run answers, and nothing downstream can be trusted until it does.
 
 Both land the **same Bronze table names in the same Lakehouse**, so the notebook,
 Gold tables, Direct Lake model and 15-minute schedule are shared. Choosing one
@@ -26,10 +32,23 @@ Discovered against the live tenant:
 |---|---|
 | Workspace | Smart Factory — `daff049b-5e21-4d61-8cf2-465032703de5` |
 | Capacity | `b66dc66a-d4a2-4451-8ef4-22241fdb9689` (assigned; not readable by this account, so SKU unconfirmed — it is *not* the PPU one) |
-| Enterprise gateways visible | **0** |
-| SQL Server connections visible | **0** (32 connections, all File / SharePoint / ODBC / Folder) |
-| On-prem connections | all `OnPremisesGatewayPersonal` — personal mode, which Dataflow Gen2 cannot use |
+| SQL gateway connection | `081b83d6-70db-41bc-ae0f-787ac7e67403` — `10.62.27.4;db_ProcessData`, standard gateway, **usable** |
+| Lakehouse | `NGP2SPCLakehouse` — `49675f59-eded-4e77-bbb9-75f9a1fecf97` (created 2026-08-13, flat/non-schema) |
+| Backfill pipeline | `NGP2 SPC Bronze Backfill` — `5b049bf0-1626-4e3c-8d10-b113de9b33f0` |
+| Bronze dataflow (Gen2 route) | `NGP2 SPC Bronze` — `0f7c96be-16f5-4dee-a0fe-d78435a1a49a` |
+| Published report / model | `621a428c-360a-4315-8ccb-422f4d922c26` / `1c5363ab-60d3-4a82-a673-4f1e6f7d00d8` |
+| Gateway | `HOLL_PBI_GATEWAY (Primary)` — `23abfba2-f963-4c8d-ac82-acfbbf7e33e2`, version `3000.286.14` |
 | Python visuals in the service | confirmed working (the 3 SPC charts are `pythonVisual`) |
+
+**Do not use `smart_factory_lh`.** It is another team's medallion project
+(`nb_load_bronze`, `nb_silver_build`, …) *and* it is a **schemas-enabled**
+Lakehouse, which stores tables at `Tables/<schema>/<table>` rather than
+`Tables/<table>`. The flat layout is assumed by `_discover_delta_tables()` in
+[`src/core/db.py`](../src/core/db.py), by [`bronze_merge.py`](bronze_merge.py) and
+by the Direct Lake conversion, and schema enablement cannot be turned off after
+creation. `deploy_bronze.py --lakehouse-only` creates a flat one; the tables
+endpoint returning `400 UnsupportedOperationForSchemasEnabledLakehouse` is how to
+tell them apart.
 
 ## Why this exists
 
@@ -195,6 +214,15 @@ HTTPS and borrows az only for the bearer token.
 `deploy_pipeline.sh` by `deploy_pipeline.py`. The `.sh` is kept only because it is
 the one place the *Gen2* dataflow gets chained to the notebook; it still has the
 `az rest --query` defect, so if that route is ever taken, port it first.
+
+### One more Windows gotcha: export `MSYS_NO_PATHCONV=1`
+
+Calling `fab.py` from Git Bash with a leading-slash API path silently rewrites it
+into a Windows path, producing a 404 against a URL like
+`.../v1C:/Users/youngcz/AppData/Local/Programs/Git/workspaces/...`. MSYS path
+conversion treats `/workspaces/...` as a filesystem path. The deploy scripts are
+unaffected because they build paths internally, but any ad-hoc `fab.py get /...`
+needs `export MSYS_NO_PATHCONV=1` first.
 
 ## Deliberate deviations from the original plan
 
