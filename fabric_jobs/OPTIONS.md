@@ -45,8 +45,8 @@ on-premises source.
 
 | # | Option | Gateway? | Works on current gateway? | Verdict |
 |---|---|---|---|---|
-| A | Dataflow Gen2 (CI/CD) | yes | ✗ needs `3000.290` | Blocked — this is what we tried |
-| B | **Pipeline Copy activity** | yes | ✓ needs `3000.214.2` | **Best available. Untested.** |
+| A | Dataflow Gen2 (CI/CD) | yes | ✗ needs `3000.290` | Blocked — this is what we tried. Kept deployable |
+| B | **Pipeline Copy activity** | yes | ✓ needs `3000.214.2` | **Chosen and built (2026-08-13). Not yet run in Fabric** |
 | C | Notebook connecting directly to SQL | — | — | **Impossible.** Notebooks have no gateway support at all |
 | D | Local script writing to OneLake | none | — | **Ruled out** by the no-laptop constraint |
 | E | Managed Private Endpoint | none | — | Separate network-engineering project |
@@ -87,6 +87,36 @@ Two things to confirm when testing B:
   One practitioner note suggests existing firewall rules usually already cover
   this, since it isn't typically distinguished from Dataflow Gen2 traffic.
 - Copy activity can only use one gateway per activity — fine here, we have one.
+
+### What B costs us, and what it buys
+
+The one genuine loss is **declarative incremental refresh**. Gen2 turned
+"store 75 days, refresh 2 days" into watermarking, partition replacement and
+retention. Copy activity can only append or overwrite a whole table, so that
+behaviour is reimplemented in [`bronze_merge.py`](bronze_merge.py): a stateless
+6-hour tail into `stage_*` with Overwrite, then a Delta `replaceWhere` into Bronze
+bounded by the stage's own earliest watermark, then a metadata-checked retention
+prune. Verified locally as idempotent, gap-healing, duplicate-free, and producing
+SPC output identical to the pristine export.
+
+Against that, three things get *better*, not merely equivalent:
+
+| | Gen2 | Copy activity |
+|---|---|---|
+| Filter/column logic | translated to M by `_like_to_m()` | **the original T-SQL, unchanged** |
+| Incremental behaviour | a portal setting, unscriptable | code, version-controlled, tested |
+| Retry semantics | limited | per-activity retry; overwrite makes retries safe |
+
+The T-SQL point is the one that matters for correctness. `_like_to_m()` converts
+`LIKE` patterns into `Text.Contains`/`Text.StartsWith`; that was verified to select
+identical rows, but it is still a translation layer that can drift from
+`bronze_plan()`. Copy activity sends the exact T-SQL that parity was verified
+against, which removes the risk rather than mitigating it.
+
+Cost of the tail approach: 6h re-read against a 15-minute schedule is ~24x
+redundant, which is ~5k rows per run — negligible, and it buys tolerance for a few
+hours of outage. The constraint it creates is that **the pipeline must run at least
+every 6 hours** or a gap opens; recovery is re-running the backfill.
 
 ---
 
@@ -187,12 +217,21 @@ would re-open the Dataflow Gen2 route as an alternative.
 
 ## What to test next, cheapest first
 
-1. **Build a Pipeline with a Copy activity** against the existing SQL connection,
-   one small table, into a Lakehouse. This is the make-or-break test: it either
-   proves the current gateway is sufficient, or it doesn't. Needs capacity to run,
-   but only briefly.
-2. **Confirm Direct Lake renders** the report against a Lakehouse table.
-3. **Re-ask IT about capacity with the numbers above**, not "do you have capacity."
+Both pipelines are now built and deployable — see the run order in
+[`README.md`](README.md).
+
+1. **Run `NGP2 SPC Bronze Backfill`.** This is the make-or-break test: it either
+   proves Copy activity works on gateway `3000.286.14`, or it doesn't. Needs
+   capacity to run, but only briefly.
+2. **Run `NGP2 SPC 15min` once** — proves the stage → merge → Gold chain.
+3. **Confirm Direct Lake renders** the report against the `gold_*` tables.
+4. **Re-ask IT about capacity with the numbers above**, not "do you have capacity."
 
 Step 1 is the one that matters. If Copy activity works on the current gateway, the
 entire gateway problem — the thing that has consumed the most time — disappears.
+
+Note the first deploy may need the pipeline JSON aligned: the
+`externalReferences.connection` and `LakehouseTableSink` shapes in
+`generate_pipeline.py` are written from documentation, not from a portal-authored
+reference. If the API rejects them, build one Copy activity in the portal and diff
+its definition — that was the lesson from the Gen2 round.

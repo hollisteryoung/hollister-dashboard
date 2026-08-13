@@ -1,11 +1,24 @@
 # NGP2 SPC Dashboard — Fabric-native refresh
 
-## Status (2026-08-10)
+## Status (2026-08-13)
 
-**Blocked on one IT dependency.** Everything is built and numerically verified;
-the only thing missing is a SQL Server connection on a standard (enterprise)
-gateway. See [`IT_REQUEST_gateway.md`](IT_REQUEST_gateway.md) — that is the
-request to send, and it is a routine one.
+**Two ingestion routes exist. The Copy-activity one does not need the gateway
+update; the Dataflow Gen2 one does.**
+
+| Route | Gateway floor | Installed `3000.286.14` | State |
+|---|---|---|---|
+| **Pipeline Copy activity** ★ | `3000.214.2` | ✓ clears it | Built, locally verified, **not yet run in Fabric** |
+| Dataflow Gen2 (CI/CD) | `3000.290` | ✗ one release short | Built; blocked on `UnsupportedGatewayVersion` |
+
+Both land the **same Bronze table names in the same Lakehouse**, so the notebook,
+Gold tables, Direct Lake model and 15-minute schedule are shared. Choosing one
+does not discard the other — once the gateway is updated, Gen2 becomes a working
+alternative rather than a requirement, and Copy activity remains preferable on
+cost (see [`OPTIONS.md`](OPTIONS.md): ~4.6x cheaper in CU, no staging engines).
+
+Remaining blocker for either route is Fabric capacity, not code. See
+[`EVIDENCE_gateway_blocker.md`](EVIDENCE_gateway_blocker.md) for the gateway
+escalation.
 
 Discovered against the live tenant:
 
@@ -30,26 +43,56 @@ at all**, for Spark or Python. The only notebook route to an on-prem source is
 Managed Private Endpoints, a separate network-engineering project with the same
 IT friction that blocked Python in the first place.
 
-Dataflow Gen2, however, has full standard support for on-prem SQL Server over a
-gateway. So the pipeline is split at that seam:
+Two Fabric items *can* reach on-prem SQL over a gateway — a Dataflow Gen2 and a
+Data Pipeline's Copy activity. So the pipeline is split at that seam:
 
 ```
-Dataflow Gen2  ──(enterprise gateway)──>  Bronze Delta tables in the Lakehouse
+  Copy activity ──(gateway)──> stage_* ─┐        Bronze Delta tables
+   (or Dataflow Gen2 ──(gateway)────────┴──────> in the Lakehouse
                                                 │
                                           (no gateway)
                                                 ▼
-                          Python notebook: DuckDB reads Bronze, runs the real
-                          SPC pipeline unchanged, writes gold_* Delta tables
+                          Python notebook: merges the staged tail into Bronze,
+                          then DuckDB runs the real SPC pipeline unchanged and
+                          writes gold_* Delta tables
                                                 │
                                                 ▼
                           Direct Lake semantic model (Fabric-to-Fabric read)
                                                 │
-                          Data Pipeline: dataflow → notebook, every 15 minutes
+                          Data Pipeline: extract → notebook, every 15 minutes
 ```
 
 No Python ever runs on the gateway, and no gateway is involved past the extract.
 That is why the IT ask is now a plain SQL Server connection rather than a
 security exception.
+
+### What the Copy-activity route has to do for itself
+
+Copy activity can only append or overwrite a whole table — it has no equivalent of
+Gen2's incremental refresh, which handled watermarking, partition replacement *and*
+retention from two settings. That is reproduced in
+[`bronze_merge.py`](bronze_merge.py), and deliberately not by tracking a high-water
+mark:
+
+- Each run's Copy activity re-reads a fixed **6-hour tail** into `stage_<table>`
+  with Overwrite, so it holds no state and a retry cannot duplicate anything.
+- The notebook then replaces the same window in Bronze with the staged rows using a
+  Delta `replaceWhere`, bounded by the stage's own earliest watermark — so the rows
+  removed and the rows written cover exactly the same range.
+- Retention is pruned to 80 days (`_SPC_LOOKBACK_DAYS` defaults to 75), checked
+  against table metadata first so the usual run does no rewrite.
+
+The tail is anchored on `MAX(watermark)` **in the source table**, not the clock,
+matching [`export_bronze_local.py`](../bin/export_bronze_local.py). That sidesteps
+whether the historian writes local or UTC time, and means a stalled historian
+re-reads the same rows harmlessly rather than silently reading none.
+
+The consequence to know: **the pipeline must run at least once every 6 hours** or a
+gap opens. Recovery is re-running the backfill pipeline; nothing needs resetting.
+
+`replaceWhere` is also why [`src/core/db.py`](../src/core/db.py) needed **no change
+at all** for this route — Bronze at rest is byte-equivalent either way, so the
+verified compute path is untouched.
 
 ## The pipeline code is reused, not reimplemented
 
@@ -75,9 +118,21 @@ text needs no rewriting. Two dialect differences are bridged by `top_clause()` /
 | Direct Lake TMDL conversion + `--revert` | applies and restores cleanly |
 | Original Hollister Dashboard PBI unaffected | 16 tables, both lines, full 21-column Shifts |
 | Fabric API reachable (`deploy_bronze.py --check-only`) | workspace resolves, preconditions reported |
+| Copy-activity source T-SQL vs the parity-verified queries | character-identical apart from the window bound |
+| `bronze_merge.py` — merge an already-present tail, twice | no row added, bounds preserved, zero duplicates |
+| `bronze_merge.py` — 3h hole punched in Bronze's tail | fully healed by the next merge, zero duplicates |
+| `bronze_merge.py` — no `stage_*` table present | clean skip, so the notebook still works behind Gen2 |
+| SPC output from merged Bronze vs pristine export (duckdb both sides) | **identical**, zero differences |
 
-**Not verified:** anything requiring the gateway — the dataflow, the end-to-end
-15-minute run, and Direct Lake against real Bronze data.
+**Not verified:** anything requiring the gateway or capacity — neither extract
+route has landed a row in Fabric, no Direct Lake render, no scheduled run. The
+Copy-activity JSON in particular has never been accepted by the API; the
+`externalReferences.connection` and `LakehouseTableSink` shapes in
+[`generate_pipeline.py`](deploy/generate_pipeline.py) are written from
+documentation, not from a portal-authored reference, so expect to align them once
+the first deploy returns an error. (Lesson from the Gen2 round: only
+portal-authored items reach real gateway execution, so a portal-built Copy activity
+is the reference to diff against if it misbehaves.)
 
 ## Run order
 
@@ -85,28 +140,48 @@ text needs no rewriting. Two dialect differences are bridged by `top_clause()` /
 az login --allow-no-subscriptions --tenant db08e4ba-c0c6-4893-8bbe-8f3b86b87652
 
 # Precondition check — read-only, safe to run any time
-python fabric_jobs/deploy/deploy_bronze.py --check-only
+python fabric_jobs/deploy/deploy_pipeline.py --check-only
 
-# --- blocked here until IT provisions the SQL gateway connection ---
-
-# Phase A — Lakehouse + Bronze mirror
-python fabric_jobs/deploy/deploy_bronze.py --sql-connection "<display name>"
-#   then, in the portal: enable incremental refresh on each of the 5 queries
-#   (75 days stored / 2 days refreshed), and run the one-time backfill
+# Phase A — Lakehouse
+python fabric_jobs/deploy/deploy_bronze.py --lakehouse-only
 
 # Phase B — ship the code the notebook imports
 python fabric_jobs/deploy/sync_code_to_lakehouse.py --workspace "Smart Factory"
 #   then create a *Python* notebook "NGP2 SPC Gold Refresh" with the Lakehouse
 #   attached, pasting the two cells from fabric_jobs/notebook_bootstrap.py
 
-# Phase C — repoint the semantic model (only after gold_* tables exist)
+# Phase C — deploy both pipelines (creates nothing else, runs nothing)
+python fabric_jobs/deploy/deploy_pipeline.py
+
+# Phase C.1 — the make-or-break gateway test: does Copy activity work on 3000.286?
+python fabric_jobs/deploy/deploy_pipeline.py --run "NGP2 SPC Bronze Backfill"
+#   check the 5 Bronze tables have rows before going on
+
+# Phase C.2 — prove one incremental run (stage -> merge -> Gold)
+python fabric_jobs/deploy/deploy_pipeline.py --run "NGP2 SPC 15min"
+
+# Phase D — repoint the semantic model (only after gold_* tables exist)
 python fabric_jobs/deploy/convert_model_to_directlake.py \
     --workspace-id daff049b-5e21-4d61-8cf2-465032703de5 --lakehouse-id <guid>
 #   reversible with --revert
 
-# Phase D — orchestrate and schedule
-./fabric_jobs/deploy/deploy_pipeline.sh "Smart Factory"
+# Phase E — schedule, only after two consecutive successful runs
+python fabric_jobs/deploy/deploy_pipeline.py --schedule
 ```
+
+### Alternative: the Dataflow Gen2 route
+
+Unchanged and still deployable, once the gateway clears `3000.290`. Substitute for
+Phase C/C.1/C.2:
+
+```bash
+python fabric_jobs/deploy/deploy_bronze.py --sql-connection "<display name>"
+#   then, in the portal: enable incremental refresh on each of the 5 queries
+#   (75 days stored / 2 days refreshed), and run the one-time backfill
+```
+
+The notebook needs no change — `bronze_merge` is a no-op when no `stage_*` tables
+exist, and Gen2 writes Bronze directly.
 
 ## Why `fab.py` exists
 
@@ -116,11 +191,10 @@ through the cp1252 console codec, so non-ASCII display names come back as
 undecodable bytes. [`deploy/fab.py`](deploy/fab.py) calls the API directly over
 HTTPS and borrows az only for the bearer token.
 
-`deploy_bronze.sh` was replaced by `deploy_bronze.py` for this reason.
-**`deploy_pipeline.sh` still uses the `az rest --query` pattern and will hit the
-same defect** — it needs converting to `fab.py` before Phase D is run. It is left
-as-is for now because Phase D is blocked behind Phase A anyway and any rewrite
-would be untestable until then.
+`deploy_bronze.sh` was replaced by `deploy_bronze.py` for this reason, and
+`deploy_pipeline.sh` by `deploy_pipeline.py`. The `.sh` is kept only because it is
+the one place the *Gen2* dataflow gets chained to the notebook; it still has the
+`az rest --query` defect, so if that route is ever taken, port it first.
 
 ## Deliberate deviations from the original plan
 
@@ -135,8 +209,11 @@ would be untestable until then.
 - **`expressions.tmdl` is rewritten, not deleted.** The plan said delete it; that
   was wrong. Direct Lake still needs one shared named expression — the
   `AzureStorage.DataLake` connector pointing at the Lakehouse.
-- **Incremental refresh is a manual portal step.** Dataflow Gen2 stores that
-  setting outside the definition parts, so it cannot be scripted.
+- **Incremental refresh is a manual portal step** *on the Gen2 route only*.
+  Dataflow Gen2 stores that setting outside the definition parts, so it cannot be
+  scripted. The Copy-activity route has no such setting and implements the
+  behaviour itself in [`bronze_merge.py`](bronze_merge.py) — which is scripted,
+  version-controlled and testable, and is the main reason to prefer it beyond cost.
 - **The notebook item is created by hand.** One paste of two cells, versus
   hand-building a format that fails silently when malformed.
 

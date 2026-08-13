@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+"""Fold the freshly-copied tail of each source table into the Bronze Delta tables.
+
+This exists because the Pipeline Copy activity route has no equivalent of Dataflow
+Gen2's incremental refresh. Gen2 took two settings ("store 75 days, refresh 2
+days") and handled watermarking, partition replacement and retention itself. Copy
+activity does none of that: it can only append or overwrite a whole table. So the
+incremental behaviour is reproduced here, in Python, where it can be tested.
+
+Shape of the deal with the pipeline:
+
+    Copy activity  ->  stage_<table>   (mode Overwrite; the last N hours of source
+                                        data, re-read in full every run)
+    this module     ->  <table>        (Bronze; the stage window replaces the same
+                                        window in Bronze, atomically)
+
+The replacement is a Delta `replaceWhere`: every Bronze row at or after the
+stage's own earliest watermark is replaced by every stage row. That makes a run
+idempotent, so re-running, overlapping runs, or a pipeline retry cannot duplicate
+rows — which is why the Copy activity can stay completely stateless and just
+re-read a fixed tail rather than tracking a high-water mark.
+
+Two properties worth knowing:
+
+  * The tail is anchored on `MAX(watermark)` *in the source table*, not on the
+    clock, exactly as bin/export_bronze_local.py does. That sidesteps the question
+    of whether the historian writes local or UTC timestamps, and means a stalled
+    historian re-reads the same rows harmlessly instead of silently reading none.
+  * Consequently the pipeline must run at least once per tail window (default 6h)
+    or a gap opens. Recover by re-running the backfill pipeline; nothing here
+    needs resetting.
+
+Rows are passed through as Arrow straight from the stage table's Delta schema, so
+Bronze column types stay whatever the Copy activity wrote them as. Round-tripping
+through pandas would risk re-typing timestamps as `timestamp_ntz` and reopening
+the Direct Lake reader-version question settled in spc_gold_refresh.write_gold().
+
+Local test run (against the export bin/export_bronze_local.py produces):
+    python fabric_jobs/bronze_merge.py --bronze "$TEMP/claude/c--hollister-dashboard/bronze"
+"""
+
+import argparse
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Copy activity writes here; this module reads and then leaves them in place. They
+# share the Lakehouse Tables/ folder with Bronze and Gold, so the prefix is what
+# keeps them distinguishable in the Lakehouse explorer.
+STAGE_PREFIX = "stage_"
+
+# Bronze must cover _SPC_LOOKBACK_DAYS in src/metrics/spc.py, which defaults to 75.
+# The headroom above that is deliberate: the lookback is anchored on the newest
+# t_stamp, so trimming Bronze to exactly 75 days would leave the oldest subgroup
+# scan reading the very edge of the table.
+RETENTION_DAYS = 80
+
+
+def _plan():
+    sys.path.insert(0, os.path.join(ROOT, "bin"))
+    sys.path.insert(0, os.path.join(ROOT, "src"))
+    from export_bronze_local import bronze_plan
+    return bronze_plan()
+
+
+def _duck():
+    import duckdb
+
+    con = duckdb.connect()
+    con.execute("INSTALL delta; LOAD delta;")
+    return con
+
+
+def _posix(path):
+    return path.replace("\\", "/").replace("'", "''")
+
+
+def merge_table(con, root, tbl, watermark_col, retention_days=RETENTION_DAYS):
+    """Replace Bronze's tail window with the staged copy of it. Returns a summary dict."""
+    from deltalake import DeltaTable, write_deltalake
+
+    bronze_path = os.path.join(root, tbl)
+    stage_path = os.path.join(root, f"{STAGE_PREFIX}{tbl}")
+
+    if not DeltaTable.is_deltatable(stage_path):
+        return {"table": tbl, "action": "skipped", "note": "no stage table yet"}
+
+    # to_arrow_table(), not .arrow(): the latter returns a RecordBatchReader on
+    # duckdb 1.5.x, which cannot be inspected for row count without consuming it.
+    # Arrow rather than pandas so the column types stay exactly as the Copy activity
+    # wrote them — a pandas round-trip would re-type naive datetimes as
+    # `timestamp_ntz` and reopen the Direct Lake reader-version question that
+    # spc_gold_refresh.write_gold() settled.
+    stage = con.execute(
+        f"SELECT * FROM delta_scan('{_posix(stage_path)}')"
+    ).to_arrow_table()
+    if stage.num_rows == 0:
+        return {"table": tbl, "action": "skipped", "note": "stage empty"}
+
+    # The replaced window is defined by the staged data itself, so the rows removed
+    # and the rows written cover exactly the same range — no gap, no overlap.
+    tail_start = con.execute(
+        f'SELECT MIN("{watermark_col}") FROM delta_scan(\'{_posix(stage_path)}\')'
+    ).fetchone()[0]
+
+    if not DeltaTable.is_deltatable(bronze_path):
+        # No backfill has run. Seeding Bronze from the tail alone would look
+        # successful while leaving the SPC baseline far short of its lookback, so
+        # say so rather than quietly producing thin control limits.
+        write_deltalake(bronze_path, stage, mode="overwrite", schema_mode="overwrite")
+        return {"table": tbl, "action": "created", "rows": stage.num_rows,
+                "note": "Bronze did not exist — run the backfill pipeline, this is "
+                        "only the tail window"}
+
+    write_deltalake(
+        bronze_path, stage, mode="overwrite",
+        predicate=f'"{watermark_col}" >= TIMESTAMP \'{tail_start}\'',
+    )
+
+    pruned = _prune(con, bronze_path, watermark_col, retention_days)
+    total = con.execute(f"SELECT COUNT(*) FROM delta_scan('{_posix(bronze_path)}')").fetchone()[0]
+    return {"table": tbl, "action": "merged", "rows": stage.num_rows,
+            "from": tail_start, "pruned": pruned, "total": total}
+
+
+def _prune(con, bronze_path, watermark_col, retention_days):
+    """Drop rows older than the retention window, anchored on the newest row.
+
+    Checked before deleting because a Delta delete rewrites every file it touches;
+    on most runs nothing has aged out and the check is a metadata-only read.
+    """
+    from deltalake import DeltaTable
+
+    lo, hi = con.execute(
+        f'SELECT MIN("{watermark_col}"), MAX("{watermark_col}") '
+        f"FROM delta_scan('{_posix(bronze_path)}')"
+    ).fetchone()
+    if lo is None or hi is None:
+        return 0
+    import datetime
+
+    cutoff = hi - datetime.timedelta(days=retention_days)
+    if lo >= cutoff:
+        return 0
+    res = DeltaTable(bronze_path).delete(
+        predicate=f'"{watermark_col}" < TIMESTAMP \'{cutoff}\''
+    )
+    return int(res.get("num_deleted_rows", 0) or 0)
+
+
+def merge_all(root, retention_days=RETENTION_DAYS):
+    con = _duck()
+    results = []
+    try:
+        for _key, tbl, watermark, _cols, _like in _plan():
+            results.append(merge_table(con, root, tbl, watermark, retention_days))
+    finally:
+        con.close()
+    return results
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--bronze", default="/lakehouse/default/Tables",
+                    help="Delta dir holding both stage_* and Bronze tables")
+    ap.add_argument("--retention-days", type=int, default=RETENTION_DAYS)
+    args = ap.parse_args(argv)
+
+    print(f"Bronze merge in {args.bronze} (retention {args.retention_days}d)\n")
+    skipped = 0
+    for r in merge_all(args.bronze, args.retention_days):
+        if r["action"] == "skipped":
+            skipped += 1
+            print(f"  {r['table']:48s} skipped — {r['note']}")
+        elif r["action"] == "created":
+            print(f"  {r['table']:48s} CREATED {r['rows']:>9,} rows — {r['note']}")
+        else:
+            print(f"  {r['table']:48s} +{r['rows']:>8,} staged   "
+                  f"total {r['total']:>10,}   pruned {r['pruned']:>7,}   "
+                  f"from {r['from']}")
+    if skipped:
+        print(f"\n  {skipped} table(s) had no staged data — check the Copy activities ran.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

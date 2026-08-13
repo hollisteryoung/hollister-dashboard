@@ -16,6 +16,14 @@
 
 
 # ── Cell 2 — run the refresh ──────────────────────────────────────────────────
+#
+# Two steps, in order. The merge folds the tail the pipeline's Copy activities just
+# landed in stage_* into the Bronze tables (Copy activity has no incremental
+# refresh of its own — see fabric_jobs/bronze_merge.py), then the Gold refresh runs
+# the real SPC pipeline over Bronze via DuckDB.
+#
+# The merge is a no-op if no stage tables exist, so this same notebook still works
+# unchanged behind the Dataflow Gen2 route, which writes Bronze directly.
 
 import sys
 
@@ -24,7 +32,10 @@ for p in (CODE, f"{CODE}/src", f"{CODE}/bin"):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from fabric_jobs.spc_gold_refresh import main
+TABLES = "/lakehouse/default/Tables"
 
-main(["--bronze", "/lakehouse/default/Tables",
-      "--gold",   "/lakehouse/default/Tables"])
+from fabric_jobs.bronze_merge import main as merge_bronze
+from fabric_jobs.spc_gold_refresh import main as refresh_gold
+
+merge_bronze(["--bronze", TABLES])
+refresh_gold(["--bronze", TABLES, "--gold", TABLES])
