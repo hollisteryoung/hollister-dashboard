@@ -32,10 +32,18 @@ for p in (CODE, f"{CODE}/src", f"{CODE}/bin"):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-TABLES = "/lakehouse/default/Tables"
+# Reads go through the mount; writes must not. delta-rs commits by renaming the log
+# entry into place and the OneLake FUSE mount rejects rename with EPERM, so every
+# write_deltalake() goes to the abfss endpoint instead. See fabric_jobs/onelake.py.
+from fabric_jobs.onelake import tables_uri
+
+MOUNT = "/lakehouse/default/Tables"
+WORKSPACE_ID = "daff049b-5e21-4d61-8cf2-465032703de5"   # Smart Factory
+LAKEHOUSE_ID = "49675f59-eded-4e77-bbb9-75f9a1fecf97"   # NGP2SPCLakehouse
+URI = tables_uri(WORKSPACE_ID, LAKEHOUSE_ID)
 
 from fabric_jobs.bronze_merge import main as merge_bronze
 from fabric_jobs.spc_gold_refresh import main as refresh_gold
 
-merge_bronze(["--bronze", TABLES])
-refresh_gold(["--bronze", TABLES, "--gold", TABLES])
+merge_bronze(["--bronze", MOUNT, "--write-root", URI])
+refresh_gold(["--bronze", MOUNT, "--gold", URI])

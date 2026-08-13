@@ -44,6 +44,8 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import onelake                                                  # noqa: E402
 
 # Copy activity writes here; this module reads and then leaves them in place. They
 # share the Lakehouse Tables/ folder with Bronze and Gold, so the prefix is what
@@ -72,29 +74,53 @@ def _duck():
     return con
 
 
+def _arrow(result):
+    """Materialise a DuckDB result as a pyarrow Table, whatever the duckdb version.
+
+    duckdb has renamed this three times: `.arrow()` (which on 1.5.x hands back a
+    RecordBatchReader, not a Table), `.fetch_arrow_table()` (deprecated on 1.5.x),
+    and `.to_arrow_table()`. The first Fabric run failed here with
+    `AttributeError: 'DuckDBPyConnection' object has no attribute 'to_arrow_table'`
+    because the notebook's preinstalled duckdb is older than the pinned one and
+    `%pip install` did not displace it. Probing is more reliable than pinning, since
+    the pin is not enforceable in that environment.
+    """
+    for name in ("to_arrow_table", "fetch_arrow_table"):
+        fn = getattr(result, name, None)
+        if fn is not None:
+            return fn()
+    out = result.arrow()
+    return out.read_all() if hasattr(out, "read_all") else out
+
+
 def _posix(path):
     return path.replace("\\", "/").replace("'", "''")
 
 
-def merge_table(con, root, tbl, watermark_col, retention_days=RETENTION_DAYS):
-    """Replace Bronze's tail window with the staged copy of it. Returns a summary dict."""
+def merge_table(con, root, tbl, watermark_col, retention_days=RETENTION_DAYS,
+                write_root=None):
+    """Replace Bronze's tail window with the staged copy of it. Returns a summary dict.
+
+    `root` is read through DuckDB (the Lakehouse mount is fine for reads);
+    `write_root` is where delta-rs commits, which on Fabric must be an abfss URI —
+    see the module docstring in fabric_jobs/onelake.py.
+    """
     from deltalake import DeltaTable, write_deltalake
 
+    write_root = write_root or root
+    opts = onelake.storage_options(write_root)
+    bronze_write = onelake.join(write_root, tbl)
     bronze_path = os.path.join(root, tbl)
     stage_path = os.path.join(root, f"{STAGE_PREFIX}{tbl}")
 
     if not DeltaTable.is_deltatable(stage_path):
         return {"table": tbl, "action": "skipped", "note": "no stage table yet"}
 
-    # to_arrow_table(), not .arrow(): the latter returns a RecordBatchReader on
-    # duckdb 1.5.x, which cannot be inspected for row count without consuming it.
     # Arrow rather than pandas so the column types stay exactly as the Copy activity
     # wrote them — a pandas round-trip would re-type naive datetimes as
     # `timestamp_ntz` and reopen the Direct Lake reader-version question that
     # spc_gold_refresh.write_gold() settled.
-    stage = con.execute(
-        f"SELECT * FROM delta_scan('{_posix(stage_path)}')"
-    ).to_arrow_table()
+    stage = _arrow(con.execute(f"SELECT * FROM delta_scan('{_posix(stage_path)}')"))
     if stage.num_rows == 0:
         return {"table": tbl, "action": "skipped", "note": "stage empty"}
 
@@ -108,23 +134,27 @@ def merge_table(con, root, tbl, watermark_col, retention_days=RETENTION_DAYS):
         # No backfill has run. Seeding Bronze from the tail alone would look
         # successful while leaving the SPC baseline far short of its lookback, so
         # say so rather than quietly producing thin control limits.
-        write_deltalake(bronze_path, stage, mode="overwrite", schema_mode="overwrite")
+        write_deltalake(bronze_write, stage, mode="overwrite", schema_mode="overwrite",
+                        storage_options=opts)
         return {"table": tbl, "action": "created", "rows": stage.num_rows,
                 "note": "Bronze did not exist — run the backfill pipeline, this is "
                         "only the tail window"}
 
     write_deltalake(
-        bronze_path, stage, mode="overwrite",
+        bronze_write, stage, mode="overwrite",
         predicate=f'"{watermark_col}" >= TIMESTAMP \'{tail_start}\'',
+        storage_options=opts,
     )
 
-    pruned = _prune(con, bronze_path, watermark_col, retention_days)
+    pruned = _prune(con, bronze_path, watermark_col, retention_days,
+                    bronze_write, opts)
     total = con.execute(f"SELECT COUNT(*) FROM delta_scan('{_posix(bronze_path)}')").fetchone()[0]
     return {"table": tbl, "action": "merged", "rows": stage.num_rows,
             "from": tail_start, "pruned": pruned, "total": total}
 
 
-def _prune(con, bronze_path, watermark_col, retention_days):
+def _prune(con, bronze_path, watermark_col, retention_days, write_target=None,
+           opts=None):
     """Drop rows older than the retention window, anchored on the newest row.
 
     Checked before deleting because a Delta delete rewrites every file it touches;
@@ -143,18 +173,18 @@ def _prune(con, bronze_path, watermark_col, retention_days):
     cutoff = hi - datetime.timedelta(days=retention_days)
     if lo >= cutoff:
         return 0
-    res = DeltaTable(bronze_path).delete(
-        predicate=f'"{watermark_col}" < TIMESTAMP \'{cutoff}\''
-    )
+    dt = DeltaTable(write_target or bronze_path, storage_options=opts)
+    res = dt.delete(predicate=f'"{watermark_col}" < TIMESTAMP \'{cutoff}\'')
     return int(res.get("num_deleted_rows", 0) or 0)
 
 
-def merge_all(root, retention_days=RETENTION_DAYS):
+def merge_all(root, retention_days=RETENTION_DAYS, write_root=None):
     con = _duck()
     results = []
     try:
         for _key, tbl, watermark, _cols, _like in _plan():
-            results.append(merge_table(con, root, tbl, watermark, retention_days))
+            results.append(merge_table(con, root, tbl, watermark, retention_days,
+                                       write_root))
     finally:
         con.close()
     return results
@@ -163,13 +193,26 @@ def merge_all(root, retention_days=RETENTION_DAYS):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--bronze", default="/lakehouse/default/Tables",
-                    help="Delta dir holding both stage_* and Bronze tables")
+                    help="dir DuckDB reads stage_* and Bronze from (the mount is fine)")
+    ap.add_argument("--write-root",
+                    help="where delta-rs commits; on Fabric this must be the abfss "
+                         "OneLake URI, since the mount does not support rename. "
+                         "Defaults to --bronze for local runs.")
     ap.add_argument("--retention-days", type=int, default=RETENTION_DAYS)
     args = ap.parse_args(argv)
 
-    print(f"Bronze merge in {args.bronze} (retention {args.retention_days}d)\n")
+    # Printed because %pip install cannot be relied on in a Fabric notebook — the
+    # first run there used an older duckdb than the pinned one. If anything
+    # version-sensitive breaks again, the run log says which versions were in play.
+    import duckdb
+    import deltalake
+    print(f"duckdb {duckdb.__version__} / deltalake {deltalake.__version__} / "
+          f"python {sys.version.split()[0]}")
+    write_root = args.write_root or args.bronze
+    print(f"Bronze merge: read {args.bronze}\n"
+          f"              write {write_root} (retention {args.retention_days}d)\n")
     skipped = 0
-    for r in merge_all(args.bronze, args.retention_days):
+    for r in merge_all(args.bronze, args.retention_days, args.write_root):
         if r["action"] == "skipped":
             skipped += 1
             print(f"  {r['table']:48s} skipped — {r['note']}")

@@ -32,10 +32,13 @@ import argparse
 import os
 import shutil
 import sys
+import tempfile
 
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import onelake                                                  # noqa: E402
 
 GOLD_TABLES = ("Lines", "Shifts", "SPC", "Snapshots")
 
@@ -57,13 +60,45 @@ DATETIME_COLS = {
 RETENTION_DAYS = 3
 
 
-def _prepare_paths(bronze, gold):
+def _prepare_paths(bronze, gold, workdir=None):
+    """Point the pipeline's intermediate files at one directory on real local disk.
+
+    The pipeline *writes* its snapshots through a path relative to the process CWD
+    (`weekly_analysis.SPC_SNAPSHOT_DIR`) but *reads* them back through a path
+    absolute to the code directory (`export_powerbi_csv.ANALYSES`). Run from the repo
+    root those are the same directory, which is why this has never mattered — but a
+    notebook's CWD is not the code directory, so the snapshot written was not the
+    snapshot read and Shifts/SPC/Snapshots came out empty while Lines, which is not
+    derived from snapshots, looked fine.
+
+    Anchoring both on one scratch directory fixes it, and keeping that directory on
+    local disk rather than the Lakehouse mount avoids relying on mount write
+    semantics for the intermediates. Nothing is lost by discarding it after the run:
+    the retained snapshot history lives in the Gold Delta tables.
+    """
+    # Resolved before the chdir below, or a relative path passed on the command line
+    # would silently point somewhere else afterwards.
+    bronze = bronze if onelake.is_remote(bronze) else os.path.abspath(bronze)
+    gold = gold if onelake.is_remote(gold) else os.path.abspath(gold)
+
     os.environ["DB_BACKEND"] = "duckdb"
     os.environ["DELTA_TABLES_PATH"] = bronze
     os.environ.setdefault("LINE", "ngp2")
     sys.path.insert(0, os.path.join(ROOT, "src"))
     sys.path.insert(0, os.path.join(ROOT, "bin"))
-    os.makedirs(gold, exist_ok=True)
+
+    work = workdir or os.path.join(tempfile.gettempdir(), "ngp2_spc_gold")
+    os.makedirs(work, exist_ok=True)
+    os.chdir(work)                      # makes the relative writes land in `work`
+    import export_powerbi_csv           # noqa: PLC0415
+    export_powerbi_csv.ANALYSES = os.path.join(work, "output", "analyses")
+    print(f"Work:   {work}")
+
+    # os.makedirs would create a literal 'abfss:' directory; a remote Gold root needs
+    # no pre-creation, write_deltalake creates the table path itself.
+    if not onelake.is_remote(gold):
+        os.makedirs(gold, exist_ok=True)
+    return work, bronze, gold
 
 
 def compute_snapshot():
@@ -87,16 +122,19 @@ def compute_snapshot():
 
 
 def _gold_path(gold, name):
-    return os.path.join(gold, f"{GOLD_PREFIX}{name}")
+    # onelake.join, not os.path.join: on Fabric `gold` is an abfss URI because
+    # delta-rs cannot commit through the Lakehouse mount (see fabric_jobs/onelake.py).
+    return onelake.join(gold, f"{GOLD_PREFIX}{name}")
 
 
 def _read_gold(gold, name):
     from deltalake import DeltaTable
 
     path = _gold_path(gold, name)
-    if not DeltaTable.is_deltatable(path):
+    opts = onelake.storage_options(gold)
+    if not DeltaTable.is_deltatable(path, storage_options=opts):
         return None
-    df = DeltaTable(path).to_pandas()
+    df = DeltaTable(path, storage_options=opts).to_pandas()
     # Strip the UTC tag write_gold() applies, so retained history and this run's
     # freshly computed rows (naive, straight out of the pipeline) merge in one
     # representation instead of colliding as mixed-dtype object columns.
@@ -146,6 +184,7 @@ def merge_history(new, gold):
 def write_gold(merged, gold):
     from deltalake import write_deltalake
 
+    opts = onelake.storage_options(gold)
     for name in GOLD_TABLES:
         df = merged[name].copy()
         for col in DATETIME_COLS.get(name, []):
@@ -164,7 +203,8 @@ def write_gold(merged, gold):
         # Full overwrite: the largest of these is the 3-day SPC history (order
         # 10^4 rows), so rewriting is cheaper and far simpler to reason about
         # than merge/append plus a separate prune.
-        write_deltalake(path, df, mode="overwrite", schema_mode="overwrite")
+        write_deltalake(path, df, mode="overwrite", schema_mode="overwrite",
+                        storage_options=opts)
         print(f"  {GOLD_PREFIX}{name:10s} {len(df):>7,} rows x {len(df.columns)} cols")
 
 
@@ -176,16 +216,18 @@ def main(argv=None):
                     help=f"Delta dir for the {GOLD_PREFIX}* tables the semantic model reads")
     args = ap.parse_args(argv)
 
-    _prepare_paths(args.bronze, args.gold)
-    print(f"Bronze: {args.bronze}\nGold:   {args.gold}\n")
+    # Use the returned paths, not args: _prepare_paths resolves them to absolute
+    # before it changes directory, so the raw args would point elsewhere afterwards.
+    _work, bronze, gold = _prepare_paths(args.bronze, args.gold)
+    print(f"Bronze: {bronze}\nGold:   {gold}\n")
 
     new = compute_snapshot()
     for name, df in new.items():
         print(f"  computed {name:10s} {len(df):>7,} rows")
 
-    merged = merge_history(new, args.gold)
+    merged = merge_history(new, gold)
     print()
-    write_gold(merged, args.gold)
+    write_gold(merged, gold)
 
     snaps = merged["Snapshots"]
     print(f"\nRetained {len(snaps)} snapshot(s), "

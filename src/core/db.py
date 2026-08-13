@@ -154,17 +154,31 @@ def _duckdb_connection():
     # here and the existing query text resolves unchanged.
     con.execute("CREATE SCHEMA IF NOT EXISTS dbo")
     registered = normalised = 0
+    skipped = []
     for name, scan in _discover_delta_tables(root):
-        projection = _naive_projection(con, scan)
+        # Tolerate a table this DuckDB build cannot read. Bronze, Gold and the Copy
+        # activity's stage tables share one Lakehouse folder, and the Gold tables are
+        # written by a newer delta-rs than the notebook's DuckDB delta extension can
+        # parse — a real failure seen as
+        #   MalformedJsonError: data did not match any variant of untagged enum DataType
+        # on `DESCRIBE ... delta_scan('.../gold_SPC')`. Nothing in the query path reads
+        # Gold, so skipping it is correct; failing here would take down the whole run.
+        try:
+            projection = _naive_projection(con, scan)
+            con.execute(f'CREATE OR REPLACE VIEW dbo."{name}" AS '
+                        f"SELECT {projection or '*'} FROM {scan}")
+        except Exception as e:                              # noqa: BLE001
+            skipped.append((name, str(e).splitlines()[0][:120]))
+            continue
         if projection:
             normalised += 1
-        con.execute(f'CREATE OR REPLACE VIEW dbo."{name}" AS '
-                    f"SELECT {projection or '*'} FROM {scan}")
         registered += 1
     if registered == 0:
-        raise RuntimeError(f"no Delta/Parquet tables found under {root}")
+        raise RuntimeError(f"no readable Delta/Parquet tables found under {root}")
     print(f"  duckdb backend: {registered} table(s) registered from {root}"
           + (f" ({normalised} timezone-normalised)" if normalised else ""))
+    for name, err in skipped:
+        print(f"  note: skipped unreadable table {name}: {err}", file=sys.stderr)
     return con
 
 
