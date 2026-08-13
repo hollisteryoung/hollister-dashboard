@@ -10,3 +10,10 @@ matplotlib==3.11.0
 duckdb==1.5.5
 deltalake==1.6.2
 pyarrow==25.0.1
+
+# zoneinfo (bin/export_powerbi_csv.py) needs an IANA tz database, which Windows
+# doesn't ship — a fresh Windows dev machine needs this package for
+# ZoneInfo("Europe/London") to resolve at all. Irrelevant to the Fabric
+# notebook, which doesn't install from this file; that path has its own
+# try/except fallback in export_powerbi_csv.py instead.
+tzdata==2026.1

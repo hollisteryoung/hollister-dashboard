@@ -19,6 +19,31 @@ import datetime as dt
 import json
 import os
 import re
+import sys
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
+
+# GeneratedAt must read correctly wherever this runs — a laptop (already UK-local)
+# or a Fabric notebook (whose host clock is UTC). dt.datetime.now() with no
+# timezone silently returns whichever of those the machine happens to have; this
+# pins it to UK wall-clock time explicitly, and zoneinfo handles the BST/GMT
+# switch automatically rather than needing a hand-rolled seasonal offset.
+#
+# ZoneInfo needs an IANA tz database, which the notebook's environment is not
+# guaranteed to have (unlike this workstation, where it resolves via the pip
+# `tzdata` package). This is a cosmetic timestamp only — it must never be able
+# to take the whole pipeline down — so a missing database falls back to a
+# clearly-labelled UTC timestamp instead of raising.
+try:
+    _UK = ZoneInfo("Europe/London")
+except ZoneInfoNotFoundError:
+    print("  note: no IANA tz database found — GeneratedAt will show UTC, not "
+          "UK local time", file=sys.stderr)
+    _UK = dt.timezone.utc
+
+
+def _now_uk_str():
+    tag = "" if _UK is not dt.timezone.utc else " UTC"
+    return dt.datetime.now(_UK).strftime("%Y-%m-%d %H:%M:%S") + tag
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ANALYSES = os.path.join(ROOT, "output", "analyses")
@@ -183,7 +208,7 @@ def _build_tables_spc_only(lines):
     (that's the whole point of --spc-only) so there's nothing to put in them.
     """
     active_lines = lines or LINES
-    generated_at = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    generated_at = _now_uk_str()
 
     shifts, spc, snapshots = [], [], []
     seen_snapshots = set()
@@ -293,7 +318,7 @@ def build_tables(lines=None, spc_only=False):
     records = collect_shifts(lines=lines)
     active_lines = lines or LINES
     print(f"Collected {len(records)} distinct shifts across {len(active_lines)} lines")
-    generated_at = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    generated_at = _now_uk_str()
 
     shifts, categories, segments, clusters, topstops, hourly, anomalies = ([] for _ in range(7))
     hourly_clusters = []
