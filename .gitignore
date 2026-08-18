@@ -16,3 +16,10 @@ venv/
 # ad-hoc debug scratch dumped at repo root during troubleshooting sessions
 /_*.log
 /_val.json
+
+# analysis build artifacts
+analysis/node_modules/
+analysis/package-lock.json
+analysis/package.json
+analysis/*.pdf
+analysis/slide-*.jpg
