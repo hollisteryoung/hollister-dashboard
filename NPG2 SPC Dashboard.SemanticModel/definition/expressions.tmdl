@@ -6,3 +6,4 @@ expression 'DirectLake - NPG2 SPC Dashboard' =
 	lineageTag: 07486648-dc52-47b3-b29d-d13078755f90
 
 	annotation PBI_IncludeFutureArtifacts = 0
+

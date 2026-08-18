@@ -179,12 +179,16 @@ def _prune(con, bronze_path, watermark_col, retention_days, write_target=None,
 
 
 def merge_all(root, retention_days=RETENTION_DAYS, write_root=None):
+    import time
+
     con = _duck()
     results = []
     try:
         for _key, tbl, watermark, _cols, _like in _plan():
-            results.append(merge_table(con, root, tbl, watermark, retention_days,
-                                       write_root))
+            t0 = time.perf_counter()
+            r = merge_table(con, root, tbl, watermark, retention_days, write_root)
+            r["seconds"] = round(time.perf_counter() - t0, 1)
+            results.append(r)
     finally:
         con.close()
     return results
@@ -213,15 +217,16 @@ def main(argv=None):
           f"              write {write_root} (retention {args.retention_days}d)\n")
     skipped = 0
     for r in merge_all(args.bronze, args.retention_days, args.write_root):
+        secs = f"  [{r.get('seconds', 0):5.1f}s]"
         if r["action"] == "skipped":
             skipped += 1
-            print(f"  {r['table']:48s} skipped — {r['note']}")
+            print(f"  {r['table']:48s} skipped — {r['note']}{secs}")
         elif r["action"] == "created":
-            print(f"  {r['table']:48s} CREATED {r['rows']:>9,} rows — {r['note']}")
+            print(f"  {r['table']:48s} CREATED {r['rows']:>9,} rows — {r['note']}{secs}")
         else:
             print(f"  {r['table']:48s} +{r['rows']:>8,} staged   "
                   f"total {r['total']:>10,}   pruned {r['pruned']:>7,}   "
-                  f"from {r['from']}")
+                  f"from {r['from']}{secs}")
     if skipped:
         print(f"\n  {skipped} table(s) had no staged data — check the Copy activities ran.")
     return 0

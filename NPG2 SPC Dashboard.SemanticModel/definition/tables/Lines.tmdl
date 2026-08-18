@@ -4,6 +4,15 @@ table Lines
 	measure 'Last Refreshed' = "Last refreshed " & MAX(Lines[GeneratedAt])
 		lineageTag: a1c2b3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6
 
+	measure 'Change detection Maximum for GeneratedAt' = MAX('Lines'[GeneratedAt])
+		lineageTag: 303bc89a-9afc-43ac-9bf2-9856b6b106c5
+
+		extendedProperty ChangeDetectionMetadata =
+				{
+				  "version": 0,
+				  "refreshInterval": "PT30S"
+				}
+
 	column LineId
 		dataType: string
 		lineageTag: 1f74ebc8-bce3-41a7-a950-792f02ebf2a4

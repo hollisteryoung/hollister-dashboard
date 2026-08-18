@@ -300,20 +300,28 @@ def main(argv=None):
 
     # Use the returned paths, not args: _prepare_paths resolves them to absolute
     # before it changes directory, so the raw args would point elsewhere afterwards.
+    import time
+
     _work, bronze, gold = _prepare_paths(args.bronze, args.gold)
     print(f"Bronze: {bronze}\nGold:   {gold}\n")
 
+    t0 = time.perf_counter()
     new = compute_snapshot()
+    t1 = time.perf_counter()
     for name, df in new.items():
         print(f"  computed {name:10s} {len(df):>7,} rows")
 
     merged = merge_history(new, gold)
+    t2 = time.perf_counter()
     print()
     write_gold(merged, gold)
+    t3 = time.perf_counter()
 
     snaps = merged["Snapshots"]
     print(f"\nRetained {len(snaps)} snapshot(s), "
           f"{snaps['SnapshotTime'].min()} .. {snaps['SnapshotTime'].max()}")
+    print(f"[timing] compute_snapshot: {t1 - t0:6.1f}s   merge_history: {t2 - t1:6.1f}s   "
+          f"write_gold: {t3 - t2:6.1f}s")
     return 0
 
 

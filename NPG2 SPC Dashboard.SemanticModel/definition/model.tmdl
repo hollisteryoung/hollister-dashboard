@@ -8,13 +8,13 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","RemoteModeling"]
 
 annotation PBI_QueryOrder = ["Shifts","SPC","Lines","Snapshots"]
 
+ref table Lines
 ref table Shifts
 ref table SPC
-ref table Lines
 ref table Snapshots
 
 ref cultureInfo en-IE
