@@ -29,6 +29,11 @@ YEAR = "2026"
 # request; still computed so they can be reported separately.
 EXCLUDED = {"NewUro", "Rings"}
 
+# Individual (workcell, month) readings dropped from every average, likewise at
+# the user's request. The raw value is kept on the machine record so the deck can
+# still say what was removed.
+EXCLUDED_READINGS = {("BFX1", "Jul")}
+
 FAMILY_LABEL = {
     "2PCAC": "2-Piece Autocoiners",
     "1PCAC": "1-Piece Autocoiners",
@@ -152,17 +157,22 @@ def read_machines(wb, targets, families):
         family = FAMILY_OVERRIDE.get(name) or (families.get(code) if code else None)
         if family is None:
             raise SystemExit(f"no family for workcell {name!r} — update WORKCELL_TO_CODE")
+        # '#DIV/0!' means the workcell did not run that month.
+        months = {
+            m: (row[c] if isinstance(row[c], (int, float)) else None)
+            for m, c in columns.items() if m in MONTHS
+        }
+        dropped = {m: months[m] for m in months if (name, m) in EXCLUDED_READINGS}
+        for m in dropped:
+            months[m] = None
         machines.append({
             "name": name,
             "code": code,
             "family": family,
             "familyLabel": FAMILY_LABEL[family],
             "target": targets.get(code),
-            # '#DIV/0!' means the workcell did not run that month.
-            "months": {
-                m: (row[c] if isinstance(row[c], (int, float)) else None)
-                for m, c in columns.items() if m in MONTHS
-            },
+            "months": months,
+            "droppedReadings": dropped,
         })
     return machines
 
@@ -220,6 +230,11 @@ def main():
             "recentMonths": RECENT,
             "year": YEAR,
             "excludedFamilies": sorted(FAMILY_LABEL[f] for f in EXCLUDED),
+            "excludedReadings": [
+                {"workcell": n, "month": m, "value": v}
+                for mach in machines for m, v in mach["droppedReadings"].items()
+                for n in [mach["name"]]
+            ],
             "company": company,
             "families": summary,
             "machines": machines,

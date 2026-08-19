@@ -59,6 +59,7 @@ const footNote =
   `Baseline = ${BASE_LBL}; last 3 months = ${REC_LBL} (July is the most recent complete month). ` +
   "April sits in the baseline: at 56.0% it ran below the Jan–Mar average and ranked 4th of the seven months. " +
   `${DROPPED.map((f) => f.label).join(" and ")} are excluded throughout. ` +
+  "BFX1’s July reading is excluded from every average, so BFX Cells and the company figure are built from May–Jun for that cell. " +
   "Averages are the equal-weighted mean of each workcell’s monthly OEE; months with no production are excluded, months recorded as 0% are included.";
 
 function addFooter(s, text) {
@@ -228,7 +229,7 @@ const INSIGHTS = [
       { text: "1-Piece Autocoiners", options: { bold: true, color: INK } },
       { text: " fell ", options: { color: INK2 } },
       { text: "5.8 pts", options: { bold: true, color: INK } },
-      { text: " on two machines alone: Autocoiner #5 (74.5→43.8) and #3 (67.2→40.6). The other ten held. BFX dropped further (−15.6) but is a single cell.",
+      { text: " on two machines alone: Autocoiner #5 (74.5→43.8) and #3 (67.2→40.6). The other ten held. Hollister Closed Pouch is next at −5.5, led by PCH04 and PCH01.",
         options: { color: INK2 } },
     ],
   },
@@ -407,6 +408,19 @@ s2.addText(
     fontFace: SANS, fontSize: 10, lineSpacingMultiple: 1.05 }
 );
 
+s2.addText("One reading dropped by request", {
+  x: 6.9, y: 6.32, w: 5.98, h: 0.22, margin: 0,
+  fontFace: SANS, fontSize: 11, bold: true, color: INK,
+});
+s2.addText(
+  [
+    { text: "BFX1’s July reading (26.4%) is excluded", options: { bold: true, color: INK } },
+    { text: " from BFX Cells and the company average. It ends a steady four-month slide — 71.6 → 64.7 → 45.3 → 26.4 — not a one-off, so 55.0% understates an ongoing decline.",
+      options: { color: INK2 } },
+  ],
+  { x: 6.9, y: 6.56, w: 5.98, h: 0.46, margin: 0, fontFace: SANS, fontSize: 9.5, color: INK2 }
+);
+
 s2.addText("Families excluded from this analysis", {
   x: 6.9, y: 4.72, w: 5.98, h: 0.22, margin: 0,
   fontFace: SANS, fontSize: 11, bold: true, color: INK,
@@ -437,8 +451,8 @@ s2.addTable(dropRows, {
   margin: 0.04,
 });
 s2.addText(
-  "Shown for reference only — these families are excluded from the chart, the company average and every figure on slide 1.",
-  { x: 6.9, y: 5.96, w: 5.98, h: 0.34, margin: 0, fontFace: SANS, fontSize: 9.5, color: INK3 }
+  "Shown for reference only — excluded from the chart, the company average and every figure on slide 1.",
+  { x: 6.9, y: 5.98, w: 5.98, h: 0.22, margin: 0, fontFace: SANS, fontSize: 9.5, color: INK3 }
 );
 
 addFooter(s2, footNote);
