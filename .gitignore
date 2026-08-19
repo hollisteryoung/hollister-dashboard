@@ -21,5 +21,6 @@ venv/
 analysis/node_modules/
 analysis/package-lock.json
 analysis/package.json
+analysis/oee.xlsx
 analysis/*.pdf
 analysis/slide-*.jpg
