@@ -92,8 +92,8 @@ Two Fabric items *can* reach on-prem SQL over a gateway — a Dataflow Gen2 and 
 Data Pipeline's Copy activity. So the pipeline is split at that seam:
 
 ```
-  Copy activity ──(gateway)──> stage_* ─┐        Bronze Delta tables
-   (or Dataflow Gen2 ──(gateway)────────┴──────> in the Lakehouse
+  Copy activity ──(gateway)──> stage_union ─┐    Bronze Delta tables
+   (or Dataflow Gen2 ──(gateway)────────────┴──> in the Lakehouse
                                                 │
                                           (no gateway)
                                                 ▼
@@ -111,6 +111,47 @@ No Python ever runs on the gateway, and no gateway is involved past the extract.
 That is why the IT ask is now a plain SQL Server connection rather than a
 security exception.
 
+### One Copy activity, not five (2026-08-26)
+
+The extract was originally one Copy activity per Bronze table. That is the
+expensive shape, and not because of the data: **data movement bills
+`duration x intelligent-throughput-optimization x 1.5 CU-hours`, and a copy over
+the gateway costs ~90s of that whatever it carries** — connection, query and
+commit overhead dominate at this size. The five copies moved ~4.5k rows between
+them (StatusBlocks 104, PPM 173, OutputStats 4,223, plus the two counter tables)
+and paid that fixed cost five times per run.
+
+Measured on the live pipeline, hourly runs: the copy phase ran 91-100s for all
+five in parallel, the notebook 449-528s. At ITO=4 that is ~0.75 CU-h/run of data
+movement against ~0.13 CU-h for the notebook — the extract was roughly **6x the
+compute it feeds**. Worth knowing: two of those five copies existed only so
+`detect_latest_shift()` could read one `MAX()` each, so 40% of the meter bought
+two scalars.
+
+So all five sources now travel in one Copy activity, as a single `UNION ALL`
+projected into a fixed slot list and tagged with its `bronze_plan()` key in `src`
+(see `export_bronze_local.union_slot_map`, which is also what
+[`bronze_merge.py`](bronze_merge.py) splits it back apart with — one function, both
+directions, so they cannot drift). Each branch keeps its own window bound and LIKE
+filters, so the row set crossing the gateway is unchanged.
+
+Verified before deploy by building Bronze both ways from one extraction — a fixed
+extraction ceiling and a byte-copied Bronze, because the historian appends to
+OutputStats every ~7s and a naive A/B diffs by however long the first leg took —
+and diffing all five tables: identical columns, types and every row.
+
+**Rollback is a redeploy, not a revert.** `bronze_merge.py` prefers `stage_union`
+and falls back to the per-table `stage_*` tables, so
+`generate_pipeline.py --stage-mode per-table` restores the old shape with no code
+change (and the Gen2 route, which writes Bronze directly, never cared either way).
+Deploy the notebook code *first* for that reason: it is a no-op until a
+`stage_union` table appears.
+
+Residual risk local testing cannot cover: how the Copy activity itself types the
+wide unioned result set on the way into Parquet. `bronze_merge._conform()` casts
+the split onto each Bronze table's own schema and raises on any column-set
+mismatch, so that surfaces as a failed run rather than a re-typed Bronze column.
+
 ### What the Copy-activity route has to do for itself
 
 Copy activity can only append or overwrite a whole table — it has no equivalent of
@@ -119,7 +160,7 @@ retention from two settings. That is reproduced in
 [`bronze_merge.py`](bronze_merge.py), and deliberately not by tracking a high-water
 mark:
 
-- Each run's Copy activity re-reads a fixed **6-hour tail** into `stage_<table>`
+- Each run's Copy activity re-reads a fixed **6-hour tail** into `stage_union`
   with Overwrite, so it holds no state and a retry cannot duplicate anything.
 - The notebook then replaces the same window in Bronze with the staged rows using a
   Delta `replaceWhere`, bounded by the stage's own earliest watermark — so the rows
@@ -166,7 +207,7 @@ text needs no rewriting. Two dialect differences are bridged by `top_clause()` /
 | Copy-activity source T-SQL vs the parity-verified queries | character-identical apart from the window bound |
 | `bronze_merge.py` — merge an already-present tail, twice | no row added, bounds preserved, zero duplicates |
 | `bronze_merge.py` — 3h hole punched in Bronze's tail | fully healed by the next merge, zero duplicates |
-| `bronze_merge.py` — no `stage_*` table present | clean skip, so the notebook still works behind Gen2 |
+| `bronze_merge.py` — no stage table present | clean skip, so the notebook still works behind Gen2 |
 | SPC output from merged Bronze vs pristine export (duckdb both sides) | **identical**, zero differences |
 
 **Not verified:** anything requiring the gateway or capacity — neither extract

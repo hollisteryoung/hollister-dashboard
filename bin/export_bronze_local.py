@@ -72,6 +72,95 @@ def bronze_plan():
     return plan
 
 
+# ──────────────────────────────────────────────
+# One-copy union stage
+# ──────────────────────────────────────────────
+#
+# The 15-minute pipeline originally ran one Copy activity per Bronze table. Data
+# movement bills `duration x intelligent-throughput-optimization x 1.5 CU-hours`,
+# and a copy over the gateway costs ~90s of that whatever it carries — connection,
+# query and commit overhead dominate at this size. Five copies moving ~4.5k rows
+# between them therefore paid that toll five times for no more data. One Copy
+# activity carrying all five sources as a single UNION ALL pays it once.
+#
+# Every source is projected into the slot list below and tagged with its
+# bronze_plan() key in `src`; fabric_jobs/bronze_merge.py splits it back out and
+# projects each group onto that table's own Bronze schema. Slots are shared where
+# name and type already coincide (the two counter tables, plus Counter_Total
+# riding in ctr_val) and dedicated where they don't (StatusBlocks, prefixed sb_).
+UNION_STAGE_TABLE = "stage_union"
+
+# StatusBlocks is the one plan entry whose select list is None (SELECT *). A union
+# branch needs an explicit column list, so it is named here — in the table's own
+# ordinal order, which is also the Bronze column order the backfill created.
+STATUS_BLOCK_COLUMNS = (
+    "ID", "RunningStatus", "Start_TS", "StopType", "End_TS",
+    "Faults", "StartID", "EndID", "StopTypeNote", "Notes",
+)
+
+# Slot list, in the order the union emits it. The type is needed only for the
+# `CAST(NULL AS ...)` placeholder a branch emits for a slot it does not carry —
+# the real type always comes from whichever branch does carry it. Captured from
+# INFORMATION_SCHEMA on db_ProcessData, 2026-08-26.
+UNION_SLOTS = (
+    ("src",              "varchar(32)"),
+    ("block_id",         "int"),
+    ("t_stamp",          "datetime"),
+    ("row_id",           "int"),
+    ("ctr_name",         "nvarchar(255)"),
+    ("ctr_val",          "bigint"),
+    ("sb_ID",            "bigint"),
+    ("sb_RunningStatus", "bit"),
+    ("sb_Start_TS",      "datetime"),
+    ("sb_StopType",      "nvarchar(8)"),
+    ("sb_End_TS",        "datetime"),
+    ("sb_Faults",        "nvarchar(1024)"),
+    ("sb_StartID",       "bigint"),
+    ("sb_EndID",         "bigint"),
+    ("sb_StopTypeNote",  "nvarchar(64)"),
+    ("sb_Notes",         "nvarchar(128)"),
+)
+
+
+def union_slot_map(key, cols):
+    """[(bronze_column, union_slot)] for one bronze_plan() entry, in Bronze order.
+
+    Read left-to-right this is how the Copy activity projects a source into the
+    union; read right-to-left it is how bronze_merge.py reconstructs the Bronze
+    table. Both directions come from this one function so they cannot drift.
+
+    A plan column with no slot is an error rather than a silent drop: adding a
+    column to bronze_plan() must also give it somewhere to travel, and finding
+    that out when the pipeline is generated is much cheaper than finding it out
+    as a missing Bronze column three runs later.
+    """
+    if key == "status_blocks":
+        return [(c, "sb_" + c) for c in STATUS_BLOCK_COLUMNS]
+
+    ts = get_col(CFG, "t_stamp")
+    counter_total = get_col(CFG, "counter_total")
+    slots = {s for s, _ in UNION_SLOTS}
+    out = []
+    for col in cols:
+        if col == ts:
+            slot = "t_stamp"
+        elif col in ("block_id", "row_id"):
+            slot = col
+        elif col.endswith("_Counter_Names"):
+            slot = "ctr_name"
+        elif col.endswith("_Counters") or col == counter_total:
+            slot = "ctr_val"
+        else:
+            raise RuntimeError(
+                f"bronze_plan() column {key}.{col} has no union slot. Add one to "
+                f"UNION_SLOTS and a rule to union_slot_map(), or the one-copy "
+                f"stage would drop it."
+            )
+        assert slot in slots, f"union slot {slot!r} missing from UNION_SLOTS"
+        out.append((col, slot))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=30,

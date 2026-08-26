@@ -16,10 +16,21 @@ Two pipelines are emitted, both from bronze_plan():
                              straight into the Bronze tables. Run once, or any
                              time Bronze needs rebuilding from source.
 
-  NGP2 SPC 15min             5 Copy activities landing only a recent tail into
-                             stage_* (Overwrite, therefore stateless), then one
-                             notebook activity that merges the tail into Bronze
-                             and recomputes Gold. Scheduled every 15 minutes.
+  NGP2 SPC 15min             ONE Copy activity landing a recent tail of all five
+                             sources into stage_union (Overwrite, therefore
+                             stateless), then one notebook activity that merges
+                             the tail into Bronze and recomputes Gold. Runs
+                             hourly, despite the name.
+
+                             It was five copies, one per table. Data movement
+                             bills duration x intelligent-throughput-optimization
+                             x 1.5 CU-hours, and a copy over the gateway costs
+                             ~90s of that whatever it carries, so five copies of
+                             ~4.5k rows between them paid the fixed cost five
+                             times per run — measured at ~6x the notebook it
+                             feeds. Pass --stage-mode per-table for the old shape;
+                             bronze_merge.py accepts either, which is what makes
+                             that a complete rollback.
 
 Both source queries bound the window on `MAX(watermark)` *in the source table*
 rather than on the clock, matching bin/export_bronze_local.py — the historian's
@@ -45,8 +56,12 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 sys.path.insert(0, os.path.join(ROOT, "bin"))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
-from export_bronze_local import bronze_plan                  # noqa: E402
+from export_bronze_local import (                            # noqa: E402
+    UNION_SLOTS, UNION_STAGE_TABLE, bronze_plan, union_slot_map,
+)
 from core.lines import get_line_config                       # noqa: E402
+
+CFG = get_line_config("ngp2")
 
 BACKFILL_NAME = "NGP2 SPC Bronze Backfill"
 PIPELINE_NAME = "NGP2 SPC 15min"
@@ -61,6 +76,10 @@ BACKFILL_DAYS = 80
 # which costs ~5k rows per run and buys tolerance for a few hours of outage.
 TAIL_HOURS = 6
 
+# "union" = one Copy activity for all five sources; "per-table" = the original
+# five. See build_incremental() — per-table is kept as the rollback shape.
+STAGE_MODE = "union"
+
 # Bounded well under the 15-minute cadence so a stuck run cannot overlap the next.
 COPY_TIMEOUT = "0.00:10:00"
 NOTEBOOK_TIMEOUT = "0.00:10:00"
@@ -74,6 +93,37 @@ def source_query(tbl, cols, like, window_expr):
         name_col, pats = like
         where.append("(" + " OR ".join(f"{name_col} LIKE '{p}'" for p in pats) + ")")
     return f"SELECT {select} FROM dbo.{tbl} WHERE " + " AND ".join(where)
+
+
+def union_source_query(window_expr):
+    """The single SELECT the one-copy stage sends: every bronze_plan() entry
+    projected into UNION_SLOTS and tagged with its plan key in `src`.
+
+    Each branch keeps its own window bound and LIKE filters, so what crosses the
+    gateway is the same row set the five separate copies fetched — just in one
+    result set, and so on one billed data-movement duration instead of five.
+    fabric_jobs/bronze_merge.py splits it back apart on `src`.
+    """
+    branches = []
+    for key, tbl, watermark, cols, like in bronze_plan():
+        expr_for = {slot: col for col, slot in union_slot_map(key, cols)}
+        # `src` first and always a literal; the rest either carry a real column or
+        # a typed NULL placeholder. The type on the placeholder matters only when
+        # no branch carries the slot at all, which union_slot_map() prevents, but
+        # being explicit keeps the Copy activity's inferred sink schema stable
+        # rather than dependent on branch order.
+        select = [f"CAST('{key}' AS varchar(32)) AS src"]
+        for slot, sqltype in UNION_SLOTS[1:]:
+            col = expr_for.get(slot)
+            select.append(f"{col} AS {slot}" if col
+                          else f"CAST(NULL AS {sqltype}) AS {slot}")
+        where = [window_expr.replace("{col}", watermark).format(tbl=tbl)]
+        if like:
+            name_col, pats = like
+            where.append("(" + " OR ".join(f"{name_col} LIKE '{p}'" for p in pats) + ")")
+        branches.append("SELECT " + ", ".join(select)
+                        + f" FROM dbo.{tbl} WHERE " + " AND ".join(where))
+    return "\nUNION ALL\n".join(branches)
 
 
 def _sql_source(tbl, sql, connection_id):
@@ -163,16 +213,39 @@ def build_backfill(ws_id, lh_id, lh_name, sql_conn, days=BACKFILL_DAYS):
     return {"properties": {"activities": activities}}
 
 
-def build_incremental(ws_id, lh_id, lh_name, sql_conn, notebook_id, tail_hours=TAIL_HOURS):
+def build_incremental(ws_id, lh_id, lh_name, sql_conn, notebook_id,
+                      tail_hours=TAIL_HOURS, stage_mode=STAGE_MODE):
+    """The scheduled pipeline: land the tail, then merge and recompute Gold.
+
+    stage_mode "union" emits ONE Copy activity carrying all five sources (see
+    export_bronze_local.union_slot_map); "per-table" emits the original five, one
+    per Bronze table. Both land data the notebook can consume — bronze_merge.py
+    prefers the union stage and falls back to the per-table ones — so this is a
+    safe rollback switch: redeploy with per-table and nothing else changes.
+
+    Union is the default because data movement bills per copy activity duration,
+    and a gateway copy costs ~90s of it regardless of how few rows it carries.
+    """
     window = ("{col} >= DATEADD(hour, -" + str(tail_hours)
               + ", (SELECT MAX({col}) FROM dbo.{tbl}))")
     activities, names = [], []
-    for _key, tbl, watermark, cols, like in bronze_plan():
-        sql = source_query(tbl, cols, like, window.replace("{col}", watermark))
-        name = f"Stage {tbl}"
+
+    if stage_mode == "union":
+        name = "Stage all sources"
         names.append(name)
+        # The dataset's table name is nominal — sqlReaderQuery supplies the real
+        # statement, and this source spans five tables. Naming the largest of them
+        # keeps the activity readable in the portal.
         activities.append(_copy_activity(
-            name, tbl, sql, f"stage_{tbl}", ws_id, lh_id, lh_name, sql_conn))
+            name, CFG["tables"]["output_stats"], union_source_query(window),
+            UNION_STAGE_TABLE, ws_id, lh_id, lh_name, sql_conn))
+    else:
+        for _key, tbl, watermark, cols, like in bronze_plan():
+            sql = source_query(tbl, cols, like, window.replace("{col}", watermark))
+            name = f"Stage {tbl}"
+            names.append(name)
+            activities.append(_copy_activity(
+                name, tbl, sql, f"stage_{tbl}", ws_id, lh_id, lh_name, sql_conn))
 
     # Succeeded-only, on every copy: the notebook overwrites the Gold tables the
     # report reads, so a partial extract must not be allowed to publish SPC limits
@@ -198,6 +271,10 @@ def main():
     ap.add_argument("--notebook-id", help="omit to emit the backfill pipeline only")
     ap.add_argument("--backfill-days", type=int, default=BACKFILL_DAYS)
     ap.add_argument("--tail-hours", type=int, default=TAIL_HOURS)
+    ap.add_argument("--stage-mode", choices=("union", "per-table"), default=STAGE_MODE,
+                    help="union: one Copy activity for all five sources (cheap, "
+                         "default). per-table: the original five, kept as the "
+                         "rollback shape — bronze_merge.py handles either.")
     ap.add_argument("--out", default=os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                                  "build", "pipeline"))
     args = ap.parse_args()
@@ -215,7 +292,8 @@ def main():
 
     if args.notebook_id:
         inc = build_incremental(*common, notebook_id=args.notebook_id,
-                                tail_hours=args.tail_hours)
+                                tail_hours=args.tail_hours,
+                                stage_mode=args.stage_mode)
         path = os.path.join(args.out, "incremental.json")
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             json.dump(inc, f, indent=2)
@@ -228,11 +306,14 @@ def main():
         print("\n  --notebook-id not given, so the 15-minute pipeline was skipped.\n"
               "  Create the notebook first (fabric_jobs/notebook_bootstrap.py).")
 
-    print(f"\nSource queries ({args.tail_hours}h tail):\n")
+    print(f"\nSource SQL ({args.tail_hours}h tail, stage mode {args.stage_mode}):\n")
     window = ("{col} >= DATEADD(hour, -" + str(args.tail_hours)
               + ", (SELECT MAX({col}) FROM dbo.{tbl}))")
-    for _key, tbl, watermark, cols, like in bronze_plan():
-        print("  " + source_query(tbl, cols, like, window.replace("{col}", watermark)))
+    if args.stage_mode == "union":
+        print(union_source_query(window))
+    else:
+        for _key, tbl, watermark, cols, like in bronze_plan():
+            print("  " + source_query(tbl, cols, like, window.replace("{col}", watermark)))
     return 0
 
 
