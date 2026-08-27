@@ -209,8 +209,13 @@ def main():
                  f"fabric_jobs/notebook_bootstrap.py, or pass --backfill")
 
     step("Generate pipeline definitions")
-    generate(ws_id, lh["id"], sql["id"], nb["id"] if want_incremental else None,
-             sm["id"] if (want_incremental and sm) else None)
+    # sm["id"] is deliberately NOT passed: the PBISemanticModelRefresh activity
+    # requires an externalReferences connection that can only be minted by
+    # configuring the activity in the portal, and without it every run fails with
+    # "The external references connection cannot be found in the trident payload".
+    # The reframe happens at the end of spc_gold_refresh.main() instead, using the
+    # notebook's own identity, where it needs no connection object at all.
+    generate(ws_id, lh["id"], sql["id"], nb["id"] if want_incremental else None)
 
     step("Create or update pipelines")
     ids = {BACKFILL_NAME: upsert(ws_id, BACKFILL_NAME,
