@@ -47,6 +47,10 @@ from generate_pipeline import BACKFILL_NAME, PIPELINE_NAME       # noqa: E402
 WORKSPACE = "Smart Factory"
 LAKEHOUSE = "NGP2SPCLakehouse"
 NOTEBOOK = "NGP2 SPC Gold Refresh"
+# Reframed at the end of every run. Without that, Activator cannot see new
+# data in a Direct Lake model at all and alerts never fire — see
+# generate_pipeline._semantic_refresh_activity().
+SEMANTIC_MODEL = "NPG2 SPC Dashboard"
 BUILD = os.path.join(HERE, "build", "pipeline")
 
 INTERVAL_MIN = 15
@@ -90,13 +94,18 @@ def find_item(ws_id, name, item_type=None):
     return None
 
 
-def generate(ws_id, lh_id, sql_conn_id, notebook_id):
+def generate(ws_id, lh_id, sql_conn_id, notebook_id, semantic_model_id=None):
     cmd = [sys.executable, os.path.join(HERE, "generate_pipeline.py"),
            "--workspace-id", ws_id, "--lakehouse-id", lh_id,
            "--lakehouse-name", LAKEHOUSE,
            "--sql-connection-id", sql_conn_id, "--out", BUILD]
     if notebook_id:
         cmd += ["--notebook-id", notebook_id]
+    # Passed through rather than left to the generator's default: this function
+    # regenerates the definitions immediately before deploying them, so anything it
+    # omits is silently dropped from what goes live.
+    if semantic_model_id:
+        cmd += ["--semantic-model-id", semantic_model_id]
     subprocess.run(cmd, check=True)
 
 
@@ -161,8 +170,10 @@ def main():
     sql = find_sql_connection(args.sql_connection)
     lh = fab.find(fab.get(f"/workspaces/{ws_id}/lakehouses"), LAKEHOUSE)
     nb = find_item(ws_id, NOTEBOOK, "Notebook")
+    sm = find_item(ws_id, SEMANTIC_MODEL, "SemanticModel")
     print(f"  lakehouse {LAKEHOUSE!r}: {lh['id'] if lh else 'NOT FOUND'}")
     print(f"  notebook  {NOTEBOOK!r}: {nb['id'] if nb else 'NOT FOUND'}")
+    print(f"  model     {SEMANTIC_MODEL!r}: {sm['id'] if sm else 'NOT FOUND'}")
 
     if args.check_only:
         step("Check complete (nothing created)")
@@ -198,7 +209,8 @@ def main():
                  f"fabric_jobs/notebook_bootstrap.py, or pass --backfill")
 
     step("Generate pipeline definitions")
-    generate(ws_id, lh["id"], sql["id"], nb["id"] if want_incremental else None)
+    generate(ws_id, lh["id"], sql["id"], nb["id"] if want_incremental else None,
+             sm["id"] if (want_incremental and sm) else None)
 
     step("Create or update pipelines")
     ids = {BACKFILL_NAME: upsert(ws_id, BACKFILL_NAME,

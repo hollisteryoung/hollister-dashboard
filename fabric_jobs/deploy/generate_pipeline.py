@@ -83,6 +83,11 @@ STAGE_MODE = "union"
 # Bounded well under the 15-minute cadence so a stuck run cannot overlap the next.
 COPY_TIMEOUT = "0.00:10:00"
 NOTEBOOK_TIMEOUT = "0.00:10:00"
+# A Direct Lake reframe is metadata work, not a data load, so this is
+# generous rather than tight.
+REFRESH_TIMEOUT = "0.00:20:00"
+
+NOTEBOOK_ACTIVITY_NAME = "Merge Bronze and compute Gold"
 
 
 def source_query(tbl, cols, like, window_expr):
@@ -202,6 +207,46 @@ def _copy_activity(name, tbl, sql, sink_table, ws_id, lh_id, lh_name, sql_conn):
     }
 
 
+def _semantic_refresh_activity(name, ws_id, model_id, depends_on):
+    """Reframe the Direct Lake semantic model once Gold has been rewritten.
+
+    Two reasons this is here rather than left to Direct Lake's automatic framing:
+
+      * **Activator cannot see changes in a Direct Lake model until it is
+        refreshed.** It keeps reporting the values it first framed however many
+        times the underlying Delta tables change, so an alert on `Out of Control`
+        never fires no matter how many bars breach the UCL. That is a documented
+        Microsoft bug, not a rule misconfiguration, and an explicit refresh is the
+        workaround. (Activator also only polls Power BI hourly, which matches this
+        pipeline's cadence anyway.)
+      * It removes the framing question from the report path entirely: by the time
+        the pipeline reports success, the model has been told to reload.
+
+    waitOnCompletion so a failed reframe fails the run visibly rather than leaving
+    the report silently on stale rows. Retries because the Power BI refresh API
+    errors outright if a refresh is already in flight — a manual trigger landing on
+    top of the schedule would otherwise fail the whole pipeline for a reason that
+    resolves itself in a minute.
+    """
+    return {
+        "name": name,
+        "type": "PBISemanticModelRefresh",
+        "dependsOn": [{"activity": d, "dependencyConditions": ["Succeeded"]}
+                      for d in depends_on],
+        "policy": {"timeout": REFRESH_TIMEOUT, "retry": 2,
+                   "retryIntervalInSeconds": 60,
+                   "secureInput": False, "secureOutput": False},
+        "typeProperties": {
+            "method": "post",
+            "waitOnCompletion": True,
+            "commitMode": "Transactional",
+            "operationType": "SemanticModelRefresh",
+            "groupId": ws_id,
+            "datasetId": model_id,
+        },
+    }
+
+
 def build_backfill(ws_id, lh_id, lh_name, sql_conn, days=BACKFILL_DAYS):
     window = ("{col} >= DATEADD(day, -" + str(days)
               + ", (SELECT MAX({col}) FROM dbo.{tbl}))")
@@ -214,7 +259,8 @@ def build_backfill(ws_id, lh_id, lh_name, sql_conn, days=BACKFILL_DAYS):
 
 
 def build_incremental(ws_id, lh_id, lh_name, sql_conn, notebook_id,
-                      tail_hours=TAIL_HOURS, stage_mode=STAGE_MODE):
+                      tail_hours=TAIL_HOURS, stage_mode=STAGE_MODE,
+                      semantic_model_id=None):
     """The scheduled pipeline: land the tail, then merge and recompute Gold.
 
     stage_mode "union" emits ONE Copy activity carrying all five sources (see
@@ -251,13 +297,21 @@ def build_incremental(ws_id, lh_id, lh_name, sql_conn, notebook_id,
     # report reads, so a partial extract must not be allowed to publish SPC limits
     # computed from an incomplete Bronze tail.
     activities.append({
-        "name": "Merge Bronze and compute Gold",
+        "name": NOTEBOOK_ACTIVITY_NAME,
         "type": "TridentNotebook",
         "dependsOn": [{"activity": n, "dependencyConditions": ["Succeeded"]} for n in names],
         "policy": {"timeout": NOTEBOOK_TIMEOUT, "retry": 0,
                    "secureInput": False, "secureOutput": False},
         "typeProperties": {"notebookId": notebook_id, "workspaceId": ws_id},
     })
+
+    # Only if a model id was supplied, so the generator still works for anyone who
+    # has not got one to hand — and so this stays one flag to drop if the Activator
+    # bug it works around is ever fixed.
+    if semantic_model_id:
+        activities.append(_semantic_refresh_activity(
+            "Reframe semantic model", ws_id, semantic_model_id,
+            [NOTEBOOK_ACTIVITY_NAME]))
     return {"properties": {"activities": activities}}
 
 
@@ -271,6 +325,10 @@ def main():
     ap.add_argument("--notebook-id", help="omit to emit the backfill pipeline only")
     ap.add_argument("--backfill-days", type=int, default=BACKFILL_DAYS)
     ap.add_argument("--tail-hours", type=int, default=TAIL_HOURS)
+    ap.add_argument("--semantic-model-id",
+                    help="Direct Lake model to reframe after Gold is written. "
+                         "Required for Activator alerts to see new data at all — "
+                         "see _semantic_refresh_activity().")
     ap.add_argument("--stage-mode", choices=("union", "per-table"), default=STAGE_MODE,
                     help="union: one Copy activity for all five sources (cheap, "
                          "default). per-table: the original five, kept as the "
@@ -293,7 +351,8 @@ def main():
     if args.notebook_id:
         inc = build_incremental(*common, notebook_id=args.notebook_id,
                                 tail_hours=args.tail_hours,
-                                stage_mode=args.stage_mode)
+                                stage_mode=args.stage_mode,
+                                semantic_model_id=args.semantic_model_id)
         path = os.path.join(args.out, "incremental.json")
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             json.dump(inc, f, indent=2)
