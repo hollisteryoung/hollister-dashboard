@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, os.path.normpath(os.path.join(os.path.dirname(__file__), '..')))
-from core.db import query, top_clause, limit_clause
+from core.db import hour_trunc, query, top_clause, limit_clause
 from core.lines import get_line_config, get_table, get_col
 from domain.shifts import assign_shift
 
@@ -573,6 +573,74 @@ def _collect_subgroups_core(
     return subgroups if len(subgroups) >= min_subgroups else None
 
 
+def _latest_reading(conn, tbl, name_col, counter_col, name):
+    """(block_id, t_stamp) of the most recent row for one representative counter
+    name. Used only to detect whether a batch has run past the last reset for
+    longer than usual — see _add_open_batch_subgroup.
+    """
+    df = query(conn, f"""
+    SELECT {top_clause(1)} block_id, t_stamp FROM {tbl}
+    WHERE {name_col} = ?
+    ORDER BY t_stamp DESC
+    {limit_clause(1)}
+    """, params=[name])
+    if df.empty:
+        return None
+    return int(df.iloc[0]["block_id"]), df.iloc[0]["t_stamp"]
+
+
+def _add_open_batch_subgroup(conn, subgroups, reset_rows, tbl, name_col, counter_col,
+                             rep_name, fetch_lanes_at_block, tbl_out, n_lanes_divisor,
+                             shift_boundaries=None, excluded_days=None):
+    """Append one provisional subgroup for a batch that is still running (hasn't
+    reset yet), so a long-running batch doesn't withhold SPC data indefinitely.
+
+    Without this, a subgroup only exists once a counter reset closes a batch —
+    correct for a complete count, but it means a station whose current batch
+    runs longer than a shift (confirmed on Vision: batches sometimes span 20+
+    hours with no reset) shows nothing at all for that stretch, even though
+    inspection is actively happening. This reads the counter's current
+    (not-yet-reset) value as a stand-in for the closing reset, the same way a
+    real subgroup reads the value at the block right before the *next* reset —
+    the counter counts up from 0 either way, so "value now" and "value at the
+    next reset" are the same kind of number, just observed at different times.
+
+    Deliberately shaped identically to a normal subgroup (same keys, no
+    "provisional" marker) so every downstream consumer — baseline building,
+    Laney p', EWMA, Gold schema — needs no changes. The real tradeoff is
+    business, not technical: this reading will typically be *lower* than the
+    eventual closed-batch count, since inspection is still in progress.
+    """
+    if subgroups is None or not reset_rows:
+        return subgroups
+
+    latest = _latest_reading(conn, tbl, name_col, counter_col, rep_name)
+    if latest is None:
+        return subgroups
+    latest_block, latest_ts = latest
+    last_reset = reset_rows[-1]
+    if latest_block <= int(last_reset.block_id):
+        return subgroups   # no rows past the last reset — nothing open yet
+
+    ts_str = str(latest_ts)[:19]
+    if excluded_days and ts_str[:10] in excluded_days:
+        return subgroups
+
+    end_lanes = fetch_lanes_at_block(latest_block)
+    if end_lanes is None:
+        return subgroups
+
+    epoch_start_str = _resolve_epoch_start(
+        last_reset.t_stamp, pd.Timestamp(latest_ts), shift_boundaries
+    ) or str(last_reset.t_stamp)[:19]
+    total_per_lane = _output_max_in_epoch(conn, tbl_out, epoch_start_str, ts_str) / n_lanes_divisor
+    if total_per_lane < 100:
+        return subgroups   # too little inspected so far to be a meaningful reading
+
+    subgroups.append({"t_stamp": ts_str, "n_inspected": total_per_lane, **end_lanes})
+    return subgroups
+
+
 def _collect_counter_subgroups(conn, table_key, counter_col, name_col,
                                counter_pattern, n_expected, n_lanes_divisor,
                                excluded_days=None, shift_boundaries=None):
@@ -624,10 +692,15 @@ def _collect_counter_subgroups(conn, table_key, counter_col, name_col,
         return _lanes_at_last_block_before(conn, tbl, name_col, counter_col,
                                            rep_name, counter_pattern, n_expected, before_ts_str)
 
-    return _collect_subgroups_core(
+    subgroups = _collect_subgroups_core(
         conn, reset_rows,
         fetch_lanes_at_block, fetch_lanes_at_boundary,
         get_table(CFG, "output_stats"), n_lanes_divisor, excluded_days, shift_boundaries,
+    )
+    return _add_open_batch_subgroup(
+        conn, subgroups, reset_rows, tbl, name_col, counter_col, rep_name,
+        fetch_lanes_at_block, get_table(CFG, "output_stats"), n_lanes_divisor,
+        shift_boundaries, excluded_days,
     )
 
 
@@ -751,11 +824,15 @@ def _collect_camera_dual(conn, params, excluded_days=None, shift_boundaries=None
             return None
         return _fetch_at_block(int(df_bk.iloc[0, 0]))
 
-    return _collect_subgroups_core(
+    subgroups = _collect_subgroups_core(
         conn, reset_rows,
         _fetch_at_block, _fetch_at_boundary,
         tbl_out, divisor, excluded_days, shift_boundaries,
         min_subgroups=min_subgroups,
+    )
+    return _add_open_batch_subgroup(
+        conn, subgroups, reset_rows, tbl, name_col, counter_col, reset_name,
+        _fetch_at_block, tbl_out, divisor, shift_boundaries, excluded_days,
     )
 
 
@@ -830,3 +907,194 @@ def derive_spc_lanes(panel, subgroups, active_subgroups=None):
             keys = all_keys
         return keys, [int(k.replace(prefix, "")) for k in keys]
     raise ValueError(f"Unknown lane_key_mode {mode!r}")
+
+
+# ──────────────────────────────────────────────
+# Hourly SPC collection (raw counters, not counter-reset subgroups)
+# ──────────────────────────────────────────────
+#
+# An SPC subgroup above is created by a batch counter reset, which happens
+# ~2 times/day/panel — about once per shift (measured live, 2026-08-27). That
+# is fine for a shift-level trend but leaves ~90% of clock hours with no
+# subgroup at all, so an hourly trend needs its own bucketing off the raw
+# counters rather than a finer slice of the same reset events.
+#
+# The technique: sum positive increments between consecutive readings of the
+# same counter, grouped by clock hour. A decrease mid-hour is a batch/order
+# reset; its delta is the new (post-reset) value, since the counter counts up
+# from 0 again — the same convention _output_max_in_epoch() uses for resets
+# within a shift epoch, applied here per hour instead of per epoch. Verified
+# against a bulk 3-day pull against live SQL: exact hourly rejects and parts
+# in one query per table, no per-subgroup round trips, median ~316 parts/
+# lane/hour, comfortably above the existing n>=100 subgroup threshold.
+#
+# Bounded on the same _SPC_LOOKBACK_DAYS used for reset detection above —
+# generous relative to what the hourly window/baseline actually need
+# (SPC_HOURLY_WINDOW_HOURS + SPC_HOURLY_BASELINE_BUCKETS in weekly_analysis.py
+# is well under 75 days of hours), but reusing one bound means one fewer knob
+# and automatic consistency if that constant is ever retuned.
+
+
+def _hourly_deltas(conn, tbl, order_col, name_col, counter_col, patterns, since_str):
+    """One bulk query: per (hour, counter_name) positive-increment sum.
+
+    `patterns` is one LIKE pattern or a list of them — camera_dual passes both
+    its rear and front patterns in one call so lane-pairing sees both series;
+    PARTITION BY name keeps each counter's LAG sequence independent even though
+    every matching name is read in one pass. `order_col` is what LAG orders by:
+    block_id for the counter tables (their logged sequence, matching
+    _detect_counter_resets' own ORDER BY), t_stamp for output_stats (no
+    block_id column there).
+    """
+    pats = list(patterns) if isinstance(patterns, (list, tuple)) else [patterns]
+    where_like = "(" + " OR ".join(f"{name_col} LIKE ?" for _ in pats) + ")"
+    hr = hour_trunc("t_stamp")
+    return query(conn, f"""
+    WITH d AS (
+        SELECT {name_col} AS name, t_stamp, {counter_col} AS cnt,
+               LAG({counter_col}) OVER (PARTITION BY {name_col} ORDER BY {order_col}) AS prev
+        FROM {tbl}
+        WHERE {where_like} AND t_stamp >= ?
+    )
+    SELECT {hr} AS hr, name,
+           SUM(CASE WHEN prev IS NULL THEN 0
+                    WHEN cnt >= prev THEN cnt - prev ELSE cnt END) AS rejects
+    FROM d
+    GROUP BY {hr}, name
+    """, params=[*pats, since_str])
+
+
+def _hourly_parts(conn, since_str):
+    """Hourly parts produced, from output_stats' Counter_Total — same
+    positive-increment technique as _hourly_deltas(), undivided (callers
+    divide by their own panel's n_lanes_divisor)."""
+    tbl = get_table(CFG, "output_stats")
+    hr = hour_trunc("t_stamp")
+    return query(conn, f"""
+    WITH d AS (
+        SELECT t_stamp, {C_TOTAL} AS cnt,
+               LAG({C_TOTAL}) OVER (ORDER BY t_stamp) AS prev
+        FROM {tbl}
+        WHERE t_stamp >= ?
+    )
+    SELECT {hr} AS hr,
+           SUM(CASE WHEN prev IS NULL THEN 0
+                    WHEN cnt >= prev THEN cnt - prev ELSE cnt END) AS parts
+    FROM d
+    GROUP BY {hr}
+    """, params=[since_str])
+
+
+def _hourly_subgroups_from_deltas(lane_df, parts_df, divisor, excluded_days=None):
+    """Assemble the {t_stamp, n_inspected, <lane>: rejects} subgroup list from
+    the two bulk hourly queries: one dict per hour across the full lookback
+    window, oldest first.
+
+    Every hour in [min(hr), max(hr)] across both frames is emitted, matching
+    the shift-grain convention of "every point on the axis gets an entry, gaps
+    included" — an hour with no lane activity is 0 rejects, not a missing
+    point; an hour with no production at all is n_inspected=0, which callers
+    already render as a gap (null rate/UCL) rather than shrinking the axis.
+
+    Every hour's dict carries the FULL set of lane names discovered anywhere
+    in the window as keys (0 where inactive that hour), not just the names
+    active that particular hour. This matters for lane_key_mode
+    "discovered_sorted" (the Vision panel), whose lane set is read from just
+    the first subgroup in derive_spc_lanes() — with a per-hour-only key set,
+    an oldest hour that happened to be quiet could silently drop a lane from
+    the whole series.
+    """
+    if parts_df.empty:
+        return []
+    lane_names = sorted(lane_df["name"].unique()) if not lane_df.empty else []
+    lo, hi = parts_df["hr"].min(), parts_df["hr"].max()
+    if not lane_df.empty:
+        lo, hi = min(lo, lane_df["hr"].min()), max(hi, lane_df["hr"].max())
+    grid = pd.date_range(lo, hi, freq="1h")
+
+    parts_by_hr = parts_df.set_index("hr")["parts"].to_dict()
+    lane_by_hr = {}
+    if not lane_df.empty:
+        for hr, g in lane_df.groupby("hr"):
+            lane_by_hr[hr] = dict(zip(g["name"], g["rejects"]))
+
+    out = []
+    for hr in grid:
+        ts_str = hr.strftime("%Y-%m-%d %H:%M:%S")
+        if excluded_days and ts_str[:10] in excluded_days:
+            continue
+        parts = parts_by_hr.get(pd.Timestamp(hr), 0) or 0
+        row = {"t_stamp": ts_str, "n_inspected": parts / divisor if divisor else 0}
+        active = lane_by_hr.get(pd.Timestamp(hr), {})
+        for name in lane_names:
+            row[name] = active.get(name, 0) or 0
+        out.append(row)
+    return out
+
+
+def _collect_single_hourly(conn, panel, since_str, excluded_days=None):
+    """Hourly counterpart to _collect_counter_subgroups() for a "single" panel."""
+    tbl = get_table(CFG, panel["table_key"])
+    lane_df = _hourly_deltas(conn, tbl, "block_id", panel["name_col"],
+                             panel["counter_col"], panel["pattern"], since_str)
+    parts_df = _hourly_parts(conn, since_str)
+    return _hourly_subgroups_from_deltas(lane_df, parts_df, panel["divisor"],
+                                         excluded_days)
+
+
+def _collect_camera_dual_hourly(conn, params, since_str, excluded_days=None):
+    """Hourly counterpart to _collect_camera_dual(): sums both stations'
+    hourly positive increments per physical lane (parsed from the counter
+    name's numeric suffix, same as _sum_camera_lanes()), producing the
+    "lane{N}" keys lane_key_mode "synthetic" expects. The literal "lane"
+    prefix mirrors the existing block-level camera collector's own
+    dict-comprehension construction rather than reading
+    panel["lane_key_prefix"], for the same reason that one does: it is a
+    collector-internal convention, not something callers configure per run.
+    """
+    tbl = get_table(CFG, params["table_key"])
+    lane_df = _hourly_deltas(conn, tbl, "block_id", params["name_col"],
+                             params["counter_col"],
+                             [params["rear_pattern"], params["front_pattern"]],
+                             since_str)
+    if not lane_df.empty:
+        lane_num = lane_df["name"].str.rsplit("_", n=1).str[-1].astype(int)
+        lane_df = (lane_df.assign(lane_num=lane_num)
+                          .groupby(["hr", "lane_num"], as_index=False)["rejects"].sum())
+        lane_df["name"] = "lane" + lane_df["lane_num"].astype(str)
+    parts_df = _hourly_parts(conn, since_str)
+    return _hourly_subgroups_from_deltas(lane_df, parts_df, params["divisor"],
+                                         excluded_days)
+
+
+CUSTOM_HOURLY_COLLECTORS = {
+    "camera_dual": _collect_camera_dual_hourly,
+}
+
+
+def collect_hourly_subgroups(conn, cfg, panel, excluded, lookback_days=None):
+    """Hourly counterpart to collect_spc_subgroups(): buckets by clock hour off
+    the raw counters rather than by counter-reset event. See the module note
+    above _hourly_deltas() for why hourly needs its own collection path.
+
+    Bounded on _SPC_LOOKBACK_DAYS back from the freshest observed output_stats
+    reading — never wall clock, matching every other lookback bound in this
+    module, since the historian's clock is not assumed to match the caller's.
+    """
+    days = lookback_days if lookback_days is not None else _SPC_LOOKBACK_DAYS
+    mx = query(conn, f"SELECT MAX(t_stamp) AS m FROM {get_table(CFG, 'output_stats')}")
+    if mx.empty or mx.iloc[0, 0] is None:
+        return None
+    anchor = pd.Timestamp(mx.iloc[0, 0])
+    since_str = (anchor - pd.Timedelta(days=days)).strftime("%Y-%m-%d %H:%M:%S")
+
+    collector = panel.get("collector", "single")
+    if collector == "single":
+        return _collect_single_hourly(conn, panel, since_str, excluded_days=excluded)
+    fn = CUSTOM_HOURLY_COLLECTORS.get(collector)
+    if fn is None:
+        raise KeyError(
+            f"Unknown hourly SPC collector {collector!r}; register it in "
+            f"CUSTOM_HOURLY_COLLECTORS"
+        )
+    return fn(conn, panel.get("params", {}), since_str, excluded_days=excluded)

@@ -38,6 +38,7 @@ from metrics.spc import (
     _compute_ewma,
     _laney_p_prime_params,
     build_shift_baseline,
+    collect_hourly_subgroups,
     collect_spc_subgroups,
     derive_spc_lanes,
 )
@@ -71,6 +72,17 @@ C_ALARM   = _SB_COLS.C_ALARM
 N_DAYS = int(os.environ.get("SPC_WINDOW_DAYS", "7"))
 SPC_BASELINE_SUBGROUPS = 100  # per-shift buckets before the weekly window used for p_bar/sigma_z
 ANOMALY_BASELINE_SHIFTS = 13  # prior shifts used for per-shift z-score baseline (matches shift_dashboard)
+
+# Hourly SPC trend: displayed points and pre-window baseline pool, both counted
+# in hours rather than shifts. 48h covers four shifts and stays legible on one
+# axis; 7 days of hours (168) was tried against the same reasoning as N_DAYS
+# above and is too dense to read. 500 pre-window hourly buckets is ~3 weeks of
+# history (~158k parts/lane at the measured ~316 parts/lane/hour) — the shift
+# equivalent (SPC_BASELINE_SUBGROUPS=100 shifts, ~50 days) would be
+# unnecessarily deep at hourly grain and 100 *hourly* buckets would be only
+# ~4 days, too shallow for stable limits. Both env-tunable.
+SPC_HOURLY_WINDOW_HOURS = int(os.environ.get("SPC_HOURLY_WINDOW_HOURS", "48"))
+SPC_HOURLY_BASELINE_BUCKETS = int(os.environ.get("SPC_HOURLY_BASELINE_BUCKETS", "500"))
 
 OUTPUT_PATH = os.path.join(output_dir(CFG), "weekly-dashboard.json")
 
@@ -388,6 +400,74 @@ def compute_weekly_spc(conn, panel, all_shifts, excluded):
                              window_start_str=window_start_str)
 
 
+def _build_hourly_spc(displayed, lane_keys, lane_labels, baseline_subs=None):
+    """Hourly counterpart to _build_weekly_spc().
+
+    No aggregation step is needed here: each element of `displayed` already
+    IS one clock hour (collect_hourly_subgroups() bucketed it that way), unlike
+    shift_subs above which is built by aggregating many raw batch-reset
+    subgroups per shift. Laney p' and EWMA are computed on the SAME displayed
+    series and the same pre-window baseline pool, so the raw-rate chart and the
+    EWMA chart share one x-axis rather than each picking their own window —
+    the two were asked for side by side specifically so the smoothing can be
+    checked against the rates its UCL breaches are computed from.
+    """
+    lanes = _laney_p_prime_series(displayed, lane_keys, lane_labels, baseline_subs=baseline_subs)
+    ewma = _compute_ewma(displayed, lane_keys, baseline_subgroups=baseline_subs)
+    valid_hours = sum(1 for s in displayed if s.get("n_inspected", 0) > 0)
+
+    hour_table = []
+    for j, s in enumerate(displayed):
+        n = s.get("n_inspected", 0)
+        if n == 0:
+            continue
+        row = {"label": s["t_stamp"], "n_inspected": round(n), "per_lane": []}
+        for li, key in enumerate(lane_keys):
+            d = s.get(key, 0)
+            ooc = lanes[li]["points"][j]["out_of_control"]
+            row["per_lane"].append({
+                "lane": lane_labels[li],
+                "rejects": round(d),
+                "rate_pct": round(d / n * 100, 2) if n > 0 else 0,
+                "ooc": ooc,
+            })
+        hour_table.append(row)
+
+    return {"hourly_subgroups": valid_hours, "total_hours": len(displayed),
+            "lanes": lanes, "ewma": ewma, "hour_table": hour_table}
+
+
+def compute_hourly_spc(conn, panel, excluded):
+    """Hourly Laney p' series + EWMA for one declarative SPC panel.
+
+    Unlike compute_weekly_spc(), there is no shift-aggregation step: every
+    subgroup collect_hourly_subgroups() returns already is one clock hour, in
+    chronological order, so the displayed window and the pre-window baseline
+    pool are both plain slices of that one list — the hourly equivalent of how
+    compute_weekly_spc() slices raw subgroups against N_DAYS /
+    SPC_BASELINE_SUBGROUPS, just at hour grain instead of shift grain.
+    """
+    subgroups = collect_hourly_subgroups(conn, CFG, panel, excluded)
+    if not subgroups:
+        return None
+    lane_keys, lane_labels = derive_spc_lanes(panel, subgroups, active_subgroups=subgroups)
+    if not lane_keys:
+        return None
+
+    displayed = subgroups[-SPC_HOURLY_WINDOW_HOURS:]
+    if sum(1 for s in displayed if s.get("n_inspected", 0) > 0) < 3:
+        return None
+
+    pool = (subgroups[:-SPC_HOURLY_WINDOW_HOURS]
+           if len(subgroups) > SPC_HOURLY_WINDOW_HOURS else [])
+    baseline_subs = [s for s in pool if s.get("n_inspected", 0) >= 100]
+    baseline_subs = baseline_subs[-SPC_HOURLY_BASELINE_BUCKETS:]
+    if len(baseline_subs) < 2:
+        baseline_subs = None  # fall back to within-window data if history is insufficient
+
+    return _build_hourly_spc(displayed, lane_keys, lane_labels, baseline_subs=baseline_subs)
+
+
 def _compute_weekly_shift_entry(conn, s_date, s_type, s_start, s_end, p95_ppm) -> dict:
     """Compute all OEE metrics for one shift in the weekly window and return the entry dict.
 
@@ -540,12 +620,30 @@ def compute_spc_only():
                 print(f"  {panel['title']}: {spc['shift_subgroups']} shifts"
                       + (f", OOC lanes: {[l['lane'] for l in ooc]}" if ooc else ", all in control"))
 
+        # Hourly trend, alongside the shift-level series above rather than in
+        # place of it: p2shiftdetail01's Shift slicer and 4-Shift Trend panel
+        # both depend on the shift grain, so this only adds a second, finer
+        # series for the native SPC page rather than changing what the shift
+        # grain feeds.
+        print("\nComputing hourly SPC (clock-hour buckets)...")
+        hourly_spc = {}
+        for panel in get_spc_panels(CFG):
+            if not has_table(CFG, panel["gate_table"]):
+                continue
+            spc = compute_hourly_spc(conn, panel, excluded)
+            hourly_spc["hourly_" + panel["key"]] = spc
+            if spc:
+                ooc = [l for l in spc["lanes"] if l.get("any_out_of_control")]
+                print(f"  {panel['title']}: {spc['hourly_subgroups']} hours"
+                      + (f", OOC lanes: {[l['lane'] for l in ooc]}" if ooc else ", all in control"))
+
         output = {
             "analysis_id": "weekly-dashboard-spc",
             "line_id": CFG["line_id"],
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "shifts": shifts_data,
             **weekly_spc,
+            **hourly_spc,
         }
         save_analysis_json(output, SPC_ONLY_OUTPUT_PATH)
         print(f"\nWrote {SPC_ONLY_OUTPUT_PATH}")

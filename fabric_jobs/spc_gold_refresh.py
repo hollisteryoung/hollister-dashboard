@@ -41,7 +41,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import onelake                                                  # noqa: E402
 
-GOLD_TABLES = ("Lines", "Shifts", "SPC", "Snapshots")
+GOLD_TABLES = ("Lines", "Shifts", "SPC", "SPC_Hourly", "EWMA_Hourly", "Snapshots")
 
 # Gold and Bronze share one Lakehouse Tables/ folder — Direct Lake can only bind
 # to Lakehouse tables, so the outputs have to live there too. The prefix keeps
@@ -55,6 +55,8 @@ GOLD_PREFIX = "gold_"
 DATETIME_COLS = {
     "Shifts": ["ShiftDate"],
     "Snapshots": ["SnapshotTime"],
+    "SPC_Hourly": ["BucketStart"],
+    "EWMA_Hourly": ["BucketStart"],
 }
 
 # Retained history, matching SPC_SNAPSHOT_RETENTION_DAYS in weekly_analysis.py.
@@ -129,6 +131,49 @@ GOLD_SCHEMAS = {
         ("SnapshotLabel", pa.string()),
         ("IsLatestSnapshot", pa.int64()),
     ]),
+    # Hourly counterpart to SPC — same clock-hour bucketing rationale as
+    # src/metrics/spc.py's hourly collectors: a shift-level subgroup only
+    # exists once a counter reset closes a batch (~2/day/panel), which is too
+    # sparse for a trend chart. No IsLatest column: unlike SPC (one bar per
+    # lane per shift, filtered to the current shift), this feeds a line chart
+    # of the WHOLE retained window, so every hour in a run stays in.
+    "SPC_Hourly": pa.schema([
+        ("SnapshotKey", pa.string()),
+        ("LineId", pa.string()),
+        ("Line", pa.string()),
+        ("Panel", pa.string()),
+        ("BucketStart", pa.timestamp("us", tz="UTC")),
+        ("HourLabel", pa.string()),
+        ("HourIdx", pa.int64()),
+        ("Lane", pa.int64()),
+        ("Rejects", pa.int64()),
+        ("RatePct", pa.float64()),
+        ("UclPct", pa.float64()),
+        ("OOC", pa.int64()),
+        ("NInspected", pa.int64()),
+        ("PBar", pa.float64()),
+        ("RatePctLabel", pa.string()),
+        ("LaneLabel", pa.string()),
+    ]),
+    # EWMA (smoothed drift) trend, hourly. OOC here is distinct from
+    # SPC_Hourly's: it flags the EWMA statistic itself crossing its own
+    # steady-state UCL/LCL (the standard EWMA control-chart signal), not the
+    # raw-rate Laney p' signal SPC_Hourly.OOC carries.
+    "EWMA_Hourly": pa.schema([
+        ("SnapshotKey", pa.string()),
+        ("LineId", pa.string()),
+        ("Line", pa.string()),
+        ("Panel", pa.string()),
+        ("BucketStart", pa.timestamp("us", tz="UTC")),
+        ("HourIdx", pa.int64()),
+        ("Lane", pa.int64()),
+        ("Rate", pa.float64()),
+        ("Ewma", pa.float64()),
+        ("Ucl", pa.float64()),
+        ("Lcl", pa.float64()),
+        ("OOC", pa.int64()),
+        ("LaneLabel", pa.string()),
+    ]),
 }
 
 
@@ -192,7 +237,21 @@ def compute_snapshot():
     weekly_analysis.compute_spc_only()
     data = compute_all(refresh=False, lines=("ngp2",), tables=GOLD_TABLES, spc_only=True)
     _add_spc_report_labels(data["SPC"])
+    _add_spc_report_labels(data["SPC_Hourly"])
+    _add_lane_label(data["EWMA_Hourly"])
     return data
+
+
+def _add_lane_label(df):
+    """LaneLabel is a pure function of Panel/Lane, shared by every Gold frame
+    that carries them (SPC, SPC_Hourly, EWMA_Hourly) — see
+    _add_spc_report_labels() for why this is a physical column rather than
+    DAX. Mutates df in place; a no-op shape-wise on an empty frame.
+    """
+    df["LaneLabel"] = [
+        f"N{lane}" if panel == "Nozzle" else f"Lane {lane}"
+        for panel, lane in zip(df["Panel"], df["Lane"])
+    ]
 
 
 def _add_spc_report_labels(spc_df):
@@ -204,18 +263,17 @@ def _add_spc_report_labels(spc_df):
     OOC-suffixed label or the per-panel lane prefix has to be computed here, as a
     real physical column, rather than as DAX in the model.
 
-    Mutates spc_df in place; a no-op on an empty frame (RatePct/OOC/Panel/Lane
-    still exist as columns even with 0 rows, since compute_all() always returns
-    the full column set).
+    Shared by SPC and SPC_Hourly — both carry the same RatePct/OOC/Panel/Lane
+    columns this reads, just at shift grain vs hour grain. Mutates spc_df in
+    place; a no-op on an empty frame (RatePct/OOC/Panel/Lane still exist as
+    columns even with 0 rows, since compute_all() always returns the full
+    column set).
     """
     spc_df["RatePctLabel"] = (
         spc_df["RatePct"].map(lambda x: f"{x:.2f}%")
         + spc_df["OOC"].map(lambda o: "  OOC" if o == 1 else "")
     )
-    spc_df["LaneLabel"] = [
-        f"N{lane}" if panel == "Nozzle" else f"Lane {lane}"
-        for panel, lane in zip(spc_df["Panel"], spc_df["Lane"])
-    ]
+    _add_lane_label(spc_df)
 
 
 def _gold_path(gold, name):
@@ -258,7 +316,7 @@ def merge_history(new, gold):
     merged = {"Lines": new["Lines"].copy()}   # single row, no history to keep
     read_timings = {}
 
-    for name in ("Snapshots", "Shifts", "SPC"):
+    for name in ("Snapshots", "Shifts", "SPC", "SPC_Hourly", "EWMA_Hourly"):
         incoming = snaps if name == "Snapshots" else new[name].copy()
         t0 = time.perf_counter()
         prior = _read_gold(gold, name)
@@ -277,7 +335,7 @@ def merge_history(new, gold):
     merged["Snapshots"] = kept.sort_values("SnapshotTime").reset_index(drop=True)
 
     live = set(kept["SnapshotKey"])
-    for name in ("Shifts", "SPC"):
+    for name in ("Shifts", "SPC", "SPC_Hourly", "EWMA_Hourly"):
         merged[name] = merged[name][merged[name]["SnapshotKey"].isin(live)].reset_index(drop=True)
 
     # RatePctLabel/LaneLabel are pure functions of RatePct/OOC/Panel/Lane. Recompute
@@ -285,6 +343,8 @@ def merge_history(new, gold):
     # history written before these columns existed doesn't carry nulls forward —
     # those showed up as spurious "(Blank)" categories on the native SPC charts.
     _add_spc_report_labels(merged["SPC"])
+    _add_spc_report_labels(merged["SPC_Hourly"])
+    _add_lane_label(merged["EWMA_Hourly"])
 
     merged["_read_timings"] = read_timings   # not a Gold table; write_gold() only loops GOLD_TABLES
     return merged

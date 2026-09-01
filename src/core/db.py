@@ -72,6 +72,20 @@ def limit_clause(n):
     return f"LIMIT {n}" if _backend() == "duckdb" else ""
 
 
+def hour_trunc(col):
+    """Truncate a timestamp column to the top of its hour, as a SELECT expression.
+
+    The one piece of SQL in the hourly SPC path that differs by backend: SQL
+    Server has no date_trunc, so the bucket boundary is built from DATEADD/
+    DATEDIFF against epoch; DuckDB has date_trunc('hour', ...) directly. Both
+    return a naive datetime at the start of the hour `col` falls in, so a bucket
+    key computed this way is safe to GROUP BY and to join back across backends.
+    """
+    if _backend() == "duckdb":
+        return f"date_trunc('hour', {col})"
+    return f"DATEADD(hour, DATEDIFF(hour, 0, {col}), 0)"
+
+
 def _pick_driver():
     available = set(pyodbc.drivers())
     for d in _DRIVER_PREFERENCE:

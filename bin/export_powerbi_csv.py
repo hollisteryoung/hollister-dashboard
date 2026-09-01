@@ -61,6 +61,11 @@ SEG_COLORS = {
 }
 SPC_PANELS = {"weekly_nozzle_spc": "Nozzle", "weekly_camera_spc": "Camera",
               "weekly_vision_spc": "Vision"}
+# Same panels, hourly grain (weekly_analysis.compute_hourly_spc) — kept as its
+# own literal dict rather than derived from SPC_PANELS so a rename of one
+# grain's keys can't silently retarget the other.
+SPC_PANELS_HOURLY = {"hourly_nozzle_spc": "Nozzle", "hourly_camera_spc": "Camera",
+                     "hourly_vision_spc": "Vision"}
 SEG_LABELS = {"hydration": "Hydration", "foil": "Foil", "schubert": "Schubert",
               "manual": "Manual", "unattributed": "Other", "web": "Web / Reel",
               "sealing": "Sealing", "handling": "Handling", "pneumatic": "Pneumatic",
@@ -210,7 +215,7 @@ def _build_tables_spc_only(lines):
     active_lines = lines or LINES
     generated_at = _now_uk_str()
 
-    shifts, spc, snapshots = [], [], []
+    shifts, spc, snapshots, spc_hourly, ewma_hourly = [], [], [], [], []
     seen_snapshots = set()
     for line in active_lines:
         snap_dir = os.path.join(ANALYSES, line, "spc_snapshots")
@@ -276,6 +281,70 @@ def _build_tables_spc_only(lines):
                             1 if slbl == latest_label else 0,
                         ])
 
+            # Hourly trend, alongside the shift-level SPC block above rather than
+            # replacing it — this is what feeds the native SPC page's line charts
+            # instead of the one-bar-per-lane snapshot view. No IsLatest column:
+            # the page filters on Snapshots[IsLatestSnapshot] (which computation
+            # run to show), not on any one row within that run — every hour in
+            # the run's hour_table is kept so the whole series renders as a line.
+            for pkey, pname in SPC_PANELS_HOURLY.items():
+                sp = doc.get(pkey)
+                if not sp:
+                    continue
+                ucl = {}
+                for lane in sp.get("lanes", []):
+                    ln = lane.get("lane")
+                    for pt in lane.get("points", []):
+                        ucl[(ln, pt.get("label"))] = (pt.get("ucl_pct", 0), pt.get("out_of_control", False))
+                pbar = {lane.get("lane"): lane.get("p_bar_pct", 0) for lane in sp.get("lanes", [])}
+                for hidx, ht in enumerate(sp.get("hour_table", [])):
+                    hlbl, n = ht.get("label"), ht.get("n_inspected", 0)
+                    try:
+                        bucket_dt = dt.datetime.strptime(hlbl, "%Y-%m-%d %H:%M:%S")
+                    except (TypeError, ValueError):
+                        continue
+                    bucket_start = bucket_dt.strftime("%Y-%m-%d %H:%M:%S")
+                    hour_label = bucket_dt.strftime("%b %d, %I:%M %p").replace(" 0", " ")
+                    for pl in ht.get("per_lane", []):
+                        ln = pl.get("lane")
+                        u, ooc = ucl.get((ln, hlbl), (0, pl.get("ooc", False)))
+                        is_ooc = 1 if (pl.get("ooc") or ooc) else 0
+                        spc_hourly.append([
+                            snap_key, line, LINES[line], pname, bucket_start, hour_label,
+                            hidx, ln, pl.get("rejects", 0), round(pl.get("rate_pct", 0), 3),
+                            round(u, 3), is_ooc, n, round(pbar.get(ln, 0), 3),
+                        ])
+
+                # Lane order for EWMA's rates/ewma/ucl/lcl lists matches lanes[]
+                # (both built from the same lane_keys), so the lane NUMBER for
+                # index li is lanes[li]["lane"] -- not li+1. That distinction
+                # only shows up once a panel's active_filter prunes an inactive
+                # lane (camera_spc), when the surviving lane numbers are no
+                # longer a contiguous 1..N run.
+                ewma = sp.get("ewma")
+                lanes_list = sp.get("lanes", [])
+                if ewma and lanes_list:
+                    ucl_list, lcl_list = ewma.get("ucl") or [], ewma.get("lcl") or []
+                    for hidx, sh in enumerate(ewma.get("shifts") or []):
+                        hlbl = sh.get("t_stamp")
+                        try:
+                            bucket_dt = dt.datetime.strptime(hlbl, "%Y-%m-%d %H:%M:%S")
+                        except (TypeError, ValueError):
+                            continue
+                        bucket_start = bucket_dt.strftime("%Y-%m-%d %H:%M:%S")
+                        rates, ew = sh.get("rates") or [], sh.get("ewma") or []
+                        for li, lane_entry in enumerate(lanes_list):
+                            ln = lane_entry.get("lane")
+                            rate = rates[li] if li < len(rates) else 0
+                            ev = ew[li] if li < len(ew) else 0
+                            u = ucl_list[li] if li < len(ucl_list) else 0
+                            l = lcl_list[li] if li < len(lcl_list) else 0
+                            ewma_hourly.append([
+                                snap_key, line, LINES[line], pname, bucket_start, hidx, ln,
+                                round(rate, 3), round(ev, 3), round(u, 3), round(l, 3),
+                                1 if (ev > u or ev < l) else 0,
+                            ])
+
     if snapshots:
         latest_key = max(row[0] for row in snapshots)
         for row in snapshots:
@@ -293,6 +362,12 @@ def _build_tables_spc_only(lines):
          ["SnapshotKey", "LineId", "Line", "Panel", "ShiftLabel", "LineShiftLabel", "Lane",
           "Rejects", "RatePct", "UclPct", "OOC", "NInspected", "OOCColor",
           "ShiftIdx", "PBar", "IsLatest"], spc),
+        ("SPC_Hourly",
+         ["SnapshotKey", "LineId", "Line", "Panel", "BucketStart", "HourLabel", "HourIdx",
+          "Lane", "Rejects", "RatePct", "UclPct", "OOC", "NInspected", "PBar"], spc_hourly),
+        ("EWMA_Hourly",
+         ["SnapshotKey", "LineId", "Line", "Panel", "BucketStart", "HourIdx", "Lane",
+          "Rate", "Ewma", "Ucl", "Lcl", "OOC"], ewma_hourly),
         ("Lines", ["LineId", "Line", "GeneratedAt"], lines_dim),
     ]
 
