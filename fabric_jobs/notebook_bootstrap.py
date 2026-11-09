@@ -46,15 +46,26 @@ URI = tables_uri(WORKSPACE_ID, LAKEHOUSE_ID)
 
 from fabric_jobs.bronze_merge import main as merge_bronze
 from fabric_jobs.spc_gold_refresh import main as refresh_gold
+from fabric_jobs.runlock import acquire as _lock_acquire, release as _lock_release
 
-# Timing-only, to find out where a 15-minute run actually spends its ~9-10
-# minutes before optimizing the wrong thing. Remove once the breakdown is known.
-import time                                                        # noqa: E402
+# Overlap guard: a manual trigger landing close to the scheduled one caused a
+# Delta CommitFailedError once OPTIMIZE/VACUUM started touching more files than
+# a plain merge does. See fabric_jobs/runlock.py.
+if not _lock_acquire():
+    print("Another run is already in progress (lock held) — skipping this run "
+          "rather than risk a concurrent Delta commit.")
+else:
+    try:
+        # Timing-only, to find out where a 15-minute run actually spends its ~9-10
+        # minutes before optimizing the wrong thing. Remove once the breakdown is known.
+        import time                                                    # noqa: E402
 
-_t0 = time.perf_counter()
-merge_bronze(["--bronze", MOUNT, "--write-root", URI])
-_t1 = time.perf_counter()
-refresh_gold(["--bronze", MOUNT, "--gold", URI])
-_t2 = time.perf_counter()
-print(f"\n[timing] merge_bronze: {_t1 - _t0:6.1f}s   refresh_gold: {_t2 - _t1:6.1f}s   "
-      f"total: {_t2 - _t0:6.1f}s")
+        _t0 = time.perf_counter()
+        merge_bronze(["--bronze", MOUNT, "--write-root", URI])
+        _t1 = time.perf_counter()
+        refresh_gold(["--bronze", MOUNT, "--gold", URI])
+        _t2 = time.perf_counter()
+        print(f"\n[timing] merge_bronze: {_t1 - _t0:6.1f}s   refresh_gold: {_t2 - _t1:6.1f}s   "
+              f"total: {_t2 - _t0:6.1f}s")
+    finally:
+        _lock_release()

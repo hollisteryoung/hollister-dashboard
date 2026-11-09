@@ -1,0 +1,106 @@
+table gold_EWMA_Hourly
+	lineageTag: 7fb9c08b-d264-4158-a806-a430b1998f27
+
+	measure 'EWMA %' = MAX(gold_EWMA_Hourly[Ewma])
+		formatString: 0.00
+		lineageTag: c5cd8b08-8ef0-4cc7-b0f8-00d5c211c431
+
+	measure 'EWMA UCL %' = MAX(gold_EWMA_Hourly[Ucl])
+		formatString: 0.00
+		lineageTag: bf2858b8-d42b-47c8-9216-788c9b9adadb
+
+	measure 'EWMA LCL %' = MAX(gold_EWMA_Hourly[Lcl])
+		formatString: 0.00
+		lineageTag: a3278e98-d127-45d5-a5ed-c78f2b691c49
+
+	measure 'EWMA Out of Control' = MAX(gold_EWMA_Hourly[OOC])
+		formatString: 0
+		lineageTag: bfdd597a-3438-424a-b728-70c1edb1ad38
+
+	measure 'Common UCL' = AVERAGEX(VALUES(gold_EWMA_Hourly[LaneLabel]), CALCULATE(MAX(gold_EWMA_Hourly[Ucl])))
+		formatString: 0.00
+
+	column SnapshotKey
+		dataType: string
+		lineageTag: f5889d06-d9da-47a9-a51a-c2a354e63ea6
+		summarizeBy: none
+		sourceColumn: SnapshotKey
+
+	column LineId
+		dataType: string
+		lineageTag: c2851106-602f-46b7-86cd-745acb948a7e
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 0369d799-b2eb-4db7-af37-d4c2f5277f05
+		summarizeBy: none
+		sourceColumn: Line
+
+	column Panel
+		dataType: string
+		lineageTag: daa8f461-bd17-4c29-80ff-821701e50ffa
+		summarizeBy: none
+		sourceColumn: Panel
+
+	column BucketStart
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9519d8b4-0095-4d53-be54-6974bb594343
+		summarizeBy: none
+		sourceColumn: BucketStart
+
+	column HourIdx
+		dataType: int64
+		lineageTag: db09f39f-b2b1-40a0-8e79-978a3f896a74
+		summarizeBy: none
+		sourceColumn: HourIdx
+
+	column Lane
+		dataType: int64
+		lineageTag: e5a742ca-1a90-4d7c-92fb-027664166632
+		summarizeBy: none
+		sourceColumn: Lane
+
+	column Rate
+		dataType: double
+		lineageTag: 2542b1c5-c2ca-4f98-a0fc-d0d010fa4495
+		summarizeBy: none
+		sourceColumn: Rate
+
+	column Ewma
+		dataType: double
+		lineageTag: 6ef4f9e3-8561-4179-8643-98213cb1a936
+		summarizeBy: none
+		sourceColumn: Ewma
+
+	column Ucl
+		dataType: double
+		lineageTag: f2e772e7-b497-45aa-823c-2d1724b0c77b
+		summarizeBy: none
+		sourceColumn: Ucl
+
+	column Lcl
+		dataType: double
+		lineageTag: f02ebf12-ef74-46ef-b6b7-e7be3562b649
+		summarizeBy: none
+		sourceColumn: Lcl
+
+	column OOC
+		dataType: int64
+		lineageTag: 288ac660-4de8-47ed-90aa-32aa9e36b728
+		summarizeBy: none
+		sourceColumn: OOC
+
+	column LaneLabel
+		dataType: string
+		lineageTag: 127ae27c-e3c5-4eff-b747-b5f24844aa97
+		summarizeBy: none
+		sourceColumn: LaneLabel
+
+	partition gold_EWMA_Hourly = entity
+		mode: directLake
+		source
+			entityName: gold_EWMA_Hourly
+			expressionSource: 'DirectLake - NPG2 SPC Dashboard'

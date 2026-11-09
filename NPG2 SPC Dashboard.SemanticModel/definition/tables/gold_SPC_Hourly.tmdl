@@ -1,0 +1,147 @@
+table gold_SPC_Hourly
+	lineageTag: 63f5eac2-7472-4aa8-bf42-ef726a92ad01
+
+	measure 'Hourly Reject Rate %' = MAX(gold_SPC_Hourly[RatePct])
+		formatString: 0.00
+		lineageTag: 30c36a06-96cf-40df-878e-c66a6cbe3c48
+
+	measure 'Hourly UCL %' = MAX(gold_SPC_Hourly[UclPct])
+		formatString: 0.00
+		lineageTag: d65ee818-e0b1-411b-a1e8-60921f9f54ec
+
+	measure 'Hourly Out of Control' = MAX(gold_SPC_Hourly[OOC])
+		formatString: 0
+		lineageTag: cc549e40-7223-471c-bda5-71dd6ddd730d
+
+	measure 'UCL Lane 1' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 1")
+		lineageTag: a41fd4b3-349f-401d-ae75-4c8cac6c254c
+
+	measure 'UCL Lane 2' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 2")
+		lineageTag: e0f99067-171a-45a4-bf6e-a96b09434465
+
+	measure 'UCL Lane 3' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 3")
+		lineageTag: f48c88a6-9660-4c13-bc27-ea59b2c2b01a
+
+	measure 'UCL Lane 4' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 4")
+		lineageTag: 31bf1488-30b7-4095-9e17-645266e4fa45
+
+	measure 'UCL Lane 5' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 5")
+		lineageTag: 0d8c3462-0312-4c63-bac1-07870170f89c
+
+	measure 'UCL Lane 6' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 6")
+		lineageTag: bd79f308-710c-4bbd-8eac-817a26905a58
+
+	measure 'UCL Lane 7' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 7")
+		lineageTag: a9bdc19e-ac76-49a2-b048-80c70dd0902e
+
+	measure 'UCL Lane 8' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 8")
+		lineageTag: 6a6e7327-360d-4831-b54e-7349c006e702
+
+	measure 'UCL Lane 9' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 9")
+		lineageTag: 792c58c7-e0c8-4542-9bde-f05ad924f56c
+
+	measure 'UCL Lane 10' = CALCULATE(MAX(gold_EWMA_Hourly[Ucl]), gold_EWMA_Hourly[LaneLabel] = "Lane 10")
+		lineageTag: 26ed334c-9a49-494d-8d60-864e66c67fc8
+
+	column SnapshotKey
+		dataType: string
+		lineageTag: 26b9d49a-08fe-46e0-89bd-dcd80ac1ee8b
+		summarizeBy: none
+		sourceColumn: SnapshotKey
+
+	column LineId
+		dataType: string
+		lineageTag: 3c426110-043f-4133-bd81-ef05e63a6759
+		summarizeBy: none
+		sourceColumn: LineId
+
+	column Line
+		dataType: string
+		lineageTag: 2dd6acce-5100-4600-901c-5e750e4e59ad
+		summarizeBy: none
+		sourceColumn: Line
+
+	column Panel
+		dataType: string
+		lineageTag: a9e5d616-b133-4a59-a326-402da1be0d4b
+		summarizeBy: none
+		sourceColumn: Panel
+
+	column BucketStart
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cd160291-bc5f-43ec-92e9-68b2117c4fc4
+		summarizeBy: none
+		sourceColumn: BucketStart
+
+	column HourLabel
+		dataType: string
+		lineageTag: 5177714f-5b4e-4357-81f9-8415dc0bfddf
+		summarizeBy: none
+		sourceColumn: HourLabel
+
+	column HourIdx
+		dataType: int64
+		lineageTag: 21cf3b1c-71b7-442c-8e74-024ebd13c0c7
+		summarizeBy: none
+		sourceColumn: HourIdx
+
+	column Lane
+		dataType: int64
+		lineageTag: f4ed1c43-e48f-4363-8b27-9983af528c31
+		summarizeBy: none
+		sourceColumn: Lane
+
+	column Rejects
+		dataType: int64
+		lineageTag: 0532ad86-c205-4c64-a622-193c13bc7f4d
+		summarizeBy: none
+		sourceColumn: Rejects
+
+	column RatePct
+		dataType: double
+		lineageTag: 39439cef-59b1-4125-bdfd-1d86cf8b8c37
+		summarizeBy: none
+		sourceColumn: RatePct
+
+	column UclPct
+		dataType: double
+		lineageTag: 592999ce-5bd7-4d76-b986-70becffc34e1
+		summarizeBy: none
+		sourceColumn: UclPct
+
+	column OOC
+		dataType: int64
+		lineageTag: 1236cee8-1d51-48f6-8b65-10b3a5296173
+		summarizeBy: none
+		sourceColumn: OOC
+
+	column NInspected
+		dataType: int64
+		lineageTag: 836b932f-03d3-447e-9447-2a55c61759e0
+		summarizeBy: none
+		sourceColumn: NInspected
+
+	column PBar
+		dataType: double
+		lineageTag: 1d21946c-525f-4d16-8b11-9a50c71ee077
+		summarizeBy: none
+		sourceColumn: PBar
+
+	column RatePctLabel
+		dataType: string
+		lineageTag: 7d055759-36b8-408f-a5d2-5b33dc1e5c64
+		summarizeBy: none
+		sourceColumn: RatePctLabel
+
+	column LaneLabel
+		dataType: string
+		lineageTag: ce661969-1188-4ae7-838e-c3ce7e986f19
+		summarizeBy: none
+		sourceColumn: LaneLabel
+
+	partition gold_SPC_Hourly = entity
+		mode: directLake
+		source
+			entityName: gold_SPC_Hourly
+			expressionSource: 'DirectLake - NPG2 SPC Dashboard'
